@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "goddess_story_library",
+    "slug": "goddess_story_library",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
