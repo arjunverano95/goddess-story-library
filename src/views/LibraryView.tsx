@@ -1,7 +1,8 @@
 import {useState} from 'react';
-import {Badge, Button, Card, Icon, SearchBar} from '@rneui/themed';
+import {Badge, Card, Text, SearchBar} from '@rneui/themed';
 import {View} from 'react-native';
-import goddessStoryList from '../assets/data';
+import WebView from 'react-native-webview';
+import goddessStoryList from '../app/data';
 import {GoddessStory} from '../models/GoddessStory';
 
 const LibraryView = () => {
@@ -14,10 +15,27 @@ const LibraryView = () => {
     setSearchValue(value);
     setSearchResult(card);
   };
+  const getRarityColor = (value) => {
+    switch (value) {
+      case 'R':
+        return 'error';
+      case 'SR':
+        return 'warning';
+      case 'SSR':
+        return 'primary';
+      default:
+        return 'success';
+    }
+  };
   return (
     <>
-      <View>
+      <View style={{paddingTop: 50, backgroundColor: '#393e42'}}>
         <SearchBar
+          containerStyle={{
+            backgroundColor: '#393e42',
+            borderBottomColor: 'transparent',
+            borderTopColor: 'transparent',
+          }}
           placeholder="Input set and card number"
           onChangeText={handleSearch}
           value={searchValue}
@@ -29,17 +47,37 @@ const LibraryView = () => {
       </View>
 
       {searchResult && (
-        <Card containerStyle={{}} wrapperStyle={{}}>
-          <View>
-            <Card.Title>{searchResult.CharacterName}</Card.Title>
-            <Badge value={searchResult.Rarity} status="error" />
-          </View>
-          <Card.FeaturedSubtitle>
-            {searchResult.SeriesName}
-          </Card.FeaturedSubtitle>
-          <Card.Divider />
-          <View></View>
-        </Card>
+        <>
+          <Card>
+            <View style={{flexDirection: 'row'}}>
+              <Badge
+                badgeStyle={{
+                  height: 25,
+                  width: 45,
+                  paddingHorizontal: 5,
+                  marginRight: 5,
+                }}
+                textStyle={{alignSelf: 'flex-start'}}
+                value={searchResult.Rarity}
+                status={getRarityColor(searchResult.Rarity)}
+              />
+              <Card.Title>{`${searchResult.CharacterName}`}</Card.Title>
+            </View>
+            <Card.Divider />
+            <View>
+              <Text>{`Series: ${searchResult.SeriesName}`}</Text>
+              <Text>{`ID: ${searchResult.SetNumber}-${searchResult.CardNumber}`}</Text>
+              {/* <Text>{`Character Name: ${searchResult.CharacterName}`}</Text> */}
+              {/* <Text>{`Rarity: ${searchResult.Rarity}`}</Text> */}
+            </View>
+          </Card>
+          <WebView
+            style={{flex: 1, marginVertical: 20}}
+            source={{
+              uri: `http://images.google.com/images?q=${searchResult.SeriesName} ${searchResult.CharacterName}`,
+            }}
+          />
+        </>
       )}
     </>
   );
