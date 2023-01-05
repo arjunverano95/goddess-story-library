@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.goddessstorylibrary",
+    package = "com.goddess_story_library",
 )
 
 android_resource(
     name = "res",
-    package = "com.goddessstorylibrary",
+    package = "com.goddess_story_library",
     res = "src/main/res",
 )
 
