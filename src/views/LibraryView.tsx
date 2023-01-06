@@ -1,7 +1,9 @@
 import {useState} from 'react';
-import {Badge, Card, Text, SearchBar} from '@rneui/themed';
+import {Badge, Card, Text, SearchBar, Button, Icon} from '@rneui/themed';
 import {View} from 'react-native';
 import WebView from 'react-native-webview';
+import Voice from '@react-native-voice/voice';
+
 import goddessStoryList from '../app/data';
 import {GoddessStory} from '../models/GoddessStory';
 
@@ -29,9 +31,16 @@ const LibraryView = () => {
   };
   return (
     <>
-      <View style={{paddingTop: 50, backgroundColor: '#393e42'}}>
+      <View
+        style={{
+          paddingTop: 50,
+          backgroundColor: '#393e42',
+          flexDirection: 'row',
+        }}
+      >
         <SearchBar
           containerStyle={{
+            flex: 1,
             backgroundColor: '#393e42',
             borderBottomColor: 'transparent',
             borderTopColor: 'transparent',
@@ -40,10 +49,21 @@ const LibraryView = () => {
           onChangeText={handleSearch}
           value={searchValue}
         />
-        {/* <Button type="solid">
-          Icon
-          <Icon name="home" color="white" />
-        </Button> */}
+        <Button
+          containerStyle={{
+            marginTop: 10,
+            marginRight: 8,
+          }}
+          buttonStyle={{
+            height: 46,
+          }}
+          type="solid"
+          onPress={async () => {
+            Voice.start('en-US');
+          }}
+        >
+          <Icon name="mic" color="white" />
+        </Button>
       </View>
 
       {searchResult && (

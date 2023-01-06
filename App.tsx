@@ -2,17 +2,14 @@ import {createTheme, ThemeProvider} from '@rneui/themed';
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import LibraryView from './src/views/LibraryView';
+import TextToSpeech from './TextToSpeech';
 
 const theme = createTheme({
   lightColors: {
-    primary: '#293D50',
-    secondary: '#A1B8CE',
-    background: '#E9E9E9',
+    primary: '#e85d64',
+    secondary: '#f2a4a8',
+    background: '#fffdfd',
   },
-  // darkColors: {
-  //   primary: '#213140',
-  //   secondary: '#4a5a6b',
-  // },
   mode: 'light',
 });
 
