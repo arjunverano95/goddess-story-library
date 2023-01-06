@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {Badge, Card, Text, SearchBar, Button, Icon} from '@rneui/themed';
 import {View} from 'react-native';
 import WebView from 'react-native-webview';
-import Voice from '@react-native-voice/voice';
 
 import goddessStoryList from '../app/data';
 import {GoddessStory} from '../models/GoddessStory';
@@ -58,9 +57,7 @@ const LibraryView = () => {
             height: 46,
           }}
           type="solid"
-          onPress={async () => {
-            Voice.start('en-US');
-          }}
+          onPress={async () => {}}
         >
           <Icon name="mic" color="white" />
         </Button>
