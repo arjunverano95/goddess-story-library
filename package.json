@@ -20,6 +20,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-voice/voice": "^3.2.4",
     "@rneui/base": "^4.0.0-rc.7",
     "@rneui/themed": "^4.0.0-rc.7",
     "expo": "~47.0.9",
