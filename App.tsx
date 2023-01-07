@@ -1,6 +1,7 @@
 import {createTheme, ThemeProvider} from '@rneui/themed';
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+
 import LibraryView from './src/views/LibraryView';
 
 const theme = createTheme({
