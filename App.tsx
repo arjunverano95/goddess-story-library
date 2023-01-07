@@ -4,7 +4,7 @@ import React from 'react';
 import {LogBox} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import LibraryView from './src/views/LibraryView';
+import Search from './src/views/Search';
 
 const theme = createTheme({
   lightColors: {
@@ -21,7 +21,7 @@ export default function App() {
       <StatusBar translucent={true}></StatusBar>
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
-          <LibraryView />
+          <Search />
         </ThemeProvider>
       </SafeAreaProvider>
     </>

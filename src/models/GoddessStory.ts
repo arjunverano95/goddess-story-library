@@ -1,7 +1,7 @@
 export interface GoddessStory {
   Code: string;
   SetNumber: string;
-  CardNumber: number;
+  CardNumber: string;
   CharacterName: string;
   SeriesName: string;
   Rarity: string;
