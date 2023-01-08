@@ -1,21 +1,31 @@
-# @rneui/template
+# Goddess Story Library
 
-## React Native Elements Expo Template
+A simple and easy to use viewer and library of Goddess story cards.
 
-### Usage
+[images]
 
-#### Stable
+## Features
 
-        expo init app --template @rneui/template
+- Speech-to-text lookup of card details
+- Easy viewing of Set Lists with powerful filters
+- Complete\* list of all Goddess Story Cards
 
-#### Stable Typescript
+More features will be added soon! ✨
+<sub><sup>\* NS-10-M04 is still being updated</sup></sub>
 
-        expo init app --template @rneui/template@ts
+## Usage
 
-#### Bleeding Edge (Experimental)
+### Voice Search Formats 🔊
 
-        expo init app --template @rneui/template@edge
+    <Set Number><Card Number> 			i.e, NS01001 or NS05M02065
+    <Set Number><PR|BW><Card Number> 	i.e, NS10M03PR018
 
-#### Bleeding Edge Typescript (Experimental)
+### 🔗 Download Links
 
-        expo init app --template @rneui/template@edge-ts
+Android -
+IOS -
+
+## Asset Sources
+
+[Waifu Card Community | Discord](https://discord.gg/waifucard)
+[Goddess Story Cards PH | Facebook](https://www.facebook.com/groups/768146134112112)
