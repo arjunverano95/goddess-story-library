@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
 import {GoddessStory} from '../../models/GoddessStory';
+import Header from '../Header';
 
 const data: GoddessStory[] = require('../../app/data.json');
 
@@ -35,40 +36,37 @@ const SearchForm = (props: SearchFormProps) => {
     Voice.onSpeechResults = onSpeechResults;
   }, []);
   return (
-    <View
-      style={{
-        paddingTop: 50,
-        backgroundColor: '#393e42',
-        flexDirection: 'row',
-      }}
-    >
-      <SearchBar
-        containerStyle={{
-          flex: 1,
-          backgroundColor: '#393e42',
-          borderBottomColor: 'transparent',
-          borderTopColor: 'transparent',
-        }}
-        placeholder="Input set and card number"
-        onChangeText={handleSearch}
-        value={searchValue}
-      />
-      <Button
-        containerStyle={{
-          marginTop: 10,
-          marginRight: 8,
-        }}
-        buttonStyle={{
-          height: 46,
-        }}
-        type="solid"
-        onPress={async () => {
-          Voice.start('en-PH');
-        }}
-      >
-        <Icon name="mic" color="white" />
-      </Button>
-    </View>
+    <Header>
+      <>
+        <SearchBar
+          containerStyle={{
+            flex: 1,
+            paddingLeft: 0,
+            backgroundColor: '#393e42',
+            borderBottomColor: 'transparent',
+            borderTopColor: 'transparent',
+          }}
+          placeholder="Input set and card number"
+          onChangeText={handleSearch}
+          value={searchValue}
+        />
+        <Button
+          containerStyle={{
+            marginTop: 10,
+            marginRight: 8,
+          }}
+          buttonStyle={{
+            height: 46,
+          }}
+          type="solid"
+          onPress={async () => {
+            Voice.start('en-PH');
+          }}
+        >
+          <Icon name="mic" color="white" />
+        </Button>
+      </>
+    </Header>
   );
 };
 export default SearchForm;
