@@ -2,7 +2,6 @@ import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
 import {View, Image} from 'react-native';
 import WebView from 'react-native-webview';
-import cardImages from '../../app/cardImages';
 import {GoddessStory} from '../../models/GoddessStory';
 
 interface SearchResultProps {
@@ -29,17 +28,12 @@ const SearchResult = (props: SearchResultProps) => {
   if (!data) return <></>;
 
   const CardImage = () => {
-    const key = `${data.SetNumber.replace(/-/g, '')}${
-      data.CardNumber
-    }${data.Rarity.replace(/\//g, '')}`;
-    const img = cardImages[key];
-    if (img)
+    if (data.ImageUrl)
       return (
         <View
           style={{
             flex: 1,
             margin: 20,
-            justifyContent: 'flex-start',
           }}
         >
           <Image
@@ -49,7 +43,7 @@ const SearchResult = (props: SearchResultProps) => {
               resizeMode: 'contain',
               width: null,
             }}
-            source={img}
+            source={{uri: data.ImageUrl}}
           />
         </View>
       );

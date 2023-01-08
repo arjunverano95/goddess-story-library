@@ -5,4 +5,5 @@ export interface GoddessStory {
   CharacterName: string;
   SeriesName: string;
   Rarity: string;
+  ImageUrl: string;
 }
