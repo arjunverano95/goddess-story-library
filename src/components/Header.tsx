@@ -4,7 +4,7 @@ import {Button, Icon} from '@rneui/themed';
 import {View} from 'react-native';
 
 interface HeaderProps {
-  children?: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
 }
 const Header = (props: HeaderProps) => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
@@ -47,30 +47,3 @@ const Header = (props: HeaderProps) => {
   );
 };
 export default Header;
-
-// export default (props) => {
-//   return (
-//     <RNEHeader
-//       barStyle="default"
-//       centerComponent={
-//         props.children && (
-//           <View
-//             style={{
-//               padding: 0,
-//               margin: 0,
-//               flex: 1,
-//               flexDirection: 'row',
-//             }}
-//           >
-//             {props.children}
-//           </View>
-//         )
-//       }
-//       leftComponent={{icon: 'menu', color: '#fff'}}
-//       placement="L"
-//       rightComponent={{icon: 'home', color: '#fff'}}
-//       rightContainerStyle={{}}
-//       statusBarProps={{}}
-//     />
-//   );
-// };

@@ -6,38 +6,36 @@ const SetList = () => {
   return (
     <>
       <Header>
-        <>
-          <View
+        <View
+          style={{
+            flex: 1,
+            paddingLeft: 10,
+          }}
+        >
+          <Text
             style={{
-              flex: 1,
-              paddingLeft: 10,
+              fontSize: 18,
+              fontWeight: 'bold',
+              marginTop: 19,
+              color: '#fff',
             }}
           >
-            <Text
-              style={{
-                fontSize: 18,
-                fontWeight: 'bold',
-                marginTop: 19,
-                color: '#fff',
-              }}
-            >
-              {'Goddess Story'}
-            </Text>
-          </View>
-          <Button
-            containerStyle={{
-              marginTop: 10,
-              marginRight: 8,
-            }}
-            buttonStyle={{
-              height: 46,
-            }}
-            type="clear"
-            onPress={async () => {}}
-          >
-            <Icon name="tune" color="white" />
-          </Button>
-        </>
+            {'Goddess Story'}
+          </Text>
+        </View>
+        <Button
+          containerStyle={{
+            marginTop: 10,
+            marginRight: 8,
+          }}
+          buttonStyle={{
+            height: 46,
+          }}
+          type="clear"
+          onPress={async () => {}}
+        >
+          <Icon name="tune" color="white" />
+        </Button>
       </Header>
     </>
   );

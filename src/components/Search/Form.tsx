@@ -8,11 +8,11 @@ import Header from '../Header';
 
 const data: GoddessStory[] = require('../../app/data.json');
 
-interface SearchFormProps {
+interface FormProps {
   onSearch: (value: GoddessStory) => void;
 }
 
-const SearchForm = (props: SearchFormProps) => {
+export const Form = (props: FormProps) => {
   const [searchValue, setSearchValue] = useState('');
   const {onSearch} = props;
 
@@ -37,36 +37,33 @@ const SearchForm = (props: SearchFormProps) => {
   }, []);
   return (
     <Header>
-      <>
-        <SearchBar
-          containerStyle={{
-            flex: 1,
-            paddingLeft: 0,
-            backgroundColor: '#393e42',
-            borderBottomColor: 'transparent',
-            borderTopColor: 'transparent',
-          }}
-          placeholder="Input set and card number"
-          onChangeText={handleSearch}
-          value={searchValue}
-        />
-        <Button
-          containerStyle={{
-            marginTop: 10,
-            marginRight: 8,
-          }}
-          buttonStyle={{
-            height: 46,
-          }}
-          type="solid"
-          onPress={async () => {
-            Voice.start('en-PH');
-          }}
-        >
-          <Icon name="mic" color="white" />
-        </Button>
-      </>
+      <SearchBar
+        containerStyle={{
+          flex: 1,
+          paddingLeft: 0,
+          backgroundColor: '#393e42',
+          borderBottomColor: 'transparent',
+          borderTopColor: 'transparent',
+        }}
+        placeholder="Input set and card number"
+        onChangeText={handleSearch}
+        value={searchValue}
+      />
+      <Button
+        containerStyle={{
+          marginTop: 10,
+          marginRight: 8,
+        }}
+        buttonStyle={{
+          height: 46,
+        }}
+        type="solid"
+        onPress={async () => {
+          Voice.start('en-PH');
+        }}
+      >
+        <Icon name="mic" color="white" />
+      </Button>
     </Header>
   );
 };
-export default SearchForm;

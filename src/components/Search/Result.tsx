@@ -4,11 +4,11 @@ import {View, Image} from 'react-native';
 import WebView from 'react-native-webview';
 import {GoddessStory} from '../../models/GoddessStory';
 
-interface SearchResultProps {
+interface ResultProps {
   data: GoddessStory;
 }
 
-const SearchResult = (props: SearchResultProps) => {
+export const Result = (props: ResultProps) => {
   const {data} = props;
   const netInfo = useNetInfo();
 
@@ -90,4 +90,3 @@ const SearchResult = (props: SearchResultProps) => {
     </>
   );
 };
-export default SearchResult;
