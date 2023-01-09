@@ -8,44 +8,44 @@ import routes from './../../app/routes';
 interface DrawerContentProps {
   navigation: DrawerNavigationHelpers;
 }
-const DrawerContent = (props: DrawerContentProps) => {
-  const {navigation} = props;
-  return (
-    <>
-      <View
-        style={{
-          height: 200,
-          overflow: 'hidden',
-          position: 'relative',
-        }}
-      >
-        <Image
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            height: 250,
-            width: '100%',
-          }}
-          source={require('../../../assets/cover.png')}
-        />
-      </View>
-      {routes.map((item) => (
-        <DrawerItem
-          key={item.name}
-          icon={() => <Icon name={item.icon} />}
-          label={item.label}
-          onPress={() => {
-            navigation.navigate(item.name);
-          }}
-        />
-      ))}
-    </>
-  );
-};
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
+  const DrawerContent = (props: DrawerContentProps) => {
+    const {navigation} = props;
+    return (
+      <>
+        <View
+          style={{
+            height: 200,
+            overflow: 'hidden',
+            position: 'relative',
+          }}
+        >
+          <Image
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              height: 250,
+              width: '100%',
+            }}
+            source={require('../../../assets/cover.png')}
+          />
+        </View>
+        {routes.map((item) => (
+          <DrawerItem
+            key={item.name}
+            icon={() => <Icon name={item.icon} />}
+            label={item.label}
+            onPress={() => {
+              navigation.navigate(item.name);
+            }}
+          />
+        ))}
+      </>
+    );
+  };
   return (
     <NavigationContainer>
       <Drawer.Navigator

@@ -1,6 +1,6 @@
 import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
-import {View, Image} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
 import {GoddessStory} from '../../models/GoddessStory';
 
@@ -12,39 +12,13 @@ export const Result = (props: ResultProps) => {
   const {data} = props;
   const netInfo = useNetInfo();
 
-  const getRarityColor = (value) => {
-    switch (value) {
-      case 'R':
-        return 'error';
-      case 'SR':
-        return 'warning';
-      case 'SSR':
-        return 'primary';
-      default:
-        return 'success';
-    }
-  };
-
   if (!data) return <></>;
 
   const CardImage = () => {
     if (data.ImageUrl)
       return (
-        <View
-          style={{
-            flex: 1,
-            margin: 20,
-          }}
-        >
-          <Image
-            style={{
-              flex: 1,
-              height: null,
-              resizeMode: 'contain',
-              width: null,
-            }}
-            source={{uri: data.ImageUrl}}
-          />
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={{uri: data.ImageUrl}} />
         </View>
       );
     else
@@ -52,7 +26,7 @@ export const Result = (props: ResultProps) => {
         <>
           {netInfo.isConnected && (
             <WebView
-              style={{flex: 1, margin: 20}}
+              style={styles.imageWebview}
               source={{
                 uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
               }}
@@ -64,19 +38,17 @@ export const Result = (props: ResultProps) => {
   return (
     <>
       <Card>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.cardTitleContainer}>
           <Badge
-            badgeStyle={{
-              height: 25,
-              width: 45,
-              paddingHorizontal: 5,
-              marginRight: 5,
-            }}
-            textStyle={{alignSelf: 'flex-start'}}
+            badgeStyle={styles.rarityBadge}
+            textStyle={styles.raritytext}
             value={data.Rarity}
-            status={getRarityColor(data.Rarity)}
+            status="warning"
           />
-          <Card.Title>{`${data.CharacterName}`}</Card.Title>
+          <Card.Title
+            style={styles.cardTitle}
+          >{`${data.CharacterName}`}</Card.Title>
+          <Card.Title style={styles.cardSubTitle}>{data.SetNumber}</Card.Title>
         </View>
         <Card.Divider />
         <View>
@@ -90,3 +62,27 @@ export const Result = (props: ResultProps) => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    flex: 1,
+    margin: 20,
+  },
+  image: {
+    flex: 1,
+    height: null,
+    resizeMode: 'contain',
+    width: null,
+  },
+  imageWebview: {flex: 1, margin: 20},
+  cardTitleContainer: {flexDirection: 'row'},
+  rarityBadge: {
+    height: 25,
+    width: 45,
+    paddingHorizontal: 5,
+    marginRight: 5,
+  },
+  raritytext: {fontWeight: 'bold'}, // alignSelf: 'flex-start'}
+  cardTitle: {flex: 1, textAlign: 'left'},
+  cardSubTitle: {fontWeight: 'normal'},
+});

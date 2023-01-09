@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {SearchBar, Button, Icon} from '@rneui/themed';
-import {View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
 import {GoddessStory} from '../../models/GoddessStory';
@@ -38,25 +38,14 @@ export const Form = (props: FormProps) => {
   return (
     <Header>
       <SearchBar
-        containerStyle={{
-          flex: 1,
-          paddingLeft: 0,
-          backgroundColor: '#393e42',
-          borderBottomColor: 'transparent',
-          borderTopColor: 'transparent',
-        }}
+        containerStyle={styles.searchBarContainer}
         placeholder="Input set and card number"
         onChangeText={handleSearch}
         value={searchValue}
       />
       <Button
-        containerStyle={{
-          marginTop: 10,
-          marginRight: 8,
-        }}
-        buttonStyle={{
-          height: 46,
-        }}
+        containerStyle={styles.voiceSearchContainer}
+        buttonStyle={styles.voiceSearchButton}
         type="solid"
         onPress={async () => {
           Voice.start('en-PH');
@@ -67,3 +56,20 @@ export const Form = (props: FormProps) => {
     </Header>
   );
 };
+
+const styles = StyleSheet.create({
+  searchBarContainer: {
+    flex: 1,
+    paddingLeft: 0,
+    backgroundColor: '#393e42',
+    borderBottomColor: 'transparent',
+    borderTopColor: 'transparent',
+  },
+  voiceSearchContainer: {
+    marginTop: 10,
+    marginRight: 8,
+  },
+  voiceSearchButton: {
+    height: 46,
+  },
+});

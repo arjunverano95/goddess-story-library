@@ -1,7 +1,7 @@
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {useNavigation} from '@react-navigation/native';
 import {Button, Icon} from '@rneui/themed';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 interface HeaderProps {
   children?: JSX.Element | JSX.Element[];
@@ -9,21 +9,10 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
   return (
-    <View
-      style={{
-        paddingTop: 50,
-        backgroundColor: '#393e42',
-        flexDirection: 'row',
-      }}
-    >
+    <View style={styles.headerContainer}>
       <Button
-        containerStyle={{
-          marginTop: 10,
-          marginHorizontal: 5,
-        }}
-        buttonStyle={{
-          height: 46,
-        }}
+        containerStyle={styles.toggleDrawerContainer}
+        buttonStyle={styles.toggleDrawerButton}
         type="clear"
         onPress={async () => {
           navigation.openDrawer();
@@ -46,4 +35,19 @@ const Header = (props: HeaderProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    paddingTop: 50,
+    backgroundColor: '#393e42',
+    flexDirection: 'row',
+  },
+  toggleDrawerContainer: {
+    marginTop: 10,
+    marginHorizontal: 5,
+  },
+  toggleDrawerButton: {
+    height: 46,
+  },
+});
 export default Header;
