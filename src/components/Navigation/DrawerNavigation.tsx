@@ -3,7 +3,7 @@ import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/s
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from '@rneui/base';
 import {View, Image, StyleSheet} from 'react-native';
-import routes from './../../app/routes';
+import routes, {initialRoute} from './../../app/routes';
 
 interface DrawerContentProps {
   navigation: DrawerNavigationHelpers;
@@ -38,7 +38,7 @@ const DrawerNavigation = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator
-        initialRouteName="Search"
+        initialRouteName={initialRoute}
         screenOptions={{
           headerShown: false,
         }}

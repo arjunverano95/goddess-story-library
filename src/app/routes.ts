@@ -9,16 +9,17 @@ interface Routes {
 }
 const routes: Routes[] = [
   {
+    name: 'setlist',
+    label: 'Goddess Story',
+    icon: 'list',
+    component: SetList,
+  },
+  {
     name: 'search',
     label: 'Search',
     icon: 'search',
     component: Search,
   },
-  {
-    name: 'setlist',
-    label: 'Set List',
-    icon: 'list',
-    component: SetList,
-  },
 ];
 export default routes;
+export const initialRoute = 'setlist';
