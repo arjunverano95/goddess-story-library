@@ -1,10 +1,10 @@
 import {useState} from 'react';
-import {BottomSheet, Button, Icon, Input, ListItem, Text} from '@rneui/themed';
+import {BottomSheet, Button, Icon, ListItem, Text} from '@rneui/themed';
 import {StyleSheet, View} from 'react-native';
 
 import {GoddessStory} from '../../models/GoddessStory';
 import Header from '../Header';
-import {ScrollView} from 'react-native-gesture-handler';
+import {FlatList} from 'react-native-gesture-handler';
 
 const data: GoddessStory[] = require('../../app/data.json');
 const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
@@ -57,6 +57,7 @@ export const Form = (props: FormProps) => {
       </Header>
       <BottomSheet
         onBackdropPress={() => {
+          setExpanded(null);
           setIsVisible(false);
         }}
         isVisible={isVisible}
@@ -94,28 +95,32 @@ export const Form = (props: FormProps) => {
                 borderColor: Colors.placeholder,
               }}
             >
-              <ScrollView style={styles.selectContainer}>
-                {setNumberList.map((item, index) => (
-                  <ListItem containerStyle={styles.selectListItem} key={index}>
-                    <ListItem.CheckBox
-                      // Use ThemeProvider to change the defaults of the checkbox
-                      iconType="material-community"
-                      checkedIcon="checkbox-marked"
-                      uncheckedIcon="checkbox-blank-outline"
-                      checked={item === filterData.SetNumber}
-                      onPress={() => {
-                        if (filterData.SetNumber === item)
-                          updateFilterData('SetNumber', '');
-                        else updateFilterData('SetNumber', item);
-                        handleExpanded('SetNumber');
-                      }}
-                    />
-                    <ListItem.Content>
-                      <ListItem.Subtitle>{item}</ListItem.Subtitle>
-                    </ListItem.Content>
-                  </ListItem>
-                ))}
-              </ScrollView>
+              <View style={styles.selectContainer}>
+                <FlatList
+                  data={setNumberList}
+                  renderItem={({item}) => (
+                    <ListItem containerStyle={styles.selectListItem}>
+                      <ListItem.CheckBox
+                        // Use ThemeProvider to change the defaults of the checkbox
+                        iconType="material-community"
+                        checkedIcon="checkbox-marked"
+                        uncheckedIcon="checkbox-blank-outline"
+                        checked={item === filterData.SetNumber}
+                        onPress={() => {
+                          if (filterData.SetNumber === item)
+                            updateFilterData('SetNumber', '');
+                          else updateFilterData('SetNumber', item);
+                          handleExpanded('SetNumber');
+                        }}
+                      />
+                      <ListItem.Content>
+                        <ListItem.Subtitle>{item}</ListItem.Subtitle>
+                      </ListItem.Content>
+                    </ListItem>
+                  )}
+                  keyExtractor={(item) => item}
+                />
+              </View>
             </View>
           </ListItem.Accordion>
 
@@ -156,28 +161,32 @@ export const Form = (props: FormProps) => {
               handleExpanded('Rarity');
             }}
           >
-            <ScrollView style={styles.selectContainer}>
-              {rarityList.map((item, index) => (
-                <ListItem containerStyle={styles.selectListItem} key={index}>
-                  <ListItem.CheckBox
-                    // Use ThemeProvider to change the defaults of the checkbox
-                    iconType="material-community"
-                    checkedIcon="checkbox-marked"
-                    uncheckedIcon="checkbox-blank-outline"
-                    checked={item === filterData.Rarity}
-                    onPress={() => {
-                      if (filterData.Rarity === item)
-                        updateFilterData('Rarity', '');
-                      else updateFilterData('Rarity', item);
-                      handleExpanded('Rarity');
-                    }}
-                  />
-                  <ListItem.Content>
-                    <ListItem.Subtitle>{item}</ListItem.Subtitle>
-                  </ListItem.Content>
-                </ListItem>
-              ))}
-            </ScrollView>
+            <View style={styles.selectContainer}>
+              <FlatList
+                data={rarityList}
+                renderItem={({item}) => (
+                  <ListItem containerStyle={styles.selectListItem}>
+                    <ListItem.CheckBox
+                      // Use ThemeProvider to change the defaults of the checkbox
+                      iconType="material-community"
+                      checkedIcon="checkbox-marked"
+                      uncheckedIcon="checkbox-blank-outline"
+                      checked={item === filterData.Rarity}
+                      onPress={() => {
+                        if (filterData.Rarity === item)
+                          updateFilterData('Rarity', '');
+                        else updateFilterData('Rarity', item);
+                        handleExpanded('Rarity');
+                      }}
+                    />
+                    <ListItem.Content>
+                      <ListItem.Subtitle>{item}</ListItem.Subtitle>
+                    </ListItem.Content>
+                  </ListItem>
+                )}
+                keyExtractor={(item) => item}
+              />
+            </View>
           </ListItem.Accordion>
 
           <ListItem containerStyle={styles.listItem}>
@@ -223,6 +232,7 @@ export const Form = (props: FormProps) => {
                   ? 'Goddess Story'
                   : filterData.SetNumber,
               );
+              setExpanded(null);
               setIsVisible(false);
             }}
           />
