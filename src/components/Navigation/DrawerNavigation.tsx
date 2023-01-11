@@ -2,7 +2,7 @@ import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from '@rneui/base';
-import {View, Image} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import routes from './../../app/routes';
 
 interface DrawerContentProps {
@@ -16,20 +16,9 @@ const DrawerNavigation = () => {
     const {navigation} = props;
     return (
       <>
-        <View
-          style={{
-            height: 200,
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
+        <View style={styles.drawerContentContainer}>
           <Image
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              height: 250,
-              width: '100%',
-            }}
+            style={styles.drawerContentCoverImage}
             source={require('../../../assets/cover.png')}
           />
         </View>
@@ -68,4 +57,17 @@ const DrawerNavigation = () => {
     </NavigationContainer>
   );
 };
+const styles = StyleSheet.create({
+  drawerContentContainer: {
+    height: 200,
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  drawerContentCoverImage: {
+    position: 'absolute',
+    bottom: 0,
+    height: 250,
+    width: '100%',
+  },
+});
 export default DrawerNavigation;

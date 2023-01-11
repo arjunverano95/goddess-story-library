@@ -1,7 +1,8 @@
 import {useNetInfo} from '@react-native-community/netinfo';
-import {Badge, Card, Text} from '@rneui/themed';
+import {Badge, Card, Skeleton, Text} from '@rneui/themed';
 import {View, Image, StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
+import FastImage from 'react-native-fast-image';
 import {GoddessStory} from '../../models/GoddessStory';
 
 interface ResultProps {
@@ -18,7 +19,11 @@ export const Result = (props: ResultProps) => {
     if (data.ImageUrl)
       return (
         <View style={styles.imageContainer}>
-          <Image style={styles.image} source={{uri: data.ImageUrl}} />
+          <FastImage
+            style={styles.image}
+            source={{uri: data.ImageUrl, priority: FastImage.priority.normal}}
+            resizeMode={FastImage.resizeMode.contain}
+          />
         </View>
       );
     else
@@ -37,7 +42,7 @@ export const Result = (props: ResultProps) => {
   };
   return (
     <>
-      <Card>
+      <Card containerStyle={styles.cardContainer}>
         <View style={styles.cardTitleContainer}>
           <Badge
             badgeStyle={styles.rarityBadge}
@@ -58,6 +63,7 @@ export const Result = (props: ResultProps) => {
           {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
         </View>
       </Card>
+
       <CardImage />
     </>
   );
@@ -66,7 +72,8 @@ export const Result = (props: ResultProps) => {
 const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
-    margin: 20,
+    margin: 15,
+    backgroundColor: '#FFF',
   },
   image: {
     flex: 1,
@@ -75,6 +82,7 @@ const styles = StyleSheet.create({
     width: null,
   },
   imageWebview: {flex: 1, margin: 20},
+  cardContainer: {borderWidth: 0},
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {
     height: 25,

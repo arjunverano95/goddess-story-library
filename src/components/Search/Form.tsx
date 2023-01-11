@@ -19,6 +19,7 @@ export const Form = (props: FormProps) => {
   const onSpeechResults = (e: SpeechResultsEvent) => {
     if (e.value.length > 0) {
       let result = `${e.value[0]}`.replace(/ /g, '').toUpperCase();
+      result = result.replace(/FOR/g, '4');
       result = result.replace(/TO/g, '2');
       result = result.replace(/O/g, '0');
       handleSearch(result);

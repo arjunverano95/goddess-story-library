@@ -21,16 +21,7 @@ const Header = (props: HeaderProps) => {
         <Icon name="menu" color="white" />
       </Button>
       {props.children && (
-        <View
-          style={{
-            padding: 0,
-            margin: 0,
-            flex: 1,
-            flexDirection: 'row',
-          }}
-        >
-          {props.children}
-        </View>
+        <View style={styles.headerContentContainer}>{props.children}</View>
       )}
     </View>
   );
@@ -48,6 +39,12 @@ const styles = StyleSheet.create({
   },
   toggleDrawerButton: {
     height: 46,
+  },
+  headerContentContainer: {
+    padding: 0,
+    margin: 0,
+    flex: 1,
+    flexDirection: 'row',
   },
 });
 export default Header;
