@@ -5,6 +5,7 @@ import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
 import {GoddessStory} from '../../models/GoddessStory';
 import Header from '../Header';
+import {colors} from '../../app/colors';
 
 const data: GoddessStory[] = require('../../app/data.json');
 
@@ -19,6 +20,7 @@ export const Form = (props: FormProps) => {
   const onSpeechResults = (e: SpeechResultsEvent) => {
     if (e.value.length > 0) {
       let result = `${e.value[0]}`.replace(/ /g, '').toUpperCase();
+      result = result.replace(/S&R/g, 'SR');
       result = result.replace(/FOR/g, '4');
       result = result.replace(/TO/g, '2');
       result = result.replace(/O/g, '0');
@@ -62,9 +64,8 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flex: 1,
     paddingLeft: 0,
-    backgroundColor: '#393e42',
-    borderBottomColor: 'transparent',
-    borderTopColor: 'transparent',
+    borderBottomColor: colors.transparent,
+    borderTopColor: colors.transparent,
   },
   voiceSearchContainer: {
     marginTop: 10,

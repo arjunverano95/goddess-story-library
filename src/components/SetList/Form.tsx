@@ -5,14 +5,12 @@ import {StyleSheet, View} from 'react-native';
 import {GoddessStory} from '../../models/GoddessStory';
 import Header from '../Header';
 import {FlatList} from 'react-native-gesture-handler';
+import {colors} from '../../app/colors';
 
 const data: GoddessStory[] = require('../../app/data.json');
 const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
 const rarityList = [...new Set(data.map((item) => item.Rarity))];
-const Colors = {
-  placeholder: '#bfbfbf',
-  active: '#43484d',
-};
+
 interface FormProps {
   onSearch: (value: GoddessStory) => void;
 }
@@ -70,14 +68,14 @@ export const Form = (props: FormProps) => {
             </Text>
           </View>
           <ListItem.Accordion
-            icon={<Icon name={'keyboard-arrow-down'} color={Colors.active} />}
+            icon={<Icon name={'keyboard-arrow-down'} color={colors.black} />}
             containerStyle={[styles.listItem, styles.listItemAccordion]}
             content={
               <ListItem.Content>
                 <Text
                   style={[
                     styles.formText,
-                    filterData.SetNumber === '' ? {} : {color: Colors.active},
+                    filterData.SetNumber === '' ? {} : {color: colors.black},
                   ]}
                 >
                   {filterData.SetNumber === '' ? 'Set' : filterData.SetNumber}
@@ -92,7 +90,7 @@ export const Form = (props: FormProps) => {
             <View
               style={{
                 borderBottomWidth: 1,
-                borderColor: Colors.placeholder,
+                borderColor: colors.greyOutline,
               }}
             >
               <View style={styles.selectContainer}>
@@ -129,7 +127,7 @@ export const Form = (props: FormProps) => {
               <ListItem.Input
                 style={styles.listItemInput}
                 placeholder={'Card No.'}
-                placeholderTextColor={Colors.placeholder}
+                placeholderTextColor={colors.greyOutline}
                 onFocus={() => {
                   setExpanded(null);
                 }}
@@ -142,14 +140,14 @@ export const Form = (props: FormProps) => {
           </ListItem>
 
           <ListItem.Accordion
-            icon={<Icon name={'keyboard-arrow-down'} color={Colors.active} />}
+            icon={<Icon name={'keyboard-arrow-down'} color={colors.black} />}
             containerStyle={[styles.listItem, styles.listItemAccordion]}
             content={
               <ListItem.Content>
                 <Text
                   style={[
                     styles.formText,
-                    filterData.Rarity === '' ? {} : {color: Colors.active},
+                    filterData.Rarity === '' ? {} : {color: colors.black},
                   ]}
                 >
                   {filterData.Rarity === '' ? 'Rarity' : filterData.Rarity}
@@ -194,7 +192,7 @@ export const Form = (props: FormProps) => {
               <ListItem.Input
                 style={styles.listItemInput}
                 placeholder={'Character'}
-                placeholderTextColor={Colors.placeholder}
+                placeholderTextColor={colors.greyOutline}
                 onFocus={() => {
                   setExpanded(null);
                 }}
@@ -211,7 +209,7 @@ export const Form = (props: FormProps) => {
               <ListItem.Input
                 style={styles.listItemInput}
                 placeholder={'Series'}
-                placeholderTextColor={Colors.placeholder}
+                placeholderTextColor={colors.greyOutline}
                 onFocus={() => {
                   setExpanded(null);
                 }}
@@ -251,7 +249,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 19,
-    color: '#fff',
+    color: colors.white,
   },
   filterContainer: {
     marginTop: 10,
@@ -261,7 +259,7 @@ const styles = StyleSheet.create({
     height: 46,
   },
   formContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     paddingHorizontal: 25,
     paddingBottom: 25,
   },
@@ -271,12 +269,12 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 0,
     borderBottomWidth: 1,
-    borderColor: Colors.placeholder,
+    borderColor: colors.greyOutline,
     height: 50,
   },
   listItemAccordion: {
     paddingLeft: 10,
-    color: Colors.active,
+    color: colors.black,
   },
 
   selectContainer: {
@@ -287,9 +285,9 @@ const styles = StyleSheet.create({
   },
   listItemInput: {
     textAlign: 'left',
-    color: Colors.active,
+    color: colors.black,
   },
-  formText: {fontSize: 18, color: Colors.placeholder},
+  formText: {fontSize: 18, color: colors.greyOutline},
   submitButton: {
     marginTop: 20,
   },

@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.silversoft.goddess-story-library",
@@ -29,17 +27,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#f2a4a8"
       },
-      "permissions": [
-        "android.permission.RECORD_AUDIO"
-      ],
+      "permissions": ["android.permission.RECORD_AUDIO"],
       "package": "com.silversoft.goddess_story_library"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "@react-native-voice/voice"
-    ],
+    "plugins": ["@react-native-voice/voice"],
+
     "extra": {
       "eas": {
         "projectId": "3ecac027-9d6d-4e86-878c-e8ba23c725d2"

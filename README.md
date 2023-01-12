@@ -21,6 +21,9 @@ More features will be added soon! ✨
     <Set Number><Card Number> 		i.e, NS01001 or NS05M02065
     <Set Number><PR|BW><Card Number> 	i.e, NS10M03PR018
 
+    NS-10-M04
+    <Set Number><Rarity><Card Number>    i.e, NS10M04SR021
+
 ### Download Links
 
 Android -

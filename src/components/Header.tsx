@@ -2,6 +2,7 @@ import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/s
 import {useNavigation} from '@react-navigation/native';
 import {Button, Icon} from '@rneui/themed';
 import {View, StyleSheet} from 'react-native';
+import {colors} from '../app/colors';
 
 interface HeaderProps {
   children?: JSX.Element | JSX.Element[];
@@ -29,8 +30,8 @@ const Header = (props: HeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    paddingTop: 50,
-    backgroundColor: '#393e42',
+    // paddingTop: 50,
+    backgroundColor: colors.headerBg,
     flexDirection: 'row',
   },
   toggleDrawerContainer: {
