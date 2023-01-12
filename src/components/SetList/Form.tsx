@@ -4,7 +4,8 @@ import {StyleSheet, View} from 'react-native';
 
 import {GoddessStory} from '../../models/GoddessStory';
 import {FlatList} from 'react-native-gesture-handler';
-import {colors} from '../../app/colors';
+import {Colors} from '../../app/colors';
+import {Icons} from './../../app/icons';
 
 const data: GoddessStory[] = require('../../app/data.json');
 const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
@@ -48,7 +49,7 @@ export const Form = (props: FormProps) => {
           setIsVisible(true);
         }}
       >
-        <Icon name="tune" color="white" />
+        <Icon name={Icons.filter} color="white" />
       </Button>
       <BottomSheet
         onBackdropPress={() => {
@@ -59,20 +60,20 @@ export const Form = (props: FormProps) => {
       >
         <View style={styles.formContainer}>
           <View style={styles.formHeader}>
-            <Icon name="tune" size={45} />
+            <Icon name={Icons.filter} size={45} />
             <Text h3 style={{marginLeft: 10}}>
               {'Filter'}
             </Text>
           </View>
           <ListItem.Accordion
-            icon={<Icon name={'keyboard-arrow-down'} color={colors.black} />}
+            icon={<Icon name={Icons.arrow_down} />}
             containerStyle={[styles.listItem, styles.listItemAccordion]}
             content={
               <ListItem.Content>
                 <Text
                   style={[
                     styles.formText,
-                    filterData.SetNumber === '' ? {} : {color: colors.black},
+                    filterData.SetNumber === '' ? {} : {color: Colors.black},
                   ]}
                 >
                   {filterData.SetNumber === '' ? 'Set' : filterData.SetNumber}
@@ -87,7 +88,7 @@ export const Form = (props: FormProps) => {
             <View
               style={{
                 borderBottomWidth: 1,
-                borderColor: colors.greyOutline,
+                borderColor: Colors.greyOutline,
               }}
             >
               <View style={styles.selectContainer}>
@@ -124,7 +125,7 @@ export const Form = (props: FormProps) => {
               <ListItem.Input
                 style={styles.inputField}
                 placeholder={'Card No.'}
-                placeholderTextColor={colors.greyOutline}
+                placeholderTextColor={Colors.greyOutline}
                 onFocus={() => {
                   setExpanded(null);
                 }}
@@ -137,14 +138,14 @@ export const Form = (props: FormProps) => {
           </ListItem>
 
           <ListItem.Accordion
-            icon={<Icon name={'keyboard-arrow-down'} color={colors.black} />}
+            icon={<Icon name={Icons.arrow_down} />}
             containerStyle={[styles.listItem, styles.listItemAccordion]}
             content={
               <ListItem.Content>
                 <Text
                   style={[
                     styles.formText,
-                    filterData.Rarity === '' ? {} : {color: colors.black},
+                    filterData.Rarity === '' ? {} : {color: Colors.black},
                   ]}
                 >
                   {filterData.Rarity === '' ? 'Rarity' : filterData.Rarity}
@@ -189,7 +190,7 @@ export const Form = (props: FormProps) => {
               <ListItem.Input
                 style={styles.inputField}
                 placeholder={'Character'}
-                placeholderTextColor={colors.greyOutline}
+                placeholderTextColor={Colors.greyOutline}
                 onFocus={() => {
                   setExpanded(null);
                 }}
@@ -211,7 +212,7 @@ export const Form = (props: FormProps) => {
               <Text
                 style={[
                   styles.formText,
-                  filterData.SeriesName === '' ? {} : {color: colors.black},
+                  filterData.SeriesName === '' ? {} : {color: Colors.black},
                 ]}
               >
                 {filterData.SeriesName === ''
@@ -219,7 +220,7 @@ export const Form = (props: FormProps) => {
                   : filterData.SeriesName}
               </Text>
             </ListItem.Content>
-            <Icon name={'keyboard-arrow-right'} color={colors.black} />
+            <Icon name={Icons.arrow_right} />
           </ListItem>
           <Button
             containerStyle={styles.submitButton}
@@ -250,7 +251,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 19,
-    color: colors.white,
+    color: Colors.white,
   },
   filterContainer: {
     marginTop: 10,
@@ -260,7 +261,7 @@ const styles = StyleSheet.create({
     height: 46,
   },
   formContainer: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     paddingHorizontal: 25,
     paddingBottom: 25,
   },
@@ -270,16 +271,16 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 0,
     borderBottomWidth: 1,
-    borderColor: colors.greyOutline,
+    borderColor: Colors.greyOutline,
     height: 50,
   },
   listItemAccordion: {
     paddingLeft: 10,
-    color: colors.black,
+    color: Colors.black,
   },
   listItemText: {
     paddingLeft: 10,
-    color: colors.black,
+    color: Colors.black,
   },
   selectContainer: {
     height: 200,
@@ -289,9 +290,9 @@ const styles = StyleSheet.create({
   },
   inputField: {
     textAlign: 'left',
-    color: colors.black,
+    color: Colors.black,
   },
-  formText: {fontSize: 18, color: colors.greyOutline},
+  formText: {fontSize: 18, color: Colors.greyOutline},
   submitButton: {
     marginTop: 20,
   },

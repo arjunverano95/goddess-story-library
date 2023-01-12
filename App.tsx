@@ -4,15 +4,18 @@ import React from 'react';
 import {LogBox} from 'react-native';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {lightColors, colors} from './src/app/colors';
+import {LightColors, Colors} from './src/app/colors';
 import DrawerNavigation from './src/components/Navigation/DrawerNavigation';
 
 const theme = createTheme({
-  lightColors: lightColors,
+  lightColors: LightColors,
   mode: 'light',
   components: {
     Header: {
-      backgroundColor: colors.headerBg,
+      backgroundColor: Colors.headerBg,
+    },
+    Icon: {
+      color: Colors.black,
     },
   },
 });
@@ -21,7 +24,7 @@ export default function App() {
   return (
     <>
       <StatusBar
-        backgroundColor={colors.headerBg}
+        backgroundColor={Colors.headerBg}
         translucent={false}
       ></StatusBar>
       <SafeAreaProvider>

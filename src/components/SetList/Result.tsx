@@ -5,7 +5,7 @@ import {View, StyleSheet} from 'react-native';
 import WebView from 'react-native-webview';
 import FastImage from 'react-native-fast-image';
 import {GoddessStory} from '../../models/GoddessStory';
-import {colors} from '../../app/colors';
+import {Colors} from '../../app/colors';
 
 interface ResultProps {
   data: GoddessStory;
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     margin: 15,
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
   },
   image: {
     flex: 1,

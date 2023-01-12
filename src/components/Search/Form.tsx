@@ -4,7 +4,8 @@ import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
 import {GoddessStory} from '../../models/GoddessStory';
-import {colors} from '../../app/colors';
+import {Colors} from '../../app/colors';
+import {Icons} from './../../app/icons';
 
 const data: GoddessStory[] = require('../../app/data.json');
 
@@ -53,7 +54,7 @@ export const Form = (props: FormProps) => {
           Voice.start('en-PH');
         }}
       >
-        <Icon name="mic" color="white" />
+        <Icon name={Icons.record} color="white" />
       </Button>
     </>
   );
@@ -63,8 +64,8 @@ const styles = StyleSheet.create({
   searchBarContainer: {
     flex: 1,
     paddingLeft: 0,
-    borderBottomColor: colors.transparent,
-    borderTopColor: colors.transparent,
+    borderBottomColor: Colors.transparent,
+    borderTopColor: Colors.transparent,
   },
   voiceSearchContainer: {
     marginTop: 10,

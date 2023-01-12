@@ -1,5 +1,6 @@
 import Search from '../views/Search';
 import SetList from '../views/SetList';
+import {Icons} from './icons';
 
 interface Routes {
   name: string;
@@ -11,13 +12,13 @@ const routes: Routes[] = [
   {
     name: 'setlist',
     label: 'Goddess Story',
-    icon: 'list',
+    icon: Icons.list,
     component: SetList,
   },
   {
     name: 'search',
     label: 'Search',
-    icon: 'search',
+    icon: Icons.search,
     component: Search,
   },
 ];
