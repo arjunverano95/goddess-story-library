@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {SearchBar, Button, Icon} from '@rneui/themed';
 import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';

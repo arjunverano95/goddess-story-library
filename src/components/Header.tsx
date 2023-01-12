@@ -1,3 +1,4 @@
+import React from 'react';
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {useNavigation} from '@react-navigation/native';
 import {Button, Icon} from '@rneui/themed';

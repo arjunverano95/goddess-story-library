@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {Form, Result} from '../components/SetList';
 
 import {GoddessStory} from '../models/GoddessStory';

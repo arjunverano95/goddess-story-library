@@ -1,3 +1,4 @@
+import React from 'react';
 import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {NavigationContainer} from '@react-navigation/native';

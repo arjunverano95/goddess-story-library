@@ -1,3 +1,4 @@
+import React from 'react';
 import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
 import {View, StyleSheet} from 'react-native';

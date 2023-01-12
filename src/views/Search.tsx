@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import Header from '../components/Header';
 import {Form, Result} from '../components/Search';
 
