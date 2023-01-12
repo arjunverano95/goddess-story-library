@@ -125,7 +125,7 @@ export const Form = (props: FormProps) => {
           <ListItem containerStyle={styles.listItem}>
             <ListItem.Content>
               <ListItem.Input
-                style={styles.listItemInput}
+                style={styles.inputField}
                 placeholder={'Card No.'}
                 placeholderTextColor={colors.greyOutline}
                 onFocus={() => {
@@ -190,7 +190,7 @@ export const Form = (props: FormProps) => {
           <ListItem containerStyle={styles.listItem}>
             <ListItem.Content>
               <ListItem.Input
-                style={styles.listItemInput}
+                style={styles.inputField}
                 placeholder={'Character'}
                 placeholderTextColor={colors.greyOutline}
                 onFocus={() => {
@@ -204,21 +204,25 @@ export const Form = (props: FormProps) => {
             </ListItem.Content>
           </ListItem>
 
-          <ListItem containerStyle={styles.listItem}>
+          <ListItem
+            containerStyle={[styles.listItem, styles.listItemText]}
+            onPress={() => {
+              alert('');
+            }}
+          >
             <ListItem.Content>
-              <ListItem.Input
-                style={styles.listItemInput}
-                placeholder={'Series'}
-                placeholderTextColor={colors.greyOutline}
-                onFocus={() => {
-                  setExpanded(null);
-                }}
-                onChangeText={(value) => {
-                  updateFilterData('SeriesName', value);
-                }}
-                value={filterData.SeriesName}
-              />
+              <Text
+                style={[
+                  styles.formText,
+                  filterData.SeriesName === '' ? {} : {color: colors.black},
+                ]}
+              >
+                {filterData.SeriesName === ''
+                  ? 'Series'
+                  : filterData.SeriesName}
+              </Text>
             </ListItem.Content>
+            <Icon name={'keyboard-arrow-right'} color={colors.black} />
           </ListItem>
           <Button
             containerStyle={styles.submitButton}
@@ -276,14 +280,17 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: colors.black,
   },
-
+  listItemText: {
+    paddingLeft: 10,
+    color: colors.black,
+  },
   selectContainer: {
     height: 200,
   },
   selectListItem: {
     paddingVertical: 5,
   },
-  listItemInput: {
+  inputField: {
     textAlign: 'left',
     color: colors.black,
   },
