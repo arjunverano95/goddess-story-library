@@ -3,7 +3,6 @@ import {BottomSheet, Button, Icon, ListItem, Text} from '@rneui/themed';
 import {StyleSheet, View} from 'react-native';
 
 import {GoddessStory} from '../../models/GoddessStory';
-import Header from '../Header';
 import {FlatList} from 'react-native-gesture-handler';
 import {colors} from '../../app/colors';
 
@@ -38,21 +37,19 @@ export const Form = (props: FormProps) => {
   };
   return (
     <>
-      <Header>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{title}</Text>
-        </View>
-        <Button
-          containerStyle={styles.filterContainer}
-          buttonStyle={styles.filterButton}
-          type="clear"
-          onPress={async () => {
-            setIsVisible(true);
-          }}
-        >
-          <Icon name="tune" color="white" />
-        </Button>
-      </Header>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{title}</Text>
+      </View>
+      <Button
+        containerStyle={styles.filterContainer}
+        buttonStyle={styles.filterButton}
+        type="clear"
+        onPress={async () => {
+          setIsVisible(true);
+        }}
+      >
+        <Icon name="tune" color="white" />
+      </Button>
       <BottomSheet
         onBackdropPress={() => {
           setExpanded(null);
