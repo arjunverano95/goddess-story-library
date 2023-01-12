@@ -4,7 +4,6 @@ import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
 import {GoddessStory} from '../../models/GoddessStory';
-import Header from '../Header';
 import {colors} from '../../app/colors';
 
 const data: GoddessStory[] = require('../../app/data.json');
@@ -39,7 +38,7 @@ export const Form = (props: FormProps) => {
     Voice.onSpeechResults = onSpeechResults;
   }, []);
   return (
-    <Header>
+    <>
       <SearchBar
         containerStyle={styles.searchBarContainer}
         placeholder="Input set and card number"
@@ -56,7 +55,7 @@ export const Form = (props: FormProps) => {
       >
         <Icon name="mic" color="white" />
       </Button>
-    </Header>
+    </>
   );
 };
 

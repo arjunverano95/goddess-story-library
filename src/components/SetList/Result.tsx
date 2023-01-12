@@ -22,7 +22,10 @@ export const Result = (props: ResultProps) => {
         <View style={styles.imageContainer}>
           <FastImage
             style={styles.image}
-            source={{uri: data.ImageUrl, priority: FastImage.priority.normal}}
+            source={{
+              uri: data.ImageUrl,
+              priority: FastImage.priority.normal,
+            }}
             resizeMode={FastImage.resizeMode.contain}
           />
         </View>
