@@ -1,6 +1,7 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useCallback} from 'react';
+import {StyleSheet} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Icon, ListItem, Text} from '@rneui/themed';
 
@@ -17,6 +18,31 @@ interface SelectFieldProps {
 }
 export const SelectField = (props: SelectFieldProps) => {
   const {value, label, data, isExpanded, onPress, onSelect} = props;
+  const renderItem = useCallback(
+    ({item}: {item: string}) => {
+      return (
+        <ListItem key={item} containerStyle={styles.selectListItem}>
+          <ListItem.CheckBox
+            // Use ThemeProvider to change the defaults of the checkbox
+            iconType="material-community"
+            checkedIcon="checkbox-marked"
+            uncheckedIcon="checkbox-blank-outline"
+            checked={item === value}
+            onPress={() => {
+              onSelect(item);
+            }}
+          />
+          <ListItem.Content>
+            <ListItem.Subtitle>{item}</ListItem.Subtitle>
+          </ListItem.Content>
+        </ListItem>
+      );
+    },
+    [onSelect],
+  );
+  // const SelectList = () => {
+  //   return <>{data.map((item) => renderItem({item}))}</>;
+  // };
   return (
     <ListItem.Accordion
       icon={<Icon name={Icons.arrow_down} />}
@@ -33,36 +59,14 @@ export const SelectField = (props: SelectFieldProps) => {
       isExpanded={isExpanded}
       onPress={onPress}
     >
-      <View
-        style={{
-          borderBottomWidth: 1,
-          borderColor: Colors.greyOutline,
-        }}
-      >
-        <View style={styles.selectContainer}>
-          <FlatList
-            data={data}
-            renderItem={({item}) => (
-              <ListItem containerStyle={styles.selectListItem}>
-                <ListItem.CheckBox
-                  // Use ThemeProvider to change the defaults of the checkbox
-                  iconType="material-community"
-                  checkedIcon="checkbox-marked"
-                  uncheckedIcon="checkbox-blank-outline"
-                  checked={item === value}
-                  onPress={() => {
-                    onSelect(item);
-                  }}
-                />
-                <ListItem.Content>
-                  <ListItem.Subtitle>{item}</ListItem.Subtitle>
-                </ListItem.Content>
-              </ListItem>
-            )}
-            keyExtractor={(item) => item}
-          />
-        </View>
-      </View>
+      <SafeAreaView style={styles.selectContainer}>
+        {/* <SelectList /> */}
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item}
+        />
+      </SafeAreaView>
     </ListItem.Accordion>
   );
 };
@@ -81,6 +85,8 @@ const styles = StyleSheet.create({
   },
   selectContainer: {
     height: 200,
+    borderBottomWidth: 1,
+    borderColor: Colors.greyOutline,
   },
   selectListItem: {
     paddingVertical: 5,

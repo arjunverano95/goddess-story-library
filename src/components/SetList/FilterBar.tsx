@@ -15,7 +15,15 @@ interface FilterBarProps {
 export const FilterBar = (props: FilterBarProps) => {
   const {onSearch} = props;
   const [isBSVisible, setIsBSVisible] = useState(false);
-  const [title, setTitle] = useState('Goddess Story');
+  const [filterData, setFilterData] = useState<GoddessStory>({
+    Code: '',
+    SetNumber: '',
+    CardNumber: '',
+    CharacterName: '',
+    SeriesName: '',
+    Rarity: '',
+    ImageUrl: '',
+  });
 
   const toggleBottomSheet = () => {
     setIsBSVisible(!isBSVisible);
@@ -23,7 +31,9 @@ export const FilterBar = (props: FilterBarProps) => {
   return (
     <>
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>
+          {filterData.SetNumber === '' ? 'Goddess Story' : filterData.SetNumber}
+        </Text>
       </View>
       <Button
         containerStyle={styles.filterContainer}
@@ -42,9 +52,10 @@ export const FilterBar = (props: FilterBarProps) => {
         isVisible={isBSVisible}
       >
         <FilterForm
+          data={filterData}
           onSubmit={(data) => {
             onSearch(data);
-            setTitle(data.SetNumber === '' ? 'Goddess Story' : data.SetNumber);
+            setFilterData(data);
             toggleBottomSheet();
           }}
         />

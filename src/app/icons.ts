@@ -7,4 +7,5 @@ export const Icons = {
   filter: 'tune',
   list: 'list',
   search: 'search',
+  close: 'close',
 };

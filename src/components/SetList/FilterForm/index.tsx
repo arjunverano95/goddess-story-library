@@ -11,24 +11,18 @@ import {InputField, SearchField, SelectField} from './Fields';
 const data: GoddessStory[] = require('../../../app/data.json');
 const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
 const rarityList = [...new Set(data.map((item) => item.Rarity))];
+const seriesList = [...new Set(data.map((item) => item.SeriesName))].sort();
 
 interface FilterFormProps {
+  data: GoddessStory;
   onSubmit: (value: GoddessStory) => void;
 }
 const FilterForm = (props: FilterFormProps) => {
-  const {onSubmit} = props;
+  const {data, onSubmit} = props;
   const [expanded, setExpanded] = useState('');
-  const [filterData, setFilterData] = useState<GoddessStory>({
-    Code: '',
-    SetNumber: '',
-    CardNumber: '',
-    CharacterName: '',
-    SeriesName: '',
-    Rarity: '',
-    ImageUrl: '',
-  });
-  const handleExpanded = (value: string) => {
-    if (expanded === value) setExpanded(null);
+  const [filterData, setFilterData] = useState<GoddessStory>(data);
+  const handleExpanded = (value?: string) => {
+    if (!value || expanded === value) setExpanded(null);
     else setExpanded(value);
   };
   const updateFilterData = (key: string, value: string) => {
@@ -41,7 +35,7 @@ const FilterForm = (props: FilterFormProps) => {
       <View style={styles.formContainer}>
         <View style={styles.formHeader}>
           <Icon name={Icons.filter} size={45} />
-          <Text h3 style={{marginLeft: 10}}>
+          <Text h3 style={styles.title}>
             {'Filter'}
           </Text>
         </View>
@@ -61,7 +55,7 @@ const FilterForm = (props: FilterFormProps) => {
         <InputField
           label={'Card No.'}
           onFocus={() => {
-            setExpanded(null);
+            handleExpanded();
           }}
           onChangeText={(value) => {
             updateFilterData('CardNumber', value);
@@ -85,20 +79,30 @@ const FilterForm = (props: FilterFormProps) => {
         <InputField
           label={'Character'}
           onFocus={() => {
-            setExpanded(null);
+            handleExpanded();
           }}
           onChangeText={(value) => {
             updateFilterData('CharacterName', value);
           }}
           value={filterData.CharacterName}
         />
-        <SearchField value={filterData.SeriesName} label={'Series'} />
+        <SearchField
+          value={filterData.SeriesName}
+          label={'Series'}
+          data={seriesList}
+          onPress={() => {
+            handleExpanded();
+          }}
+          onSelect={(item) => {
+            updateFilterData('SeriesName', item);
+          }}
+        />
 
         <Button
           containerStyle={styles.submitButton}
           title={'Submit'}
           onPress={() => {
-            setExpanded(null);
+            handleExpanded();
             onSubmit(filterData);
           }}
         />
@@ -113,7 +117,7 @@ const styles = StyleSheet.create({
     paddingBottom: 25,
   },
   formHeader: {flexDirection: 'row', paddingVertical: 25},
-
+  title: {marginLeft: 10},
   submitButton: {
     marginTop: 20,
   },
