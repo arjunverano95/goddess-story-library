@@ -1,13 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import FastImage from 'react-native-fast-image';
-import WebView from 'react-native-webview';
 
-import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
 
-import {Colors} from '../app/colors';
 import {GoddessStory} from '../models/GoddessStory';
+import CardImage from './CardImage';
 
 interface CardDetailsProps {
   data: GoddessStory;
@@ -15,38 +12,9 @@ interface CardDetailsProps {
 
 const CardDetails = (props: CardDetailsProps) => {
   const {data} = props;
-  const netInfo = useNetInfo();
 
   if (!data) return <></>;
 
-  const CardImage = () => {
-    if (data.ImageUrl)
-      return (
-        <View style={styles.imageContainer}>
-          <FastImage
-            style={styles.image}
-            source={{
-              uri: data.ImageUrl,
-              priority: FastImage.priority.normal,
-            }}
-            resizeMode={FastImage.resizeMode.contain}
-          />
-        </View>
-      );
-    else
-      return (
-        <>
-          {netInfo.isConnected && (
-            <WebView
-              style={styles.imageWebview}
-              source={{
-                uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
-              }}
-            />
-          )}
-        </>
-      );
-  };
   return (
     <>
       <Card containerStyle={styles.cardContainer}>
@@ -71,23 +39,11 @@ const CardDetails = (props: CardDetailsProps) => {
         </View>
       </Card>
 
-      <CardImage />
+      <CardImage data={data} />
     </>
   );
 };
 const styles = StyleSheet.create({
-  imageContainer: {
-    flex: 1,
-    margin: 15,
-    backgroundColor: Colors.white,
-  },
-  image: {
-    flex: 1,
-    height: null,
-    resizeMode: 'contain',
-    width: null,
-  },
-  imageWebview: {flex: 1, margin: 20},
   cardContainer: {borderWidth: 0},
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {

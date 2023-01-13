@@ -17,7 +17,7 @@ const SetList = (props: ScreenProps<'SetList'>) => {
         <FilterBar onSearch={onSearch} />
       </Header>
 
-      {/* <Result data={searchResult} /> */}
+      <Gallery params={searchResult} />
     </>
   );
 };

@@ -3,6 +3,8 @@
   "importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
   "importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 80,
   "importStringConfiguration.quoteMark": "single",
+  "importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "all",
   "importSorter.importStringConfiguration.spacingPerImportExpression.afterStartingBracket": 0,
   "importSorter.importStringConfiguration.spacingPerImportExpression.beforeEndingBracket": 0
 }
