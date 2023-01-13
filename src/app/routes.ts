@@ -1,26 +1,27 @@
 import SetList from '../views/SetList';
 import VoiceSearch from '../views/VoiceSearch';
 import {Icons} from './icons';
+import {NavigationParamList, ScreenProps} from './navigation';
 
 interface Routes {
-  name: string;
+  name: keyof NavigationParamList;
   label: string;
   icon: string;
-  component: () => JSX.Element;
+  component: (props: ScreenProps<keyof NavigationParamList>) => JSX.Element;
 }
-const routes: Routes[] = [
+
+export const Routes: Routes[] = [
   {
-    name: 'setlist',
+    name: 'SetList',
     label: 'Goddess Story',
     icon: Icons.list,
     component: SetList,
   },
   {
-    name: 'search',
+    name: 'VoiceSearch',
     label: 'Search',
     icon: Icons.search,
     component: VoiceSearch,
   },
 ];
-export default routes;
-export const initialRoute = 'setlist';
+export const initialRoute: keyof NavigationParamList = 'SetList';

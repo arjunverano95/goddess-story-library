@@ -14,10 +14,8 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web",
     "format": "npx prettier --write .",
-    "lint": "eslint --ext .tsx --ext .ts src/",
-    "eject": "expo eject"
+    "lint": "eslint --ext .tsx --ext .ts src/"
   },
   "dependencies": {
     "@react-native-community/netinfo": "9.3.5",

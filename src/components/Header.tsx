@@ -1,20 +1,19 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
-import {useNavigation} from '@react-navigation/native';
 import {Button, Icon} from '@rneui/themed';
 
 import {Colors} from '../app/colors';
 import {Icons} from '../app/icons';
+import {NavigationParamList, NavigationProp} from '../app/navigation';
 
 interface HeaderProps {
+  navigation: NavigationProp<keyof NavigationParamList>;
   children?: JSX.Element | JSX.Element[];
   showBackButton?: boolean;
 }
 const Header = (props: HeaderProps) => {
-  const {children, showBackButton} = props;
-  const navigation = useNavigation<DrawerNavigationHelpers>();
+  const {navigation, children, showBackButton} = props;
   return (
     <View
       style={[

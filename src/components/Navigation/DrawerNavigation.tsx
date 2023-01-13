@@ -1,21 +1,21 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
-import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
-import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
+import {
+  createDrawerNavigator,
+  DrawerContentComponentProps,
+  DrawerItem,
+} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from '@rneui/base';
 
-import routes, {initialRoute} from '../../app/routes';
+import {NavigationParamList} from '../../app/navigation';
+import {initialRoute, Routes} from '../../app/routes';
 
-interface DrawerContentProps {
-  navigation: DrawerNavigationHelpers;
-}
-
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator<NavigationParamList>();
 
 const DrawerNavigation = () => {
-  const DrawerContent = (props: DrawerContentProps) => {
+  const DrawerContent = (props: DrawerContentComponentProps) => {
     const {navigation} = props;
     return (
       <>
@@ -25,7 +25,7 @@ const DrawerNavigation = () => {
             source={require('../../../assets/cover.png')}
           />
         </View>
-        {routes.map((item) => (
+        {Routes.map((item) => (
           <DrawerItem
             key={item.name}
             icon={() => <Icon name={item.icon} />}
@@ -45,11 +45,9 @@ const DrawerNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-        drawerContent={({navigation}) => (
-          <DrawerContent navigation={navigation} />
-        )}
+        drawerContent={(props) => <DrawerContent {...props} />}
       >
-        {routes.map((item) => (
+        {Routes.map((item) => (
           <Drawer.Screen
             key={item.name}
             name={item.name}
