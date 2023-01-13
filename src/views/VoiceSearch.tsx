@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {Form, Result} from '../components/Search';
 
+import CardDetails from '../components/CardDetails';
+import Header from '../components/Header';
+import {SearchBar} from '../components/VoiceSearch';
 import {GoddessStory} from '../models/GoddessStory';
 
-const Search = () => {
+const VoiceSearch = () => {
   const [searchResult, setResult] = useState<GoddessStory>(undefined);
   const onSearch = (value: GoddessStory) => {
     setResult(value);
@@ -12,10 +13,10 @@ const Search = () => {
   return (
     <>
       <Header>
-        <Form onSearch={onSearch} />
+        <SearchBar onSearch={onSearch} />
       </Header>
-      <Result data={searchResult} />
+      <CardDetails data={searchResult} />
     </>
   );
 };
-export default Search;
+export default VoiceSearch;

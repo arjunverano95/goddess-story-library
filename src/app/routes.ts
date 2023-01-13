@@ -1,5 +1,5 @@
-import Search from '../views/Search';
 import SetList from '../views/SetList';
+import VoiceSearch from '../views/VoiceSearch';
 import {Icons} from './icons';
 
 interface Routes {
@@ -19,7 +19,7 @@ const routes: Routes[] = [
     name: 'search',
     label: 'Search',
     icon: Icons.search,
-    component: Search,
+    component: VoiceSearch,
   },
 ];
 export default routes;

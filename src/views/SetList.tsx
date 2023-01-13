@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {Form, Result} from '../components/SetList';
 
+import Header from '../components/Header';
+import {FilterBar, Gallery} from '../components/SetList';
 import {GoddessStory} from '../models/GoddessStory';
 
 const SetList = () => {
@@ -12,7 +12,7 @@ const SetList = () => {
   return (
     <>
       <Header>
-        <Form onSearch={onSearch} />
+        <FilterBar onSearch={onSearch} />
       </Header>
 
       {/* <Result data={searchResult} /> */}

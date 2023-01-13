@@ -1,10 +1,11 @@
-import {createTheme, ThemeProvider} from '@rneui/themed';
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import {LogBox} from 'react-native';
-
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {LightColors, Colors} from './src/app/colors';
+
+import {createTheme, ThemeProvider} from '@rneui/themed';
+
+import {Colors, LightColors} from './src/app/colors';
 import DrawerNavigation from './src/components/Navigation/DrawerNavigation';
 
 const theme = createTheme({
@@ -19,7 +20,7 @@ const theme = createTheme({
     },
   },
 });
-export default function App() {
+const App = () => {
   LogBox.ignoreAllLogs();
   return (
     <>
@@ -34,4 +35,5 @@ export default function App() {
       </SafeAreaProvider>
     </>
   );
-}
+};
+export default App;

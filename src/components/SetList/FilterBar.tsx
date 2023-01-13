@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
-import {BottomSheet, Button, Icon, ListItem, Text} from '@rneui/themed';
 import {StyleSheet, View} from 'react-native';
-
-import {GoddessStory} from '../../models/GoddessStory';
 import {FlatList} from 'react-native-gesture-handler';
+
+import {BottomSheet, Button, Icon, ListItem, Text} from '@rneui/themed';
+
 import {Colors} from '../../app/colors';
-import {Icons} from './../../app/icons';
+import {Icons} from '../../app/icons';
+import {GoddessStory} from '../../models/GoddessStory';
 
 const data: GoddessStory[] = require('../../app/data.json');
 const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
 const rarityList = [...new Set(data.map((item) => item.Rarity))];
 
-interface FormProps {
+interface FilterBarProps {
   onSearch: (value: GoddessStory) => void;
 }
 
-export const Form = (props: FormProps) => {
+export const FilterBar = (props: FilterBarProps) => {
   const {onSearch} = props;
   const [isVisible, setIsVisible] = useState(false);
   const [title, setTitle] = useState('Goddess Story');

@@ -1,17 +1,19 @@
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
+import WebView from 'react-native-webview';
+
 import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
-import {View, StyleSheet} from 'react-native';
-import WebView from 'react-native-webview';
-import FastImage from 'react-native-fast-image';
-import {GoddessStory} from '../../models/GoddessStory';
-import {Colors} from '../../app/colors';
 
-interface ResultProps {
+import {Colors} from '../app/colors';
+import {GoddessStory} from '../models/GoddessStory';
+
+interface CardDetailsProps {
   data: GoddessStory;
 }
 
-export const Result = (props: ResultProps) => {
+const CardDetails = (props: CardDetailsProps) => {
   const {data} = props;
   const netInfo = useNetInfo();
 
@@ -73,7 +75,6 @@ export const Result = (props: ResultProps) => {
     </>
   );
 };
-
 const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
@@ -99,3 +100,4 @@ const styles = StyleSheet.create({
   cardTitle: {flex: 1, textAlign: 'left'},
   cardSubTitle: {fontWeight: 'normal'},
 });
+export default CardDetails;

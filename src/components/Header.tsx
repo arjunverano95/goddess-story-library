@@ -1,8 +1,10 @@
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {useNavigation} from '@react-navigation/native';
 import {Button, Icon} from '@rneui/themed';
-import {View, StyleSheet} from 'react-native';
+
 import {Colors} from '../app/colors';
 import {Icons} from '../app/icons';
 

@@ -1,19 +1,20 @@
-import React, {useState, useEffect} from 'react';
-import {SearchBar, Button, Icon} from '@rneui/themed';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet} from 'react-native';
-import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 
-import {GoddessStory} from '../../models/GoddessStory';
+import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
+import {Button, Icon, SearchBar as RNESearchBar} from '@rneui/themed';
+
 import {Colors} from '../../app/colors';
-import {Icons} from './../../app/icons';
+import {Icons} from '../../app/icons';
+import {GoddessStory} from '../../models/GoddessStory';
 
 const data: GoddessStory[] = require('../../app/data.json');
 
-interface FormProps {
+interface SearchBarProps {
   onSearch: (value: GoddessStory) => void;
 }
 
-export const Form = (props: FormProps) => {
+export const SearchBar = (props: SearchBarProps) => {
   const [searchValue, setSearchValue] = useState('');
   const {onSearch} = props;
 
@@ -40,7 +41,7 @@ export const Form = (props: FormProps) => {
   }, []);
   return (
     <>
-      <SearchBar
+      <RNESearchBar
         containerStyle={styles.searchBarContainer}
         placeholder="Input set and card number"
         onChangeText={handleSearch}

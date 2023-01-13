@@ -1,2 +1,2 @@
-export {Form} from './Form';
-export {Result} from './Result';
+export {FilterBar} from './FilterBar';
+export {Gallery} from './Gallery';

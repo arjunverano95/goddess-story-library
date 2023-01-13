@@ -1,10 +1,12 @@
 import React from 'react';
+import {Image, StyleSheet, View} from 'react-native';
+
 import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
 import {DrawerNavigationHelpers} from '@react-navigation/drawer/lib/typescript/src/types';
 import {NavigationContainer} from '@react-navigation/native';
 import {Icon} from '@rneui/base';
-import {View, Image, StyleSheet} from 'react-native';
-import routes, {initialRoute} from './../../app/routes';
+
+import routes, {initialRoute} from '../../app/routes';
 
 interface DrawerContentProps {
   navigation: DrawerNavigationHelpers;

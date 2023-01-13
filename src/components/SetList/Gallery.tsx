@@ -1,17 +1,19 @@
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
+import WebView from 'react-native-webview';
+
 import {useNetInfo} from '@react-native-community/netinfo';
 import {Badge, Card, Text} from '@rneui/themed';
-import {View, StyleSheet} from 'react-native';
-import WebView from 'react-native-webview';
-import FastImage from 'react-native-fast-image';
-import {GoddessStory} from '../../models/GoddessStory';
-import {Colors} from '../../app/colors';
 
-interface ResultProps {
+import {Colors} from '../../app/colors';
+import {GoddessStory} from '../../models/GoddessStory';
+
+interface GalleryProps {
   data: GoddessStory;
 }
 
-export const Result = (props: ResultProps) => {
+export const Gallery = (props: GalleryProps) => {
   const {data} = props;
   const netInfo = useNetInfo();
 
