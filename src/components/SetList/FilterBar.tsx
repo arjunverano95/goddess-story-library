@@ -71,40 +71,4 @@ const styles = StyleSheet.create({
   filterButton: {
     height: 46,
   },
-  formContainer: {
-    backgroundColor: Colors.background,
-    paddingHorizontal: 25,
-    paddingBottom: 25,
-  },
-  formHeader: {flexDirection: 'row', paddingVertical: 25},
-  listItem: {
-    marginHorizontal: 0,
-    paddingVertical: 5,
-    paddingHorizontal: 0,
-    borderBottomWidth: 1,
-    borderColor: Colors.greyOutline,
-    height: 50,
-  },
-  listItemAccordion: {
-    paddingLeft: 10,
-    color: Colors.black,
-  },
-  listItemText: {
-    paddingLeft: 10,
-    color: Colors.black,
-  },
-  selectContainer: {
-    height: 200,
-  },
-  selectListItem: {
-    paddingVertical: 5,
-  },
-  inputField: {
-    textAlign: 'left',
-    color: Colors.black,
-  },
-  formText: {fontSize: 18, color: Colors.greyOutline},
-  submitButton: {
-    marginTop: 20,
-  },
 });

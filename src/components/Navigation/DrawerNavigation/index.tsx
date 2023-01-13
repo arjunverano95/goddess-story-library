@@ -3,13 +3,13 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {NavigationParamList} from '../../app/navigation';
-import {initialRoute, Routes} from '../../app/routes';
+import {NavigationParamList} from '../../../app/navigation';
+import {initialRoute, Routes} from '../../../app/routes';
 import DrawerContent from './DrawerContent';
 
 const Drawer = createDrawerNavigator<NavigationParamList>();
 
-const DrawerNavigation = () => {
+export const DrawerNavigation = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator
@@ -30,5 +30,3 @@ const DrawerNavigation = () => {
     </NavigationContainer>
   );
 };
-
-export default DrawerNavigation;

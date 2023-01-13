@@ -6,7 +6,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createTheme, ThemeProvider} from '@rneui/themed';
 
 import {Colors, LightColors} from './src/app/colors';
-import DrawerNavigation from './src/components/Navigation/DrawerNavigation';
+import {DrawerNavigation} from './src/components/Navigation';
 
 const theme = createTheme({
   lightColors: LightColors,

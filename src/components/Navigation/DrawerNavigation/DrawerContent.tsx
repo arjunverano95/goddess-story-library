@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/drawer';
 import {Icon} from '@rneui/base';
 
-import {Routes} from '../../app/routes';
+import {Routes} from '../../../app/routes';
 
 const DrawerContent = (props: DrawerContentComponentProps) => {
   const {navigation} = props;
@@ -16,7 +16,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
       <View style={styles.drawerContentContainer}>
         <Image
           style={styles.drawerContentCoverImage}
-          source={require('../../../assets/cover.png')}
+          source={require('../../../../assets/cover.png')}
         />
       </View>
       {Routes.map((item) => (
