@@ -20,15 +20,14 @@ interface FilterFormProps {
 const FilterForm = (props: FilterFormProps) => {
   const {data, onSubmit} = props;
   const [expanded, setExpanded] = useState('');
-  const [filterData, setFilterData] = useState<GoddessStory>(data);
+  const [formData, setFormData] = useState<GoddessStory>({...data});
   const handleExpanded = (value?: string) => {
     if (!value || expanded === value) setExpanded(null);
     else setExpanded(value);
   };
-  const updateFilterData = (key: string, value: string) => {
-    if (filterData[key] === value)
-      setFilterData({...filterData, ...{[key]: ''}});
-    else setFilterData({...filterData, ...{[key]: value}});
+  const updateFormData = (key: string, value: string) => {
+    if (formData[key] === value) setFormData({...formData, ...{[key]: ''}});
+    else setFormData({...formData, ...{[key]: value}});
   };
   return (
     <>
@@ -50,7 +49,7 @@ const FilterForm = (props: FilterFormProps) => {
                 Rarity: '',
                 ImageUrl: '',
               };
-              setFilterData(clearData);
+              setFormData(clearData);
               handleExpanded();
               onSubmit(clearData);
             }}
@@ -60,14 +59,14 @@ const FilterForm = (props: FilterFormProps) => {
         </View>
         <SelectField
           label={'Set'}
-          value={filterData.SetNumber}
+          value={formData.SetNumber}
           data={setNumberList}
           isExpanded={expanded === 'SetNumber'}
           onPress={() => {
             handleExpanded('SetNumber');
           }}
           onSelect={(item) => {
-            updateFilterData('SetNumber', item);
+            updateFormData('SetNumber', item);
             handleExpanded('SetNumber');
           }}
         />
@@ -77,21 +76,21 @@ const FilterForm = (props: FilterFormProps) => {
             handleExpanded();
           }}
           onChangeText={(value) => {
-            updateFilterData('CardNumber', value);
+            updateFormData('CardNumber', value);
           }}
-          value={filterData.CardNumber}
+          value={formData.CardNumber}
         />
 
         <SelectField
           label={'Rarity'}
-          value={filterData.Rarity}
+          value={formData.Rarity}
           data={rarityList}
           isExpanded={expanded === 'Rarity'}
           onPress={() => {
             handleExpanded('Rarity');
           }}
           onSelect={(item) => {
-            updateFilterData('Rarity', item);
+            updateFormData('Rarity', item);
             handleExpanded('Rarity');
           }}
         />
@@ -101,19 +100,19 @@ const FilterForm = (props: FilterFormProps) => {
             handleExpanded();
           }}
           onChangeText={(value) => {
-            updateFilterData('CharacterName', value);
+            updateFormData('CharacterName', value);
           }}
-          value={filterData.CharacterName}
+          value={formData.CharacterName}
         />
         <SearchField
-          value={filterData.SeriesName}
+          value={formData.SeriesName}
           label={'Series'}
           data={seriesList}
           onPress={() => {
             handleExpanded();
           }}
           onSelect={(item) => {
-            updateFilterData('SeriesName', item);
+            updateFormData('SeriesName', item);
           }}
         />
 
@@ -122,7 +121,7 @@ const FilterForm = (props: FilterFormProps) => {
           title={'Submit'}
           onPress={() => {
             handleExpanded();
-            onSubmit(filterData);
+            onSubmit(formData);
           }}
         />
       </View>

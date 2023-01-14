@@ -9,18 +9,56 @@ import {Badge, Card, Text} from '@rneui/themed';
 import {Colors} from '../../app/colors';
 import {GoddessStory} from '../../models/GoddessStory';
 
+const data: GoddessStory[] = require('../../app/data.json');
+
 interface GalleryProps {
-  data: GoddessStory[];
+  filter: GoddessStory;
+  sort: 'asc' | 'desc';
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {data} = props;
+  const {filter, sort} = props;
+  const sortData = (data: GoddessStory[], order: 'asc' | 'desc') => {
+    if (order === 'asc') {
+      return data.sort(
+        (a, b) =>
+          a.SetNumber.localeCompare(b.SetNumber) ||
+          b.Rarity.localeCompare(a.Rarity) ||
+          Number(a.CardNumber) - Number(b.CardNumber),
+      );
+    } else {
+      return data.sort(
+        (a, b) =>
+          a.SetNumber.localeCompare(b.SetNumber) ||
+          b.Rarity.localeCompare(a.Rarity) ||
+          Number(b.CardNumber) - Number(a.CardNumber),
+      );
+    }
+  };
 
+  const cleanFilter = {...filter};
+  Object.keys(cleanFilter).forEach((key) => {
+    if (!cleanFilter[key]) {
+      delete cleanFilter[key];
+    }
+  });
+  const filteredData = data.filter((item) => {
+    for (const key in cleanFilter) {
+      if (cleanFilter[key]) {
+        if (key === 'CharacterName') {
+          if (!item[key].toLowerCase().includes(cleanFilter[key].toLowerCase()))
+            return false;
+        } else if (item[key] != cleanFilter[key]) return false;
+      }
+    }
+    return true;
+  });
+  const galleryData = sortData(filteredData, sort);
   return (
     <>
       <SafeAreaView style={styles.galleryContainer}>
         <FlatList
-          data={data}
+          data={galleryData}
           style={styles.gallery}
           numColumns={2}
           keyExtractor={(item) => item.Code}

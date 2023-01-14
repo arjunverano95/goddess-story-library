@@ -9,21 +9,15 @@ import {GoddessStory} from '../../models/GoddessStory';
 import FilterForm from './FilterForm';
 
 interface FilterBarProps {
-  onSearch: (value: GoddessStory) => void;
+  filter: GoddessStory;
+  sort: 'asc' | 'desc';
+  onFilter: (value: GoddessStory) => void;
+  onSort: (value: 'asc' | 'desc') => void;
 }
 
 export const FilterBar = (props: FilterBarProps) => {
-  const {onSearch} = props;
+  const {filter, sort, onFilter, onSort} = props;
   const [isBSVisible, setIsBSVisible] = useState(false);
-  const [filterData, setFilterData] = useState<GoddessStory>({
-    Code: '',
-    SetNumber: '',
-    CardNumber: '',
-    CharacterName: '',
-    SeriesName: '',
-    Rarity: '',
-    ImageUrl: '',
-  });
 
   const toggleBottomSheet = () => {
     setIsBSVisible(!isBSVisible);
@@ -32,18 +26,31 @@ export const FilterBar = (props: FilterBarProps) => {
     <>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
-          {!filterData.SetNumber ? 'Goddess Story' : filterData.SetNumber}
+          {!filter.SetNumber ? 'Goddess Story' : filter.SetNumber}
         </Text>
       </View>
       <Button
-        containerStyle={styles.filterContainer}
-        buttonStyle={styles.filterButton}
+        containerStyle={styles.filterButtonContainer}
+        buttonStyle={styles.headerButton}
         type="clear"
         onPress={async () => {
           setIsBSVisible(true);
         }}
       >
         <Icon name={Icons.filter} color="white" />
+      </Button>
+      <Button
+        containerStyle={styles.sortButtonContainer}
+        buttonStyle={styles.headerButton}
+        type="clear"
+        onPress={async () => {
+          onSort(sort === 'asc' ? 'desc' : 'asc');
+        }}
+      >
+        <Icon
+          name={sort === 'asc' ? Icons.sort_asc : Icons.sort_desc}
+          color="white"
+        />
       </Button>
       <BottomSheet
         onBackdropPress={() => {
@@ -52,10 +59,9 @@ export const FilterBar = (props: FilterBarProps) => {
         isVisible={isBSVisible}
       >
         <FilterForm
-          data={filterData}
+          data={filter}
           onSubmit={(data) => {
-            onSearch(data);
-            setFilterData(data);
+            onFilter(data);
             toggleBottomSheet();
           }}
         />
@@ -75,11 +81,14 @@ const styles = StyleSheet.create({
     marginTop: 19,
     color: Colors.white,
   },
-  filterContainer: {
+  filterButtonContainer: {
+    marginTop: 10,
+  },
+  sortButtonContainer: {
     marginTop: 10,
     marginRight: 8,
   },
-  filterButton: {
+  headerButton: {
     height: 46,
   },
 });

@@ -1,11 +1,13 @@
 export const Icons = {
-  arrow_down: 'keyboard-arrow-down',
-  arrow_left: 'keyboard-arrow-left',
-  arrow_right: 'keyboard-arrow-right',
+  arrow_down: 'chevron-down',
+  arrow_left: 'chevron-left',
+  arrow_right: 'chevron-right',
   menu: 'menu',
-  record: 'mic',
+  record: 'microphone',
   filter: 'tune',
   list: 'list',
   search: 'search',
   close: 'close',
+  sort_asc: 'sort-alphabetical-ascending',
+  sort_desc: 'sort-alphabetical-descending',
 };

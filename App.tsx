@@ -17,6 +17,7 @@ const theme = createTheme({
     },
     Icon: {
       color: Colors.black,
+      type: 'material-community',
     },
   },
 });

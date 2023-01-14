@@ -28,6 +28,7 @@ export const SearchField = (props: SearchFieldProps) => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const {theme} = useTheme();
+
   const formattedData = !value
     ? data
     : [value, ...data.filter((item) => item !== value)];
