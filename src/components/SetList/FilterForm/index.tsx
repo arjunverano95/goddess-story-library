@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 
 import {Button, Icon, Text} from '@rneui/themed';
 
@@ -38,6 +38,25 @@ const FilterForm = (props: FilterFormProps) => {
           <Text h3 style={styles.title}>
             {'Filter'}
           </Text>
+          <Pressable
+            style={styles.clear}
+            onPress={() => {
+              const clearData: GoddessStory = {
+                Code: '',
+                SetNumber: '',
+                CardNumber: '',
+                CharacterName: '',
+                SeriesName: '',
+                Rarity: '',
+                ImageUrl: '',
+              };
+              setFilterData(clearData);
+              handleExpanded();
+              onSubmit(clearData);
+            }}
+          >
+            <Text>{'Reset'}</Text>
+          </Pressable>
         </View>
         <SelectField
           label={'Set'}
@@ -117,7 +136,11 @@ const styles = StyleSheet.create({
     paddingBottom: 25,
   },
   formHeader: {flexDirection: 'row', paddingVertical: 25},
-  title: {marginLeft: 10},
+  title: {marginLeft: 10, flex: 1},
+  clear: {
+    paddingTop: 12,
+    paddingHorizontal: 10,
+  },
   submitButton: {
     marginTop: 20,
   },
