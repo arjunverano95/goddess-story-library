@@ -32,7 +32,7 @@ export const FilterBar = (props: FilterBarProps) => {
     <>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
-          {filterData.SetNumber === '' ? 'Goddess Story' : filterData.SetNumber}
+          {!filterData.SetNumber ? 'Goddess Story' : filterData.SetNumber}
         </Text>
       </View>
       <Button

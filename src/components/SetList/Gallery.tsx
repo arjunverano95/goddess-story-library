@@ -9,25 +9,19 @@ import {Badge, Card, Text} from '@rneui/themed';
 import {Colors} from '../../app/colors';
 import {GoddessStory} from '../../models/GoddessStory';
 
-const data: GoddessStory[] = require('../../app/data.json');
-
 interface GalleryProps {
-  params: GoddessStory;
+  data: GoddessStory[];
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const formattedData = data.sort((a, b) => {
-    return (
-      a.SetNumber.localeCompare(b.SetNumber) ||
-      Number(a.CardNumber) - Number(b.CardNumber)
-    );
-  });
+  const {data} = props;
+
   return (
     <>
-      <SafeAreaView>
+      <SafeAreaView style={styles.galleryContainer}>
         <FlatList
-          data={formattedData}
-          style={styles.list}
+          data={data}
+          style={styles.gallery}
           numColumns={2}
           keyExtractor={(item) => item.Code}
           renderItem={({item}) => (
@@ -35,15 +29,22 @@ export const Gallery = (props: GalleryProps) => {
               <View>
                 <Badge
                   containerStyle={styles.rarityBadgeContainer}
-                  badgeStyle={styles.rarityBadge}
-                  textStyle={styles.raritytext}
-                  value={item.CardNumber}
+                  badgeStyle={styles.badge}
+                  textStyle={styles.badgeText}
+                  value={item.Rarity}
                   status="warning"
                 />
+                <Badge
+                  containerStyle={styles.cardNumberBadgeContainer}
+                  badgeStyle={styles.badge}
+                  textStyle={styles.badgeText}
+                  value={item.CardNumber}
+                  status="success"
+                />
                 <FastImage
-                  style={styles.item}
+                  style={styles.image}
                   source={
-                    item.ImageUrl === ''
+                    !item.ImageUrl
                       ? require('../../../assets/no-image.png')
                       : {
                           uri: item.ImageUrl,
@@ -73,41 +74,53 @@ export const Gallery = (props: GalleryProps) => {
 };
 
 const styles = StyleSheet.create({
-  list: {
-    width: '100%',
+  galleryContainer: {
+    flex: 1,
+    paddingBottom: 10,
     backgroundColor: Colors.background,
   },
-  item: {
+  gallery: {
+    flex: 1,
+    width: '100%',
+  },
+  image: {
     aspectRatio: 1,
     width: '100%',
     flex: 1,
   },
   cardContainer: {
     borderWidth: 0,
-    borderColor: Colors.transparent,
-    width: '100%',
+    shadowColor: Colors.transparent,
+    maxWidth: '50%',
     flex: 1,
     margin: 0,
     paddingHorizontal: 5,
+    paddingTop: 10,
     paddingBottom: 0,
   },
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadgeContainer: {
     position: 'absolute',
     top: 5,
+    left: 10,
+    zIndex: 999,
+  },
+  cardNumberBadgeContainer: {
+    position: 'absolute',
+    top: 5,
     right: 5,
     zIndex: 999,
   },
-  rarityBadge: {
+  badge: {
     height: 20,
     minWidth: 40,
     paddingHorizontal: 1,
     marginRight: 5,
     fontSize: 9,
   },
-  raritytext: {fontWeight: 'bold'}, // alignSelf: 'flex-start'}
+  badgeText: {fontWeight: 'bold'}, // alignSelf: 'flex-start'}
   cardTitle: {flex: 1, textAlign: 'left', fontSize: 12},
   cardSubTitle: {textAlign: 'right', fontSize: 12, fontWeight: 'bold'},
   textContent: {fontSize: 11, color: Colors.greyOutline},
-  cardFooter: {paddingHorizontal: 8, paddingTop: 3},
+  cardFooter: {paddingHorizontal: 8, paddingVertical: 3},
 });

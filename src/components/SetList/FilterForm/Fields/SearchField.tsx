@@ -28,8 +28,9 @@ export const SearchField = (props: SearchFieldProps) => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const {theme} = useTheme();
-  const formattedData =
-    value === '' ? data : [value, ...data.filter((item) => item !== value)];
+  const formattedData = !value
+    ? data
+    : [value, ...data.filter((item) => item !== value)];
   const [listData, setListData] = useState(formattedData);
 
   const toggleOverlay = () => {
@@ -38,7 +39,7 @@ export const SearchField = (props: SearchFieldProps) => {
     setIsOverlayVisible(!isOverlayVisible);
   };
   const handleSearch = (value: string) => {
-    if (value === '') setListData(formattedData);
+    if (!value) setListData(formattedData);
     else
       setListData([
         ...data.filter((item) => {
@@ -80,10 +81,8 @@ export const SearchField = (props: SearchFieldProps) => {
         }}
       >
         <ListItem.Content>
-          <Text
-            style={[styles.formText, value === '' ? {} : {color: Colors.black}]}
-          >
-            {value === '' ? label : value}
+          <Text style={[styles.formText, !value ? {} : {color: Colors.black}]}>
+            {!value ? label : value}
           </Text>
         </ListItem.Content>
         <Icon name={Icons.arrow_right} />

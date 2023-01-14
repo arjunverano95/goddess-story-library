@@ -38,6 +38,9 @@ export const SearchBar = (props: SearchBarProps) => {
 
   useEffect(() => {
     Voice.onSpeechResults = onSpeechResults;
+    return () => {
+      Voice.removeAllListeners();
+    };
   }, []);
   return (
     <>

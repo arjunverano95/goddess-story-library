@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
-import {StyleSheet} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {StyleSheet, View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 import {Icon, ListItem, Text} from '@rneui/themed';
 
@@ -48,24 +48,24 @@ export const SelectField = (props: SelectFieldProps) => {
       containerStyle={[styles.listItem, styles.listItemAccordion]}
       content={
         <ListItem.Content>
-          <Text
-            style={[styles.formText, value === '' ? {} : {color: Colors.black}]}
-          >
-            {value === '' ? label : value}
+          <Text style={[styles.formText, !value ? {} : {color: Colors.black}]}>
+            {!value ? label : value}
           </Text>
         </ListItem.Content>
       }
       isExpanded={isExpanded}
       onPress={onPress}
     >
-      <SafeAreaView style={styles.selectContainer}>
-        <SelectList />
-        {/* <FlatList
+      <View style={styles.selectContainer}>
+        <ScrollView style={styles.selectList}>
+          <SelectList />
+          {/* <FlatList
           data={data}
           renderItem={renderItem}
           keyExtractor={(item) => item}
         /> */}
-      </SafeAreaView>
+        </ScrollView>
+      </View>
     </ListItem.Accordion>
   );
 };
@@ -83,9 +83,12 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   selectContainer: {
-    height: 200,
     borderBottomWidth: 1,
     borderColor: Colors.greyOutline,
+    height: 200,
+  },
+  selectList: {
+    height: 200,
   },
   selectListItem: {
     paddingVertical: 5,
