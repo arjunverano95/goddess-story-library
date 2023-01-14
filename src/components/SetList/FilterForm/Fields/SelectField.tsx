@@ -1,6 +1,5 @@
 import React, {useCallback} from 'react';
 import {StyleSheet} from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Icon, ListItem, Text} from '@rneui/themed';
@@ -40,9 +39,9 @@ export const SelectField = (props: SelectFieldProps) => {
     },
     [onSelect],
   );
-  // const SelectList = () => {
-  //   return <>{data.map((item) => renderItem({item}))}</>;
-  // };
+  const SelectList = () => {
+    return <>{data.map((item) => renderItem({item}))}</>;
+  };
   return (
     <ListItem.Accordion
       icon={<Icon name={Icons.arrow_down} />}
@@ -60,12 +59,12 @@ export const SelectField = (props: SelectFieldProps) => {
       onPress={onPress}
     >
       <SafeAreaView style={styles.selectContainer}>
-        {/* <SelectList /> */}
-        <FlatList
+        <SelectList />
+        {/* <FlatList
           data={data}
           renderItem={renderItem}
           keyExtractor={(item) => item}
-        />
+        /> */}
       </SafeAreaView>
     </ListItem.Accordion>
   );

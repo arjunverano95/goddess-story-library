@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 
 import {Badge, Card, Text} from '@rneui/themed';
 
-import {GoddessStory} from '../models/GoddessStory';
+import {GoddessStory} from '../../models/GoddessStory';
 import CardImage from './CardImage';
 
 interface CardDetailsProps {
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {
     height: 25,
-    width: 45,
+    minWidth: 45,
     paddingHorizontal: 5,
     marginRight: 5,
   },

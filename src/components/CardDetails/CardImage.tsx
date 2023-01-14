@@ -5,8 +5,8 @@ import WebView from 'react-native-webview';
 
 import {useNetInfo} from '@react-native-community/netinfo';
 
-import {Colors} from '../app/colors';
-import {GoddessStory} from '../models/GoddessStory';
+import {Colors} from '../../app/colors';
+import {GoddessStory} from '../../models/GoddessStory';
 
 interface CardImageProps {
   data: GoddessStory;
