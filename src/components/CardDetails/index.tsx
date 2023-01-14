@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   cardContainer: {borderWidth: 0},
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {
-    height: 25,
+    height: 22,
     minWidth: 45,
     paddingHorizontal: 5,
     marginRight: 5,

@@ -59,11 +59,6 @@ export const SelectField = (props: SelectFieldProps) => {
       <View style={styles.selectContainer}>
         <ScrollView style={styles.selectList}>
           <SelectList />
-          {/* <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item) => item}
-        /> */}
         </ScrollView>
       </View>
     </ListItem.Accordion>

@@ -18,6 +18,12 @@ interface GalleryProps {
 
 export const Gallery = (props: GalleryProps) => {
   const {filter, sort} = props;
+  const cleanFilter = {...filter};
+  Object.keys(cleanFilter).forEach((key) => {
+    if (!cleanFilter[key]) {
+      delete cleanFilter[key];
+    }
+  });
   const sortData = (data: GoddessStory[], order: 'asc' | 'desc') => {
     if (order === 'asc') {
       return data.sort(
@@ -35,13 +41,6 @@ export const Gallery = (props: GalleryProps) => {
       );
     }
   };
-
-  const cleanFilter = {...filter};
-  Object.keys(cleanFilter).forEach((key) => {
-    if (!cleanFilter[key]) {
-      delete cleanFilter[key];
-    }
-  });
   const filteredData = data.filter((item) => {
     for (const key in cleanFilter) {
       if (cleanFilter[key]) {
@@ -66,14 +65,14 @@ export const Gallery = (props: GalleryProps) => {
             <Card containerStyle={styles.cardContainer}>
               <View>
                 <Badge
-                  containerStyle={styles.rarityBadgeContainer}
+                  containerStyle={styles.setNoBadgeContainer}
                   badgeStyle={styles.badge}
                   textStyle={styles.badgeText}
-                  value={item.Rarity}
+                  value={item.SetNumber}
                   status="warning"
                 />
                 <Badge
-                  containerStyle={styles.cardNumberBadgeContainer}
+                  containerStyle={styles.cardNoBadgeContainer}
                   badgeStyle={styles.badge}
                   textStyle={styles.badgeText}
                   value={item.CardNumber}
@@ -97,7 +96,7 @@ export const Gallery = (props: GalleryProps) => {
                   <Text
                     style={styles.cardTitle}
                   >{`${item.CharacterName}`}</Text>
-                  <Text style={styles.cardSubTitle}>{item.SetNumber}</Text>
+                  <Text style={styles.cardSubTitle}>{item.Rarity}</Text>
                 </View>
                 <View>
                   <Text style={styles.textContent}>{item.SeriesName}</Text>
@@ -137,13 +136,13 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   cardTitleContainer: {flexDirection: 'row'},
-  rarityBadgeContainer: {
+  setNoBadgeContainer: {
     position: 'absolute',
     top: 5,
     left: 10,
     zIndex: 999,
   },
-  cardNumberBadgeContainer: {
+  cardNoBadgeContainer: {
     position: 'absolute',
     top: 5,
     right: 5,
