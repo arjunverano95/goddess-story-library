@@ -8,11 +8,12 @@ import {Icons} from '../app/icons';
 
 interface HeaderProps {
   isVisible: boolean;
-  toggleOverlay: () => void;
-  children?: JSX.Element | JSX.Element[];
+  toggleOverlay?: () => void;
+  children: JSX.Element | JSX.Element[];
+  showClose?: boolean;
 }
 const Overlay = (props: HeaderProps) => {
-  const {children, isVisible, toggleOverlay} = props;
+  const {children, isVisible, toggleOverlay, showClose} = props;
   return (
     <RNEOverlay
       overlayStyle={styles.overlay}
@@ -20,23 +21,28 @@ const Overlay = (props: HeaderProps) => {
       isVisible={isVisible}
       onBackdropPress={toggleOverlay}
     >
-      <View style={styles.overlayHeaderContainer}>
-        <Button
-          containerStyle={styles.closeOverlayButtonContainer}
-          buttonStyle={styles.closeOverlayButton}
-          type="clear"
-          onPress={() => {
-            toggleOverlay();
-          }}
-        >
-          <Icon name={Icons.close} color={Colors.black} />
-        </Button>
-      </View>
+      {showClose && (
+        <View style={styles.overlayHeaderContainer}>
+          <Button
+            containerStyle={styles.closeOverlayButtonContainer}
+            buttonStyle={styles.closeOverlayButton}
+            type="clear"
+            onPress={() => {
+              toggleOverlay();
+            }}
+          >
+            <Icon name={Icons.close} color={Colors.black} />
+          </Button>
+        </View>
+      )}
+
       {children && <>{props.children}</>}
     </RNEOverlay>
   );
 };
-
+Overlay.defaultProps = {
+  showClose: true,
+};
 export default Overlay;
 const styles = StyleSheet.create({
   overlay: {padding: 0},

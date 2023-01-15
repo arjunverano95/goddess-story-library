@@ -3,8 +3,6 @@ import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import WebView from 'react-native-webview';
 
-import {useNetInfo} from '@react-native-community/netinfo';
-
 import {Colors} from '../../app/colors';
 import {GoddessStory} from '../../models/GoddessStory';
 
@@ -14,7 +12,6 @@ interface CardImageProps {
 
 const CardImage = (props: CardImageProps) => {
   const {data} = props;
-  const netInfo = useNetInfo();
 
   if (data.ImageUrl)
     return (
@@ -32,14 +29,12 @@ const CardImage = (props: CardImageProps) => {
   else
     return (
       <>
-        {netInfo.isConnected && (
-          <WebView
-            style={styles.imageWebview}
-            source={{
-              uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
-            }}
-          />
-        )}
+        <WebView
+          style={styles.imageWebview}
+          source={{
+            uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
+          }}
+        />
       </>
     );
 };
