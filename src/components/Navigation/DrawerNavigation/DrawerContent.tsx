@@ -5,7 +5,7 @@ import {
   DrawerContentComponentProps,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {Icon} from '@rneui/base';
+import {Icon} from '@rneui/themed';
 
 import {Routes} from '../../../app/routes';
 
