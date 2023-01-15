@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {FlatList} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Badge, Card, Text} from '@rneui/themed';
+import {FlashList} from '@shopify/flash-list';
 
 import {Colors} from '../../app/colors';
 import {GoddessStory} from '../../models/GoddessStory';
@@ -53,14 +53,15 @@ export const Gallery = (props: GalleryProps) => {
     return true;
   });
   const galleryData = sortData(filteredData, sort);
+  // TODO try FlashList
   return (
     <>
       <SafeAreaView style={styles.galleryContainer}>
-        <FlatList
+        <FlashList
           data={galleryData}
-          style={styles.gallery}
           numColumns={2}
           keyExtractor={(item) => item.Code}
+          estimatedItemSize={248}
           renderItem={({item}) => (
             <Card containerStyle={styles.cardContainer}>
               <View>
@@ -116,10 +117,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     backgroundColor: Colors.background,
   },
-  gallery: {
-    flex: 1,
-    width: '100%',
-  },
   image: {
     aspectRatio: 1,
     width: '100%',
@@ -128,7 +125,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     borderWidth: 0,
     shadowColor: Colors.transparent,
-    maxWidth: '50%',
+    // maxWidth: '50%',
     flex: 1,
     margin: 0,
     paddingHorizontal: 5,

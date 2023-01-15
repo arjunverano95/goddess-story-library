@@ -1,6 +1,5 @@
 import React, {useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {
@@ -12,6 +11,7 @@ import {
   Text,
   useTheme,
 } from '@rneui/themed';
+import {FlashList} from '@shopify/flash-list';
 
 import {Colors} from '../../../../app/colors';
 import {Icons} from '../../../../app/icons';
@@ -115,10 +115,10 @@ export const SearchField = (props: SearchFieldProps) => {
           value={searchValue}
         />
         <SafeAreaView style={styles.overlayContentContainer}>
-          <FlatList
+          <FlashList
             data={listData}
             renderItem={renderItem}
-            initialNumToRender={25}
+            estimatedItemSize={36}
             keyExtractor={(item) => item}
           />
         </SafeAreaView>
