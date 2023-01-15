@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: null,
   },
-  imageWebview: {flex: 1, margin: 20},
+  imageWebview: {flex: 1, margin: 20, backgroundColor: Colors.white},
 });
 export default CardImage;

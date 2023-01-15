@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -6,6 +6,8 @@ import {FlashList} from '@shopify/flash-list';
 
 import {Colors} from '../../../app/colors';
 import {GoddessStory} from '../../../models/GoddessStory';
+import CardDetails from '../../CardDetails';
+import Overlay from '../../Overlay';
 import GalleryItem from './GalleryItem';
 
 const data: GoddessStory[] = require('../../../app/data.json');
@@ -52,6 +54,13 @@ export const Gallery = (props: GalleryProps) => {
     return true;
   });
   const galleryData = sortData(filteredData, sort);
+
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const selectedCard = useRef<GoddessStory>(undefined);
+
+  const toggleOverlay = () => {
+    setIsOverlayVisible(!isOverlayVisible);
+  };
   return (
     <>
       <SafeAreaView style={styles.galleryContainer}>
@@ -60,9 +69,20 @@ export const Gallery = (props: GalleryProps) => {
           numColumns={2}
           keyExtractor={(item) => item.Code}
           estimatedItemSize={248}
-          renderItem={({item}) => <GalleryItem data={item} />}
+          renderItem={({item}) => (
+            <GalleryItem
+              data={item}
+              onPress={(item) => {
+                selectedCard.current = item;
+                toggleOverlay();
+              }}
+            />
+          )}
         />
       </SafeAreaView>
+      <Overlay isVisible={isOverlayVisible} toggleOverlay={toggleOverlay}>
+        {selectedCard && <CardDetails data={selectedCard.current} />}
+      </Overlay>
     </>
   );
 };

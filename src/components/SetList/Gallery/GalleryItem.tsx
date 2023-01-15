@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 import {Badge, Card, Text} from '@rneui/themed';
@@ -9,48 +9,55 @@ import {GoddessStory} from '../../../models/GoddessStory';
 
 interface GalleryItemProps {
   data: GoddessStory;
+  onPress: (value: GoddessStory) => void;
 }
 const GalleryItem = (props: GalleryItemProps) => {
-  const {data} = props;
+  const {data, onPress} = props;
   return (
     <Card containerStyle={styles.cardContainer}>
-      <View>
-        <Badge
-          containerStyle={styles.setNoBadgeContainer}
-          badgeStyle={styles.badge}
-          textStyle={styles.badgeText}
-          value={data.SetNumber}
-          status="warning"
-        />
-        <Badge
-          containerStyle={styles.cardNoBadgeContainer}
-          badgeStyle={styles.badge}
-          textStyle={styles.badgeText}
-          value={data.CardNumber}
-          status="success"
-        />
-        <FastImage
-          style={styles.image}
-          source={
-            !data.ImageUrl
-              ? require('../../../../assets/no-image.png')
-              : {
-                  uri: data.ImageUrl,
-                  priority: FastImage.priority.normal,
-                }
-          }
-          resizeMode={FastImage.resizeMode.cover}
-        />
-      </View>
-      <View style={styles.cardFooter}>
-        <View style={styles.cardTitleContainer}>
-          <Text style={styles.cardTitle}>{`${data.CharacterName}`}</Text>
-          <Text style={styles.cardSubTitle}>{data.Rarity}</Text>
-        </View>
+      <Pressable
+        onPress={() => {
+          onPress(data);
+        }}
+      >
         <View>
-          <Text style={styles.textContent}>{data.SeriesName}</Text>
+          <Badge
+            containerStyle={styles.setNoBadgeContainer}
+            badgeStyle={styles.badge}
+            textStyle={styles.badgeText}
+            value={data.SetNumber}
+            status="warning"
+          />
+          <Badge
+            containerStyle={styles.cardNoBadgeContainer}
+            badgeStyle={styles.badge}
+            textStyle={styles.badgeText}
+            value={data.CardNumber}
+            status="success"
+          />
+          <FastImage
+            style={styles.image}
+            source={
+              !data.ImageUrl
+                ? require('../../../../assets/no-image.png')
+                : {
+                    uri: data.ImageUrl,
+                    priority: FastImage.priority.normal,
+                  }
+            }
+            resizeMode={FastImage.resizeMode.cover}
+          />
         </View>
-      </View>
+        <View style={styles.cardFooter}>
+          <View style={styles.cardTitleContainer}>
+            <Text style={styles.cardTitle}>{`${data.CharacterName}`}</Text>
+            <Text style={styles.cardSubTitle}>{data.Rarity}</Text>
+          </View>
+          <View>
+            <Text style={styles.textContent}>{data.SeriesName}</Text>
+          </View>
+        </View>
+      </Pressable>
     </Card>
   );
 };

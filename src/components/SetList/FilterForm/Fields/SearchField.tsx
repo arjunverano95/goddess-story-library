@@ -1,20 +1,13 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useCallback, useRef, useState} from 'react';
+import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {
-  Button,
-  Icon,
-  ListItem,
-  Overlay,
-  SearchBar,
-  Text,
-  useTheme,
-} from '@rneui/themed';
+import {Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
 import {FlashList} from '@shopify/flash-list';
 
 import {Colors} from '../../../../app/colors';
 import {Icons} from '../../../../app/icons';
+import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {
   label: string;
@@ -32,21 +25,21 @@ export const SearchField = (props: SearchFieldProps) => {
   const formattedData = !value
     ? data
     : [value, ...data.filter((item) => item !== value)];
-  const [listData, setListData] = useState(formattedData);
+  const listData = useRef(formattedData);
 
   const toggleOverlay = () => {
+    listData.current = formattedData;
     setSearchValue('');
-    setListData(formattedData);
     setIsOverlayVisible(!isOverlayVisible);
   };
   const handleSearch = (value: string) => {
-    if (!value) setListData(formattedData);
+    if (!value) listData.current = formattedData;
     else
-      setListData([
+      listData.current = [
         ...data.filter((item) => {
           return `${item}`.toLowerCase().includes(value.toLowerCase());
         }),
-      ]);
+      ];
     setSearchValue(value);
   };
   const renderItem = useCallback(
@@ -88,24 +81,7 @@ export const SearchField = (props: SearchFieldProps) => {
         </ListItem.Content>
         <Icon name={Icons.arrow_right} />
       </ListItem>
-      <Overlay
-        overlayStyle={styles.overlay}
-        fullScreen={true}
-        isVisible={isOverlayVisible}
-        onBackdropPress={toggleOverlay}
-      >
-        <View style={styles.overlayHeaderContainer}>
-          <Button
-            containerStyle={styles.closeOverlayButtonContainer}
-            buttonStyle={styles.closeOverlayButton}
-            type="clear"
-            onPress={async () => {
-              toggleOverlay();
-            }}
-          >
-            <Icon name={Icons.close} color={Colors.black} />
-          </Button>
-        </View>
+      <Overlay isVisible={isOverlayVisible} toggleOverlay={toggleOverlay}>
         <SearchBar
           lightTheme={true}
           containerStyle={styles.searchBarContainer}
@@ -116,7 +92,7 @@ export const SearchField = (props: SearchFieldProps) => {
         />
         <SafeAreaView style={styles.overlayContentContainer}>
           <FlashList
-            data={listData}
+            data={listData.current}
             renderItem={renderItem}
             estimatedItemSize={36}
             keyExtractor={(item) => item}
@@ -140,17 +116,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: Colors.black,
   },
-  overlay: {padding: 0},
-  overlayHeaderContainer: {
-    flexDirection: 'row-reverse',
-  },
-  closeOverlayButtonContainer: {
-    marginTop: 10,
-    marginHorizontal: 5,
-  },
-  closeOverlayButton: {
-    height: 46,
-  },
+
   overlayContentContainer: {
     margin: 10,
     flex: 1,
@@ -163,7 +129,4 @@ const styles = StyleSheet.create({
   selectListItem: {
     paddingVertical: 5,
   },
-  // searchBar: {
-  //   backgroundColor: theme..grey5,
-  // },
 });

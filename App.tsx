@@ -19,6 +19,11 @@ const theme = createTheme({
       color: Colors.black,
       type: 'material-community',
     },
+    Overlay: {
+      overlayStyle: {
+        backgroundColor: Colors.background,
+      },
+    },
   },
 });
 const App = () => {
