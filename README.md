@@ -6,8 +6,8 @@ A simple and easy to use viewer and library of Goddess story cards.
 
 ## Features
 
-- Speech-to-text lookup of card informations
-- Easy viewing of Set Lists with powerful filters
+- Speech-to-text lookup of card details
+- Easy viewing of set list cards with filters
 - Complete\* list of all Goddess Story Cards
 
 More features will be added soon! ✨
