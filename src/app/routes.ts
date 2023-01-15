@@ -14,7 +14,7 @@ export const Routes: Routes[] = [
   {
     name: 'SetList',
     label: 'Goddess Story',
-    icon: Icons.list,
+    icon: Icons.home,
     component: SetList,
   },
   {

@@ -33,7 +33,7 @@ const GalleryItem = (props: GalleryItemProps) => {
           style={styles.image}
           source={
             !data.ImageUrl
-              ? require('../../../assets/no-image.png')
+              ? require('../../../../assets/no-image.png')
               : {
                   uri: data.ImageUrl,
                   priority: FastImage.priority.normal,

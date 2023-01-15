@@ -8,7 +8,7 @@ import {Colors} from '../../../app/colors';
 import {GoddessStory} from '../../../models/GoddessStory';
 import GalleryItem from './GalleryItem';
 
-const data: GoddessStory[] = require('../../app/data.json');
+const data: GoddessStory[] = require('../../../app/data.json');
 
 interface GalleryProps {
   filter: GoddessStory;
