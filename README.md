@@ -2,7 +2,7 @@
 
 A simple and easy to use viewer and library of Goddess story cards.
 
-[images]
+<img src="https://i.imgur.com/nktRR4F.jpg" alt="img1" width="200"/> <img src="https://i.imgur.com/UHT7my3.jpg" alt="img1" width="200"/> <img src="https://i.imgur.com/kmYG7sb.jpg" alt="img1" width="200"/> 
 
 ## Features
 
@@ -26,7 +26,7 @@ More features will be added soon! ✨
 
 ### Download Links
 
-Android -
+Android - [Google Drive](https://drive.google.com/file/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view)
 
 IOS -
 
