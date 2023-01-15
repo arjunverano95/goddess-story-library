@@ -55,7 +55,7 @@ export const SearchBar = (props: SearchBarProps) => {
         buttonStyle={styles.voiceSearchButton}
         type="solid"
         onPress={async () => {
-          Voice.start('en-PH');
+          Voice.start('en-US');
         }}
       >
         <Icon name={Icons.record} color="white" />
