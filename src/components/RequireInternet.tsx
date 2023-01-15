@@ -1,18 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
 import {Button, Icon, Text} from '@rneui/themed';
 
-import {Colors} from '../../app/colors';
-import {Icons} from '../../app/icons';
-import Overlay from '../Overlay';
+import {Colors} from '../app/colors';
+import {Icons} from '../app/icons';
+import Overlay from './Overlay';
 
-interface RequireInternetProps {
-  children: JSX.Element | JSX.Element[];
-}
-export const RequireInternet = (props: RequireInternetProps) => {
-  const {children} = props;
+const RequireInternet = () => {
   const netInfo = useNetInfo();
 
   const [loading, setLoading] = useState(true);
@@ -104,8 +100,13 @@ export const RequireInternet = (props: RequireInternetProps) => {
 
   return (
     <>
-      <>{children}</>
-      <Overlay showClose={false} isVisible={loading || !netInfo.isConnected}>
+      <Overlay
+        showClose={false}
+        isVisible={loading || !netInfo.isConnected}
+        toggleOverlay={() => {
+          console.log('toggleOverlay');
+        }}
+      >
         <View style={styles.container}>
           {loading ? (
             <Button type="clear" loading loadingProps={{size: 25}} />
@@ -155,3 +156,4 @@ const styles = StyleSheet.create({
   //     opacity: 0.3,
   //   },
 });
+export default RequireInternet;

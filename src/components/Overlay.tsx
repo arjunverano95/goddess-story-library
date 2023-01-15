@@ -8,7 +8,7 @@ import {Icons} from '../app/icons';
 
 interface HeaderProps {
   isVisible: boolean;
-  toggleOverlay?: () => void;
+  toggleOverlay: () => void;
   children: JSX.Element | JSX.Element[];
   showClose?: boolean;
 }
@@ -43,7 +43,6 @@ const Overlay = (props: HeaderProps) => {
 Overlay.defaultProps = {
   showClose: true,
 };
-export default Overlay;
 const styles = StyleSheet.create({
   overlay: {padding: 0},
   overlayHeaderContainer: {
@@ -57,3 +56,5 @@ const styles = StyleSheet.create({
     height: 46,
   },
 });
+
+export default Overlay;
