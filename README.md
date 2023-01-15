@@ -22,7 +22,7 @@ More features will be added soon! ✨
     <Set Number><PR|BW><Card Number> 	i.e, NS10M03PR018
 
     NS-10-M04
-    <Set Number><Rarity><Card Number>    i.e, NS10M04SR021
+    <Set Number><Rarity><Card Number>       i.e, NS10M04SR021
 
 ### Download Links
 
