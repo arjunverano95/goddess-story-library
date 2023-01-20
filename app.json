@@ -17,7 +17,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.silversoft.goddess-story-library",
+      "bundleIdentifier": "com.arjunverano95.goddess-story-library",
       "infoPlist": {
         "NSSpeechRecognitionUsageDescription": "This app uses speech recognition to convert your speech to text.",
         "NSCameraUsageDescription": "This app uses the camera to let user put a photo in his profile page."
@@ -29,7 +29,7 @@
         "backgroundColor": "#f2a4a8"
       },
       "permissions": ["android.permission.RECORD_AUDIO"],
-      "package": "com.silversoft.goddess_story_library"
+      "package": "com.arjunverano95.goddess_story_library"
     },
     "web": {
       "favicon": "./assets/favicon.png"

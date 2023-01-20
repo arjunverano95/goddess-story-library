@@ -1,4 +1,4 @@
-package com.silversoft.goddess_story_library.newarchitecture.modules;
+package com.arjunverano95.goddess_story_library.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

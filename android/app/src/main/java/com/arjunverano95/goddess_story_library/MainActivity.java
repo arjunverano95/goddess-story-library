@@ -1,4 +1,4 @@
-package com.silversoft.goddess_story_library;
+package com.arjunverano95.goddess_story_library;
 
 import android.os.Build;
 import android.os.Bundle;

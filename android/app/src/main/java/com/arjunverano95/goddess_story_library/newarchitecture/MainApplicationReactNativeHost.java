@@ -1,4 +1,4 @@
-package com.silversoft.goddess_story_library.newarchitecture;
+package com.arjunverano95.goddess_story_library.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.silversoft.goddess_story_library.BuildConfig;
-import com.silversoft.goddess_story_library.newarchitecture.components.MainComponentsRegistry;
-import com.silversoft.goddess_story_library.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.arjunverano95.goddess_story_library.BuildConfig;
+import com.arjunverano95.goddess_story_library.newarchitecture.components.MainComponentsRegistry;
+import com.arjunverano95.goddess_story_library.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

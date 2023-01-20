@@ -1,4 +1,4 @@
-package com.silversoft.goddess_story_library.newarchitecture.components;
+package com.arjunverano95.goddess_story_library.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
