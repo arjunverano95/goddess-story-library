@@ -55,7 +55,12 @@ export const SearchBar = (props: SearchBarProps) => {
         buttonStyle={styles.voiceSearchButton}
         type="solid"
         onPress={async () => {
-          Voice.start('en-US');
+          if (await Voice.isRecognizing()) {
+            await Voice.stop();
+          } else {
+            handleSearch('');
+            Voice.start('en-US');
+          }
         }}
       >
         <Icon name={Icons.record} color="white" />
