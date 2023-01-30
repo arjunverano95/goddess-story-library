@@ -4,8 +4,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 import {Icon, ListItem, Text} from '@rneui/themed';
 
-import {Colors} from '../../../../app/colors';
-import {Icons} from '../../../../app/icons';
+import {Colors, Icons} from '../../../../app/constants';
 
 interface SelectFieldProps {
   value: string;

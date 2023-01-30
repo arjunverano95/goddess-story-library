@@ -5,8 +5,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
 import {FlashList} from '@shopify/flash-list';
 
-import {Colors} from '../../../../app/colors';
-import {Icons} from '../../../../app/icons';
+import {Colors, Icons} from '../../../../app/constants';
 import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {

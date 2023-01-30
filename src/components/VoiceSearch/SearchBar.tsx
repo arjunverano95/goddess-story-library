@@ -4,8 +4,7 @@ import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 import {Button, Icon, SearchBar as RNESearchBar} from '@rneui/themed';
 
-import {Colors} from '../../app/colors';
-import {Icons} from '../../app/icons';
+import {Colors, Icons} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
 
 const data: GoddessStory[] = require('../../app/data.json');

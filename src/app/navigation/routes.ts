@@ -1,7 +1,7 @@
-import SetList from '../views/SetList';
-import VoiceSearch from '../views/VoiceSearch';
-import {Icons} from './icons';
-import {NavigationParamList, ScreenProps} from './navigation';
+import SetList from '../../views/SetList';
+import VoiceSearch from '../../views/VoiceSearch';
+import {Icons} from '../constants';
+import {NavigationParamList, ScreenProps} from './props';
 
 interface Routes {
   name: keyof NavigationParamList;

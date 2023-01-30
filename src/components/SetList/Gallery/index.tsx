@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {FlashList} from '@shopify/flash-list';
 
-import {Colors} from '../../../app/colors';
+import {Colors} from '../../../app/constants';
 import {GoddessStory} from '../../../models/GoddessStory';
 import CardDetails from '../../CardDetails';
 import Overlay from '../../Overlay';

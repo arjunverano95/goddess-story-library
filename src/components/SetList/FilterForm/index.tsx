@@ -3,8 +3,7 @@ import {Pressable, StyleSheet, View} from 'react-native';
 
 import {Button, Icon, Text} from '@rneui/themed';
 
-import {Colors} from '../../../app/colors';
-import {Icons} from '../../../app/icons';
+import {Colors, Icons} from '../../../app/constants';
 import {GoddessStory} from '../../../models/GoddessStory';
 import {InputField, SearchField, SelectField} from './Fields';
 

@@ -3,8 +3,7 @@ import {StyleSheet, View} from 'react-native';
 
 import {Button, Icon} from '@rneui/themed';
 
-import {Colors} from '../app/colors';
-import {Icons} from '../app/icons';
+import {Colors, Icons} from '../app/constants';
 import {NavigationParamList, NavigationProp} from '../app/navigation';
 
 interface HeaderProps {

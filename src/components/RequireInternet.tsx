@@ -4,8 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
 import {Button, Icon, Text} from '@rneui/themed';
 
-import {Colors} from '../app/colors';
-import {Icons} from '../app/icons';
+import {Colors, Icons} from '../app/constants';
 import Overlay from './Overlay';
 
 const RequireInternet = () => {
