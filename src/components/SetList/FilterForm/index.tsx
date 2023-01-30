@@ -4,13 +4,9 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import {Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../../app/constants';
+import {useGSL} from '../../../app/hooks/useGSL';
 import {GoddessStory} from '../../../models/GoddessStory';
 import {InputField, SearchField, SelectField} from './Fields';
-
-const data: GoddessStory[] = require('../../../app/data.json');
-const setNumberList = [...new Set(data.map((item) => item.SetNumber))];
-const rarityList = [...new Set(data.map((item) => item.Rarity))];
-const seriesList = [...new Set(data.map((item) => item.SeriesName))].sort();
 
 interface FilterFormProps {
   data: GoddessStory;
@@ -18,8 +14,10 @@ interface FilterFormProps {
 }
 const FilterForm = (props: FilterFormProps) => {
   const {data, onSubmit} = props;
+  const {setNumbers, rarities, series} = useGSL();
   const [expanded, setExpanded] = useState('');
   const [formData, setFormData] = useState<GoddessStory>({...data});
+
   const handleExpanded = (value?: string) => {
     if (!value || expanded === value) setExpanded(null);
     else setExpanded(value);
@@ -59,7 +57,7 @@ const FilterForm = (props: FilterFormProps) => {
         <SelectField
           label={'Set'}
           value={formData.SetNumber}
-          data={setNumberList}
+          data={setNumbers}
           isExpanded={expanded === 'SetNumber'}
           onPress={() => {
             handleExpanded('SetNumber');
@@ -83,7 +81,7 @@ const FilterForm = (props: FilterFormProps) => {
         <SelectField
           label={'Rarity'}
           value={formData.Rarity}
-          data={rarityList}
+          data={rarities}
           isExpanded={expanded === 'Rarity'}
           onPress={() => {
             handleExpanded('Rarity');
@@ -106,7 +104,7 @@ const FilterForm = (props: FilterFormProps) => {
         <SearchField
           value={formData.SeriesName}
           label={'Series'}
-          data={seriesList}
+          data={series}
           onPress={() => {
             handleExpanded();
           }}

@@ -1,16 +1,15 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {FlashList} from '@shopify/flash-list';
 
 import {Colors} from '../../../app/constants';
+import {useGSL} from '../../../app/hooks/useGSL';
 import {GoddessStory} from '../../../models/GoddessStory';
 import CardDetails from '../../CardDetails';
 import Overlay from '../../Overlay';
 import GalleryItem from './GalleryItem';
-
-const data: GoddessStory[] = require('../../../app/data.json');
 
 interface GalleryProps {
   filter: GoddessStory;
@@ -18,49 +17,59 @@ interface GalleryProps {
 }
 
 export const Gallery = (props: GalleryProps) => {
+  const {data} = useGSL();
   const {filter, sort} = props;
-  const cleanFilter = {...filter};
-  Object.keys(cleanFilter).forEach((key) => {
-    if (!cleanFilter[key]) {
-      delete cleanFilter[key];
-    }
-  });
-  const sortData = (data: GoddessStory[], order: 'asc' | 'desc') => {
-    if (order === 'asc') {
-      return data.sort(
-        (a, b) =>
-          a.SetNumber.localeCompare(b.SetNumber) ||
-          b.Rarity.localeCompare(a.Rarity) ||
-          Number(a.CardNumber) - Number(b.CardNumber),
-      );
-    } else {
-      return data.sort(
-        (a, b) =>
-          a.SetNumber.localeCompare(b.SetNumber) ||
-          b.Rarity.localeCompare(a.Rarity) ||
-          Number(b.CardNumber) - Number(a.CardNumber),
-      );
-    }
-  };
-  const filteredData = data.filter((item) => {
-    for (const key in cleanFilter) {
-      if (cleanFilter[key]) {
-        if (key === 'CharacterName') {
-          if (!item[key].toLowerCase().includes(cleanFilter[key].toLowerCase()))
-            return false;
-        } else if (item[key] != cleanFilter[key]) return false;
-      }
-    }
-    return true;
-  });
-  const galleryData = sortData(filteredData, sort);
-
+  const [galleryData, setGalleryData] = useState<GoddessStory[]>([]);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const selectedCard = useRef<GoddessStory>(undefined);
 
   const toggleOverlay = () => {
     setIsOverlayVisible(!isOverlayVisible);
   };
+  useEffect(() => {
+    if (data) {
+      const cleanFilter = {...filter};
+      Object.keys(cleanFilter).forEach((key) => {
+        if (!cleanFilter[key]) {
+          delete cleanFilter[key];
+        }
+      });
+      const sortData = (data: GoddessStory[], order: 'asc' | 'desc') => {
+        if (order === 'asc') {
+          return data.sort(
+            (a, b) =>
+              a.SetNumber.localeCompare(b.SetNumber) ||
+              b.Rarity.localeCompare(a.Rarity) ||
+              Number(a.CardNumber) - Number(b.CardNumber),
+          );
+        } else {
+          return data.sort(
+            (a, b) =>
+              a.SetNumber.localeCompare(b.SetNumber) ||
+              b.Rarity.localeCompare(a.Rarity) ||
+              Number(b.CardNumber) - Number(a.CardNumber),
+          );
+        }
+      };
+
+      const filteredData = data.filter((item) => {
+        for (const key in cleanFilter) {
+          if (cleanFilter[key]) {
+            if (key === 'CharacterName') {
+              if (
+                !item[key]
+                  .toLowerCase()
+                  .includes(cleanFilter[key].toLowerCase())
+              )
+                return false;
+            } else if (item[key] != cleanFilter[key]) return false;
+          }
+        }
+        return true;
+      });
+      setGalleryData(sortData(filteredData, sort));
+    }
+  }, [data, filter, sort]);
   return (
     <>
       <SafeAreaView style={styles.galleryContainer}>
