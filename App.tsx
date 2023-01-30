@@ -5,7 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {createTheme, ThemeProvider} from '@rneui/themed';
 
-import {Colors, LightColors} from './src/app/colors';
+import {Colors, LightColors} from './src/app/constants';
 import {DrawerNavigation} from './src/components/Navigation';
 import RequireInternet from './src/components/RequireInternet';
 

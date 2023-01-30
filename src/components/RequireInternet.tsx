@@ -1,23 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
+import {useNetInfo} from '@react-native-community/netinfo';
 import {Button, Icon, Text} from '@rneui/themed';
 
-import {Colors} from '../app/colors';
-import {Icons} from '../app/icons';
+import {Colors, Icons} from '../app/constants';
+import {useGSL} from '../app/hooks/useGSL';
 import Overlay from './Overlay';
 
 const RequireInternet = () => {
   const netInfo = useNetInfo();
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    NetInfo.fetch().then(() => {
-      setLoading(false);
-    });
-  }, []);
+  const {isLoading} = useGSL();
 
   // return (
   //   <View style={styles.skeletonContainer}>
@@ -102,13 +95,13 @@ const RequireInternet = () => {
     <>
       <Overlay
         showClose={false}
-        isVisible={loading || !netInfo.isConnected}
+        isVisible={isLoading || !netInfo.isConnected}
         toggleOverlay={() => {
           console.log('toggleOverlay');
         }}
       >
         <View style={styles.container}>
-          {loading ? (
+          {isLoading ? (
             <Button type="clear" loading loadingProps={{size: 25}} />
           ) : (
             <>

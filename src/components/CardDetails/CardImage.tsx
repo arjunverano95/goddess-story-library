@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import WebView from 'react-native-webview';
 
-import {Colors} from '../../app/colors';
+import {Colors} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
 
 interface CardImageProps {

@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 
 import {Badge, Card, Text} from '@rneui/themed';
 
-import {Colors} from '../../app/colors';
+import {Colors} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
 import CardImage from './CardImage';
 

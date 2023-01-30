@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 
 import {ListItem} from '@rneui/themed';
 
-import {Colors} from '../../../../app/colors';
+import {Colors} from '../../../../app/constants';
 
 interface InputFieldProps {
   label: string;

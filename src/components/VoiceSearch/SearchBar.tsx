@@ -4,17 +4,16 @@ import {StyleSheet} from 'react-native';
 import Voice, {SpeechResultsEvent} from '@react-native-voice/voice';
 import {Button, Icon, SearchBar as RNESearchBar} from '@rneui/themed';
 
-import {Colors} from '../../app/colors';
-import {Icons} from '../../app/icons';
+import {Colors, Icons} from '../../app/constants';
+import {useGSL} from '../../app/hooks/useGSL';
 import {GoddessStory} from '../../models/GoddessStory';
-
-const data: GoddessStory[] = require('../../app/data.json');
 
 interface SearchBarProps {
   onSearch: (value: GoddessStory) => void;
 }
 
 export const SearchBar = (props: SearchBarProps) => {
+  const {data} = useGSL();
   const [searchValue, setSearchValue] = useState('');
   const {onSearch} = props;
 
@@ -55,7 +54,12 @@ export const SearchBar = (props: SearchBarProps) => {
         buttonStyle={styles.voiceSearchButton}
         type="solid"
         onPress={async () => {
-          Voice.start('en-US');
+          if (await Voice.isRecognizing()) {
+            await Voice.stop();
+          } else {
+            handleSearch('');
+            Voice.start('en-US');
+          }
         }}
       >
         <Icon name={Icons.record} color="white" />

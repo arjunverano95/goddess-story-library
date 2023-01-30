@@ -1,4 +1,4 @@
-# <img src="https://i.imgur.com/jDzaMrZ.png" alt="icon" width="25"/>  Goddess Story Library
+# <img src="https://i.imgur.com/jDzaMrZ.png" alt="icon" width="25"/> Goddess Story Library
 
 A simple and easy to use viewer and library of Goddess story cards.
 
