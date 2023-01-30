@@ -1164,7 +1164,7 @@
     "Code": "NS01130",
     "SetNumber": "NS-01",
     "CardNumber": 130,
-    "CharacterName": "Hanabi Hyuuga",
+    "CharacterName": "Hanabi Hyuga",
     "SeriesName": "Naruto",
     "Rarity": "R",
     "ImageUrl": "https://i.imgur.com/8XLIGta.jpg"
@@ -1353,7 +1353,7 @@
     "Code": "NS01151",
     "SetNumber": "NS-01",
     "CardNumber": 151,
-    "CharacterName": "Jeanne d'Arc Alter",
+    "CharacterName": "Jeanne d'Arc (Alter)",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "R",
     "ImageUrl": "https://i.imgur.com/AdMi2DX.jpg"
@@ -5178,7 +5178,7 @@
     "Code": "NS07008",
     "SetNumber": "NS-07",
     "CardNumber": "008",
-    "CharacterName": "Jeanne d'Arc Alter",
+    "CharacterName": "Jeanne d'Arc (Alter)",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "SSR",
     "ImageUrl": "https://i.imgur.com/obfcXWi.jpg"
@@ -5827,7 +5827,7 @@
     "SetNumber": "NS-02-M01",
     "CardNumber": "008",
     "CharacterName": "Athena",
-    "SeriesName": "Seint Seiya",
+    "SeriesName": "Saint Seiya",
     "Rarity": "PTR",
     "ImageUrl": "https://i.imgur.com/SSYYc6g.jpg"
   },
@@ -11388,7 +11388,7 @@
     "Code": "NS02M05PR002",
     "SetNumber": "NS-02-M05",
     "CardNumber": "002",
-    "CharacterName": "Hatsune Miku",
+    "CharacterName": "Kagamine Rin",
     "SeriesName": "Vocaloid",
     "Rarity": "PR",
     "ImageUrl": "https://i.imgur.com/SHi8BPz.jpg"
@@ -11397,7 +11397,7 @@
     "Code": "NS02M05PR003",
     "SetNumber": "NS-02-M05",
     "CardNumber": "003",
-    "CharacterName": "Kagamine Rin",
+    "CharacterName": "Hatsune Miku",
     "SeriesName": "Vocaloid",
     "Rarity": "PR",
     "ImageUrl": "https://i.imgur.com/5eJCtc0.jpg"
@@ -13494,7 +13494,7 @@
     "Code": "NS05M01050",
     "SetNumber": "NS-05-M01",
     "CardNumber": "050",
-    "CharacterName": "Shiki Ryouhi",
+    "CharacterName": "Shiki Ryougi",
     "SeriesName": "The Garden of Sinners",
     "Rarity": "PTR",
     "ImageUrl": "https://i.imgur.com/owsyBkm.jpg"
@@ -15241,7 +15241,7 @@
     "SetNumber": "NS-05-M02",
     "CardNumber": "037",
     "CharacterName": "Athena",
-    "SeriesName": "Seint Seiya",
+    "SeriesName": "Saint Seiya",
     "Rarity": "SSR",
     "ImageUrl": "https://i.imgur.com/CafxQWM.jpg"
   },
@@ -16527,7 +16527,7 @@
     "Code": "NS05M03054",
     "SetNumber": "NS-05-M03",
     "CardNumber": "054",
-    "CharacterName": "Jeanne d'Arc Alter",
+    "CharacterName": "Jeanne d'Arc (Alter)",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "SSR",
     "ImageUrl": "https://i.imgur.com/aA1Ckre.jpg"
@@ -17058,7 +17058,7 @@
     "Code": "NS05M03PR005",
     "SetNumber": "NS-05-M03",
     "CardNumber": "005",
-    "CharacterName": "Saber Alter",
+    "CharacterName": "Artoria Pendragon (Saber) Alter",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "PR",
     "ImageUrl": "https://i.imgur.com/bOQuo33.jpg"
@@ -17328,7 +17328,7 @@
     "Code": "NS05M04017",
     "SetNumber": "NS-05-M04",
     "CardNumber": "017",
-    "CharacterName": "Jeanne d'Arc Alter",
+    "CharacterName": "Jeanne d'Arc (Alter)",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "MR",
     "ImageUrl": "https://i.imgur.com/Q4DactO.jpg"
@@ -18309,7 +18309,7 @@
     "Code": "NS05M04126",
     "SetNumber": "NS-05-M04",
     "CardNumber": 126,
-    "CharacterName": "Jeanne D'Arc (Alter)",
+    "CharacterName": "Jeanne d'Arc (Alter)",
     "SeriesName": "Fate/Grand Order",
     "Rarity": "R",
     "ImageUrl": "https://i.imgur.com/QkW6UqR.jpg"
@@ -18885,7 +18885,7 @@
     "Code": "NS05M05028",
     "SetNumber": "NS-05-M05",
     "CardNumber": "028",
-    "CharacterName": "Chii",
+    "CharacterName": "Chi",
     "SeriesName": "Chobits",
     "Rarity": "PTR",
     "ImageUrl": "https://i.imgur.com/wx5Z2x7.jpg"
@@ -26842,7 +26842,7 @@
     "SetNumber": "NS-10-M04",
     "CardNumber": "008",
     "CharacterName": "Athena",
-    "SeriesName": "Seint Seiya",
+    "SeriesName": "Saint Seiya",
     "Rarity": "NNS",
     "ImageUrl": ""
   },
@@ -26877,7 +26877,7 @@
     "Code": "NS10M04BW003",
     "SetNumber": "NS-10-M04",
     "CardNumber": "003",
-    "CharacterName": "Chika Fuijiwara",
+    "CharacterName": "Chika Fujiwara",
     "SeriesName": "Kaguya-sama: Love is War",
     "Rarity": "BW",
     "ImageUrl": ""
@@ -26934,6 +26934,1680 @@
     "CharacterName": "Kugisaki Nobara",
     "SeriesName": "Jujutsu Kaisen",
     "Rarity": "BW",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Misaka Mikoto",
+    "SeriesName": "A Certain Magical Index",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Zero Two",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Rem",
+    "SeriesName": "Re:Zero",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Rice Shower",
+    "SeriesName": "Uma Musume Pretty Derby",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Mashu Kyrielight",
+    "SeriesName": "Fate/Grand Order",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSXNR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Yor Forger",
+    "SeriesName": "Spy X Family",
+    "Rarity": "XNR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Zero Two",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Kana Ichigo",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Miku",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Kokoro",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Ikuno",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Reimu Hakurei",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Marisa Kirisame",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Sanae Kochiya",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSP009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Cirno",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Ichika Nakano",
+    "SeriesName": "The Quintessential Quintuplets",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Nino Nakano",
+    "SeriesName": "The Quintessential Quintuplets",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Miku Nakano",
+    "SeriesName": "The Quintessential Quintuplets",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Yotsuba Nakano",
+    "SeriesName": "The Quintessential Quintuplets",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Itsuki Nakano",
+    "SeriesName": "The Quintessential Quintuplets",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Kanae Kochou",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Shinobu Kochou",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Kanao Tsuyuri",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUTR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Kanzaki Aoi",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "UTR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Makima",
+    "SeriesName": "Chainsaw Man",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Marin Kitagawa",
+    "SeriesName": "My Dress-Up Darling",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Anya Forger",
+    "SeriesName": "Spy X Family",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Nezuko Kamado",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Nobara Kugisaki",
+    "SeriesName": "Jujutsu Kaisen",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Tatsumaki",
+    "SeriesName": "One Punch Man",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Tohru",
+    "SeriesName": "Miss Kobayashi's Dragon Maid",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Mikasa Ackerman",
+    "SeriesName": "Attack on Titan",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Boa Hancock",
+    "SeriesName": "One Piece",
+    "Rarity": "MR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Kaguya Shinomiya",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Chika Fujiwara",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Kei Shirogane",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Ai Hayasaka",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Miko Iino",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Tsubame Koyasu",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Sagiri Izumi",
+    "SeriesName": "Eromanga Sensei",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Tomoe Takasago",
+    "SeriesName": "Eromanga Sensei",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMP009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Muramasa Senju",
+    "SeriesName": "Eromanga Sensei",
+    "Rarity": "MP",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Hatsune Miku",
+    "SeriesName": "Vocaloid",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Boa Hancock",
+    "SeriesName": "One Piece",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Kurumi Tokisaki",
+    "SeriesName": "Date A Live",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Artoria Pendragon (Saber)",
+    "SeriesName": "Fate Grand Order",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Inori Yuzuriha",
+    "SeriesName": "Guilty Crown",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Luo Tianyi",
+    "SeriesName": "Vocaloid",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Asuka Shikinami Langley",
+    "SeriesName": "Eva",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Kaguya Shinomiya",
+    "SeriesName": "Kaguya-sama: Love is War",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSFSR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Asuna Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "FSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Asuna Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Asada Shino",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Alice Zuberg",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Asuka Shikinami Langley",
+    "SeriesName": "Eva",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Rei Ayanami",
+    "SeriesName": "Eva",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Mari Makinami Illustrious",
+    "SeriesName": "Eva",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Yor Forger",
+    "SeriesName": "Spy X Family",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Mai Sakurajima",
+    "SeriesName": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Utaha Kasumigaoka",
+    "SeriesName": "How to Raise a Boring Girlfriend",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR010",
+    "SetNumber": "NNS",
+    "CardNumber": "010",
+    "CharacterName": "Cinnabar",
+    "SeriesName": "Land of the Lustrous",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR011",
+    "SetNumber": "NNS",
+    "CardNumber": "011",
+    "CharacterName": "Phosphophyllite",
+    "SeriesName": "Land of the Lustrous",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR012",
+    "SetNumber": "NNS",
+    "CardNumber": "012",
+    "CharacterName": "Diamond",
+    "SeriesName": "Land of the Lustrous",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR013",
+    "SetNumber": "NNS",
+    "CardNumber": "013",
+    "CharacterName": "Hatsune Miku",
+    "SeriesName": "Vocaloid",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR014",
+    "SetNumber": "NNS",
+    "CardNumber": "014",
+    "CharacterName": "Kurumi Tokisaki",
+    "SeriesName": "Date A Live",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR015",
+    "SetNumber": "NNS",
+    "CardNumber": "015",
+    "CharacterName": "Haruhi Suzumiya",
+    "SeriesName": "The Melancholy of Haruhi Suzumiya",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR016",
+    "SetNumber": "NNS",
+    "CardNumber": "016",
+    "CharacterName": "Akane Shinjo",
+    "SeriesName": "SSSS. GRIDMAN",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR017",
+    "SetNumber": "NNS",
+    "CardNumber": "017",
+    "CharacterName": "Reze",
+    "SeriesName": "Chainsaw Man",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSZR018",
+    "SetNumber": "NNS",
+    "CardNumber": "018",
+    "CharacterName": "Mejiro McQueen",
+    "SeriesName": "Uma Musume Pretty Derby",
+    "Rarity": "ZR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Emilia",
+    "SeriesName": "Re:Zero",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Yukino Yukinoshita",
+    "SeriesName": "My Youth Romantic Comedy Is Wrong As I Expected",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Yui Yuigahama",
+    "SeriesName": "My Youth Romantic Comedy Is Wrong As I Expected",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Meiko Honma",
+    "SeriesName": "The Flower We Saw That Day",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Madoka Kaname",
+    "SeriesName": "Puella Magi Madoka Magica",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Sayaka Miki",
+    "SeriesName": "Puella Magi Madoka Magica",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Mami Tomoe",
+    "SeriesName": "Puella Magi Madoka Magica",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Kyoko Sakura",
+    "SeriesName": "Puella Magi Madoka Magica",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Homura Akemi",
+    "SeriesName": "Puella Magi Madoka Magica",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR010",
+    "SetNumber": "NNS",
+    "CardNumber": "010",
+    "CharacterName": "Umi Sonoda",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR011",
+    "SetNumber": "NNS",
+    "CardNumber": "011",
+    "CharacterName": "Nico Yazawa",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR012",
+    "SetNumber": "NNS",
+    "CardNumber": "012",
+    "CharacterName": "Nozomi Tojo",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR013",
+    "SetNumber": "NNS",
+    "CardNumber": "013",
+    "CharacterName": "Kotori Minami",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR014",
+    "SetNumber": "NNS",
+    "CardNumber": "014",
+    "CharacterName": "Honoka Kousaka",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR015",
+    "SetNumber": "NNS",
+    "CardNumber": "015",
+    "CharacterName": "Eli Ayase",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR016",
+    "SetNumber": "NNS",
+    "CardNumber": "016",
+    "CharacterName": "Rin Hoshizora",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR017",
+    "SetNumber": "NNS",
+    "CardNumber": "017",
+    "CharacterName": "Hanayo Koizumi",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR018",
+    "SetNumber": "NNS",
+    "CardNumber": "018",
+    "CharacterName": "Maki Nishikino",
+    "SeriesName": "Love Live!",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR019",
+    "SetNumber": "NNS",
+    "CardNumber": "019",
+    "CharacterName": "Fujiwara no Mokou",
+    "SeriesName": "Touhou Project",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR020",
+    "SetNumber": "NNS",
+    "CardNumber": "020",
+    "CharacterName": "Kaguya Houraisan",
+    "SeriesName": "Touhou Project",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR021",
+    "SetNumber": "NNS",
+    "CardNumber": "021",
+    "CharacterName": "Alice Zuberg",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR022",
+    "SetNumber": "NNS",
+    "CardNumber": "022",
+    "CharacterName": "Shino Asada",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR023",
+    "SetNumber": "NNS",
+    "CardNumber": "023",
+    "CharacterName": "Konno Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR024",
+    "SetNumber": "NNS",
+    "CardNumber": "024",
+    "CharacterName": "Asuna Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR025",
+    "SetNumber": "NNS",
+    "CardNumber": "025",
+    "CharacterName": "Kurisu Makise",
+    "SeriesName": "Steins; Gate",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR026",
+    "SetNumber": "NNS",
+    "CardNumber": "026",
+    "CharacterName": "Chino Kafuu",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSUR027",
+    "SetNumber": "NNS",
+    "CardNumber": "027",
+    "CharacterName": "Tohka Yatogami",
+    "SeriesName": "Date A Live",
+    "Rarity": "UR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Chika Takami",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "You Watanabe",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Hanamaru Kunikida",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Dia Kurosawa",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Ruby Kurosawa",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Yoshiko Tsushima",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Kanan Matsuura",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Mari Ohara",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Riko Sakurauchi",
+    "SeriesName": "Love Live!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR010",
+    "SetNumber": "NNS",
+    "CardNumber": "010",
+    "CharacterName": "Nico Robin",
+    "SeriesName": "One Piece",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR011",
+    "SetNumber": "NNS",
+    "CardNumber": "011",
+    "CharacterName": "Megumi Kato",
+    "SeriesName": "How to Raise a Boring Girlfriend",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR012",
+    "SetNumber": "NNS",
+    "CardNumber": "012",
+    "CharacterName": "Eriri Spencer Sawamura",
+    "SeriesName": "How to Raise a Boring Girlfriend",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR013",
+    "SetNumber": "NNS",
+    "CardNumber": "013",
+    "CharacterName": "Utaha Kasumigaoka",
+    "SeriesName": "How to Raise a Boring Girlfriend",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR014",
+    "SetNumber": "NNS",
+    "CardNumber": "014",
+    "CharacterName": "Yoshino Himekawa",
+    "SeriesName": "Date A Live",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR015",
+    "SetNumber": "NNS",
+    "CardNumber": "015",
+    "CharacterName": "Kurumi Tokisaki",
+    "SeriesName": "Date A Live",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR016",
+    "SetNumber": "NNS",
+    "CardNumber": "016",
+    "CharacterName": "Mio Takamiya",
+    "SeriesName": "Date A Live",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR017",
+    "SetNumber": "NNS",
+    "CardNumber": "017",
+    "CharacterName": "Origami Tobiichi",
+    "SeriesName": "Date A Live",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR018",
+    "SetNumber": "NNS",
+    "CardNumber": "018",
+    "CharacterName": "Mio Akiyama",
+    "SeriesName": "K-On!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR019",
+    "SetNumber": "NNS",
+    "CardNumber": "019",
+    "CharacterName": "Azusa Nakano",
+    "SeriesName": "K-On!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR020",
+    "SetNumber": "NNS",
+    "CardNumber": "020",
+    "CharacterName": "Yui Hirasawa",
+    "SeriesName": "K-On!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR021",
+    "SetNumber": "NNS",
+    "CardNumber": "021",
+    "CharacterName": "Ritsu Tainaka",
+    "SeriesName": "K-On!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR022",
+    "SetNumber": "NNS",
+    "CardNumber": "022",
+    "CharacterName": "Tsumugi Kotobuki",
+    "SeriesName": "K-On!",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR023",
+    "SetNumber": "NNS",
+    "CardNumber": "023",
+    "CharacterName": "Sakura Haruno",
+    "SeriesName": "Naruto",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR024",
+    "SetNumber": "NNS",
+    "CardNumber": "024",
+    "CharacterName": "Kaori Miyazono",
+    "SeriesName": "Your Lie in April",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR025",
+    "SetNumber": "NNS",
+    "CardNumber": "025",
+    "CharacterName": "Sanae Kochiya",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR026",
+    "SetNumber": "NNS",
+    "CardNumber": "026",
+    "CharacterName": "Youmu Konpaku",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR027",
+    "SetNumber": "NNS",
+    "CardNumber": "027",
+    "CharacterName": "Reisen Udongein Inaba",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR028",
+    "SetNumber": "NNS",
+    "CardNumber": "028",
+    "CharacterName": "Cirno",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR029",
+    "SetNumber": "NNS",
+    "CardNumber": "029",
+    "CharacterName": "Aya Shameimaru",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR030",
+    "SetNumber": "NNS",
+    "CardNumber": "030",
+    "CharacterName": "Sakuya Izayoi",
+    "SeriesName": "Touhou Project",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR031",
+    "SetNumber": "NNS",
+    "CardNumber": "031",
+    "CharacterName": "Cocoa Hoto",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR032",
+    "SetNumber": "NNS",
+    "CardNumber": "032",
+    "CharacterName": "Rize Tedeza",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR033",
+    "SetNumber": "NNS",
+    "CardNumber": "033",
+    "CharacterName": "Sylphynford Tachibana",
+    "SeriesName": "Himouto! Umaru-chan",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR034",
+    "SetNumber": "NNS",
+    "CardNumber": "034",
+    "CharacterName": "Lala Satalin Deviluke",
+    "SeriesName": "To LOVE-Ru",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR035",
+    "SetNumber": "NNS",
+    "CardNumber": "035",
+    "CharacterName": "Nao Tomori",
+    "SeriesName": "Charlotte",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSSSR036",
+    "SetNumber": "NNS",
+    "CardNumber": "036",
+    "CharacterName": "Chiyo Sakura",
+    "SeriesName": "Monthly Girl's Nozaki-kun",
+    "Rarity": "SSR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Misaka Mikoto",
+    "SeriesName": "Toaru Kagaku no Railgun",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Misaka Mikoto",
+    "SeriesName": "Toaru Kagaku no Railgun",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Misaka Mikoto",
+    "SeriesName": "Toaru Kagaku no Railgun",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Asuna Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Asuna Yuuki",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Shino Asada",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Alice Zuberg",
+    "SeriesName": "Sword Art Online",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Artoria Pendragon (Saber)",
+    "SeriesName": "Fate/Zero",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Shiro",
+    "SeriesName": "No Game No Life",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR010",
+    "SetNumber": "NNS",
+    "CardNumber": "010",
+    "CharacterName": "Honoka Kousaka",
+    "SeriesName": "Love Live!",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR011",
+    "SetNumber": "NNS",
+    "CardNumber": "011",
+    "CharacterName": "Chika Takami",
+    "SeriesName": "Love Live!",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR012",
+    "SetNumber": "NNS",
+    "CardNumber": "012",
+    "CharacterName": "Yuu Takasaki",
+    "SeriesName": "Love Live!",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR013",
+    "SetNumber": "NNS",
+    "CardNumber": "013",
+    "CharacterName": "Meiko Honma",
+    "SeriesName": "The Flower We Saw That Day",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR014",
+    "SetNumber": "NNS",
+    "CardNumber": "014",
+    "CharacterName": "Cocoa Hoto",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR015",
+    "SetNumber": "NNS",
+    "CardNumber": "015",
+    "CharacterName": "Kaori Miyazono",
+    "SeriesName": "Your Lie in April",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR016",
+    "SetNumber": "NNS",
+    "CardNumber": "016",
+    "CharacterName": "Megumi Kato",
+    "SeriesName": "How to Raise a Boring Girlfriend",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR017",
+    "SetNumber": "NNS",
+    "CardNumber": "017",
+    "CharacterName": "Kurisu Makise",
+    "SeriesName": "Steins; Gate",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR018",
+    "SetNumber": "NNS",
+    "CardNumber": "018",
+    "CharacterName": "Yui Hirasawa",
+    "SeriesName": "K-On!",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR019",
+    "SetNumber": "NNS",
+    "CardNumber": "019",
+    "CharacterName": "Mitsuha Miyamizu",
+    "SeriesName": "Your Name",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR020",
+    "SetNumber": "NNS",
+    "CardNumber": "020",
+    "CharacterName": "Hina Amano",
+    "SeriesName": "Weathering with You",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR021",
+    "SetNumber": "NNS",
+    "CardNumber": "021",
+    "CharacterName": "Iwato Suzume",
+    "SeriesName": "Suzume No Tojimari",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR022",
+    "SetNumber": "NNS",
+    "CardNumber": "022",
+    "CharacterName": "Emilia",
+    "SeriesName": "Re:Zero",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR023",
+    "SetNumber": "NNS",
+    "CardNumber": "023",
+    "CharacterName": "Nao Tomori",
+    "SeriesName": "Charlotte",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR024",
+    "SetNumber": "NNS",
+    "CardNumber": "024",
+    "CharacterName": "Sagiri Izumi",
+    "SeriesName": "Eromanga Sensei",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR025",
+    "SetNumber": "NNS",
+    "CardNumber": "025",
+    "CharacterName": "Ginko Sora",
+    "SeriesName": "The Ryuo's Work is Never Done",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR026",
+    "SetNumber": "NNS",
+    "CardNumber": "026",
+    "CharacterName": "Zero Two",
+    "SeriesName": "Darling in the Franxx",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR027",
+    "SetNumber": "NNS",
+    "CardNumber": "027",
+    "CharacterName": "Mai Sakurajima",
+    "SeriesName": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR028",
+    "SetNumber": "NNS",
+    "CardNumber": "028",
+    "CharacterName": "Nezuko Kamado",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR029",
+    "SetNumber": "NNS",
+    "CardNumber": "029",
+    "CharacterName": "Nobara Kugisaki",
+    "SeriesName": "Jujutsu Kaisen",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR030",
+    "SetNumber": "NNS",
+    "CardNumber": "030",
+    "CharacterName": "Rimuru Tempest",
+    "SeriesName": "That Time I Got Reincarnated as a Slime",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR031",
+    "SetNumber": "NNS",
+    "CardNumber": "031",
+    "CharacterName": "Shouko Komi",
+    "SeriesName": "Komi Can't Communicate",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR032",
+    "SetNumber": "NNS",
+    "CardNumber": "032",
+    "CharacterName": "Marin Kitagawa",
+    "SeriesName": "My Dress-Up Darling",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR033",
+    "SetNumber": "NNS",
+    "CardNumber": "033",
+    "CharacterName": "Lucy",
+    "SeriesName": "Cyberpunk Edgerunners",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR034",
+    "SetNumber": "NNS",
+    "CardNumber": "034",
+    "CharacterName": "Mercury Suletta",
+    "SeriesName": "Mobile Suit Gundam: The Witch from Mercury",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR035",
+    "SetNumber": "NNS",
+    "CardNumber": "035",
+    "CharacterName": "Kanade",
+    "SeriesName": "The Beast Tamer Who Got Kicked Out From His Party Meets a Cat Girl From the Superior Race",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSAR036",
+    "SetNumber": "NNS",
+    "CardNumber": "036",
+    "CharacterName": "Anya Forger",
+    "SeriesName": "Spy X Family",
+    "Rarity": "AR",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC001",
+    "SetNumber": "NNS",
+    "CardNumber": "001",
+    "CharacterName": "Rem",
+    "SeriesName": "Re:Zero",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC002",
+    "SetNumber": "NNS",
+    "CardNumber": "002",
+    "CharacterName": "Kurumi Tokisaki",
+    "SeriesName": "Date A Live",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC003",
+    "SetNumber": "NNS",
+    "CardNumber": "003",
+    "CharacterName": "Sakura Haruno",
+    "SeriesName": "Naruto",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC004",
+    "SetNumber": "NNS",
+    "CardNumber": "004",
+    "CharacterName": "Isuzu Sento",
+    "SeriesName": "Amagi Brilliant Park",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC005",
+    "SetNumber": "NNS",
+    "CardNumber": "005",
+    "CharacterName": "Nezuko Kamado",
+    "SeriesName": "Demon Slayer",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC006",
+    "SetNumber": "NNS",
+    "CardNumber": "006",
+    "CharacterName": "Shana",
+    "SeriesName": "Shakugan no Shana",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC007",
+    "SetNumber": "NNS",
+    "CardNumber": "007",
+    "CharacterName": "Chiyo Sakura",
+    "SeriesName": "Monthly Girl's Nozaki-kun",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC008",
+    "SetNumber": "NNS",
+    "CardNumber": "008",
+    "CharacterName": "Kotori Minami",
+    "SeriesName": "Love Live!",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC009",
+    "SetNumber": "NNS",
+    "CardNumber": "009",
+    "CharacterName": "Nozomi Tojo",
+    "SeriesName": "Love Live!",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC010",
+    "SetNumber": "NNS",
+    "CardNumber": "010",
+    "CharacterName": "Kizuna Ai",
+    "SeriesName": "V-Tuber",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC011",
+    "SetNumber": "NNS",
+    "CardNumber": "011",
+    "CharacterName": "Hatsune Miku",
+    "SeriesName": "Vocaloid",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC012",
+    "SetNumber": "NNS",
+    "CardNumber": "012",
+    "CharacterName": "Kagamine Rin",
+    "SeriesName": "Vocaloid",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC013",
+    "SetNumber": "NNS",
+    "CardNumber": "013",
+    "CharacterName": "Mona",
+    "SeriesName": "Genshin Impact",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC014",
+    "SetNumber": "NNS",
+    "CardNumber": "014",
+    "CharacterName": "Lumine",
+    "SeriesName": "Genshin Impact",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC015",
+    "SetNumber": "NNS",
+    "CardNumber": "015",
+    "CharacterName": "Dark Magician Girl",
+    "SeriesName": "Yu-Gi-Oh!",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC016",
+    "SetNumber": "NNS",
+    "CardNumber": "016",
+    "CharacterName": "Cocoa Hoto",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC017",
+    "SetNumber": "NNS",
+    "CardNumber": "017",
+    "CharacterName": "Chino Kafuu",
+    "SeriesName": "Is the Order a Rabbit?",
+    "Rarity": "MC",
+    "ImageUrl": ""
+  },
+  {
+    "Code": "NNSMC018",
+    "SetNumber": "NNS",
+    "CardNumber": "018",
+    "CharacterName": "Lewis Gun",
+    "SeriesName": "Girls' Frontline",
+    "Rarity": "MC",
     "ImageUrl": ""
   }
 ]
