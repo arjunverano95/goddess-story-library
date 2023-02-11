@@ -14,7 +14,11 @@ const Drawer = createDrawerNavigator<NavigationParamList>();
 
 export const DrawerNavigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      documentTitle={{
+        formatter: () => `Goddess Story Library`,
+      }}
+    >
       <Drawer.Navigator
         initialRouteName={initialRoute}
         screenOptions={{
