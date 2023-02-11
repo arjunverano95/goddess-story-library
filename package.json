@@ -17,7 +17,8 @@
     "web": "expo start --web",
     "format": "npx prettier --write .",
     "lint": "eslint --ext .tsx --ext .ts src/",
-    "build:android": "eas build -p android"
+    "build:android": "eas build -p android",
+    "build:web": "npx expo export:web"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.2",
