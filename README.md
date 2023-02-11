@@ -30,6 +30,8 @@ Android - [Google Drive](https://drive.google.com/file/d/1jSvF128oKd4pizkIhjIpiZ
 
 IOS -
 
+WEB - [Link](https://arjunverano95.github.io/goddess-story-library)
+
 ## Asset Sources
 
 [Waifu Card Community | Discord](https://discord.gg/waifucard)
