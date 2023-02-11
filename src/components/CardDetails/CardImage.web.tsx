@@ -1,6 +1,5 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import WebView from 'react-native-webview';
 
 import {Colors} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
@@ -27,11 +26,9 @@ const CardImage = (props: CardImageProps) => {
   else
     return (
       <>
-        <WebView
+        <iframe
           style={styles.imageWebview}
-          source={{
-            uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
-          }}
+          src={`http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`}
         />
       </>
     );
@@ -48,6 +45,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: null,
   },
-  imageWebview: {flex: 1, margin: 20, backgroundColor: Colors.white},
+  imageWebview: {
+    flex: 1,
+    margin: 20,
+    backgroundColor: Colors.white,
+    borderWidth: 0,
+  },
 });
 export default CardImage;
