@@ -1,0 +1,39 @@
+{
+  "background_color": "#f2a4a8",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Goddess Story Library",
+  "short_name": "Goddess Story Library",
+  "start_url": "/?utm_source=web_app_manifest",
+  "theme_color": "#f2a4a8",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.arjunverano95.goddess-story-library"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.arjunverano95.goddess_story_library",
+      "id": "com.arjunverano95.goddess_story_library"
+    }
+  ],
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "\\goddess-story-library\\pwa\\chrome-icon\\chrome-icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "\\goddess-story-library\\pwa\\chrome-icon\\chrome-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "\\goddess-story-library\\pwa\\chrome-icon\\chrome-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

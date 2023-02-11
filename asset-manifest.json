@@ -1,0 +1,40 @@
+{
+  "files": {
+    "app.js": "/goddess-story-library/static/js/app.8a03ee7c.chunk.js",
+    "app.js.map": "/goddess-story-library/static/js/app.8a03ee7c.chunk.js.map",
+    "runtime~app.js": "/goddess-story-library/static/js/runtime~app.964532c9.js",
+    "runtime~app.js.map": "/goddess-story-library/static/js/runtime~app.964532c9.js.map",
+    "static/js/2.61360299.chunk.js": "/goddess-story-library/static/js/2.61360299.chunk.js",
+    "static/js/2.61360299.chunk.js.map": "/goddess-story-library/static/js/2.61360299.chunk.js.map",
+    "fonts/AntDesign.ttf": "/goddess-story-library/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/goddess-story-library/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/goddess-story-library/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/goddess-story-library/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/goddess-story-library/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/goddess-story-library/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/goddess-story-library/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/goddess-story-library/./fonts/Foundation.ttf",
+    "fonts/Ionicons.ttf": "/goddess-story-library/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/goddess-story-library/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/goddess-story-library/./fonts/MaterialIcons.ttf",
+    "fonts/SimpleLineIcons.ttf": "/goddess-story-library/./fonts/SimpleLineIcons.ttf",
+    "favicon-16.png": "/goddess-story-library/favicon-16.png",
+    "favicon-32.png": "/goddess-story-library/favicon-32.png",
+    "favicon.ico": "/goddess-story-library/favicon.ico",
+    "index.html": "/goddess-story-library/index.html",
+    "manifest.json": "/goddess-story-library/manifest.json",
+    "serve.json": "/goddess-story-library/serve.json",
+    "static/js/2.61360299.chunk.js.LICENSE.txt": "/goddess-story-library/static/js/2.61360299.chunk.js.LICENSE.txt",
+    "static/media/bell.png": "/goddess-story-library/static/media/bell.cf04af27.png",
+    "static/media/cover.png": "/goddess-story-library/static/media/cover.68176387.png",
+    "static/media/heart.png": "/goddess-story-library/static/media/heart.23b5c2c0.png",
+    "static/media/no-image.png": "/goddess-story-library/static/media/no-image.54669752.png",
+    "static/media/rocket.png": "/goddess-story-library/static/media/rocket.d2f3bf41.png",
+    "static/media/star.png": "/goddess-story-library/static/media/star.69c71386.png"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.964532c9.js",
+    "static/js/2.61360299.chunk.js",
+    "static/js/app.8a03ee7c.chunk.js"
+  ]
+}
