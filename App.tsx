@@ -8,6 +8,7 @@ import {createTheme, ThemeProvider} from '@rneui/themed';
 import {Colors, LightColors} from './src/app/constants';
 import {DrawerNavigation} from './src/components/Navigation';
 import RequireInternet from './src/components/RequireInternet';
+import Wrapper from './src/components/Wrapper';
 
 const theme = createTheme({
   lightColors: LightColors,
@@ -37,8 +38,10 @@ const App = () => {
       ></StatusBar>
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
-          <DrawerNavigation />
-          <RequireInternet />
+          <Wrapper>
+            <DrawerNavigation />
+            <RequireInternet />
+          </Wrapper>
         </ThemeProvider>
       </SafeAreaProvider>
     </>

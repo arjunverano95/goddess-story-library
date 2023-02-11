@@ -12,4 +12,5 @@ export const Icons = {
   sort_asc: 'sort-alphabetical-ascending',
   sort_desc: 'sort-alphabetical-descending',
   no_internet: 'access-point-remove',
+  download: 'cloud-download-outline',
 };
