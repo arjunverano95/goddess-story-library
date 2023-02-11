@@ -32,7 +32,7 @@ const CardImage = (props: CardImageProps) => {
         <WebView
           style={styles.imageWebview}
           source={{
-            uri: `http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
+            uri: `https://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`,
           }}
         />
       </>

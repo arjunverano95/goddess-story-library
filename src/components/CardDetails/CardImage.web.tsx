@@ -28,7 +28,7 @@ const CardImage = (props: CardImageProps) => {
       <>
         <iframe
           style={styles.imageWebview}
-          src={`http://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`}
+          src={`https://images.google.com/images?q=${data.SeriesName} ${data.CharacterName}`}
         />
       </>
     );
