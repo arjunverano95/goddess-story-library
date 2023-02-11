@@ -1,7 +1,7 @@
-import SetList from '../../views/SetList';
-import VoiceSearch from '../../views/VoiceSearch';
-import {Icons} from '../constants';
-import {NavigationParamList, ScreenProps} from './props';
+import SetList from '../../../views/SetList';
+import VoiceSearch from '../../../views/VoiceSearch';
+import {Icons} from '../../constants';
+import {NavigationParamList, ScreenProps} from '../types';
 
 interface Routes {
   name: keyof NavigationParamList;
@@ -10,7 +10,7 @@ interface Routes {
   component: (props: ScreenProps<keyof NavigationParamList>) => JSX.Element;
 }
 
-export const Routes: Routes[] = [
+const Routes: Routes[] = [
   {
     name: 'SetList',
     label: 'Goddess Story',
@@ -25,3 +25,4 @@ export const Routes: Routes[] = [
   },
 ];
 export const initialRoute: keyof NavigationParamList = 'SetList';
+export default Routes;

@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/drawer';
 import {Icon} from '@rneui/themed';
 
-import {Routes} from '../../../app/navigation';
+import Routes from '../../../app/navigation/routes';
 
 const DrawerContent = (props: DrawerContentComponentProps) => {
   const {navigation} = props;

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {ScreenProps} from '../app/navigation';
+import {ScreenProps} from '../app/navigation/types';
 import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
 import {GoddessStory} from '../models/GoddessStory';

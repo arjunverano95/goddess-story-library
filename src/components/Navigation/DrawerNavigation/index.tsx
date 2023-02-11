@@ -3,11 +3,8 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {
-  initialRoute,
-  NavigationParamList,
-  Routes,
-} from '../../../app/navigation';
+import Routes, {initialRoute} from '../../../app/navigation/routes';
+import {NavigationParamList} from '../../../app/navigation/types';
 import DrawerContent from './DrawerContent';
 
 const Drawer = createDrawerNavigator<NavigationParamList>();
