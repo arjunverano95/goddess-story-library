@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, useWindowDimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {FlashList} from '@shopify/flash-list';
@@ -18,10 +18,22 @@ interface GalleryProps {
 
 export const Gallery = (props: GalleryProps) => {
   const {data} = useGSL();
+  const {width} = useWindowDimensions();
   const {filter, sort} = props;
   const [galleryData, setGalleryData] = useState<GoddessStory[]>([]);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const selectedCard = useRef<GoddessStory>(undefined);
+  let galleryColNo = 2;
+
+  if (width < 576) {
+    galleryColNo = 2;
+  } else if (width >= 576 && width < 768) {
+    galleryColNo = 3;
+  } else if (width >= 768 && width < 992) {
+    galleryColNo = 5;
+  } else {
+    galleryColNo = 6;
+  }
 
   const toggleOverlay = () => {
     setIsOverlayVisible(!isOverlayVisible);
@@ -75,7 +87,7 @@ export const Gallery = (props: GalleryProps) => {
       <SafeAreaView style={styles.galleryContainer}>
         <FlashList
           data={galleryData}
-          numColumns={2}
+          numColumns={galleryColNo}
           keyExtractor={(item) => item.Code}
           estimatedItemSize={248}
           renderItem={({item}) => (

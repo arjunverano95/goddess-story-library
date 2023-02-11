@@ -125,6 +125,11 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.transparent,
     borderTopColor: Colors.transparent,
   },
+  searchBarInputContainer: {
+    backgroundColor: Colors.transparent,
+    borderBottomColor: Colors.transparent,
+    borderTopColor: Colors.transparent,
+  },
   selectListItem: {
     paddingVertical: 5,
   },

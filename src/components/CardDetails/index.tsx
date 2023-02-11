@@ -18,36 +18,43 @@ const CardDetails = (props: CardDetailsProps) => {
 
   return (
     <>
-      <Card containerStyle={styles.cardContainer}>
-        <View style={styles.cardTitleContainer}>
-          <Badge
-            badgeStyle={styles.rarityBadge}
-            textStyle={styles.raritytext}
-            value={data.Rarity}
-            status="warning"
-          />
-          <Card.Title
-            style={styles.cardTitle}
-          >{`${data.CharacterName}`}</Card.Title>
-          <Card.Title style={styles.cardSubTitle}>{data.SetNumber}</Card.Title>
-        </View>
-        <Card.Divider />
-        <View>
-          <Text>{`Series: ${data.SeriesName}`}</Text>
-          <Text>{`ID: ${data.SetNumber}-${data.CardNumber}`}</Text>
-          {/* <Text>{`Character Name: ${data.CharacterName}`}</Text> */}
-          {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
-        </View>
-      </Card>
-
+      <View style={styles.container}>
+        <Card containerStyle={styles.cardContainer}>
+          <View style={styles.cardTitleContainer}>
+            <Badge
+              badgeStyle={styles.rarityBadge}
+              textStyle={styles.raritytext}
+              value={data.Rarity}
+              status="warning"
+            />
+            <Card.Title
+              style={styles.cardTitle}
+            >{`${data.CharacterName}`}</Card.Title>
+            <Card.Title style={styles.cardSubTitle}>
+              {data.SetNumber}
+            </Card.Title>
+          </View>
+          <Card.Divider />
+          <View>
+            <Text>{`Series: ${data.SeriesName}`}</Text>
+            <Text>{`ID: ${data.SetNumber}-${data.CardNumber}`}</Text>
+            {/* <Text>{`Character Name: ${data.CharacterName}`}</Text> */}
+            {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
+          </View>
+        </Card>
+      </View>
       <CardImage data={data} />
     </>
   );
 };
 const styles = StyleSheet.create({
+  container: {alignItems: 'center', paddingHorizontal: 10},
   cardContainer: {
     borderWidth: 0,
     backgroundColor: Colors.white,
+    marginTop: 10,
+    width: '100%',
+    maxWidth: 576,
   },
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {

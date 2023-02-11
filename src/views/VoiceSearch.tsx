@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {ScreenProps} from '../app/navigation';
+import {ScreenProps} from '../app/navigation/types';
 import CardDetails from '../components/CardDetails';
 import Header from '../components/Header';
 import {SearchBar} from '../components/VoiceSearch';
