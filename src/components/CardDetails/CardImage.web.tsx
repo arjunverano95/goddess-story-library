@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
 import {Colors} from '../../app/constants';
@@ -23,15 +23,25 @@ const CardImage = (props: CardImageProps) => {
         />
       </View>
     );
-  else
+  else {
+    useEffect(() => {
+      history.pushState(
+        null,
+        '',
+        `#gsc.tab=1&gsc.q=${data.SeriesName} ${data.CharacterName}`,
+      );
+      const script = document.createElement('script');
+      document.head.append(script);
+      script.src = `https://cse.google.com/cse.js?cx=64bb5bd8971ac4f24`;
+    }, []);
     return (
       <>
-        <iframe
-          style={styles.imageWebview}
-          src={`https://cse.google.com/cse?cx=64bb5bd8971ac4f24#gsc.tab=1&gsc.q=${data.SeriesName} ${data.CharacterName}`}
-        />
+        <View style={styles.imageWebview}>
+          <div className="gcse-searchresults-only"></div>
+        </View>
       </>
     );
+  }
 };
 const styles = StyleSheet.create({
   imageContainer: {
@@ -50,6 +60,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: Colors.white,
     borderWidth: 0,
+    overflowY: 'auto',
   },
 });
 export default CardImage;
