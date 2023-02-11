@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/goddess-story-library/static/js/app.474e12ee.chunk.js",
-    "app.js.map": "/goddess-story-library/static/js/app.474e12ee.chunk.js.map",
+    "app.js": "/goddess-story-library/static/js/app.7011dd2f.chunk.js",
+    "app.js.map": "/goddess-story-library/static/js/app.7011dd2f.chunk.js.map",
     "runtime~app.js": "/goddess-story-library/static/js/runtime~app.964532c9.js",
     "runtime~app.js.map": "/goddess-story-library/static/js/runtime~app.964532c9.js.map",
     "static/js/2.61360299.chunk.js": "/goddess-story-library/static/js/2.61360299.chunk.js",
@@ -35,6 +35,6 @@
   "entrypoints": [
     "static/js/runtime~app.964532c9.js",
     "static/js/2.61360299.chunk.js",
-    "static/js/app.474e12ee.chunk.js"
+    "static/js/app.7011dd2f.chunk.js"
   ]
 }
