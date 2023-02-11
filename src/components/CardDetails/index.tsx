@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 
 import {Badge, Card, Text} from '@rneui/themed';
 
-import {Colors} from '../../app/constants';
+import {Colors, Sizes} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
 import CardImage from './CardImage';
 
@@ -42,19 +42,21 @@ const CardDetails = (props: CardDetailsProps) => {
             {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
           </View>
         </Card>
+        <View style={styles.imageContainer}>
+          <CardImage data={data} />
+        </View>
       </View>
-      <CardImage data={data} />
     </>
   );
 };
 const styles = StyleSheet.create({
-  container: {alignItems: 'center', paddingHorizontal: 10},
+  container: {alignItems: 'center', paddingHorizontal: 10, flex: 1},
   cardContainer: {
     borderWidth: 0,
     backgroundColor: Colors.white,
     marginTop: 10,
     width: '100%',
-    maxWidth: 576,
+    maxWidth: Sizes.sm,
   },
   cardTitleContainer: {flexDirection: 'row'},
   rarityBadge: {
@@ -66,5 +68,10 @@ const styles = StyleSheet.create({
   raritytext: {fontWeight: 'bold'}, // alignSelf: 'flex-start'}
   cardTitle: {flex: 1, textAlign: 'left'},
   cardSubTitle: {fontWeight: 'normal'},
+  imageContainer: {
+    width: '100%',
+    maxWidth: Sizes.sm,
+    flex: 1,
+  },
 });
 export default CardDetails;
