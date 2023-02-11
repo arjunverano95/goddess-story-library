@@ -3,7 +3,7 @@ import {StyleSheet, useWindowDimensions, View} from 'react-native';
 
 import {Button, Icon, Text} from '@rneui/themed';
 
-import {Colors, Icons} from '../app/constants';
+import {Colors, Icons, Sizes} from '../app/constants';
 import {isMobileWebBrowser} from '../app/utils/isMobileWebBrowser';
 
 interface WrapperProps {
@@ -12,7 +12,7 @@ interface WrapperProps {
 const Wrapper = ({children}: WrapperProps) => {
   const {width} = useWindowDimensions();
 
-  if (isMobileWebBrowser() || width <= 576) {
+  if (isMobileWebBrowser() || width <= Sizes.sm) {
     return <>{children}</>;
   }
   // if (isMobileWebBrowser()) return children;
