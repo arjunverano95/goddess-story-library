@@ -12,8 +12,6 @@ A simple and easy to use viewer and library of Goddess story cards.
 
 More features will be added soon! ✨
 
-<sub><sup>\* NS-10-M04 is still being updated</sup></sub>
-
 ## Usage
 
 ### Voice Search Formats 🔊
