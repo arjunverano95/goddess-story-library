@@ -22,7 +22,6 @@ const CardImage = (props: CardImageProps) => {
             uri: data.ImageUrl,
             priority: FastImage.priority.normal,
           }}
-          // defaultSource={require('../../../assets/no-image.png')}
           resizeMode={FastImage.resizeMode.contain}
         />
       </View>
@@ -31,6 +30,7 @@ const CardImage = (props: CardImageProps) => {
     return (
       <>
         <WebView
+          injectedJavaScript={`document.querySelectorAll('.gsc-positioningWrapper').forEach(el=> el.style.display = 'none')`}
           style={styles.imageWebview}
           source={{
             uri: `${GSLBaseUrl}/cse.html#gsc.tab=1&gsc.q=${data.SeriesName} ${data.CharacterName}`,

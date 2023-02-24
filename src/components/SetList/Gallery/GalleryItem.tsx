@@ -1,11 +1,11 @@
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import FastImage from 'react-native-fast-image';
 
 import {Badge, Card, Text} from '@rneui/themed';
 
 import {Colors} from '../../../app/constants';
 import {GoddessStory} from '../../../models/GoddessStory';
+import GalleryImage from './GalleryImage';
 
 interface GalleryItemProps {
   data: GoddessStory;
@@ -35,19 +35,7 @@ const GalleryItem = (props: GalleryItemProps) => {
             value={data.CardNumber}
             status="success"
           />
-          <FastImage
-            style={styles.image}
-            // defaultSource={require('../../../../assets/no-image.png')}
-            source={
-              !data.ImageUrl
-                ? require('../../../../assets/no-image.png')
-                : {
-                    uri: data.ImageUrl,
-                    priority: FastImage.priority.normal,
-                  }
-            }
-            resizeMode={FastImage.resizeMode.cover}
-          />
+          <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
         </View>
         <View style={styles.cardFooter}>
           <View style={styles.cardTitleContainer}>
