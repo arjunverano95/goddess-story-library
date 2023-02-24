@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet, useWindowDimensions} from 'react-native';
+import {Platform, StyleSheet, useWindowDimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {FlashList} from '@shopify/flash-list';
@@ -111,7 +111,7 @@ export const Gallery = (props: GalleryProps) => {
 const styles = StyleSheet.create({
   galleryContainer: {
     flex: 1,
-    paddingBottom: 10,
+    paddingBottom: Platform.select({web: 0, native: 10}),
     backgroundColor: Colors.background,
   },
 });
