@@ -22,7 +22,7 @@ const CardImage = (props: CardImageProps) => {
             uri: data.ImageUrl,
             priority: FastImage.priority.normal,
           }}
-          defaultSource={require('../../../assets/no-image.png')}
+          // defaultSource={require('../../../assets/no-image.png')}
           resizeMode={FastImage.resizeMode.contain}
         />
       </View>

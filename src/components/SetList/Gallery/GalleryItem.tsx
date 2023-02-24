@@ -37,7 +37,7 @@ const GalleryItem = (props: GalleryItemProps) => {
           />
           <FastImage
             style={styles.image}
-            defaultSource={require('../../../../assets/no-image.png')}
+            // defaultSource={require('../../../../assets/no-image.png')}
             source={
               !data.ImageUrl
                 ? require('../../../../assets/no-image.png')
