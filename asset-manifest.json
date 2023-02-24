@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/goddess-story-library/static/js/app.aa0885f7.chunk.js",
-    "app.js.map": "/goddess-story-library/static/js/app.aa0885f7.chunk.js.map",
+    "app.js": "/goddess-story-library/static/js/app.f5798da2.chunk.js",
+    "app.js.map": "/goddess-story-library/static/js/app.f5798da2.chunk.js.map",
     "runtime~app.js": "/goddess-story-library/static/js/runtime~app.964532c9.js",
     "runtime~app.js.map": "/goddess-story-library/static/js/runtime~app.964532c9.js.map",
-    "static/js/2.61360299.chunk.js": "/goddess-story-library/static/js/2.61360299.chunk.js",
-    "static/js/2.61360299.chunk.js.map": "/goddess-story-library/static/js/2.61360299.chunk.js.map",
+    "static/js/2.6640c83d.chunk.js": "/goddess-story-library/static/js/2.6640c83d.chunk.js",
+    "static/js/2.6640c83d.chunk.js.map": "/goddess-story-library/static/js/2.6640c83d.chunk.js.map",
     "fonts/AntDesign.ttf": "/goddess-story-library/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/goddess-story-library/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/goddess-story-library/./fonts/Feather.ttf",
@@ -26,7 +26,7 @@
     "index.html": "/goddess-story-library/index.html",
     "manifest.json": "/goddess-story-library/manifest.json",
     "serve.json": "/goddess-story-library/serve.json",
-    "static/js/2.61360299.chunk.js.LICENSE.txt": "/goddess-story-library/static/js/2.61360299.chunk.js.LICENSE.txt",
+    "static/js/2.6640c83d.chunk.js.LICENSE.txt": "/goddess-story-library/static/js/2.6640c83d.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/goddess-story-library/static/media/bell.cf04af27.png",
     "static/media/cover.png": "/goddess-story-library/static/media/cover.68176387.png",
     "static/media/heart.png": "/goddess-story-library/static/media/heart.23b5c2c0.png",
@@ -36,7 +36,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.964532c9.js",
-    "static/js/2.61360299.chunk.js",
-    "static/js/app.aa0885f7.chunk.js"
+    "static/js/2.6640c83d.chunk.js",
+    "static/js/app.f5798da2.chunk.js"
   ]
 }
