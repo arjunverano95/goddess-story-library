@@ -9,6 +9,5 @@
 /node_modules
 /package-lock.json
 /package.json
-/public
 /patches
-/web
+/web-build

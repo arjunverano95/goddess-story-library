@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import WebView from 'react-native-webview';
 
-import {Colors} from '../../app/constants';
+import {Colors, GSLBaseUrl} from '../../app/constants';
 import {GoddessStory} from '../../models/GoddessStory';
 
 interface CardImageProps {
@@ -22,6 +22,7 @@ const CardImage = (props: CardImageProps) => {
             uri: data.ImageUrl,
             priority: FastImage.priority.normal,
           }}
+          defaultSource={require('../../../assets/no-image.png')}
           resizeMode={FastImage.resizeMode.contain}
         />
       </View>
@@ -32,7 +33,7 @@ const CardImage = (props: CardImageProps) => {
         <WebView
           style={styles.imageWebview}
           source={{
-            uri: `https://cse.google.com/cse?cx=64bb5bd8971ac4f24#gsc.tab=1&gsc.q=${data.SeriesName} ${data.CharacterName}`,
+            uri: `${GSLBaseUrl}/cse.html#gsc.tab=1&gsc.q=${data.SeriesName} ${data.CharacterName}`,
           }}
         />
       </>
