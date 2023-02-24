@@ -33,6 +33,10 @@ const CardImage = (props: CardImageProps) => {
       const script = document.createElement('script');
       document.head.append(script);
       script.src = `https://cse.google.com/cse.js?cx=64bb5bd8971ac4f24`;
+
+      return () => {
+        script.remove();
+      };
     }, []);
     return (
       <>

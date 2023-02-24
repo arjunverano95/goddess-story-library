@@ -1,6 +1,8 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 
-axios.defaults.baseURL = 'https://arjunverano95.github.io';
+import {GSLBaseUrl} from '../constants';
+
+axios.defaults.baseURL = GSLBaseUrl;
 
 const responseBody = (response: AxiosResponse) => response.data;
 
