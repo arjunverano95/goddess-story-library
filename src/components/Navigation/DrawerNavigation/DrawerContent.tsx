@@ -1,18 +1,18 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 
 import {
   DrawerContentComponentProps,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {Icon} from '@rneui/themed';
+import {Icon, Text} from '@rneui/themed';
 
 import Routes from '../../../app/navigation/routes';
 
 const DrawerContent = (props: DrawerContentComponentProps) => {
   const {navigation} = props;
   return (
-    <>
+    <View style={{flex: 1}}>
       <View style={styles.drawerContentContainer}>
         <Image
           style={styles.drawerContentCoverImage}
@@ -29,7 +29,21 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
           }}
         />
       ))}
-    </>
+      <View style={styles.footer}>
+        <Pressable
+          onPress={() => {
+            Linking.openURL('https://discord.gg/waifucard');
+          }}
+        >
+          <Image
+            resizeMode={'contain'}
+            style={styles.discordButton}
+            source={require('../../../../assets/discord.png')}
+          />
+          <Text style={styles.discordText}>{'Waifu Card Community'}</Text>
+        </Pressable>
+      </View>
+    </View>
   );
 };
 const styles = StyleSheet.create({
@@ -44,5 +58,14 @@ const styles = StyleSheet.create({
     height: 250,
     width: '100%',
   },
+  buttonIcon: {
+    marginRight: 10,
+  },
+  footer: {flex: 1, padding: 15, justifyContent: 'flex-end'},
+  discordButton: {
+    height: 60,
+    width: 'auto',
+  },
+  discordText: {textAlign: 'center'},
 });
 export default DrawerContent;
