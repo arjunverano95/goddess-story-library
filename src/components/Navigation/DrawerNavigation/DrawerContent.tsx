@@ -31,17 +31,44 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
       ))}
       <View style={styles.footer}>
         <Pressable
+          style={styles.footerButton}
+          onPress={() => {
+            Linking.openURL('https://www.reddit.com/r/GoddessStoryTCG');
+          }}
+        >
+          <Image
+            resizeMode={'contain'}
+            style={styles.footerButtonImg}
+            source={require('../../../../assets/reddit.png')}
+          />
+        </Pressable>
+        <Pressable
+          style={styles.footerButton}
+          onPress={() => {
+            Linking.openURL(
+              'https://www.facebook.com/groups/goddessstoryandwaifucardnewsupdatesandcollections',
+            );
+          }}
+        >
+          <Image
+            resizeMode={'contain'}
+            style={styles.footerButtonImg}
+            source={require('../../../../assets/facebook.png')}
+          />
+        </Pressable>
+        <Pressable
+          style={styles.footerButton}
           onPress={() => {
             Linking.openURL('https://discord.gg/waifucard');
           }}
         >
           <Image
             resizeMode={'contain'}
-            style={styles.discordButton}
+            style={styles.footerButtonImg}
             source={require('../../../../assets/discord.png')}
           />
-          <Text style={styles.discordText}>{'Waifu Card Community'}</Text>
         </Pressable>
+        <Text style={styles.footerSubtitle}>{'Waifu Card Community'}</Text>
       </View>
     </View>
   );
@@ -62,10 +89,16 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   footer: {flex: 1, padding: 15, justifyContent: 'flex-end'},
-  discordButton: {
-    height: 60,
+  footerButton: {
+    marginTop: 5,
+  },
+  footerButtonImg: {
+    height: 55,
     width: 'auto',
   },
-  discordText: {textAlign: 'center'},
+  footerSubtitle: {
+    marginTop: 10,
+    textAlign: 'center',
+  },
 });
 export default DrawerContent;
