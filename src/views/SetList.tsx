@@ -16,6 +16,7 @@ const SetList = (props: ScreenProps<'SetList'>) => {
     SeriesName: '',
     Rarity: '',
     ImageUrl: '',
+    HasImage: '',
   });
   const [sort, setSortValue] = useState<'asc' | 'desc'>('asc');
   const onFilter = (value: GoddessStory) => {

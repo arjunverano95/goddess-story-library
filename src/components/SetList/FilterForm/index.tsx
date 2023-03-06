@@ -45,6 +45,7 @@ const FilterForm = (props: FilterFormProps) => {
                 SeriesName: '',
                 Rarity: '',
                 ImageUrl: '',
+                HasImage: '',
               };
               setFormData(clearData);
               handleExpanded();

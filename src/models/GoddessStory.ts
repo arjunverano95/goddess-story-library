@@ -6,4 +6,5 @@ export interface GoddessStory {
   SeriesName: string;
   Rarity: string;
   ImageUrl: string;
+  HasImage: string;
 }
