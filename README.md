@@ -35,3 +35,7 @@ WEB - [Link](https://arjunverano95.github.io/goddess-story-library)
 [Waifu Card Community | Discord](https://discord.gg/waifucard)
 
 [Goddess Story Cards PH | Facebook](https://www.facebook.com/groups/768146134112112)
+
+
+## LICENSE
+This project is licensed under the terms of the MIT license.
