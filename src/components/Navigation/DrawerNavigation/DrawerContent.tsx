@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   footerButtonImg: {
-    height: 55,
+    height: 50,
     width: 'auto',
   },
   footerSubtitle: {
