@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/goddess-story-library/static/js/app.ffa065c1.chunk.js",
-    "app.js.map": "/goddess-story-library/static/js/app.ffa065c1.chunk.js.map",
+    "app.js": "/goddess-story-library/static/js/app.bf5f24ca.chunk.js",
+    "app.js.map": "/goddess-story-library/static/js/app.bf5f24ca.chunk.js.map",
     "runtime~app.js": "/goddess-story-library/static/js/runtime~app.964532c9.js",
     "runtime~app.js.map": "/goddess-story-library/static/js/runtime~app.964532c9.js.map",
-    "static/js/2.e97dd919.chunk.js": "/goddess-story-library/static/js/2.e97dd919.chunk.js",
-    "static/js/2.e97dd919.chunk.js.map": "/goddess-story-library/static/js/2.e97dd919.chunk.js.map",
+    "static/js/2.17114f6b.chunk.js": "/goddess-story-library/static/js/2.17114f6b.chunk.js",
+    "static/js/2.17114f6b.chunk.js.map": "/goddess-story-library/static/js/2.17114f6b.chunk.js.map",
     "fonts/AntDesign.ttf": "/goddess-story-library/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/goddess-story-library/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/goddess-story-library/./fonts/Feather.ttf",
@@ -26,18 +26,20 @@
     "index.html": "/goddess-story-library/index.html",
     "manifest.json": "/goddess-story-library/manifest.json",
     "serve.json": "/goddess-story-library/serve.json",
-    "static/js/2.e97dd919.chunk.js.LICENSE.txt": "/goddess-story-library/static/js/2.e97dd919.chunk.js.LICENSE.txt",
+    "static/js/2.17114f6b.chunk.js.LICENSE.txt": "/goddess-story-library/static/js/2.17114f6b.chunk.js.LICENSE.txt",
     "static/media/bell.png": "/goddess-story-library/static/media/bell.cf04af27.png",
     "static/media/cover.png": "/goddess-story-library/static/media/cover.68176387.png",
-    "static/media/discord.png": "/goddess-story-library/static/media/discord.13f463e3.png",
+    "static/media/discord.png": "/goddess-story-library/static/media/discord.6ef0c07e.png",
+    "static/media/facebook.png": "/goddess-story-library/static/media/facebook.602a9f64.png",
     "static/media/heart.png": "/goddess-story-library/static/media/heart.23b5c2c0.png",
     "static/media/no-image.png": "/goddess-story-library/static/media/no-image.54669752.png",
+    "static/media/reddit.png": "/goddess-story-library/static/media/reddit.46f366bf.png",
     "static/media/rocket.png": "/goddess-story-library/static/media/rocket.d2f3bf41.png",
     "static/media/star.png": "/goddess-story-library/static/media/star.69c71386.png"
   },
   "entrypoints": [
     "static/js/runtime~app.964532c9.js",
-    "static/js/2.e97dd919.chunk.js",
-    "static/js/app.ffa065c1.chunk.js"
+    "static/js/2.17114f6b.chunk.js",
+    "static/js/app.bf5f24ca.chunk.js"
   ]
 }
