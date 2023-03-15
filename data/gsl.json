@@ -13704,7 +13704,7 @@
       "Code": "NS02M06017",
       "SetNumber": "NS-02-M06",
       "CardNumber": "017",
-      "CharacterName": "Hanako Kuroe",
+      "CharacterName": "Chloe Hanako",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SSR",
       "ImageUrl": "https://i.imgur.com/1mkduvY.jpg",
@@ -14354,7 +14354,7 @@
       "Code": "NS02M06PR010",
       "SetNumber": "NS-02-M06",
       "CardNumber": "010",
-      "CharacterName": "Haoyun Narmaya",
+      "CharacterName": "Narmaya",
       "SeriesName": "Granblue Fantasy",
       "Rarity": "PR",
       "ImageUrl": "https://i.imgur.com/858BwZV.jpg",
@@ -23274,7 +23274,7 @@
       "Code": "NS05M05101",
       "SetNumber": "NS-05-M05",
       "CardNumber": 101,
-      "CharacterName": "Izumo Miyako",
+      "CharacterName": "Miyako Izumo",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "R",
       "ImageUrl": "https://i.imgur.com/cFgQzD9.jpg",
@@ -27474,7 +27474,7 @@
       "Code": "NS10M02107",
       "SetNumber": "NS-10-M02",
       "CardNumber": 107,
-      "CharacterName": "Himemiya Maho",
+      "CharacterName": "Maho Himemiya",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SSR",
       "ImageUrl": "https://i.imgur.com/KoNtng8.jpg",
@@ -29837,8 +29837,8 @@
       "CharacterName": "Nilou",
       "SeriesName": "Genshin Impact",
       "Rarity": "LP",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/HcvHJv6.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NS10M04LP002",
@@ -29867,8 +29867,8 @@
       "CharacterName": "Hu Tao",
       "SeriesName": "Genshin Impact",
       "Rarity": "LP",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/l8hx0zp.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NS10M04LP005",
@@ -30067,8 +30067,8 @@
       "CharacterName": "Sajuna Inui",
       "SeriesName": "My Dress-Up Darling",
       "Rarity": "MR/199",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/laUVEXr.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NS10M04MR199007",
@@ -31447,8 +31447,8 @@
       "CharacterName": "Nezuko Kamado",
       "SeriesName": "Demon Slayer",
       "Rarity": "BW",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/rhv1TA4.png",
+      "HasImage": "YES"
     },
     {
       "Code": "NS10M04BW006",
@@ -31467,8 +31467,8 @@
       "CharacterName": "Mai Sakurajima",
       "SeriesName": "Rascal Does Not Dream of Bunny Girl Senpai",
       "Rarity": "BW",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/l8A971b.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NS10M04BW008",
@@ -31487,8 +31487,8 @@
       "CharacterName": "Kugisaki Nobara",
       "SeriesName": "Jujutsu Kaisen",
       "Rarity": "BW",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/rUJiiGn.png",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS01XNR001",
@@ -34161,124 +34161,124 @@
       "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN001",
+      "Code": "NNS02JNH001",
       "SetNumber": "NNS-02",
       "CardNumber": "001",
       "CharacterName": "Ereshkigal",
       "SeriesName": "Fate Series",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/72Pa1pj.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN002",
+      "Code": "NNS02JNH002",
       "SetNumber": "NNS-02",
       "CardNumber": "002",
       "CharacterName": "Ishtar",
       "SeriesName": "Fate Series",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/GUvyhqZ.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN003",
+      "Code": "NNS02JNH003",
       "SetNumber": "NNS-02",
       "CardNumber": "003",
       "CharacterName": "Madoka Kaname",
       "SeriesName": "Puella Magi Madoka Magica",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/GHBpmRr.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN004",
+      "Code": "NNS02JNH004",
       "SetNumber": "NNS-02",
       "CardNumber": "004",
       "CharacterName": "Akemi Homura",
       "SeriesName": "Puella Magi Madoka Magica",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/9FmoiZ5.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN005",
+      "Code": "NNS02JNH005",
       "SetNumber": "NNS-02",
       "CardNumber": "005",
       "CharacterName": "Lumine",
       "SeriesName": "Genshin Impact",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/31BRKXt.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN006",
+      "Code": "NNS02JNH006",
       "SetNumber": "NNS-02",
       "CardNumber": "006",
       "CharacterName": "Keqing",
       "SeriesName": "Genshin Impact",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/j1n93nI.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN007",
+      "Code": "NNS02JNH007",
       "SetNumber": "NNS-02",
       "CardNumber": "007",
       "CharacterName": "Cidala",
       "SeriesName": "Granblue Fantasy",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/x11A6Yv.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN008",
+      "Code": "NNS02JNH008",
       "SetNumber": "NNS-02",
       "CardNumber": "008",
       "CharacterName": "Cidala",
       "SeriesName": "Granblue Fantasy",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/iKIakbS.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN009",
+      "Code": "NNS02JNH009",
       "SetNumber": "NNS-02",
       "CardNumber": "009",
       "CharacterName": "Musashi",
       "SeriesName": "Kantai Collection",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/IbiGC7w.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN010",
+      "Code": "NNS02JNH010",
       "SetNumber": "NNS-02",
       "CardNumber": "010",
       "CharacterName": "Yamato",
       "SeriesName": "Kantai Collection",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/yQgUJDX.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN011",
+      "Code": "NNS02JNH011",
       "SetNumber": "NNS-02",
       "CardNumber": "011",
       "CharacterName": "Yuudachi",
       "SeriesName": "Kantai Collection",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/fG3OjDH.jpg",
+      "HasImage": "YES"
     },
     {
-      "Code": "NNS02JHN012",
+      "Code": "NNS02JNH012",
       "SetNumber": "NNS-02",
       "CardNumber": "012",
       "CharacterName": "Shigure",
       "SeriesName": "Kantai Collection",
-      "Rarity": "JHN",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "Rarity": "JNH",
+      "ImageUrl": "https://i.imgur.com/myTQMDF.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR001",
@@ -34287,8 +34287,8 @@
       "CharacterName": "Uzuki Shimamura",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Iq78zLa.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR002",
@@ -34297,8 +34297,8 @@
       "CharacterName": "Yuka Nakano",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/IfAWrwK.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR003",
@@ -34307,8 +34307,8 @@
       "CharacterName": "Yukari Mizumoto",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Tjql62u.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR004",
@@ -34317,8 +34317,8 @@
       "CharacterName": "Kanako Mimura",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/T0W4C5s.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR005",
@@ -34327,8 +34327,8 @@
       "CharacterName": "Miho Kohinata",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/IkAAt2S.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR006",
@@ -34337,8 +34337,8 @@
       "CharacterName": "Momoka Sakurai",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/BbwRh5Q.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR007",
@@ -34347,8 +34347,8 @@
       "CharacterName": "Kyoko Igarashi",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/FTLtskY.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR008",
@@ -34357,8 +34357,8 @@
       "CharacterName": "Shiki Ichinose",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/gSW9WAY.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR009",
@@ -34367,8 +34367,8 @@
       "CharacterName": "Chiyo Shirayuki",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/WAYxXKr.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR010",
@@ -34377,8 +34377,8 @@
       "CharacterName": "Mirei Hayasaka",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/SI2BbeU.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR011",
@@ -34387,8 +34387,8 @@
       "CharacterName": "Sae Kobayakawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/ENFgoUe.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR012",
@@ -34397,8 +34397,8 @@
       "CharacterName": "Hotaru Shiragiku",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/qMUAqzg.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR013",
@@ -34407,8 +34407,8 @@
       "CharacterName": "Rin Shibuya",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/iUZYTwS.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR014",
@@ -34417,8 +34417,8 @@
       "CharacterName": "Chiaki Kurokawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/odk5rQs.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR015",
@@ -34427,8 +34427,8 @@
       "CharacterName": "Mizuki Kawasima",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/mUEwff7.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR016",
@@ -34437,8 +34437,8 @@
       "CharacterName": "Nao Kamiya",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/lUpv29S.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR017",
@@ -34447,8 +34447,8 @@
       "CharacterName": "Seira Mizuki",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/GEV6QLd.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR018",
@@ -34457,8 +34457,8 @@
       "CharacterName": "Miyu Mifune",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/9jWSKWw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR019",
@@ -34467,8 +34467,8 @@
       "CharacterName": "Minami Nitta",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/ET8TQc6.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR020",
@@ -34477,8 +34477,8 @@
       "CharacterName": "Hayate Hisakawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/fpGcakV.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR021",
@@ -34487,8 +34487,8 @@
       "CharacterName": "Asuka Ninomiya",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/NLAjU7U.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR022",
@@ -34497,8 +34497,8 @@
       "CharacterName": "Ranko Kanzaki",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/YUtoBOO.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR023",
@@ -34507,8 +34507,8 @@
       "CharacterName": "Anastasia",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/CKpYsWK.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR024",
@@ -34517,8 +34517,8 @@
       "CharacterName": "Hajime Fujiwara",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/OstMP76.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR025",
@@ -34527,8 +34527,8 @@
       "CharacterName": "Mio Honda",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/sVMCq35.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR026",
@@ -34537,8 +34537,8 @@
       "CharacterName": "Aiko Takamori",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/achbgoa.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR027",
@@ -34547,8 +34547,8 @@
       "CharacterName": "Miria Akagi",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/jKpC799.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR028",
@@ -34557,8 +34557,8 @@
       "CharacterName": "Nagi Hisakawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/ExkYJ4k.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR029",
@@ -34567,8 +34567,8 @@
       "CharacterName": "Riamu Yumemi",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5iituy6.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR030",
@@ -34577,8 +34577,8 @@
       "CharacterName": "Hinako Kita",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/FQwpsiB.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR031",
@@ -34587,8 +34587,8 @@
       "CharacterName": "Shizuku Oikawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/RM3D1Te.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR032",
@@ -34597,8 +34597,8 @@
       "CharacterName": "Mika Jougasaki",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/WovxC5D.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR033",
@@ -34607,8 +34607,8 @@
       "CharacterName": "Yoshino Yorita",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/h4ocR3Y.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR034",
@@ -34617,8 +34617,8 @@
       "CharacterName": "Tomoe Murakami",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/NoLzOSE.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR035",
@@ -34627,8 +34627,8 @@
       "CharacterName": "Misaki Etou",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/oiRybrY.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02MR036",
@@ -34637,8 +34637,8 @@
       "CharacterName": "Shin Sato",
       "SeriesName": "The Idolm@ster",
       "Rarity": "MR",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/P2uGKF7.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER001",
@@ -34647,8 +34647,8 @@
       "CharacterName": "Sakura Kinomoto",
       "SeriesName": "Cardcaptor Sakura",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/LnD2pgB.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER002",
@@ -34657,8 +34657,8 @@
       "CharacterName": "Meimi Haneoka",
       "SeriesName": "Saint Tail",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/HPd7oWc.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER003",
@@ -34667,8 +34667,8 @@
       "CharacterName": "Nagisa Furukawa",
       "SeriesName": "Clannad",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/gFQLAEq.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER004",
@@ -34677,8 +34677,8 @@
       "CharacterName": "Leticia Draculea",
       "SeriesName": "Problem Children Are Coming from Another World, Aren't They?",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/UMWqsUi.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER005",
@@ -34687,8 +34687,8 @@
       "CharacterName": "Shiraori",
       "SeriesName": "So I'm a Spider, So What?",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/u7nu7NR.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER006",
@@ -34697,8 +34697,8 @@
       "CharacterName": "Mamako Oosuki",
       "SeriesName": "Do You Love Your Mom and Her Two-Hit Multi-Target Attacks?",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/srWlH8h.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER007",
@@ -34707,8 +34707,8 @@
       "CharacterName": "Jean",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/xnEblYi.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER008",
@@ -34717,8 +34717,8 @@
       "CharacterName": "Barbara",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/FOkUoYv.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER009",
@@ -34727,8 +34727,8 @@
       "CharacterName": "Reze",
       "SeriesName": "Chainsaw Man",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/1nQgjgE.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER010",
@@ -34737,8 +34737,8 @@
       "CharacterName": "Tosa",
       "SeriesName": "Azur Lane",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Ea7bnRi.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER011",
@@ -34747,8 +34747,8 @@
       "CharacterName": "Albedo",
       "SeriesName": "Overlord",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/GdjidZw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER012",
@@ -34757,8 +34757,8 @@
       "CharacterName": "Neptune",
       "SeriesName": "Hyperdimension Neptunia",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/7j9rTte.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER013",
@@ -34767,8 +34767,8 @@
       "CharacterName": "Shokuhou Misaki",
       "SeriesName": "A Certain Magical Index",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/vkckeOx.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER014",
@@ -34777,8 +34777,8 @@
       "CharacterName": "Yue",
       "SeriesName": "Arifureta: From Commonplace to World's Strongest",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/YgGOTgT.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER015",
@@ -34787,8 +34787,8 @@
       "CharacterName": "Rin Shibuya",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/tXSVc7C.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER016",
@@ -34797,8 +34797,8 @@
       "CharacterName": "Melusine",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/aMrE81D.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER017",
@@ -34807,8 +34807,8 @@
       "CharacterName": "Abigail Williams",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Kjx5Lv4.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER018",
@@ -34817,8 +34817,8 @@
       "CharacterName": "Okita Souji",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/V8ZDaP4.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER019",
@@ -34827,8 +34827,8 @@
       "CharacterName": "Filo",
       "SeriesName": "The Rising of the Shield Hero",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/X4IrFty.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER020",
@@ -34837,8 +34837,8 @@
       "CharacterName": "W",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/ijlC5Yq.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER021",
@@ -34847,8 +34847,8 @@
       "CharacterName": "Whisperain",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/aMyER8u.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER022",
@@ -34857,8 +34857,8 @@
       "CharacterName": "Super Creek",
       "SeriesName": "Uma Musume Pretty Derby",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Vk3iw3W.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER023",
@@ -34867,8 +34867,8 @@
       "CharacterName": "Manhattan Cafe",
       "SeriesName": "Uma Musume Pretty Derby",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/P9eHBiF.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER024",
@@ -34877,8 +34877,8 @@
       "CharacterName": "Veronica",
       "SeriesName": "Flower Knight Girl",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Gxdpga1.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER025",
@@ -34887,8 +34887,8 @@
       "CharacterName": "Twinspur",
       "SeriesName": "Flower Knight Girl",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Z5Wioq6.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER026",
@@ -34897,8 +34897,8 @@
       "CharacterName": "Blushing Bride",
       "SeriesName": "Flower Knight Girl",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/kcAVaR5.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER027",
@@ -34907,8 +34907,8 @@
       "CharacterName": "Shiroko Sunaookami",
       "SeriesName": "Blue Archive",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/kf7K0r5.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER028",
@@ -34917,8 +34917,8 @@
       "CharacterName": "Asuka Ninomiya",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/txTQ4YP.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER029",
@@ -34927,8 +34927,8 @@
       "CharacterName": "Miko Yae",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/1nsE5oX.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER030",
@@ -34937,8 +34937,8 @@
       "CharacterName": "Rosa",
       "SeriesName": "Pokemon",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/EPa1b9r.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER031",
@@ -34947,8 +34947,8 @@
       "CharacterName": "Kyoko Kirigiri",
       "SeriesName": "Danganronpa",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/y30piWD.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER032",
@@ -34957,8 +34957,8 @@
       "CharacterName": "Vivy",
       "SeriesName": "Vivy -Fluorite Eye's Song-",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/uxjS4XE.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER033",
@@ -34967,8 +34967,8 @@
       "CharacterName": "Kukuru Misakino",
       "SeriesName": "The Aquatope on White Sand",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/hIIEnZC.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER034",
@@ -34977,8 +34977,8 @@
       "CharacterName": "Shouko Komi",
       "SeriesName": "Komi Can't Communicate",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/L6Trcty.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER035",
@@ -34987,8 +34987,8 @@
       "CharacterName": "Azusa",
       "SeriesName": "I've Been Killing Slimes for 300 Years and Maxed Out My Level",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/54xHbJB.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER036",
@@ -34997,8 +34997,8 @@
       "CharacterName": "Megumin",
       "SeriesName": "God's Blessing on this Wonderful World!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Vh3D8i1.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER037",
@@ -35007,8 +35007,8 @@
       "CharacterName": "Megumi Kato",
       "SeriesName": "How to Raise a Boring Girlfriend",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/mH6nI8G.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER038",
@@ -35017,8 +35017,8 @@
       "CharacterName": "Shinobu Kochou",
       "SeriesName": "Demon Slayer",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/3j7bK2M.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER039",
@@ -35027,8 +35027,8 @@
       "CharacterName": "Alice Zuberg",
       "SeriesName": "Sword Art Online",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/B0zhc79.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER040",
@@ -35037,8 +35037,8 @@
       "CharacterName": "Mashu Kyrielight",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/6SJF2d6.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER041",
@@ -35047,8 +35047,8 @@
       "CharacterName": "Asuka Shikinami Langley",
       "SeriesName": "Eva",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/4xmR8Uo.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER042",
@@ -35057,8 +35057,8 @@
       "CharacterName": "Megurine Luka",
       "SeriesName": "Vocaloid",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/apeGCjf.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER043",
@@ -35067,8 +35067,8 @@
       "CharacterName": "Violet Evergarden",
       "SeriesName": "Violet Evergarden",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/sVNqhRp.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER044",
@@ -35077,8 +35077,8 @@
       "CharacterName": "Akemi Homura",
       "SeriesName": "Puella Magi Madoka Magica",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/oa7puLc.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER045",
@@ -35087,8 +35087,8 @@
       "CharacterName": "Mumei",
       "SeriesName": "Kabaneri of the Iron Fortress",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/FMzJKCh.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER046",
@@ -35097,8 +35097,8 @@
       "CharacterName": "Nezuko Kamado",
       "SeriesName": "Demon Slayer",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/zxnTBEv.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER047",
@@ -35107,8 +35107,8 @@
       "CharacterName": "Rikka Takanashi",
       "SeriesName": "Love, Chunibyo & Other Delusions!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/iSyVuMq.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER048",
@@ -35117,8 +35117,8 @@
       "CharacterName": "Reimu Hakurei",
       "SeriesName": "Touhou Project",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Md7HrVA.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER049",
@@ -35127,8 +35127,8 @@
       "CharacterName": "Cocoa Hoto",
       "SeriesName": "Is the Order a Rabbit?",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/clxdRBg.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER050",
@@ -35137,8 +35137,8 @@
       "CharacterName": "Kizuna Ai",
       "SeriesName": "VTuber",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Tldl6Sh.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER051",
@@ -35147,8 +35147,8 @@
       "CharacterName": "Keke Tang",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/iY5xnBs.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER052",
@@ -35157,8 +35157,8 @@
       "CharacterName": "Kanon Shibuya",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/WRY54uS.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER053",
@@ -35167,8 +35167,8 @@
       "CharacterName": "Mafuyu Kirisu",
       "SeriesName": "We Never Learn!: Bokuben",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/77vmhlf.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER054",
@@ -35177,8 +35177,8 @@
       "CharacterName": "Yuri Nakamura",
       "SeriesName": "Angel Beats!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/H8tEkJX.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER055",
@@ -35187,8 +35187,8 @@
       "CharacterName": "Kazusa Touma",
       "SeriesName": "White Album 2",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/cFGvZ4L.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER056",
@@ -35197,8 +35197,8 @@
       "CharacterName": "QiQi",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/yvvx5ui.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER057",
@@ -35207,8 +35207,8 @@
       "CharacterName": "Ako Udagawa",
       "SeriesName": "BanG Dream!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/C4vSGeM.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER058",
@@ -35217,8 +35217,8 @@
       "CharacterName": "Chiyomi Anzai",
       "SeriesName": "Girls Und Panzer",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/8nQaN4p.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER059",
@@ -35227,8 +35227,8 @@
       "CharacterName": "Ginko Sora",
       "SeriesName": "The Ryuo's Work is Never Done",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/iyrej7y.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER060",
@@ -35237,8 +35237,8 @@
       "CharacterName": "Kasumi Nakasu",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5hNHrL5.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER061",
@@ -35247,8 +35247,8 @@
       "CharacterName": "Chisato Arashi",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5r2LB1p.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER062",
@@ -35257,8 +35257,8 @@
       "CharacterName": "Sumire Heanna",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/9pAo47S.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER063",
@@ -35267,8 +35267,8 @@
       "CharacterName": "Ren Hazuki",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/cVuo80n.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER064",
@@ -35277,8 +35277,8 @@
       "CharacterName": "Angelina",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/uHzgGEI.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER065",
@@ -35287,8 +35287,8 @@
       "CharacterName": "Pallas",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/lcOUxDv.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER066",
@@ -35297,8 +35297,8 @@
       "CharacterName": "Z23",
       "SeriesName": "Azur Lane",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/KdSQxlJ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER067",
@@ -35307,8 +35307,8 @@
       "CharacterName": "Elf Yamada",
       "SeriesName": "Eromanga Sensei",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/IrvFHxs.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER068",
@@ -35317,8 +35317,8 @@
       "CharacterName": "Baobhan Sith",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/iUOVDIk.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER069",
@@ -35327,8 +35327,8 @@
       "CharacterName": "Tomoe Gozen",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/VrOxSQk.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER070",
@@ -35337,8 +35337,8 @@
       "CharacterName": "Meltlilith",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/6E0ocgw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER071",
@@ -35347,8 +35347,8 @@
       "CharacterName": "BB",
       "SeriesName": "Fate Series",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/bQC2q1W.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER072",
@@ -35357,8 +35357,8 @@
       "CharacterName": "Shiki Ryougi",
       "SeriesName": "Kara no Kyoukai",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/g0HpsVJ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER073",
@@ -35367,8 +35367,8 @@
       "CharacterName": "Honoka Kousaka",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/4q65KIv.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER074",
@@ -35377,8 +35377,8 @@
       "CharacterName": "Kotori Minami",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/2vxttvw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER075",
@@ -35387,8 +35387,8 @@
       "CharacterName": "Umi Sonoda",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/WA42BSH.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER076",
@@ -35397,8 +35397,8 @@
       "CharacterName": "Eli Ayase",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/0VliRno.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER077",
@@ -35407,8 +35407,8 @@
       "CharacterName": "Nozomi Tojo",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/tVUfvvD.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER078",
@@ -35417,8 +35417,8 @@
       "CharacterName": "Maki Nishikino",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/VvVRiqk.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER079",
@@ -35427,8 +35427,8 @@
       "CharacterName": "Rin Hoshizora",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/nzAe0As.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER080",
@@ -35437,8 +35437,8 @@
       "CharacterName": "Hanayo Koizumi",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/F9yTVRA.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER081",
@@ -35447,8 +35447,8 @@
       "CharacterName": "Nico Yazawa",
       "SeriesName": "Love Live!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/VGyuVVM.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER082",
@@ -35457,8 +35457,8 @@
       "CharacterName": "Echidna",
       "SeriesName": "Re:Zero",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/DIfrFVr.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER083",
@@ -35467,8 +35467,8 @@
       "CharacterName": "Marin Kitagawa",
       "SeriesName": "My Dress-Up Darling",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/mX1RIZZ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER084",
@@ -35477,8 +35477,8 @@
       "CharacterName": "Marnie",
       "SeriesName": "Pokemon",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/OSyqt4v.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER085",
@@ -35487,8 +35487,8 @@
       "CharacterName": "Haruka Ogasawara",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/7k862Dd.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER086",
@@ -35497,8 +35497,8 @@
       "CharacterName": "Asuka Tanaka",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/DXlsyVF.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER087",
@@ -35507,8 +35507,8 @@
       "CharacterName": "Kaori Nakaseko",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/fK76Wkz.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER088",
@@ -35517,8 +35517,8 @@
       "CharacterName": "Sapphire Kawashima",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/DcLKxiw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER089",
@@ -35527,8 +35527,8 @@
       "CharacterName": "Nozomi Kasaki",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/whEFihI.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER090",
@@ -35537,8 +35537,8 @@
       "CharacterName": "Mizore Yoroizuka",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5eZgpoY.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER091",
@@ -35547,8 +35547,8 @@
       "CharacterName": "Hazuki Katou",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/a92Nb8i.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER092",
@@ -35557,8 +35557,8 @@
       "CharacterName": "Natsuki Nakagawa",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/GOSgux1.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER093",
@@ -35567,8 +35567,8 @@
       "CharacterName": "Yuuko Yoshikawa",
       "SeriesName": "Sound! Euphonium",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/dpneCRC.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER094",
@@ -35577,8 +35577,8 @@
       "CharacterName": "Keqing",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Ezfhw4x.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER095",
@@ -35587,8 +35587,8 @@
       "CharacterName": "Kuroyukihime",
       "SeriesName": "Accel World",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/bjmXrbm.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER096",
@@ -35597,8 +35597,8 @@
       "CharacterName": "Rinne Ohara",
       "SeriesName": "Island",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/hDp6NbZ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER097",
@@ -35607,8 +35607,8 @@
       "CharacterName": "Yuezheng Ling",
       "SeriesName": "VSinger",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/4CwhBEx.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER098",
@@ -35617,8 +35617,8 @@
       "CharacterName": "Yui Hirasawa",
       "SeriesName": "K-On!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/qawfZJm.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER099",
@@ -35627,8 +35627,8 @@
       "CharacterName": "Mio Akiyama",
       "SeriesName": "K-On!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/RA0Tcrj.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER100",
@@ -35637,8 +35637,8 @@
       "CharacterName": "Ritsu Tainaka",
       "SeriesName": "K-On!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/xNAH3Qd.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER101",
@@ -35647,8 +35647,8 @@
       "CharacterName": "Tsumugi Kotobuki",
       "SeriesName": "K-On!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/syzgydy.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER102",
@@ -35657,8 +35657,8 @@
       "CharacterName": "Azusa Nakano",
       "SeriesName": "K-On!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/XzwJh95.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER103",
@@ -35667,8 +35667,8 @@
       "CharacterName": "Junko Enoshima",
       "SeriesName": "Danganronpa",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/2K28rdS.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER104",
@@ -35677,8 +35677,8 @@
       "CharacterName": "Magallan",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/TKo7MRC.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER105",
@@ -35687,8 +35687,8 @@
       "CharacterName": "Mostima",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/WFewKpm.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER106",
@@ -35697,8 +35697,8 @@
       "CharacterName": "Ceobe",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/XTXOceh.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER107",
@@ -35707,8 +35707,8 @@
       "CharacterName": "Manticore",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/9fETCbc.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER108",
@@ -35717,8 +35717,8 @@
       "CharacterName": "Tomimi",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/W7CIJNB.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER109",
@@ -35727,8 +35727,8 @@
       "CharacterName": "Frostleaf",
       "SeriesName": "Arknights",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/DVFGWrh.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER110",
@@ -35737,8 +35737,8 @@
       "CharacterName": "Anastasia",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/DMzwDOQ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER111",
@@ -35747,8 +35747,8 @@
       "CharacterName": "Chiyo Shiroyuki",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/o8F2juX.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER112",
@@ -35757,8 +35757,8 @@
       "CharacterName": "Riamu Yumemi",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5WyATUK.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER113",
@@ -35767,8 +35767,8 @@
       "CharacterName": "Rinze Morino",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/FIby0mV.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER114",
@@ -35777,8 +35777,8 @@
       "CharacterName": "Fuyuko Mayuzumi",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Y6v7onI.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER115",
@@ -35787,8 +35787,8 @@
       "CharacterName": "Natsuha Arisugawa",
       "SeriesName": "The Idolm@ster",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/Po19JQ3.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER116",
@@ -35797,8 +35797,8 @@
       "CharacterName": "Noelle",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/kmWnQ4P.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER117",
@@ -35807,8 +35807,8 @@
       "CharacterName": "Ayaka Kamisato",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/rixj7oR.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER118",
@@ -35817,8 +35817,8 @@
       "CharacterName": "Sayu",
       "SeriesName": "Genshin Impact",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/JRypU2H.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER119",
@@ -35827,8 +35827,8 @@
       "CharacterName": "Suzuna Minami",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/bdTTBSL.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER120",
@@ -35837,8 +35837,8 @@
       "CharacterName": "Yori Kazemiya",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/W4albrZ.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER121",
@@ -35847,8 +35847,8 @@
       "CharacterName": "Maho (Summer)",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/9KCRwNH.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER122",
@@ -35857,8 +35857,8 @@
       "CharacterName": "Shiori Kashiwazaki",
       "SeriesName": "Princess Connect Re:Dive",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/9WvuzkG.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER123",
@@ -35867,8 +35867,8 @@
       "CharacterName": "Yukina Minato",
       "SeriesName": "BanG Dream!",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/5w4QcPg.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER124",
@@ -35877,8 +35877,8 @@
       "CharacterName": "Marnie",
       "SeriesName": "Pokemon",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/YOdnVjw.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER125",
@@ -35887,8 +35887,8 @@
       "CharacterName": "Kirari Momobami",
       "SeriesName": "Kakegurui",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/ZlNqhGq.jpg",
+      "HasImage": "YES"
     },
     {
       "Code": "NNS02SER126",
@@ -35897,8 +35897,8 @@
       "CharacterName": "Shinku",
       "SeriesName": "Rozen Maiden",
       "Rarity": "SER",
-      "ImageUrl": "",
-      "HasImage": "NO"
+      "ImageUrl": "https://i.imgur.com/kzXlLxm.jpg",
+      "HasImage": "YES"
     }
   ],
   "set_no": [
@@ -35941,7 +35941,7 @@
     "FR",
     "FSR",
     "GP",
-    "JHN",
+    "JNH",
     "LP",
     "LP/99",
     "LSP",
