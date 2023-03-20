@@ -37,7 +37,7 @@ const CardDetails = (props: CardDetailsProps) => {
           <Card.Divider />
           <View>
             <Text>{`Series: ${data.SeriesName}`}</Text>
-            <Text>{`ID: ${data.SetNumber}-${data.CardNumber}`}</Text>
+            <Text>{`ID: ${data.ID}`}</Text>
             {/* <Text>{`Character Name: ${data.CharacterName}`}</Text> */}
             {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
           </View>
