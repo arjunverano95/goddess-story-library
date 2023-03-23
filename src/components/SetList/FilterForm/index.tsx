@@ -38,6 +38,7 @@ const FilterForm = (props: FilterFormProps) => {
             style={styles.clear}
             onPress={() => {
               const clearData: GoddessStory = {
+                ID: '',
                 Code: '',
                 SetNumber: '',
                 CardNumber: '',

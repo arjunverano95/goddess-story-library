@@ -1,6 +1,4 @@
 import SetList from '../../../views/SetList';
-// import VoiceSearch from '../../../views/VoiceSearch';
-import {Icons} from '../../constants';
 import {NavigationParamList, ScreenProps} from '../types';
 
 interface Routes {
@@ -23,12 +21,6 @@ const Routes: Routes[] = [
     icon: 'senpai-goddess-haven.png',
     component: SetList,
   },
-  // {
-  //   name: 'VoiceSearch',
-  //   label: 'Search',
-  //   icon: Icons.search,
-  //   component: VoiceSearch,
-  // },
 ];
 export const initialRoute: keyof NavigationParamList = 'GoddessStory';
 export default Routes;
