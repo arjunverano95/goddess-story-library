@@ -1,4 +1,5 @@
 export type NavigationParamList = {
-  SetList: undefined;
+  GoddessStory: undefined;
+  SenpaiGoddessHaven: undefined;
   VoiceSearch: undefined;
 };

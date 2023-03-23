@@ -1,5 +1,5 @@
 import SetList from '../../../views/SetList';
-import VoiceSearch from '../../../views/VoiceSearch';
+// import VoiceSearch from '../../../views/VoiceSearch';
 import {Icons} from '../../constants';
 import {NavigationParamList, ScreenProps} from '../types';
 
@@ -12,17 +12,23 @@ interface Routes {
 
 const Routes: Routes[] = [
   {
-    name: 'SetList',
+    name: 'GoddessStory',
     label: 'Goddess Story',
-    icon: Icons.home,
+    icon: 'little-frog.png',
     component: SetList,
   },
   {
-    name: 'VoiceSearch',
-    label: 'Search',
-    icon: Icons.search,
-    component: VoiceSearch,
+    name: 'SenpaiGoddessHaven',
+    label: 'Senpai Goddess Haven',
+    icon: 'senpai-goddess-haven.png',
+    component: SetList,
   },
+  // {
+  //   name: 'VoiceSearch',
+  //   label: 'Search',
+  //   icon: Icons.search,
+  //   component: VoiceSearch,
+  // },
 ];
-export const initialRoute: keyof NavigationParamList = 'SetList';
+export const initialRoute: keyof NavigationParamList = 'GoddessStory';
 export default Routes;

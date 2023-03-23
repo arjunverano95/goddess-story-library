@@ -5,10 +5,11 @@ import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
 import {GoddessStory} from '../models/GoddessStory';
 
-const SetList = (props: ScreenProps<'SetList'>) => {
+const SetList = (props: ScreenProps<'GoddessStory'>) => {
   const {navigation} = props;
 
   const [filter, setFilterData] = useState<GoddessStory>({
+    ID: '',
     Code: '',
     SetNumber: '',
     CardNumber: '',

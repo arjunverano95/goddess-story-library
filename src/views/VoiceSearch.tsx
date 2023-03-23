@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import {SearchBar} from '../components/VoiceSearch';
 import {GoddessStory} from '../models/GoddessStory';
 
-const VoiceSearch = (props: ScreenProps<'SetList'>) => {
+const VoiceSearch = (props: ScreenProps<'VoiceSearch'>) => {
   const {navigation} = props;
   const [searchResult, setResult] = useState<GoddessStory>(undefined);
   const onSearch = (value: GoddessStory) => {
