@@ -6,7 +6,6 @@ import {api} from '../services';
 export const useGSL = () => {
   const {data, isLoading} = useSWR<{
     cards: GSLCard[];
-    title: string;
     set_no: string[];
     rarity: string[];
     series: string[];
@@ -15,7 +14,6 @@ export const useGSL = () => {
   return {
     isLoading,
     data: data?.cards,
-    title: data?.title,
     setNumbers: data?.set_no,
     rarities: data?.rarity,
     series: data?.series,

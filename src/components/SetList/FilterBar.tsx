@@ -4,20 +4,20 @@ import {StyleSheet, View} from 'react-native';
 import {BottomSheet, Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../app/constants';
-import {useGSL} from '../../app/hooks/useGSL';
 import {GSLCard} from '../../models/GSLCard';
 import FilterForm from './FilterForm';
 
 interface FilterBarProps {
+  title: string;
   filter: GSLCard;
+  formData: {setNumbers: string[]; rarities: string[]; series: string[]};
   sort: 'asc' | 'desc';
   onFilter: (value: GSLCard) => void;
   onSort: (value: 'asc' | 'desc') => void;
 }
 
 export const FilterBar = (props: FilterBarProps) => {
-  const {title} = useGSL();
-  const {filter, sort, onFilter, onSort} = props;
+  const {title, filter, formData, sort, onFilter, onSort} = props;
   const [isBSVisible, setIsBSVisible] = useState(false);
 
   const toggleBottomSheet = () => {
@@ -61,6 +61,7 @@ export const FilterBar = (props: FilterBarProps) => {
       >
         <FilterForm
           data={filter}
+          formData={formData}
           onSubmit={(data) => {
             onFilter(data);
             toggleBottomSheet();

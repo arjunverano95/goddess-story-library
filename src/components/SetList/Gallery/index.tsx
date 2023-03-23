@@ -5,21 +5,20 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {FlashList} from '@shopify/flash-list';
 
 import {Colors, Sizes} from '../../../app/constants';
-import {useGSL} from '../../../app/hooks/useGSL';
 import {GSLCard} from '../../../models/GSLCard';
 import CardDetails from '../../CardDetails';
 import Overlay from '../../Overlay';
 import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
+  data: GSLCard[];
   filter: GSLCard;
   sort: 'asc' | 'desc';
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {data} = useGSL();
   const {width} = useWindowDimensions();
-  const {filter, sort} = props;
+  const {data, filter, sort} = props;
   const [galleryData, setGalleryData] = useState<GSLCard[]>([]);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const selectedCard = useRef<GSLCard>(undefined);

@@ -1,4 +1,5 @@
 import GoddessStory from '../../../views/GoddessStory';
+import SenpaiGoddessHaven from '../../../views/SenpaiGoddessHaven';
 import {NavigationParamList, ScreenProps} from '../types';
 
 interface Routes {
@@ -19,7 +20,7 @@ const Routes: Routes[] = [
     name: 'SenpaiGoddessHaven',
     label: 'Senpai Goddess Haven',
     icon: 'senpai-goddess-haven.png',
-    component: GoddessStory,
+    component: SenpaiGoddessHaven,
   },
 ];
 export const initialRoute: keyof NavigationParamList = 'GoddessStory';

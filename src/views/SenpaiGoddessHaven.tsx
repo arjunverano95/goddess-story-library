@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
 import {GSLCard} from '../models/GSLCard';
 
-const GoddessStory = (props: ScreenProps<'GoddessStory'>) => {
+const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
   const {navigation} = props;
   const {data, setNumbers, rarities, series} = useGSL();
 
@@ -30,7 +30,7 @@ const GoddessStory = (props: ScreenProps<'GoddessStory'>) => {
     <>
       <Header navigation={navigation}>
         <FilterBar
-          title={'Goddess Story'}
+          title={'Senpai Goddess Haven'}
           sort={sort}
           filter={filter}
           formData={{setNumbers, rarities, series}}
@@ -46,4 +46,4 @@ const GoddessStory = (props: ScreenProps<'GoddessStory'>) => {
   );
 };
 
-export default GoddessStory;
+export default SenpaiGoddessHaven;

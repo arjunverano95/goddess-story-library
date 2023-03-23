@@ -4,17 +4,20 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import {Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../../app/constants';
-import {useGSL} from '../../../app/hooks/useGSL';
 import {GSLCard} from '../../../models/GSLCard';
 import {InputField, SearchField, SelectField} from './Fields';
 
 interface FilterFormProps {
   data: GSLCard;
+  formData: {setNumbers: string[]; rarities: string[]; series: string[]};
   onSubmit: (value: GSLCard) => void;
 }
 const FilterForm = (props: FilterFormProps) => {
-  const {data, onSubmit} = props;
-  const {setNumbers, rarities, series} = useGSL();
+  const {
+    data,
+    onSubmit,
+    formData: {setNumbers, rarities, series},
+  } = props;
   const [expanded, setExpanded] = useState('');
   const [formData, setFormData] = useState<GSLCard>({...data});
 
