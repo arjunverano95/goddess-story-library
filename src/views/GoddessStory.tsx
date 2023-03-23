@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
 import {GSLCard} from '../models/GSLCard';
 
-const SetList = (props: ScreenProps<'GoddessStory'>) => {
+const GoddessStory = (props: ScreenProps<'GoddessStory'>) => {
   const {navigation} = props;
 
   const [filter, setFilterData] = useState<GSLCard>({
@@ -42,4 +42,4 @@ const SetList = (props: ScreenProps<'GoddessStory'>) => {
   );
 };
 
-export default SetList;
+export default GoddessStory;

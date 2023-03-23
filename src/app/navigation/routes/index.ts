@@ -1,4 +1,4 @@
-import SetList from '../../../views/SetList';
+import GoddessStory from '../../../views/GoddessStory';
 import {NavigationParamList, ScreenProps} from '../types';
 
 interface Routes {
@@ -13,13 +13,13 @@ const Routes: Routes[] = [
     name: 'GoddessStory',
     label: 'Goddess Story',
     icon: 'little-frog.png',
-    component: SetList,
+    component: GoddessStory,
   },
   {
     name: 'SenpaiGoddessHaven',
     label: 'Senpai Goddess Haven',
     icon: 'senpai-goddess-haven.png',
-    component: SetList,
+    component: GoddessStory,
   },
 ];
 export const initialRoute: keyof NavigationParamList = 'GoddessStory';
