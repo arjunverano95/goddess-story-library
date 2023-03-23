@@ -4,17 +4,19 @@ import {StyleSheet, View} from 'react-native';
 import {BottomSheet, Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../app/constants';
-import {GoddessStory} from '../../models/GoddessStory';
+import {useGSL} from '../../app/hooks/useGSL';
+import {GSLCard} from '../../models/GSLCard';
 import FilterForm from './FilterForm';
 
 interface FilterBarProps {
-  filter: GoddessStory;
+  filter: GSLCard;
   sort: 'asc' | 'desc';
-  onFilter: (value: GoddessStory) => void;
+  onFilter: (value: GSLCard) => void;
   onSort: (value: 'asc' | 'desc') => void;
 }
 
 export const FilterBar = (props: FilterBarProps) => {
+  const {title} = useGSL();
   const {filter, sort, onFilter, onSort} = props;
   const [isBSVisible, setIsBSVisible] = useState(false);
 
@@ -25,7 +27,7 @@ export const FilterBar = (props: FilterBarProps) => {
     <>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
-          {!filter.SetNumber ? 'Goddess Story' : filter.SetNumber}
+          {!filter.SetNumber ? title : filter.SetNumber}
         </Text>
       </View>
       <Button

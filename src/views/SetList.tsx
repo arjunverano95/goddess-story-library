@@ -3,12 +3,12 @@ import React, {useState} from 'react';
 import {ScreenProps} from '../app/navigation/types';
 import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
-import {GoddessStory} from '../models/GoddessStory';
+import {GSLCard} from '../models/GSLCard';
 
 const SetList = (props: ScreenProps<'GoddessStory'>) => {
   const {navigation} = props;
 
-  const [filter, setFilterData] = useState<GoddessStory>({
+  const [filter, setFilterData] = useState<GSLCard>({
     ID: '',
     Code: '',
     SetNumber: '',
@@ -20,7 +20,7 @@ const SetList = (props: ScreenProps<'GoddessStory'>) => {
     HasImage: '',
   });
   const [sort, setSortValue] = useState<'asc' | 'desc'>('asc');
-  const onFilter = (value: GoddessStory) => {
+  const onFilter = (value: GSLCard) => {
     setFilterData(value);
   };
 

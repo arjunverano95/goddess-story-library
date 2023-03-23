@@ -5,18 +5,18 @@ import {Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../../app/constants';
 import {useGSL} from '../../../app/hooks/useGSL';
-import {GoddessStory} from '../../../models/GoddessStory';
+import {GSLCard} from '../../../models/GSLCard';
 import {InputField, SearchField, SelectField} from './Fields';
 
 interface FilterFormProps {
-  data: GoddessStory;
-  onSubmit: (value: GoddessStory) => void;
+  data: GSLCard;
+  onSubmit: (value: GSLCard) => void;
 }
 const FilterForm = (props: FilterFormProps) => {
   const {data, onSubmit} = props;
   const {setNumbers, rarities, series} = useGSL();
   const [expanded, setExpanded] = useState('');
-  const [formData, setFormData] = useState<GoddessStory>({...data});
+  const [formData, setFormData] = useState<GSLCard>({...data});
 
   const handleExpanded = (value?: string) => {
     if (!value || expanded === value) setExpanded(null);
@@ -37,7 +37,7 @@ const FilterForm = (props: FilterFormProps) => {
           <Pressable
             style={styles.clear}
             onPress={() => {
-              const clearData: GoddessStory = {
+              const clearData: GSLCard = {
                 ID: '',
                 Code: '',
                 SetNumber: '',
