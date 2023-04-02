@@ -9,7 +9,7 @@ import {GSLCard} from '../models/GSLCard';
 const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
   const {navigation} = props;
   const {data, setNumbers, rarities, series} = useGSL(
-    '/data/goddess-story.json',
+    '/data/senpai-goddess-haven.json',
   );
 
   const [filter, setFilterData] = useState<GSLCard>({
