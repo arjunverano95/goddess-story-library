@@ -5,7 +5,7 @@ import {
   DrawerContentComponentProps,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {Icon, Text} from '@rneui/themed';
+import {Text} from '@rneui/themed';
 
 import Routes from '../../../app/navigation/routes';
 
@@ -19,55 +19,63 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
           source={require('../../../../assets/cover.png')}
         />
       </View>
-      {Routes.map((item) => (
-        <DrawerItem
-          key={item.name}
-          icon={() => <Icon name={item.icon} />}
-          label={item.label}
-          onPress={() => {
-            navigation.navigate(item.name);
-          }}
-        />
-      ))}
+      <View style={styles.routesContainer}>
+        {Routes.map((item) => (
+          <DrawerItem
+            key={item.name}
+            icon={() => (
+              <Image
+                resizeMode={'contain'}
+                style={styles.iconImg}
+                source={item.icon}
+              />
+            )}
+            label={item.label}
+            onPress={() => {
+              navigation.navigate(item.name);
+            }}
+          />
+        ))}
+      </View>
       <View style={styles.footer}>
-        <Pressable
-          style={styles.footerButton}
-          onPress={() => {
-            Linking.openURL('https://www.reddit.com/r/GoddessStoryTCG');
-          }}
-        >
-          <Image
-            resizeMode={'contain'}
-            style={styles.footerButtonImg}
-            source={require('../../../../assets/reddit.png')}
-          />
-        </Pressable>
-        <Pressable
-          style={styles.footerButton}
-          onPress={() => {
-            Linking.openURL(
-              'https://www.facebook.com/groups/goddessstoryandwaifucardnewsupdatesandcollections',
-            );
-          }}
-        >
-          <Image
-            resizeMode={'contain'}
-            style={styles.footerButtonImg}
-            source={require('../../../../assets/facebook.png')}
-          />
-        </Pressable>
-        <Pressable
-          style={styles.footerButton}
-          onPress={() => {
-            Linking.openURL('https://discord.gg/waifucard');
-          }}
-        >
-          <Image
-            resizeMode={'contain'}
-            style={styles.footerButtonImg}
-            source={require('../../../../assets/discord.png')}
-          />
-        </Pressable>
+        <View style={styles.footerButtonContainer}>
+          <Pressable
+            onPress={() => {
+              Linking.openURL('https://www.reddit.com/r/GoddessStoryTCG');
+            }}
+          >
+            <Image
+              resizeMode={'contain'}
+              style={styles.footerButtonImg}
+              source={require('../../../../assets/reddit.png')}
+            />
+          </Pressable>
+          <Pressable
+            style={styles.footerButtonSpacer}
+            onPress={() => {
+              Linking.openURL(
+                'https://www.facebook.com/groups/goddessstoryandwaifucardnewsupdatesandcollections',
+              );
+            }}
+          >
+            <Image
+              resizeMode={'contain'}
+              style={styles.footerButtonImg}
+              source={require('../../../../assets/facebook.png')}
+            />
+          </Pressable>
+          <Pressable
+            onPress={() => {
+              Linking.openURL('https://discord.gg/waifucard');
+            }}
+          >
+            <Image
+              resizeMode={'contain'}
+              style={styles.footerButtonImg}
+              source={require('../../../../assets/discord.png')}
+            />
+          </Pressable>
+        </View>
         <Text style={styles.footerSubtitle}>{'Waifu Card Community'}</Text>
       </View>
     </View>
@@ -85,20 +93,27 @@ const styles = StyleSheet.create({
     height: 250,
     width: '100%',
   },
-  buttonIcon: {
-    marginRight: 10,
-  },
-  footer: {flex: 1, padding: 15, justifyContent: 'flex-end'},
-  footerButton: {
+  routesContainer: {flex: 1},
+  footer: {padding: 15},
+  footerButtonContainer: {
+    justifyContent: 'center',
+    padding: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     marginTop: 5,
   },
+  footerButtonSpacer: {marginHorizontal: 10},
   footerButtonImg: {
-    height: 50,
-    width: 'auto',
+    height: 30,
+    width: 30,
   },
   footerSubtitle: {
-    marginTop: 10,
+    marginTop: 5,
     textAlign: 'center',
+  },
+  iconImg: {
+    height: 25,
+    width: 25,
   },
 });
 export default DrawerContent;

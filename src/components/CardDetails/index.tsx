@@ -4,11 +4,11 @@ import {StyleSheet, View} from 'react-native';
 import {Badge, Card, Text} from '@rneui/themed';
 
 import {Colors, Sizes} from '../../app/constants';
-import {GoddessStory} from '../../models/GoddessStory';
+import {GSLCard} from '../../models/GSLCard';
 import CardImage from './CardImage';
 
 interface CardDetailsProps {
-  data: GoddessStory;
+  data: GSLCard;
 }
 
 const CardDetails = (props: CardDetailsProps) => {
@@ -37,7 +37,7 @@ const CardDetails = (props: CardDetailsProps) => {
           <Card.Divider />
           <View>
             <Text>{`Series: ${data.SeriesName}`}</Text>
-            <Text>{`ID: ${data.SetNumber}-${data.CardNumber}`}</Text>
+            <Text>{`ID: ${data.ID}`}</Text>
             {/* <Text>{`Character Name: ${data.CharacterName}`}</Text> */}
             {/* <Text>{`Rarity: ${data.Rarity}`}</Text> */}
           </View>

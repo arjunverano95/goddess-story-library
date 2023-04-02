@@ -5,24 +5,23 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {FlashList} from '@shopify/flash-list';
 
 import {Colors, Sizes} from '../../../app/constants';
-import {useGSL} from '../../../app/hooks/useGSL';
-import {GoddessStory} from '../../../models/GoddessStory';
+import {GSLCard} from '../../../models/GSLCard';
 import CardDetails from '../../CardDetails';
 import Overlay from '../../Overlay';
 import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
-  filter: GoddessStory;
+  data: GSLCard[];
+  filter: GSLCard;
   sort: 'asc' | 'desc';
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {data} = useGSL();
   const {width} = useWindowDimensions();
-  const {filter, sort} = props;
-  const [galleryData, setGalleryData] = useState<GoddessStory[]>([]);
+  const {data, filter, sort} = props;
+  const [galleryData, setGalleryData] = useState<GSLCard[]>([]);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-  const selectedCard = useRef<GoddessStory>(undefined);
+  const selectedCard = useRef<GSLCard>(undefined);
   let galleryColNo = 2;
 
   if (width < Sizes.sm) {
@@ -46,7 +45,7 @@ export const Gallery = (props: GalleryProps) => {
           delete cleanFilter[key];
         }
       });
-      const sortData = (data: GoddessStory[], order: 'asc' | 'desc') => {
+      const sortData = (data: GSLCard[], order: 'asc' | 'desc') => {
         if (order === 'asc') {
           return data.sort(
             (a, b) =>

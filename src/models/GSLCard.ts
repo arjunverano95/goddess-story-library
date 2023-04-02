@@ -1,4 +1,5 @@
-export interface GoddessStory {
+export interface GSLCard {
+  ID: string;
   Code: string;
   SetNumber: string;
   CardNumber: string;

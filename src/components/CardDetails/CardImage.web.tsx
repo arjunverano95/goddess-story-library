@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
 import {Colors} from '../../app/constants';
-import {GoddessStory} from '../../models/GoddessStory';
+import {GSLCard} from '../../models/GSLCard';
 
 interface CardImageProps {
-  data: GoddessStory;
+  data: GSLCard;
 }
 
 const CardImage = (props: CardImageProps) => {

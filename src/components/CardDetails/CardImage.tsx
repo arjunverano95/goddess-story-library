@@ -4,10 +4,10 @@ import FastImage from 'react-native-fast-image';
 import WebView from 'react-native-webview';
 
 import {Colors, GSLBaseUrl} from '../../app/constants';
-import {GoddessStory} from '../../models/GoddessStory';
+import {GSLCard} from '../../models/GSLCard';
 
 interface CardImageProps {
-  data: GoddessStory;
+  data: GSLCard;
 }
 
 const CardImage = (props: CardImageProps) => {

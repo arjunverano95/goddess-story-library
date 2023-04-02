@@ -4,12 +4,12 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import {Badge, Card, Text} from '@rneui/themed';
 
 import {Colors} from '../../../app/constants';
-import {GoddessStory} from '../../../models/GoddessStory';
+import {GSLCard} from '../../../models/GSLCard';
 import GalleryImage from './GalleryImage';
 
 interface GalleryItemProps {
-  data: GoddessStory;
-  onPress: (value: GoddessStory) => void;
+  data: GSLCard;
+  onPress: (value: GSLCard) => void;
 }
 const GalleryItem = (props: GalleryItemProps) => {
   const {data, onPress} = props;

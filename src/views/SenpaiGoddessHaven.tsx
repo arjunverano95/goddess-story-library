@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 
+import {useGSL} from '../app/hooks/useGSL';
 import {ScreenProps} from '../app/navigation/types';
 import Header from '../components/Header';
 import {FilterBar, Gallery} from '../components/SetList';
-import {GoddessStory} from '../models/GoddessStory';
+import {GSLCard} from '../models/GSLCard';
 
-const SetList = (props: ScreenProps<'SetList'>) => {
+const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
   const {navigation} = props;
+  const {data, setNumbers, rarities, series} = useGSL(
+    '/data/senpai-goddess-haven.json',
+  );
 
-  const [filter, setFilterData] = useState<GoddessStory>({
+  const [filter, setFilterData] = useState<GSLCard>({
+    ID: '',
     Code: '',
     SetNumber: '',
     CardNumber: '',
@@ -19,7 +24,7 @@ const SetList = (props: ScreenProps<'SetList'>) => {
     HasImage: '',
   });
   const [sort, setSortValue] = useState<'asc' | 'desc'>('asc');
-  const onFilter = (value: GoddessStory) => {
+  const onFilter = (value: GSLCard) => {
     setFilterData(value);
   };
 
@@ -27,8 +32,10 @@ const SetList = (props: ScreenProps<'SetList'>) => {
     <>
       <Header navigation={navigation}>
         <FilterBar
+          title={'Senpai Goddess Haven'}
           sort={sort}
           filter={filter}
+          formData={{setNumbers, rarities, series}}
           onFilter={onFilter}
           onSort={(value) => {
             setSortValue(value);
@@ -36,9 +43,9 @@ const SetList = (props: ScreenProps<'SetList'>) => {
         />
       </Header>
 
-      <Gallery filter={filter} sort={sort} />
+      <Gallery data={data} filter={filter} sort={sort} />
     </>
   );
 };
 
-export default SetList;
+export default SenpaiGoddessHaven;

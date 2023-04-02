@@ -10,7 +10,7 @@ import Overlay from './Overlay';
 
 const RequireInternet = () => {
   const netInfo = useNetInfo();
-  const {isLoading} = useGSL();
+  const {isLoading} = useGSL('/data/goddess-story.json');
 
   // return (
   //   <View style={styles.skeletonContainer}>

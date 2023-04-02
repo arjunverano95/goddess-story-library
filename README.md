@@ -6,21 +6,11 @@ A simple and easy to use viewer and library of Goddess story cards.
 
 ## Features
 
-- Speech-to-text lookup of card details
 - Easy viewing of set list cards with filters
 - Complete\* list of all Goddess Story cards
+- Non-GS Cards Set lists
 
 More features will be added soon! ✨
-
-## Usage
-
-### Voice Search Formats 🔊
-
-    <Set Number><Card Number> 		i.e, NS01001 or NS05M02065
-    <Set Number><PR|BW><Card Number> 	i.e, NS10M03PR018
-
-    NS-10-M04
-    <Set Number><Rarity><Card Number>       i.e, NS10M04SR021
 
 ### Download Links
 
@@ -36,6 +26,6 @@ WEB - [Link](https://arjunverano95.github.io/goddess-story-library)
 
 [Goddess Story Cards PH | Facebook](https://www.facebook.com/groups/768146134112112)
 
-
 ## LICENSE
+
 This project is licensed under the terms of the MIT license.
