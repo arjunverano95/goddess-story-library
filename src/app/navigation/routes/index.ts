@@ -5,7 +5,7 @@ import {NavigationParamList, ScreenProps} from '../types';
 interface Routes {
   name: keyof NavigationParamList;
   label: string;
-  icon: string;
+  icon: number;
   component: (props: ScreenProps<keyof NavigationParamList>) => JSX.Element;
 }
 
@@ -13,13 +13,13 @@ const Routes: Routes[] = [
   {
     name: 'GoddessStory',
     label: 'Goddess Story',
-    icon: 'little-frog.png',
+    icon: require('../../../../assets/little-frog.png'),
     component: GoddessStory,
   },
   {
     name: 'SenpaiGoddessHaven',
     label: 'Senpai Goddess Haven',
-    icon: 'senpai-goddess-haven.png',
+    icon: require('../../../../assets/senpai-goddess-haven.png'),
     component: SenpaiGoddessHaven,
   },
 ];

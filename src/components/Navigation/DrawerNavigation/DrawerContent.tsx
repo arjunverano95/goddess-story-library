@@ -27,7 +27,7 @@ const DrawerContent = (props: DrawerContentComponentProps) => {
               <Image
                 resizeMode={'contain'}
                 style={styles.iconImg}
-                source={require(`../../../../assets/${item.icon}`)}
+                source={item.icon}
               />
             )}
             label={item.label}
