@@ -14,7 +14,7 @@ More features will be added soon! ✨
 
 ### Download Links
 
-Android - [Google Drive](https://lh3.googleusercontent.com/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view)
+Android - [Google Drive](https://drive.google.com/file/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view)
 
 IOS -
 
