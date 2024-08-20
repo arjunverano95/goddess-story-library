@@ -1,0 +1,18 @@
+{
+  "goddess_story": [
+    {
+      "ID": "GSL-NOTICE-001",
+      "Code": "GSLNOTICE001",
+      "SetNumber": "GSL-NOTICE",
+      "CardNumber": "001",
+      "CharacterName": "Please update the App",
+      "SeriesName": "Notice and Announcements",
+      "Rarity": "GSL",
+      "ImageUrl": "",
+      "HasImage": "NO"
+    }
+  ],
+  "set_no": ["GSL-NOTICE"],
+  "rarity": ["GSL"],
+  "series": ["Notice and Announcements"]
+}
