@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
 
 import {useGSL} from '../app/hooks/useGSL';
-import {ScreenProps} from '../app/navigation/types';
-import Header from '../components/Header';
-import {FilterBar, Gallery} from '../components/SetList';
+import Header from './Header';
+import {FilterBar, Gallery} from './SetList';
 import {GSLCard} from '../models/GSLCard';
 
-const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
-  const {navigation} = props;
-  const {data, setNumbers, rarities, series} = useGSL(
-    '/data/senpai-goddess-haven.json',
-  );
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const BaseScreen = (props: {navigation: any; dataUrl: string}) => {
+  const {navigation, dataUrl} = props;
+  const {data, setNumbers, rarities, series} = useGSL(dataUrl);
 
   const [filter, setFilterData] = useState<GSLCard>({
     ID: '',
@@ -32,7 +30,7 @@ const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
     <>
       <Header navigation={navigation}>
         <FilterBar
-          title={'Senpai Goddess Haven'}
+          title={'Goddess Story'}
           sort={sort}
           filter={filter}
           formData={{setNumbers, rarities, series}}
@@ -48,4 +46,4 @@ const SenpaiGoddessHaven = (props: ScreenProps<'SenpaiGoddessHaven'>) => {
   );
 };
 
-export default SenpaiGoddessHaven;
+export default BaseScreen;

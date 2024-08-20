@@ -41,7 +41,7 @@ const Wrapper = ({children}: WrapperProps) => {
             containerStyle={styles.submitButton}
             onPress={() => {
               window.open(
-                'https://drive.google.com/file/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view?usp=share_link',
+                'https://lh3.googleusercontent.com/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view?usp=share_link',
                 '_blank',
               );
             }}

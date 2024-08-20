@@ -1,3 +1,5 @@
+// https://lh3.googleusercontent.com/d/1nHNpNAjifPtSG7xF8e1zA01KrJJY7w9f
+
 import useSWR from 'swr';
 
 import {GSLCard} from '../../models/GSLCard';
