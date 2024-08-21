@@ -87,7 +87,6 @@ export const Gallery = (props: GalleryProps) => {
         <FlashList
           data={galleryData}
           numColumns={galleryColNo}
-          keyExtractor={(item) => item.Code}
           estimatedItemSize={248}
           renderItem={({item}) => (
             <GalleryItem

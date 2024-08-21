@@ -94,7 +94,6 @@ export const SearchField = (props: SearchFieldProps) => {
             data={listData.current}
             renderItem={renderItem}
             estimatedItemSize={36}
-            keyExtractor={(item) => item}
           />
         </SafeAreaView>
       </Overlay>
