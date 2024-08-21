@@ -1,9 +1,9 @@
 {
   "cards": [
     {
-      "ID": "SLR-001",
-      "Code": "SLR001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-001",
+      "Code": "SGH-01-SLR001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Artoria Pendragon",
       "SeriesName": "Fate Series",
@@ -12,9 +12,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "SLR-002",
-      "Code": "SLR002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-002",
+      "Code": "SGH-01-SLR002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Alter",
       "SeriesName": "Fate Series",
@@ -23,9 +23,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SLR-003",
-      "Code": "SLR003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-003",
+      "Code": "SGH-01-SLR003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Mash Kyrielight",
       "SeriesName": "Fate Series",
@@ -34,9 +34,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "SLR-004",
-      "Code": "SLR004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-004",
+      "Code": "SGH-01-SLR004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Scathach",
       "SeriesName": "Fate Series",
@@ -45,9 +45,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SLR-005",
-      "Code": "SLR005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-005",
+      "Code": "SGH-01-SLR005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Yuuki Asuna",
       "SeriesName": "Sword Art Online",
@@ -56,9 +56,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SLR-006",
-      "Code": "SLR006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SLR-006",
+      "Code": "SGH-01-SLR006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Concubine Yang",
       "SeriesName": "Fate Series",
@@ -67,9 +67,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "LSP-001",
-      "Code": "LSP001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-001",
+      "Code": "SGH-01-LSP001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "HMS Dido",
       "SeriesName": "Azur Lane",
@@ -78,9 +78,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "LSP-002",
-      "Code": "LSP002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-002",
+      "Code": "SGH-01-LSP002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "August Von Parseval",
       "SeriesName": "Azur Lane",
@@ -89,9 +89,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "LSP-003",
-      "Code": "LSP003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-003",
+      "Code": "SGH-01-LSP003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Belfast",
       "SeriesName": "Azur Lane",
@@ -100,9 +100,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "LSP-004",
-      "Code": "LSP004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-004",
+      "Code": "SGH-01-LSP004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Prinz Eugen",
       "SeriesName": "Azur Lane",
@@ -111,9 +111,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "LSP-005",
-      "Code": "LSP005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-005",
+      "Code": "SGH-01-LSP005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Cheshire",
       "SeriesName": "Azur Lane",
@@ -122,9 +122,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "LSP-006",
-      "Code": "LSP006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-006",
+      "Code": "SGH-01-LSP006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Formidable",
       "SeriesName": "Azur Lane",
@@ -133,9 +133,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "LSP-007",
-      "Code": "LSP007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-007",
+      "Code": "SGH-01-LSP007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "HMS Sirius",
       "SeriesName": "Azur Lane",
@@ -144,9 +144,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "LSP-008",
-      "Code": "LSP008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-LSP-008",
+      "Code": "SGH-01-LSP008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "HMS Warspite",
       "SeriesName": "Azur Lane",
@@ -155,9 +155,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-001",
-      "Code": "SSP001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-001",
+      "Code": "SGH-01-SSP001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Bradamante",
       "SeriesName": "Fate Series",
@@ -166,9 +166,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-002",
-      "Code": "SSP002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-002",
+      "Code": "SGH-01-SSP002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Taiho",
       "SeriesName": "Azur Lane",
@@ -177,9 +177,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-003",
-      "Code": "SSP003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-003",
+      "Code": "SGH-01-SSP003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Karyl",
       "SeriesName": "Princess Connect Re:Dive",
@@ -188,9 +188,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-004",
-      "Code": "SSP004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-004",
+      "Code": "SGH-01-SSP004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Formidable",
       "SeriesName": "Azur Lane",
@@ -199,9 +199,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-005",
-      "Code": "SSP005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-005",
+      "Code": "SGH-01-SSP005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Rem",
       "SeriesName": "Re:Zero",
@@ -210,9 +210,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-006",
-      "Code": "SSP006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-006",
+      "Code": "SGH-01-SSP006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Mainz",
       "SeriesName": "Azur Lane",
@@ -221,9 +221,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-007",
-      "Code": "SSP007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-007",
+      "Code": "SGH-01-SSP007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Prinz Eugen",
       "SeriesName": "Azur Lane",
@@ -232,9 +232,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSP-008",
-      "Code": "SSP008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSP-008",
+      "Code": "SGH-01-SSP008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "HMS Sirius",
       "SeriesName": "Azur Lane",
@@ -243,9 +243,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "SP-001",
-      "Code": "SP001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-001",
+      "Code": "SGH-01-SP001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Yae Miko",
       "SeriesName": "Genshin Impact",
@@ -254,9 +254,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-002",
-      "Code": "SP002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-002",
+      "Code": "SGH-01-SP002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Barbara",
       "SeriesName": "Genshin Impact",
@@ -265,9 +265,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-003",
-      "Code": "SP003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-003",
+      "Code": "SGH-01-SP003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Belfast",
       "SeriesName": "Azur Lane",
@@ -276,9 +276,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-004",
-      "Code": "SP004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-004",
+      "Code": "SGH-01-SP004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Ram",
       "SeriesName": "Re:Zero",
@@ -287,9 +287,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-005",
-      "Code": "SP005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-005",
+      "Code": "SGH-01-SP005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Raiden Shogun",
       "SeriesName": "Genshin Impact",
@@ -298,9 +298,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-006",
-      "Code": "SP006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-006",
+      "Code": "SGH-01-SP006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Sugar",
       "SeriesName": "-",
@@ -309,9 +309,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-007",
-      "Code": "SP007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-007",
+      "Code": "SGH-01-SP007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Marin Kitagawa",
       "SeriesName": "My Dress-Up Darling",
@@ -320,9 +320,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-008",
-      "Code": "SP008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-008",
+      "Code": "SGH-01-SP008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "Ishtar",
       "SeriesName": "Fate Series",
@@ -331,9 +331,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-009",
-      "Code": "SP009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-009",
+      "Code": "SGH-01-SP009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Sakurajima Mai",
       "SeriesName": "Rascal Does Not Dream of Bunny Girl Senpai",
@@ -342,9 +342,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SP-010",
-      "Code": "SP010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SP-010",
+      "Code": "SGH-01-SP010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "Lumine",
       "SeriesName": "Genshin Impact",
@@ -353,9 +353,9 @@
       "HasImage": "NO"
     },
     {
-      "ID": "ZR-001",
-      "Code": "ZR001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-001",
+      "Code": "SGH-01-ZR001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Alice Zuberg",
       "SeriesName": "Sword Art Online",
@@ -364,9 +364,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-002",
-      "Code": "ZR002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-002",
+      "Code": "SGH-01-ZR002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "August Von Parseval",
       "SeriesName": "Azur Lane",
@@ -375,9 +375,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-003",
-      "Code": "ZR003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-003",
+      "Code": "SGH-01-ZR003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Sinon",
       "SeriesName": "Sword Art Online",
@@ -386,9 +386,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-004",
-      "Code": "ZR004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-004",
+      "Code": "SGH-01-ZR004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Joan of Arc",
       "SeriesName": "Fate Series",
@@ -397,9 +397,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-005",
-      "Code": "ZR005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-005",
+      "Code": "SGH-01-ZR005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Kakudate Karin",
       "SeriesName": "Blue Archive",
@@ -408,9 +408,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-006",
-      "Code": "ZR006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-006",
+      "Code": "SGH-01-ZR006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Formidable",
       "SeriesName": "Azur Lane",
@@ -419,9 +419,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-007",
-      "Code": "ZR007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-007",
+      "Code": "SGH-01-ZR007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Keqing",
       "SeriesName": "Genshin Impact",
@@ -430,9 +430,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-008",
-      "Code": "ZR008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-008",
+      "Code": "SGH-01-ZR008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "Leafa",
       "SeriesName": "Sword Art Online",
@@ -441,9 +441,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-009",
-      "Code": "ZR009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-009",
+      "Code": "SGH-01-ZR009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Shibuya Rin",
       "SeriesName": "The Idolm@ster",
@@ -452,9 +452,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-010",
-      "Code": "ZR010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-010",
+      "Code": "SGH-01-ZR010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "Scathach",
       "SeriesName": "Fate Series",
@@ -463,9 +463,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-011",
-      "Code": "ZR011",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-011",
+      "Code": "SGH-01-ZR011",
+      "SetNumber": "SGH-01",
       "CardNumber": "011",
       "CharacterName": "New Jersey",
       "SeriesName": "Azur Lane",
@@ -474,9 +474,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-012",
-      "Code": "ZR012",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-012",
+      "Code": "SGH-01-ZR012",
+      "SetNumber": "SGH-01",
       "CardNumber": "012",
       "CharacterName": "Asuna Ichinos",
       "SeriesName": "Blue Archive",
@@ -485,9 +485,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-013",
-      "Code": "ZR013",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-013",
+      "Code": "SGH-01-ZR013",
+      "SetNumber": "SGH-01",
       "CardNumber": "013",
       "CharacterName": "Mai Sakurajima",
       "SeriesName": "Rascal Does Not Dream of Bunny Girl Senpai",
@@ -496,9 +496,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-014",
-      "Code": "ZR014",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-014",
+      "Code": "SGH-01-ZR014",
+      "SetNumber": "SGH-01",
       "CardNumber": "014",
       "CharacterName": "Yuuki (SAO)",
       "SeriesName": "Sword Art Online",
@@ -507,9 +507,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "ZR-015",
-      "Code": "ZR015",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-ZR-015",
+      "Code": "SGH-01-ZR015",
+      "SetNumber": "SGH-01",
       "CardNumber": "015",
       "CharacterName": "Semiramis",
       "SeriesName": "Fate Series",
@@ -518,9 +518,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-001",
-      "Code": "MR001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-001",
+      "Code": "SGH-01-MR001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Yae Miko",
       "SeriesName": "Genshin Impact",
@@ -529,9 +529,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-002",
-      "Code": "MR002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-002",
+      "Code": "SGH-01-MR002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Ganyu",
       "SeriesName": "Genshin Impact",
@@ -540,9 +540,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-003",
-      "Code": "MR003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-003",
+      "Code": "SGH-01-MR003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Hu Tao",
       "SeriesName": "Genshin Impact",
@@ -551,9 +551,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-004",
-      "Code": "MR004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-004",
+      "Code": "SGH-01-MR004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Keqing",
       "SeriesName": "Genshin Impact",
@@ -562,9 +562,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-005",
-      "Code": "MR005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-005",
+      "Code": "SGH-01-MR005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Raiden Shogun",
       "SeriesName": "Genshin Impact",
@@ -573,9 +573,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-006",
-      "Code": "MR006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-006",
+      "Code": "SGH-01-MR006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Paimon",
       "SeriesName": "Genshin Impact",
@@ -584,9 +584,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-007",
-      "Code": "MR007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-007",
+      "Code": "SGH-01-MR007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Sangonomiya Kokomi",
       "SeriesName": "Genshin Impact",
@@ -595,9 +595,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-008",
-      "Code": "MR008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-008",
+      "Code": "SGH-01-MR008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "Shenhe",
       "SeriesName": "Genshin Impact",
@@ -606,9 +606,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-009",
-      "Code": "MR009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-009",
+      "Code": "SGH-01-MR009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Kamisato Ayaka",
       "SeriesName": "Genshin Impact",
@@ -617,9 +617,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "MR-010",
-      "Code": "MR010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-MR-010",
+      "Code": "SGH-01-MR010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "Eula Lawrence",
       "SeriesName": "Genshin Impact",
@@ -628,9 +628,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-001",
-      "Code": "CP001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-001",
+      "Code": "SGH-01-CP001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Anastasia",
       "SeriesName": "Fate Series",
@@ -639,9 +639,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-002",
-      "Code": "CP002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-002",
+      "Code": "SGH-01-CP002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Bradamante",
       "SeriesName": "Fate Series",
@@ -650,9 +650,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-003",
-      "Code": "CP003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-003",
+      "Code": "SGH-01-CP003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Okita Soji",
       "SeriesName": "Fate Series",
@@ -661,9 +661,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-004",
-      "Code": "CP004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-004",
+      "Code": "SGH-01-CP004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Himiko Toga",
       "SeriesName": "My Hero Academia",
@@ -672,9 +672,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-005",
-      "Code": "CP005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-005",
+      "Code": "SGH-01-CP005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Ganyu",
       "SeriesName": "Genshin Impact",
@@ -683,9 +683,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-006",
-      "Code": "CP006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-006",
+      "Code": "SGH-01-CP006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Dark Magician Girl",
       "SeriesName": "Yu-Gi-Oh!",
@@ -694,9 +694,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-007",
-      "Code": "CP007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-007",
+      "Code": "SGH-01-CP007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Joan of Arc",
       "SeriesName": "Fate Series",
@@ -705,9 +705,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-008",
-      "Code": "CP008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-008",
+      "Code": "SGH-01-CP008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "2B",
       "SeriesName": "NieR: Automata",
@@ -716,9 +716,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-009",
-      "Code": "CP009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-009",
+      "Code": "SGH-01-CP009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Keqing",
       "SeriesName": "Genshin Impact",
@@ -727,9 +727,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-010",
-      "Code": "CP010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-010",
+      "Code": "SGH-01-CP010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "Raphtalia",
       "SeriesName": "The Rising of the Shield Hero",
@@ -738,9 +738,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-011",
-      "Code": "CP011",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-011",
+      "Code": "SGH-01-CP011",
+      "SetNumber": "SGH-01",
       "CardNumber": "011",
       "CharacterName": "Nessa",
       "SeriesName": "Fate Series",
@@ -749,9 +749,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-012",
-      "Code": "CP012",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-012",
+      "Code": "SGH-01-CP012",
+      "SetNumber": "SGH-01",
       "CardNumber": "012",
       "CharacterName": "Marnie",
       "SeriesName": "Pokemon",
@@ -760,9 +760,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-013",
-      "Code": "CP013",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-013",
+      "Code": "SGH-01-CP013",
+      "SetNumber": "SGH-01",
       "CardNumber": "013",
       "CharacterName": "Mash Kyrielight",
       "SeriesName": "Fate Series",
@@ -771,9 +771,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-014",
-      "Code": "CP014",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-014",
+      "Code": "SGH-01-CP014",
+      "SetNumber": "SGH-01",
       "CardNumber": "014",
       "CharacterName": "May",
       "SeriesName": "Pokemon",
@@ -782,9 +782,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-015",
-      "Code": "CP015",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-015",
+      "Code": "SGH-01-CP015",
+      "SetNumber": "SGH-01",
       "CardNumber": "015",
       "CharacterName": "Nami",
       "SeriesName": "One Piece",
@@ -793,9 +793,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-016",
-      "Code": "CP016",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-016",
+      "Code": "SGH-01-CP016",
+      "SetNumber": "SGH-01",
       "CardNumber": "016",
       "CharacterName": "Prinz Eugen",
       "SeriesName": "Azur Lane",
@@ -804,9 +804,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-017",
-      "Code": "CP017",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-017",
+      "Code": "SGH-01-CP017",
+      "SetNumber": "SGH-01",
       "CardNumber": "017",
       "CharacterName": "Shenhe",
       "SeriesName": "Genshin Impact",
@@ -815,9 +815,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-018",
-      "Code": "CP018",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-018",
+      "Code": "SGH-01-CP018",
+      "SetNumber": "SGH-01",
       "CardNumber": "018",
       "CharacterName": "Tokisaki Kurumi",
       "SeriesName": "Date A Live",
@@ -826,9 +826,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-019",
-      "Code": "CP019",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-019",
+      "Code": "SGH-01-CP019",
+      "SetNumber": "SGH-01",
       "CardNumber": "019",
       "CharacterName": "Hilda",
       "SeriesName": "Pokemon",
@@ -837,9 +837,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-020",
-      "Code": "CP020",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-020",
+      "Code": "SGH-01-CP020",
+      "SetNumber": "SGH-01",
       "CardNumber": "020",
       "CharacterName": "Shinano",
       "SeriesName": "Azur Lane",
@@ -848,9 +848,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-021",
-      "Code": "CP021",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-021",
+      "Code": "SGH-01-CP021",
+      "SetNumber": "SGH-01",
       "CardNumber": "021",
       "CharacterName": "Yu Miaoyi",
       "SeriesName": "Fate Series",
@@ -859,9 +859,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-022",
-      "Code": "CP022",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-022",
+      "Code": "SGH-01-CP022",
+      "SetNumber": "SGH-01",
       "CardNumber": "022",
       "CharacterName": "Yu Miaoyi",
       "SeriesName": "Fate Series",
@@ -870,9 +870,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-023",
-      "Code": "CP023",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-023",
+      "Code": "SGH-01-CP023",
+      "SetNumber": "SGH-01",
       "CardNumber": "023",
       "CharacterName": "Nino Nakano",
       "SeriesName": "The Quintessential Quintuplets",
@@ -881,9 +881,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-024",
-      "Code": "CP024",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-024",
+      "Code": "SGH-01-CP024",
+      "SetNumber": "SGH-01",
       "CardNumber": "024",
       "CharacterName": "Itsuki",
       "SeriesName": "The Quintessential Quintuplets",
@@ -892,9 +892,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "CP-025",
-      "Code": "CP025",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-CP-025",
+      "Code": "SGH-01-CP025",
+      "SetNumber": "SGH-01",
       "CardNumber": "025",
       "CharacterName": "Sumiko Hoshi",
       "SeriesName": "-",
@@ -903,9 +903,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-001",
-      "Code": "UR001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-001",
+      "Code": "SGH-01-UR001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "Zero Two",
       "SeriesName": "Darling in the Franxx",
@@ -914,9 +914,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-002",
-      "Code": "UR002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-002",
+      "Code": "SGH-01-UR002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Anastasia",
       "SeriesName": "Fate Series",
@@ -925,9 +925,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-003",
-      "Code": "UR003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-003",
+      "Code": "SGH-01-UR003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Algeria",
       "SeriesName": "Azur Lane",
@@ -936,9 +936,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-004",
-      "Code": "UR004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-004",
+      "Code": "SGH-01-UR004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Artoria Alter (Lancer)",
       "SeriesName": "Fate Series",
@@ -947,9 +947,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-005",
-      "Code": "UR005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-005",
+      "Code": "SGH-01-UR005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Tomoe Gozen",
       "SeriesName": "Fate Series",
@@ -958,9 +958,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-006",
-      "Code": "UR006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-006",
+      "Code": "SGH-01-UR006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Belfast",
       "SeriesName": "Azur Lane",
@@ -969,9 +969,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-007",
-      "Code": "UR007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-007",
+      "Code": "SGH-01-UR007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Hayasaka Ai",
       "SeriesName": "Kaguya-sama: Love is War",
@@ -980,9 +980,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-008",
-      "Code": "UR008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-008",
+      "Code": "SGH-01-UR008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "Asada Shino",
       "SeriesName": "Sword Art Online",
@@ -991,9 +991,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-009",
-      "Code": "UR009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-009",
+      "Code": "SGH-01-UR009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Okita Soji",
       "SeriesName": "Fate Series",
@@ -1002,9 +1002,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-010",
-      "Code": "UR010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-010",
+      "Code": "SGH-01-UR010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "Drake",
       "SeriesName": "Azur Lane",
@@ -1013,9 +1013,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-011",
-      "Code": "UR011",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-011",
+      "Code": "SGH-01-UR011",
+      "SetNumber": "SGH-01",
       "CardNumber": "011",
       "CharacterName": "Kama",
       "SeriesName": "Fate Series",
@@ -1024,9 +1024,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-012",
-      "Code": "UR012",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-012",
+      "Code": "SGH-01-UR012",
+      "SetNumber": "SGH-01",
       "CardNumber": "012",
       "CharacterName": "Bremerton",
       "SeriesName": "Azur Lane",
@@ -1035,9 +1035,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-013",
-      "Code": "UR013",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-013",
+      "Code": "SGH-01-UR013",
+      "SetNumber": "SGH-01",
       "CardNumber": "013",
       "CharacterName": "KSVK",
       "SeriesName": "Girls Frontline",
@@ -1046,9 +1046,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-014",
-      "Code": "UR014",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-014",
+      "Code": "SGH-01-UR014",
+      "SetNumber": "SGH-01",
       "CardNumber": "014",
       "CharacterName": "Shinomiya Kaguya",
       "SeriesName": "Kaguya-sama: Love is War",
@@ -1057,9 +1057,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-015",
-      "Code": "UR015",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-015",
+      "Code": "SGH-01-UR015",
+      "SetNumber": "SGH-01",
       "CardNumber": "015",
       "CharacterName": "Gawr Gura",
       "SeriesName": "Holo Live",
@@ -1068,9 +1068,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-016",
-      "Code": "UR016",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-016",
+      "Code": "SGH-01-UR016",
+      "SetNumber": "SGH-01",
       "CardNumber": "016",
       "CharacterName": "Ganyu",
       "SeriesName": "Genshin Impact",
@@ -1079,9 +1079,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-017",
-      "Code": "UR017",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-017",
+      "Code": "SGH-01-UR017",
+      "SetNumber": "SGH-01",
       "CardNumber": "017",
       "CharacterName": "Miyamoto Musashi",
       "SeriesName": "Fate Series",
@@ -1090,9 +1090,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-018",
-      "Code": "UR018",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-018",
+      "Code": "SGH-01-UR018",
+      "SetNumber": "SGH-01",
       "CardNumber": "018",
       "CharacterName": "Dark Magician Girl",
       "SeriesName": "Yu-Gi-Oh!",
@@ -1101,9 +1101,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-019",
-      "Code": "UR019",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-019",
+      "Code": "SGH-01-UR019",
+      "SetNumber": "SGH-01",
       "CardNumber": "019",
       "CharacterName": "Joan of Arc",
       "SeriesName": "Fate Series",
@@ -1112,9 +1112,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-020",
-      "Code": "UR020",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-020",
+      "Code": "SGH-01-UR020",
+      "SetNumber": "SGH-01",
       "CardNumber": "020",
       "CharacterName": "Raiden Mei",
       "SeriesName": "Genshin Impact",
@@ -1123,9 +1123,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-021",
-      "Code": "UR021",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-021",
+      "Code": "SGH-01-UR021",
+      "SetNumber": "SGH-01",
       "CardNumber": "021",
       "CharacterName": "Lisa",
       "SeriesName": "Genshin Impact",
@@ -1134,9 +1134,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-022",
-      "Code": "UR022",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-022",
+      "Code": "SGH-01-UR022",
+      "SetNumber": "SGH-01",
       "CardNumber": "022",
       "CharacterName": "Marie Antoinette",
       "SeriesName": "Fate Series",
@@ -1145,9 +1145,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-023",
-      "Code": "UR023",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-023",
+      "Code": "SGH-01-UR023",
+      "SetNumber": "SGH-01",
       "CardNumber": "023",
       "CharacterName": "Prinz Eugen",
       "SeriesName": "Azur Lane",
@@ -1156,9 +1156,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-024",
-      "Code": "UR024",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-024",
+      "Code": "SGH-01-UR024",
+      "SetNumber": "SGH-01",
       "CardNumber": "024",
       "CharacterName": "Graf Zeppelin",
       "SeriesName": "Azur Lane",
@@ -1167,9 +1167,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-025",
-      "Code": "UR025",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-025",
+      "Code": "SGH-01-UR025",
+      "SetNumber": "SGH-01",
       "CardNumber": "025",
       "CharacterName": "Sesshouin Kiara",
       "SeriesName": "Fate Series",
@@ -1178,9 +1178,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-026",
-      "Code": "UR026",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-026",
+      "Code": "SGH-01-UR026",
+      "SetNumber": "SGH-01",
       "CardNumber": "026",
       "CharacterName": "Tokisaki Kurumi",
       "SeriesName": "Date A Live",
@@ -1189,9 +1189,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-027",
-      "Code": "UR027",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-027",
+      "Code": "SGH-01-UR027",
+      "SetNumber": "SGH-01",
       "CardNumber": "027",
       "CharacterName": "Surtr",
       "SeriesName": "Arknights",
@@ -1200,9 +1200,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-028",
-      "Code": "UR028",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-028",
+      "Code": "SGH-01-UR028",
+      "SetNumber": "SGH-01",
       "CardNumber": "028",
       "CharacterName": "Scathach",
       "SeriesName": "Fate Series",
@@ -1211,9 +1211,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-029",
-      "Code": "UR029",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-029",
+      "Code": "SGH-01-UR029",
+      "SetNumber": "SGH-01",
       "CardNumber": "029",
       "CharacterName": "Megumin",
       "SeriesName": "God's Blessing on this Wonderful World!",
@@ -1222,9 +1222,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-030",
-      "Code": "UR030",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-030",
+      "Code": "SGH-01-UR030",
+      "SetNumber": "SGH-01",
       "CardNumber": "030",
       "CharacterName": "Tosa",
       "SeriesName": "Azur Lane",
@@ -1233,9 +1233,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-031",
-      "Code": "UR031",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-031",
+      "Code": "SGH-01-UR031",
+      "SetNumber": "SGH-01",
       "CardNumber": "031",
       "CharacterName": "Yukihana Lamy",
       "SeriesName": "Hololive",
@@ -1244,9 +1244,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-032",
-      "Code": "UR032",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-032",
+      "Code": "SGH-01-UR032",
+      "SetNumber": "SGH-01",
       "CardNumber": "032",
       "CharacterName": "Ishtar",
       "SeriesName": "Fate Series",
@@ -1255,9 +1255,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-033",
-      "Code": "UR033",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-033",
+      "Code": "SGH-01-UR033",
+      "SetNumber": "SGH-01",
       "CardNumber": "033",
       "CharacterName": "Nakano Miku",
       "SeriesName": "The Quintessential Quintuplets",
@@ -1266,9 +1266,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-034",
-      "Code": "UR034",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-034",
+      "Code": "SGH-01-UR034",
+      "SetNumber": "SGH-01",
       "CardNumber": "034",
       "CharacterName": "Marin Kitagawa",
       "SeriesName": "My Dress-Up Darling",
@@ -1277,9 +1277,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "UR-035",
-      "Code": "UR035",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-UR-035",
+      "Code": "SGH-01-UR035",
+      "SetNumber": "SGH-01",
       "CardNumber": "035",
       "CharacterName": "Shenhe",
       "SeriesName": "Genshin Impact",
@@ -1288,9 +1288,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-001",
-      "Code": "SSR001",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-001",
+      "Code": "SGH-01-SSR001",
+      "SetNumber": "SGH-01",
       "CardNumber": "001",
       "CharacterName": "AK-12",
       "SeriesName": "Girls' Frontline",
@@ -1299,9 +1299,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-002",
-      "Code": "SSR002",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-002",
+      "Code": "SGH-01-SSR002",
+      "SetNumber": "SGH-01",
       "CardNumber": "002",
       "CharacterName": "Anastasia",
       "SeriesName": "Fate Series",
@@ -1310,9 +1310,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-003",
-      "Code": "SSR003",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-003",
+      "Code": "SGH-01-SSR003",
+      "SetNumber": "SGH-01",
       "CardNumber": "003",
       "CharacterName": "Ouro Kronii",
       "SeriesName": "Holo Live",
@@ -1321,9 +1321,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-004",
-      "Code": "SSR004",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-004",
+      "Code": "SGH-01-SSR004",
+      "SetNumber": "SGH-01",
       "CardNumber": "004",
       "CharacterName": "Inferno",
       "SeriesName": "-",
@@ -1332,9 +1332,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-005",
-      "Code": "SSR005",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-005",
+      "Code": "SGH-01-SSR005",
+      "SetNumber": "SGH-01",
       "CardNumber": "005",
       "CharacterName": "Shirogane Noel",
       "SeriesName": "Vtuber",
@@ -1343,9 +1343,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-006",
-      "Code": "SSR006",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-006",
+      "Code": "SGH-01-SSR006",
+      "SetNumber": "SGH-01",
       "CardNumber": "006",
       "CharacterName": "Houshou Marine",
       "SeriesName": "Vtuber",
@@ -1354,9 +1354,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-007",
-      "Code": "SSR007",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-007",
+      "Code": "SGH-01-SSR007",
+      "SetNumber": "SGH-01",
       "CardNumber": "007",
       "CharacterName": "Pola",
       "SeriesName": "-",
@@ -1365,9 +1365,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-008",
-      "Code": "SSR008",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-008",
+      "Code": "SGH-01-SSR008",
+      "SetNumber": "SGH-01",
       "CardNumber": "008",
       "CharacterName": "Koyori",
       "SeriesName": "Holo Live",
@@ -1376,9 +1376,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-009",
-      "Code": "SSR009",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-009",
+      "Code": "SGH-01-SSR009",
+      "SetNumber": "SGH-01",
       "CardNumber": "009",
       "CharacterName": "Bremerton",
       "SeriesName": "Azur Lane",
@@ -1387,9 +1387,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-010",
-      "Code": "SSR010",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-010",
+      "Code": "SGH-01-SSR010",
+      "SetNumber": "SGH-01",
       "CardNumber": "010",
       "CharacterName": "USS Bremerton",
       "SeriesName": "Azur Lane",
@@ -1398,9 +1398,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-011",
-      "Code": "SSR011",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-011",
+      "Code": "SGH-01-SSR011",
+      "SetNumber": "SGH-01",
       "CardNumber": "011",
       "CharacterName": "Okita Souji",
       "SeriesName": "Fate Series",
@@ -1409,9 +1409,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-012",
-      "Code": "SSR012",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-012",
+      "Code": "SGH-01-SSR012",
+      "SetNumber": "SGH-01",
       "CardNumber": "012",
       "CharacterName": "Yui Ootsuki",
       "SeriesName": "The Idolm@ster",
@@ -1420,9 +1420,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-013",
-      "Code": "SSR013",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-013",
+      "Code": "SGH-01-SSR013",
+      "SetNumber": "SGH-01",
       "CardNumber": "013",
       "CharacterName": "Ookami Mio",
       "SeriesName": "Holo Live",
@@ -1431,9 +1431,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-014",
-      "Code": "SSR014",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-014",
+      "Code": "SGH-01-SSR014",
+      "SetNumber": "SGH-01",
       "CardNumber": "014",
       "CharacterName": "HMS Dido",
       "SeriesName": "Azur Lane",
@@ -1442,9 +1442,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-015",
-      "Code": "SSR015",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-015",
+      "Code": "SGH-01-SSR015",
+      "SetNumber": "SGH-01",
       "CardNumber": "015",
       "CharacterName": "MNF Dunkerque",
       "SeriesName": "Azur Lane",
@@ -1453,9 +1453,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-016",
-      "Code": "SSR016",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-016",
+      "Code": "SGH-01-SSR016",
+      "SetNumber": "SGH-01",
       "CardNumber": "016",
       "CharacterName": "Kazama Iroha",
       "SeriesName": "Vtuber",
@@ -1464,9 +1464,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-017",
-      "Code": "SSR017",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-017",
+      "Code": "SGH-01-SSR017",
+      "SetNumber": "SGH-01",
       "CardNumber": "017",
       "CharacterName": "Ganyu",
       "SeriesName": "Genshin Impact",
@@ -1475,9 +1475,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-018",
-      "Code": "SSR018",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-018",
+      "Code": "SGH-01-SSR018",
+      "SetNumber": "SGH-01",
       "CardNumber": "018",
       "CharacterName": "Miyamoto Musashi",
       "SeriesName": "Fate Series",
@@ -1486,9 +1486,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-019",
-      "Code": "SSR019",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-019",
+      "Code": "SGH-01-SSR019",
+      "SetNumber": "SGH-01",
       "CardNumber": "019",
       "CharacterName": "USS Honolulu",
       "SeriesName": "Azur Lane",
@@ -1497,9 +1497,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-020",
-      "Code": "SSR020",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-020",
+      "Code": "SGH-01-SSR020",
+      "SetNumber": "SGH-01",
       "CardNumber": "020",
       "CharacterName": "Kaela Kovalskia",
       "SeriesName": "Holo Live",
@@ -1508,9 +1508,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-021",
-      "Code": "SSR021",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-021",
+      "Code": "SGH-01-SSR021",
+      "SetNumber": "SGH-01",
       "CardNumber": "021",
       "CharacterName": "Rem",
       "SeriesName": "Re:Zero",
@@ -1519,9 +1519,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-022",
-      "Code": "SSR022",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-022",
+      "Code": "SGH-01-SSR022",
+      "SetNumber": "SGH-01",
       "CardNumber": "022",
       "CharacterName": "Nami",
       "SeriesName": "One Piece",
@@ -1530,9 +1530,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-023",
-      "Code": "SSR023",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-023",
+      "Code": "SGH-01-SSR023",
+      "SetNumber": "SGH-01",
       "CardNumber": "023",
       "CharacterName": "Prinz Eugen",
       "SeriesName": "Azur Lane",
@@ -1541,9 +1541,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-024",
-      "Code": "SSR024",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-024",
+      "Code": "SGH-01-SSR024",
+      "SetNumber": "SGH-01",
       "CardNumber": "024",
       "CharacterName": "KMS Graf Zeppelin",
       "SeriesName": "Azur Lane",
@@ -1552,9 +1552,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-025",
-      "Code": "SSR025",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-025",
+      "Code": "SGH-01-SSR025",
+      "SetNumber": "SGH-01",
       "CardNumber": "025",
       "CharacterName": "USS Enterprise",
       "SeriesName": "Azur Lane",
@@ -1563,9 +1563,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-026",
-      "Code": "SSR026",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-026",
+      "Code": "SGH-01-SSR026",
+      "SetNumber": "SGH-01",
       "CardNumber": "026",
       "CharacterName": "Ceres Fauna",
       "SeriesName": "Holo Live",
@@ -1574,9 +1574,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-027",
-      "Code": "SSR027",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-027",
+      "Code": "SGH-01-SSR027",
+      "SetNumber": "SGH-01",
       "CardNumber": "027",
       "CharacterName": "Sand Flower Fork Chloe",
       "SeriesName": "Holo Live",
@@ -1585,9 +1585,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-028",
-      "Code": "SSR028",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-028",
+      "Code": "SGH-01-SSR028",
+      "SetNumber": "SGH-01",
       "CardNumber": "028",
       "CharacterName": "Kamisato Ayaka",
       "SeriesName": "Genshin Impact",
@@ -1596,9 +1596,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-029",
-      "Code": "SSR029",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-029",
+      "Code": "SGH-01-SSR029",
+      "SetNumber": "SGH-01",
       "CardNumber": "029",
       "CharacterName": "HMS Sirius",
       "SeriesName": "Azur Lane",
@@ -1607,9 +1607,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-030",
-      "Code": "SSR030",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-030",
+      "Code": "SGH-01-SSR030",
+      "SetNumber": "SGH-01",
       "CardNumber": "030",
       "CharacterName": "RN Aquila",
       "SeriesName": "Azur Lane",
@@ -1618,9 +1618,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-031",
-      "Code": "SSR031",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-031",
+      "Code": "SGH-01-SSR031",
+      "SetNumber": "SGH-01",
       "CardNumber": "031",
       "CharacterName": "Maruzensky",
       "SeriesName": "Uma Musume Pretty Derby",
@@ -1629,9 +1629,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-032",
-      "Code": "SSR032",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-032",
+      "Code": "SGH-01-SSR032",
+      "SetNumber": "SGH-01",
       "CardNumber": "032",
       "CharacterName": "Vestia Zeta",
       "SeriesName": "Holo Live",
@@ -1640,9 +1640,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-033",
-      "Code": "SSR033",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-033",
+      "Code": "SGH-01-SSR033",
+      "SetNumber": "SGH-01",
       "CardNumber": "033",
       "CharacterName": "Yelan",
       "SeriesName": "Genshin Impact",
@@ -1651,9 +1651,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-034",
-      "Code": "SSR034",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-034",
+      "Code": "SGH-01-SSR034",
+      "SetNumber": "SGH-01",
       "CardNumber": "034",
       "CharacterName": "Ishtar",
       "SeriesName": "Fate Series",
@@ -1662,9 +1662,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-035",
-      "Code": "SSR035",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-035",
+      "Code": "SGH-01-SSR035",
+      "SetNumber": "SGH-01",
       "CardNumber": "035",
       "CharacterName": "Sakura Miko",
       "SeriesName": "Vtuber",
@@ -1673,9 +1673,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-036",
-      "Code": "SSR036",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-036",
+      "Code": "SGH-01-SSR036",
+      "SetNumber": "SGH-01",
       "CardNumber": "036",
       "CharacterName": "Natsuha Arisugawa",
       "SeriesName": "The Idolm@ster",
@@ -1684,9 +1684,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-037",
-      "Code": "SSR037",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-037",
+      "Code": "SGH-01-SSR037",
+      "SetNumber": "SGH-01",
       "CardNumber": "037",
       "CharacterName": "Tamamo no Mae",
       "SeriesName": "Fate Series",
@@ -1695,9 +1695,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-038",
-      "Code": "SSR038",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-038",
+      "Code": "SGH-01-SSR038",
+      "SetNumber": "SGH-01",
       "CardNumber": "038",
       "CharacterName": "RN Zara",
       "SeriesName": "Azur Lane",
@@ -1706,9 +1706,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-039",
-      "Code": "SSR039",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-039",
+      "Code": "SGH-01-SSR039",
+      "SetNumber": "SGH-01",
       "CardNumber": "039",
       "CharacterName": "Nino Nakano",
       "SeriesName": "The Quintessential Quintuplets",
@@ -1717,9 +1717,9 @@
       "HasImage": "YES"
     },
     {
-      "ID": "SSR-040",
-      "Code": "SSR040",
-      "SetNumber": "SGH",
+      "ID": "SGH-01-SSR-040",
+      "Code": "SGH-01-SSR040",
+      "SetNumber": "SGH-01",
       "CardNumber": "040",
       "CharacterName": "Shirogane Noel",
       "SeriesName": "Vtuber",
@@ -1728,7 +1728,7 @@
       "HasImage": "YES"
     }
   ],
-  "set_no": ["SGH"],
+  "set_no": ["SGH-01"],
   "rarity": ["SLR", "LSP", "SSP", "SP", "ZR", "MR", "CP", "UR", "SSR"],
   "series": [
     "-",
