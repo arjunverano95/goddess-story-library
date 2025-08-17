@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {StyleProp, StyleSheet, View, ViewStyle, ImageStyle} from 'react-native';
 import {Image} from 'expo-image';
+import React, {useState} from 'react';
+import {ImageStyle, StyleProp, View, ViewStyle} from 'react-native';
 
 interface GalleryImageProps {
   imageUrl?: string;

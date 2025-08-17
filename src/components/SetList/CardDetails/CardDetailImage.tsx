@@ -5,11 +5,11 @@ import {Image} from 'expo-image';
 import {Colors} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
 
-interface GalleryImageProps {
+interface CardDetailImageProps {
   data: GSLCard;
 }
 
-const GalleryImage = (props: GalleryImageProps) => {
+const CardDetailImage = (props: CardDetailImageProps) => {
   const {data} = props;
 
   if (data.ImageUrl) {
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GalleryImage;
+export default CardDetailImage;

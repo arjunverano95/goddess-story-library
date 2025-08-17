@@ -53,6 +53,7 @@ const Overlay = (props: HeaderProps) => {
         easing: Easing.in(Easing.cubic),
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
 
   const animatedStyle = useAnimatedStyle(() => {

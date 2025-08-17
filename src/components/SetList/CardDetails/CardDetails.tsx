@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import {Badge, Card, Text, Button, Icon} from '@rneui/themed';
+import {Badge, Button, Card, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons, Sizes} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
-import GalleryImage from './GalleryImage';
+import CardDetailImage from './CardDetailImage';
 
 interface CardDetailsProps {
   card: GSLCard;
@@ -49,7 +49,7 @@ const CardDetails = (props: CardDetailsProps) => {
 
       {/* Card Image Section */}
       <View style={styles.imageContainer}>
-        <GalleryImage data={card} />
+        <CardDetailImage data={card} />
       </View>
     </View>
   );
