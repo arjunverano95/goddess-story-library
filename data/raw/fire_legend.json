@@ -1,0 +1,906 @@
+{
+  "RX-5M01": {
+    "UR": {
+      "006": {
+        "name": "Belfast",
+        "series": "Azur Lane",
+        "hash_r": "91c8bc43d0ca6a788315666c74e40e3a8222a368291f3244cc4442e2ce40dfae",
+        "hash_g": "1205a2243741d1fda7a6ffeac8c2c6d21a8f49b40b6c775a98ccb1bcf91fa195",
+        "hash_b": "6f2ed2e923a18d9bb155a8d329b5a2ab3fbae1294904ec3dd5252dc5913ddb43",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-006.webp"
+      },
+      "007": {
+        "name": "Ai Hayasaka",
+        "series": "Kaguya-sama: Love is War",
+        "hash_r": "2a6c0a66187a49cbd0b4933fdee0f300768ffa8ee85b25c9c0b49173ebe89e30",
+        "hash_g": "9e469192c1e3d12c2674f204dfd23e32c242891e1cd1859b71c9aa6f9c639424",
+        "hash_b": "c68ed57dd85d4cf4f2889b6a9079303462c20132330fa1bce15ee9b073f7bdbe",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-007.webp"
+      },
+      "008": {
+        "name": "Shino Asada",
+        "series": "Sword Art Online",
+        "hash_r": "b2f55738d03389c3b056d2cd34d69c2d68dd96c82b159f3f53ba538086d115e6",
+        "hash_g": "15190476f84007bbdc4d9122a893454479cffa5a5afd4a7080f033eb1047a195",
+        "hash_b": "25d1dc4a869745d9e1cc6c51125ea2da4c6489c0f38229767a6c69e2b12f9bcb",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-008.webp"
+      },
+      "009": {
+        "name": "Okita Souji",
+        "series": "Fate Series",
+        "hash_r": "adc3127469fba1221bb41766fe1e5260e450cfb47da7dc3252bce81092a1303c",
+        "hash_g": "a0435501669b539590602f6036eac611d01e0c40c0535d653413004713f866f8",
+        "hash_b": "3b8aec41159d35511c3175d5445b9a1bd3305a067550f93f01db6e42dcdfdd75",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-009.webp"
+      },
+      "010": {
+        "name": "Drake",
+        "series": "Azur Lane",
+        "hash_r": "0df17eab6b7fe792771e1f6e1109f1ed0a484d3489d258d01a8afef42d7bdd9c",
+        "hash_g": "9f05f515b16e58d2dac14a0b7084e13b10d521236be37c711f47e6244b187f61",
+        "hash_b": "9e17643f3492f0e2d2c729222f50b122c66a91ced5a2817709ce0493a5bc0253",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-010.webp"
+      },
+      "011": {
+        "name": "Kama",
+        "series": "Fate Series",
+        "hash_r": "9ce78bd72e256ecd53ebe7f75e2aeb9edb3da4a48cdd8bc405c4bf950385e8e5",
+        "hash_g": "610994371d8091aa4ea777f8b4488d4482b8b8e51189dfaca2f73b021ae04132",
+        "hash_b": "8874ceefd82fae446dff5d90d6afae8653ca10a31ff24c5fbae5610fe5d40b53",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-011.webp"
+      },
+      "012": {
+        "name": "Bremerton",
+        "series": "Azur Lane",
+        "hash_r": "10f9263ab155765fa87bdf0a25dd1bce8ec84c32f82e94bbcc39d5cef734dfaa",
+        "hash_g": "51f4e35e723ecaea5956ec77f84a5ce6e47340c8ae5ead149e17a45326283ee1",
+        "hash_b": "749bfc1750964810bf5440d793878baa3aa84f354196ccbf129d6b2ea5cb204b",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-012.webp"
+      },
+      "013": {
+        "name": "Sovetsky Soyuz",
+        "series": "Azur Lane",
+        "hash_r": "52eb897902775a0d30e06c3fb313766ad5420c85d926f3542a44c9a7d1b12c25",
+        "hash_g": "770aaf42859e44dcd7d6f3a5045f002248dbdb63ecd02630695016e7996dd915",
+        "hash_b": "7ad6c604a3dfad62953a4bddff9be6038ae809e59401d6a2bfc46c0cde90b7e4",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-013.webp"
+      },
+      "014": {
+        "name": "Kaguya Shinomiya",
+        "series": "Kaguya-sama: Love is War",
+        "hash_r": "38a1de8ec4b72edb72079d6e7151512ae8b990aba832f06f6572a74b44a71840",
+        "hash_g": "0053eea68a04a104ee09f5603957bba87b62b632cbf7c941227ece51936a40ea",
+        "hash_b": "4fda305a74a0c9d5bf208903cff25da8e85ba35214b9339b5a6e8fe261fc5b50",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-014.webp"
+      },
+      "015": {
+        "name": "Gawr Gura",
+        "series": "Hololive",
+        "hash_r": "887b1ed78409668682f18a0d3e7edd096f5f6142049473eb2ef91f6388030e55",
+        "hash_g": "5e6b3a3cf12dd0afdcac66b3112d2ca1b8d183fc32459461324c89b9460f72b0",
+        "hash_b": "06ec8589fbc71fbdf8f9f4300667960fa55226606b680690b0fc4621458d06b8",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-015.webp"
+      },
+      "016": {
+        "name": "Ganyu",
+        "series": "Genshin Impact",
+        "hash_r": "8d03658a54e2e0047ac296ab791ffad5e9c7cb8b4615a219895631994dd2977f",
+        "hash_g": "fcce20e319b3cd7e42f4f02d19df27a8c56bff4d762274555a538bf8ddc16b04",
+        "hash_b": "84068f159cafd8197150109090f08ae3ee9df4696d33e011338f52f279d586a9",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-016.webp"
+      },
+      "017": {
+        "name": "Miyamoto Musashi",
+        "series": "Fate Series",
+        "hash_r": "ab4e5ac4f9bc59ea593b6fe6ca23401cd9f31aa2eb55edf9dde26cb9baa106d9",
+        "hash_g": "c83fa71cb85683327b53138957941c6a78972d0f8b28e1e897005eead35b20b6",
+        "hash_b": "4250611aa3246acceefb58644abab7be526599b07191d3f764f7166b95767c0e",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-017.webp"
+      },
+      "018": {
+        "name": "Dark Magician Girl",
+        "series": "Yu-Gi-Oh!",
+        "hash_r": "346903b9d9f65c00c626bc1d0db470317db25687ddf2e82ccec794ba809e58c6",
+        "hash_g": "f3cc41367df5a4575c10c3c6c18aebc24e0f4355af00e69d44d0b77b3097306a",
+        "hash_b": "fd19a139bcfdf6c1592990fee52a6f39b928f0aaef289e85a271b525e98052b5",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-018.webp"
+      },
+      "019": {
+        "name": "Jeanne d'Arc",
+        "series": "Fate Series",
+        "hash_r": "500b62a7cffb69b95d6f4cbc9104cf039fa669a8e188f166702636bcc9030b7e",
+        "hash_g": "3cff6a4f8c80aaf372246f93d59042f110a8da26ce32746b7567b266c1e2cd91",
+        "hash_b": "23aad3ecc48d0ffd255827ab267a7dd771f8310812243473537d64c93e416785",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-019.webp"
+      },
+      "020": {
+        "name": "Raiden Shogun",
+        "series": "Genshin Impact",
+        "hash_r": "68dd612cf73034dfb3deb75bb25bd9adbd6668a2234e6a168db0b9246790d38a",
+        "hash_g": "72cc419703203f0d35f7921eac5ffb87162ad54da5c9559f12c047d6dbc6bcb3",
+        "hash_b": "915fb9569fc6dcd494b5abb3e3823b3c8442dc4d409db5a90e784fa593879bd8",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-020.webp"
+      },
+      "021": {
+        "name": "Lisa Minci",
+        "series": "Genshin Impact",
+        "hash_r": "b6c0d38df7ed4e1cc92ca2f92777245582ebb31578e04c6ce9156cacab1fef9d",
+        "hash_g": "94830cfa794be33fa2fa7133fc18d4462e6d744fa73aa8a7f9c8c72b554ad91d",
+        "hash_b": "2c2c1ca6cea8e36863a0adca8253b18e94a98056077ea8475e197d00a3765eb9",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-021.webp"
+      },
+      "022": {
+        "name": "Marie Antoinette",
+        "series": "Fate Series",
+        "hash_r": "d19c653229f162415fa53e0b19389f37937a00171564158cf3dd3ab5056a8f12",
+        "hash_g": "d001d1f50d7c78dac01136d5dfd38620b542ee67dc8f1fda0ffbd4f88bedc326",
+        "hash_b": "25a2e7b9704e2d83ee1644b77cad040c6348d1cf333a8e1600a6e93d064d1c3b",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-022.webp"
+      },
+      "023": {
+        "name": "Prinz Eugen",
+        "series": "Azur Lane",
+        "hash_r": "0a73a69585fc95306633c6a8b96a9faaf0961c7a31376907b1ac21745c9c039f",
+        "hash_g": "1b2d1c63ff67d9594d087cf1201d5472a0f1bf700fe42d0197f817c3c3e67793",
+        "hash_b": "b08811a328c1c1d95129deb74774f482041fcdfe1562d9d796d039cd06849b04",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-023.webp"
+      },
+      "024": {
+        "name": "Graf Zeppelin",
+        "series": "Azur Lane",
+        "hash_r": "6a4bf177b059724fa0a726db704fea610a1b5675d7706991ef861bf375fb5079",
+        "hash_g": "e3d8a3319b77f1127edcfaa9a90b46682ff58a466228bda4a35a3bf899d1cfcc",
+        "hash_b": "f8180b28d209a3fa0bb7d22587b1f66f2214282956d86d4cc6db682e687b2cea",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-024.webp"
+      },
+      "025": {
+        "name": "Kiara Sessyoin",
+        "series": "Fate Series",
+        "hash_r": "152da4f2c3d7021f705192dca5d10a15cd484dc0eb619a1f252545ad2bcfc57f",
+        "hash_g": "fc36be430691f75f48306c5e31d7202acfc0048c326fb6f9a7c0cde124ee3b9d",
+        "hash_b": "6277ef7a8cc2588b15c51571cd020cff28630a5721c2947e778d799575d79c04",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-025.webp"
+      },
+      "026": {
+        "name": "Kurumi Tokisaki",
+        "series": "Date A Live",
+        "hash_r": "731b21306bae86149b6e539d887deebbba8bd5485a813c924d0af46549e4a317",
+        "hash_g": "9b6175b983fdfb3f64e11a63e0d2c2ef324bee77acd579c0bf805c068a082c61",
+        "hash_b": "9f93dc5bbfd5a1c6e523fd106678d4a2e2e2f2afeb2d3ae6d3790cffd2b5c727",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-026.webp"
+      },
+      "027": {
+        "name": "Surtr",
+        "series": "Arknights",
+        "hash_r": "9bbb2e551bcb2e96c05f91f3527d567f91bc18164b6ac7007e820fa6cbda8816",
+        "hash_g": "948b58f8cbdcacfd052a1e9b24a6ea072b056a6dbdf24acb29733dc60e33fb40",
+        "hash_b": "e3858923369edcc794b705fff1c81d2a03498e693527f1cea4910e4a00d86c04",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-027.webp"
+      },
+      "028": {
+        "name": "Scathach",
+        "series": "Fate Series",
+        "hash_r": "b9604c64afff2b608051bae802f41fbe0287a5febbf68ba6ccda94e6e2f6fa68",
+        "hash_g": "bf4d52b3280be3bb7e8ca747e165d4024de9e41794e971c5132b235a7b57fb90",
+        "hash_b": "10b9e31f6f2227272b7329bef1ccbbe8d2a59fcb2a3228798aaaa66b86619c5d",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-028.webp"
+      },
+      "029": {
+        "name": "Megumin",
+        "series": "God's Blessing on this Wonderful World! (KonoSuba)",
+        "hash_r": "ff0f3ac36a13e3e090579e7d169ece99da8b6ce8afe12466be134b7fda0fa12c",
+        "hash_g": "7bc80d2b000e2b93773ae64324b1c7757519c892e6843c5820cd5ade0d9d8423",
+        "hash_b": "7ccd564e3632b58e1c1af5adf5d873c2243cea20d85ff039ee6b64c5f4e3b1e2",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-029.webp"
+      },
+      "030": {
+        "name": "Tosa",
+        "series": "Azur Lane",
+        "hash_r": "00d6f152349272f672c93d96c31906eb7d49538ebf9083c242e5a88f69ffb1e8",
+        "hash_g": "f8b288985812a3e441a8f3e7f61363d17db276ebc7c011b50e0356e7be82e2f0",
+        "hash_b": "7848782047712c2a5875954cdbdb350e8932592f5dc34a36fefa9c3387e54bef",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-030.webp"
+      },
+      "031": {
+        "name": "Yukihana Lamy",
+        "series": "Hololive",
+        "hash_r": "28cff47662ba9015fc0353389d154dd0b0d8507bff53e5192134aaa95f77bf41",
+        "hash_g": "a06fe50285306bfb86fa06d98b7278bb74b04f94dad7bb93de678df29c2a8a04",
+        "hash_b": "43fb62e221edd47873926f5813916b95504f4581e673676f08c0c2f9d9724654",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-031.webp"
+      },
+      "032": {
+        "name": "Ishtar",
+        "series": "Fate Series",
+        "hash_r": "7e92f4cf86e28c35be231711ae53264770f9d0b11db75d65b6c24f0798bad770",
+        "hash_g": "bde942bdb6f00afa90c0f0c66c36d88930b6d0502d3ced2d8a57d83bfdd7face",
+        "hash_b": "d722222a3ca859122ededb2fa54bd5f9ed2b0b302c28b0c3be71ad43e421c432",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-032.webp"
+      },
+      "033": {
+        "name": "Miku Nakano",
+        "series": "The Quintessential Quintuplets",
+        "hash_r": "945e0e07862ef9f112beb97531d0f950bada86ef3193446b906a8133fde0d905",
+        "hash_g": "bdf0d2a414191c03958ebbd0e440715a9c2609883679ebb6833f625151eb6d69",
+        "hash_b": "124b83e6245ed09ddddd8960184966612c76d976ccb69253c1339101ed4ce870",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-033.webp"
+      },
+      "034": {
+        "name": "Marin Kitagawa",
+        "series": "My Dress-Up Darling",
+        "hash_r": "6cebaea20dedd4656ecc53525521965e73ec8cd12599e4076d2b0c1233854064",
+        "hash_g": "088af1380cbeb06a6aa317ea3a4c59ab238da7326a71ac2c39d1dce29c61c41c",
+        "hash_b": "c213fc1124d604579e91e340bdc7ffb2211436f326bf7486f77d8738a57beb2e",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-034.webp"
+      },
+      "035": {
+        "name": "Shenhe",
+        "series": "Genshin Impact",
+        "hash_r": "9a828a73df62a37351812cf3340a6492b2b4f0fd69b02dc33dc0f83c225bc884",
+        "hash_g": "326873abb8193fae71a463ac83b8c501dd0eaec55c574d31fa863997def3bd51",
+        "hash_b": "a21c1790ac5e6ef2fa4c05c79fc7bfdbd4627b71d955286e8ab71754ef3de116",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/UR-035.webp"
+      }
+    },
+    "ZR": {
+      "001": {
+        "name": "Edward Elric",
+        "series": "Fullmetal Alchemist",
+        "hash_r": "e91cef591de603c20254db42d339e356cbf5d7997bc6a9d8672f1ae93e5ebd2b",
+        "hash_g": "73fbed92ff8cd669807ae7feb305b5cb01e31616d8ee17de7eb61a7d368523d1",
+        "hash_b": "4584d373f6a1a8eea9d3ee75a066a099ad79733d7ffe9d32d21ef469364f07e3",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-001.webp"
+      },
+      "002": {
+        "name": "Gon Freecss",
+        "series": "Hunter x Hunter",
+        "hash_r": "fab5ec08f5085564ae15933680b3d3b1c8b97431f812bdc2a76a093d32c2383a",
+        "hash_g": "1b3c833997fda892868d997c3e1f40edfc438a984ec8f1f7da0f54ce92e626d4",
+        "hash_b": "e3d884b4c6b2fdefcd731351d549b8550fc2bd2b4b21b8a5a0cff2610c8f9b3f",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-002.webp"
+      },
+      "003": {
+        "name": "Kenshirou",
+        "series": "Fist of the North Star",
+        "hash_r": "8331bf4570b9f38924fd724f0d53cb85ef9ce467898a910a6cb69ae9f1664962",
+        "hash_g": "7628ac44f8b5dbdbf50a97dbc52b0e417a5d02690247b7dbff4f7b200e5b6307",
+        "hash_b": "f7c743d0a8aad531fef00d3bdc1cf3378471ef72d1442970f7ca2cdc806baada",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-003.webp"
+      },
+      "004": {
+        "name": "Inuyasha",
+        "series": "Inuyasha",
+        "hash_r": "bcdc420fc4f95b15370d82498ee1e3394de430e39f0cac39ba74e8f7dedd9f10",
+        "hash_g": "05ad485a97a658062835ac88deb1afe7c4711509297633aa841cb5c2861b676d",
+        "hash_b": "cc6ad17d440431a39068f59f84b6590e7c098943c641dbefe42f828243349a51",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-004.webp"
+      },
+      "005": {
+        "name": "Ken Kaneki",
+        "series": "Tokyo Ghoul",
+        "hash_r": "624ed77d8859c2c0471f13207bc209697f6ecc0d80e15c23a550fe5f2624ce2a",
+        "hash_g": "6d2031020da0fadfbcad1dcd39223966510b3e313ca52b4ecc76571326fcf4ca",
+        "hash_b": "e54ed148b9b2f49615109a75058d566a3ac4277439f1661c03bbc793cedb91f7",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-005.webp"
+      },
+      "006": {
+        "name": "Momonga",
+        "series": "Overlord",
+        "hash_r": "cf7a8d02b171c31324d7cfb0e74dcfd7ef675cb8c5d06523da0176a27e0de867",
+        "hash_g": "9b224e8236f074d0f9ffe0b141e3f8565ff0ae93d10f167c1810bf0c2fbb22e3",
+        "hash_b": "c2d49745b4196dc964f516423d9cbda132fdfe7c52288438f59a91f9a4622076",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-006.webp"
+      },
+      "007": {
+        "name": "Saitama",
+        "series": "One Punch Man",
+        "hash_r": "40921bd9a3f34ac1bbd2d17c71f7d10682c7c15aeaf35cbe293a0b066256a1bd",
+        "hash_g": "6643fe8466820bd3cfeb77cdbbfdd2d517e1edd1813f8d4af5540b8f927e23a6",
+        "hash_b": "4ea9d6db5f57da410a1f846799c6f23ab96a315e888477afcaf00839f649582e",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-007.webp"
+      },
+      "008": {
+        "name": "Doraemon",
+        "series": "Doraemon",
+        "hash_r": "c68579c7fac7be9293182b66057103c3094c8816d42d24c7a8e021e412ee6cd1",
+        "hash_g": "78573e546c016227710c415b2c4cea40143ec57cc17ad5b2e6d674c4df51a047",
+        "hash_b": "e357343c1117de0e4fd6d05c13686f45c9f478c7f4bd23c0b467b8a0e1eaf13a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-008.webp"
+      },
+      "009": {
+        "name": "Astro Boy",
+        "series": "Astro Boy",
+        "hash_r": "e14a63d9a50363ff2fe4956a77a0aa808b40b6b011b3630c68ebaf7a58c3cb28",
+        "hash_g": "34a619a486bc79d3adb312cd5b61e79e0c4eba5634ac0cb4e9e15e575b75dc98",
+        "hash_b": "a78d47a30a3ebdc7fc78dd22ff2d5d0626a567e32b9288daf4fc488a2b54b57a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/ZR-009.webp"
+      },
+      "010": {
+        "name": "Scathach",
+        "series": "Fate Series",
+        "hash_r": "Not available",
+        "hash_g": "Not available",
+        "hash_b": "Not available",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/ZR-010.webp"
+      },
+      "011": {
+        "name": "New Jersey",
+        "series": "Azur Lane",
+        "hash_r": "Not available",
+        "hash_g": "Not available",
+        "hash_b": "Not available",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/ZR-011.webp"
+      },
+      "012": {
+        "name": "Asuna Ichinose",
+        "series": "Blue Archive",
+        "hash_r": "1eb19eb9b60b499e6b808a9aece634b13ac9635f64abc601ea20e9427029625d",
+        "hash_g": "3f70157e82af66be234488c706f9aa30ee28ea25ae0aaf965b03206449a22089",
+        "hash_b": "85158609948fa30d70fb6ff59bfe98cd671ca93bfe0bad75bb9c6c41ccb2bf8a",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/ZR-012.webp"
+      },
+      "013": {
+        "name": "Mai Sakurajima",
+        "series": "Rascal Does Not Dream Of Bunny Girl Senpai",
+        "hash_r": "8e23f5bc3a73e0efda1c10e5728958c51c73f3f2dbdd4b8265f81cffa24cde09",
+        "hash_g": "9c8505ef6df53b156b8dceba9efbdccc9e6c9bf868a4bfc2062be4f1ab9015eb",
+        "hash_b": "d662249d8bfba21c6182679cc1c347b447f845228e922bfb5b56ae6536e8b1c9",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/ZR-013.webp"
+      },
+      "014": {
+        "name": "Konno Yuuki",
+        "series": "Sword Art Online",
+        "hash_r": "e2c315b396b242e5ff08c49a1eb78829638f3f431b9b300f69d18b8e605e73fa",
+        "hash_g": "13ab3dac9643078ad3788909c4c1e05f7fcfba3e46636c0148fb9ad62fa268e6",
+        "hash_b": "41cddb56b4e3c6954012b604fdebb59b1cc0175e2db595feb8649d59a8ae17be",
+        "img_url": "https://waifucards.app/img/cards/NSZW-5-1/ZR-014.webp"
+      }
+    },
+    "CL": {
+      "010": {
+        "name": "Eren Yeager",
+        "series": "Attack on Titan",
+        "hash_r": "b5c86113a3b398bab08e90c40ee323d15eac79dcd1d6f928331ef83282c6c259",
+        "hash_g": "f864f7ea67ace85570e7eb2bc060c6d7cf49c6cd34e6eed2e7e32396709db81b",
+        "hash_b": "49a85c44e89ed6910cc65b7ede7724853fadea1c90915c4a9abf2a2bc98272f2",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-010.webp"
+      },
+      "011": {
+        "name": "Reiner Braun",
+        "series": "Attack on Titan",
+        "hash_r": "9af5a5501ed4df406966a6c4ad5269c98ca831fe94c698d1e9d2fdd8a46f7332",
+        "hash_g": "f8a23ba1fe5a00f17ec31702db0e749252042730dac3ae7732c5fddeeafb4d35",
+        "hash_b": "37cf7806be196a3869a99371997c4f6e94b0c0621439846c5aa588b4c5b2c773",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-011.webp"
+      },
+      "012": {
+        "name": "Bertholdt Hoover",
+        "series": "Attack on Titan",
+        "hash_r": "b66d0206ec8138ac79321f42abf1a587256f92fd2d6c49327140b2386ea14857",
+        "hash_g": "c8ca7123304c76c7cc1e6f4e1f894e454e8112ab45d894ea61157441d31faf14",
+        "hash_b": "5f6d87bbb2680146cfd46ddf9ecc0322ef933831f5d7cbc897950197b19ac297",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-012.webp"
+      },
+      "013": {
+        "name": "Annie Leonhart",
+        "series": "Attack on Titan",
+        "hash_r": "ab9778d85acf346a06b3eafaab752b0f283bbe08596dc41597024482d39eec46",
+        "hash_g": "51a3bb782dacebb27bb794412d52b7c7c2cd85c656c42391e695ea540cdac1ce",
+        "hash_b": "8e90e8b39c05c4da82e625b7fbb9bdb9c5653ca665ab9b488a6a6967382b4089",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-013.webp"
+      },
+      "014": {
+        "name": "Ymir",
+        "series": "Attack on Titan",
+        "hash_r": "5f9b56f4879c4d22759f17e6a21c73e96709b860719822b8266bd1b34c0ace9e",
+        "hash_g": "e831e78e0d4ab051dd046b587ea10181f6b31bd40a3ef8cddd57030b1e8dd59f",
+        "hash_b": "3633b2c7e1e14296733bb6dc8660d1a627256d4aa90ba10a50e08fa46f689c60",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-014.webp"
+      },
+      "015": {
+        "name": "Zeke Yeager",
+        "series": "Attack on Titan",
+        "hash_r": "1d8137020b04b8261bc2a341ad3e4297ea733b025775bd35da6142cb03f33f23",
+        "hash_g": "8166ba2b2310d717a38154c1415bb32bdd64d48d0389ebf921a78cdfe0e146a8",
+        "hash_b": "ddbc99e7e48354b3658b3f049afd43d70f18084a8213ec55668f2e09a7bc5c14",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-015.webp"
+      },
+      "016": {
+        "name": "Pieck Finger",
+        "series": "Attack on Titan",
+        "hash_r": "28e5632d1a7b20125587b7da96db4a15549a2a24867cf6776ab1790d1fb76b01",
+        "hash_g": "f77a3b70d0589b7f818cf20d5a6d1b361b212f1968be546fd7cfe4a6dd988399",
+        "hash_b": "337609c304a1d0b15236284ce68d32dc9108a454ec73b9caa4c075b9688b1836",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-016.webp"
+      },
+      "017": {
+        "name": "Lara Tybur",
+        "series": "Attack on Titan",
+        "hash_r": "6e356a66976450e234cbcfda8b0aec787cab4885c2e63552aee8aee6dbbc3ed2",
+        "hash_g": "f88d23caab2eaf84840ef524a1245250da7df05a7442c4df44b14031047d389c",
+        "hash_b": "f7a81976f20c6c6a4a4687a8056e280ca3319cd91a5591698c1469c8783a0911",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-017.webp"
+      },
+      "018": {
+        "name": "Ymir Fritz",
+        "series": "Attack on Titan",
+        "hash_r": "1dde9b04dd42b40a7082945be7ff54dafdc3a6d7aca7cbd5191ce496b125f372",
+        "hash_g": "84b8452cd999c5a2dda68056d5a7bd93d1a5ac74b3d528f9f06068a07b703b62",
+        "hash_b": "75253a4bb71c9599fd56c0559224f6706dadef4a3bc8c48ff6fd60e42066212b",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/CL-018.webp"
+      }
+    },
+    "MR": {
+      "019": {
+        "name": "Hikaru Ichijou",
+        "series": "Macross",
+        "hash_r": "2555ccdfe6a9330e9d8ead2ffed8bc02d3bcf76f1fb65ed1b45f9a8ec3088ff5",
+        "hash_g": "c63934c614c8fd62f16aa1952ffb7b0c2934dd3ab7feeff0738662ea87dd1ba2",
+        "hash_b": "015a7b8ea187b2d08008eb63eeb9b9cec4470cbfe529ccbdf1bb614bcc6ae430",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-019.webp"
+      },
+      "020": {
+        "name": "Hayato Kazami",
+        "series": "Cyber Formula",
+        "hash_r": "97fef0662980950d1fcbfe0161055f6444a77cf47e6fd8c569387b0076b1ed8a",
+        "hash_g": "0c1fbcd2e5086e82f11881e301832dde3c9b7c6d7b06ff6a0874251d025dc305",
+        "hash_b": "f627a2c1fe6c84c2b0e2989fdd90722756175eba7b54dd904ecfce22532cc21d",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-020.webp"
+      },
+      "021": {
+        "name": "Kenshin Himura",
+        "series": "Rurouni Kenshin",
+        "hash_r": "c1dc32a238dc5c8362059492916495346f13dd954acde85fb456e539701b1338",
+        "hash_g": "b62d3ca47ac672f0d43fdfb509179ef576655ec7b10995acaef37967b3032f62",
+        "hash_b": "63b8f3115fd940bb27a44d00e6487566a8f13823aaf1deea2de5764ed9d60951",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-021.webp"
+      },
+      "022": {
+        "name": "Toriko",
+        "series": "Toriko",
+        "hash_r": "8496699802ccf6b70ad9540a74052af8a1219ad1d5ffc35446bcb6e261be2c5b",
+        "hash_g": "5d2165961d690f48a00a19cda469a9bab216345ef1d1da4899f18e1c0481a73b",
+        "hash_b": "4de091bd4a2215f47f0d216b3296b905007501dccd4f3cf03c1c74287413d045",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-022.webp"
+      },
+      "023": {
+        "name": "Hosuke Sharaku",
+        "series": "The Three-Eyed One",
+        "hash_r": "e5f49a275e100eb4a4ebf5ed0a5f1fc8acab471b900a7a61475c48460703e1b3",
+        "hash_g": "8a282d6f4ab4ddea6cbf66dfb02f20bf96969f90ab5f5bddde2dd0e61496fe7c",
+        "hash_b": "6a7191e5d1e9f3f089f029f8e4e3c9c74aa08aa494278f16a5db69be903ab0ab",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-023.webp"
+      },
+      "024": {
+        "name": "Baki Hanma",
+        "series": "Baki the Grappler",
+        "hash_r": "bb5fac0cf51b24f05eeb0ccca65a648e204445e1b62ba2bb6bec2a3af88270c4",
+        "hash_g": "f36a0d2c7cf352bd8cc09cad5fff971dbdfbba4e0fd19c7b6fc7cf2e6a82ae45",
+        "hash_b": "46b029601040e36bd09eb2041da8a8b6caa442f3497f46231a853561d503ff9c",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-024.webp"
+      },
+      "025": {
+        "name": "Subaru Natsuki",
+        "series": "Re:Zero",
+        "hash_r": "2262d5c13447ff0deefb09239b29f94a5a5fc5752a46d183480821e980e35efb",
+        "hash_g": "e5082658cfc521a4a2eb81793121c1d93b0204b46d2f4f9ba2e28295ce3c12f3",
+        "hash_b": "c43ae8026a31d49feee5d182dac53b874d9eb5eb0dacc9c9a95fb6a185abdddc",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-025.webp"
+      },
+      "026": {
+        "name": "Senkuu Ishigami",
+        "series": "Dr. Stone",
+        "hash_r": "121c3d73287ed24ead87bdd239359c6fd300d2e378e306bd39d8c9c08fb5a8f5",
+        "hash_g": "67825a24905f5cb786194ac2bf341c451b9fb3ef3084724a7d431b483630f98e",
+        "hash_b": "dbdaafac5f43386941cd33542b2fd838fd77ee5fd14d4f2827fbda1625baea0d",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-026.webp"
+      },
+      "027": {
+        "name": "Simon",
+        "series": "Gurren Lagann",
+        "hash_r": "bb0b9ce2300b426d43e6b4845861b0ad84eb36728a2c29adfb67459230718bf6",
+        "hash_g": "a8d63e0663afc0f32cd542e09338fcd69eb8663262f27316e9a8244c8031b5bb",
+        "hash_b": "098862f4299acba20cee430224c75b7f1f892e28b571c87f9317df36014b9913",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/MR-027.webp"
+      }
+    },
+    "PTR": {
+      "028": {
+        "name": "Alphonse Elric",
+        "series": "Fullmetal Alchemist",
+        "hash_r": "45b609f77bc346bf59544a97fa0e8b60075a4e39d70a78b809fa0254c76b57fd",
+        "hash_g": "d92487bbc186c17224898339a97ec2fac70aae1f6387451f1a71532a53261a58",
+        "hash_b": "af51e7ddc9ed8398e61db824a16eb432695bb3135eeec8e30e2a8caaecbf6b97",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-028.webp"
+      },
+      "029": {
+        "name": "Tora",
+        "series": "Ushio and Tora",
+        "hash_r": "c4288b01bb4e7d4a4db6f29a21ef8a9a3122931cd24e9271477b2d1082cb2df6",
+        "hash_g": "251ec88fba73fe52950e1f68bbbbcdec680304e54bc392ac525b74b014f2f6b2",
+        "hash_b": "c9defed3dbcec88d67d05b95f530a228b27907b8f49a79fb145bd57d6906e83a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-029.webp"
+      },
+      "030": {
+        "name": "Shinichi Izumi",
+        "series": "Parasyte: The Maxim",
+        "hash_r": "292b47d79593dae31859f4f84c3326934767ab1d8c8c539de4cd0c68dca359b6",
+        "hash_g": "962706302535e64c31139e35068fedb3a769060ffc1e8ad428f135385af0f1fa",
+        "hash_b": "5667dcaf4d475ebf40cd9cc9a20373b482552b209a133110f187191e88459eba",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-030.webp"
+      },
+      "031": {
+        "name": "Sai Fujiwara no",
+        "series": "Hikaru no Go",
+        "hash_r": "cd8975e37b91f7f7daa14e43bfa54d05699bda3b8ebc2e42c3a12f194b7cf746",
+        "hash_g": "5836cc09e2fa2a10b9128bc6cae22187117b0647d9810a11fa0f570530a4ee12",
+        "hash_b": "1f6106ab1d9f2d85e327d373858e27260800b6cf244e1c06396ec25906048833",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-031.webp"
+      },
+      "032": {
+        "name": "Sesshoumaru",
+        "series": "Inuyasha",
+        "hash_r": "a5a9a3576c33d6c9eeada137551a08027de518819a9f986f218cfcc18374ec82",
+        "hash_g": "adac3d0b7dbc08a08910c97ea4e16a11a83c9ed6a98cc9b5ef7c9dbc69ec9c64",
+        "hash_b": "c7bd252e772383d2be0ccaab876c7309110a5c804dd39e8a4bb7e0463b775b57",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-032.webp"
+      },
+      "033": {
+        "name": "Boros",
+        "series": "One Punch Man",
+        "hash_r": "445894ba7457abeeb897d5313dc57127a68861ac9f9ed2aca247dfd8fd19be21",
+        "hash_g": "7717ba77ec51d2bf7675b89af43ae8806687dee8d3e8b02b202379d4fa6e13ff",
+        "hash_b": "2061c1346c07bf9a37cba10b0c046f6a92f0e431ba612d725b793b4f213dbc7a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-033.webp"
+      },
+      "034": {
+        "name": "L",
+        "series": "Death Note",
+        "hash_r": "16142f8caf6b1a0935bd652f9e4544a4a837f5e224691fe69320e0268878c1d3",
+        "hash_g": "b4dcf66587a10a607c0b63b91e1afdbfae7a8ae4fcf12c978f44099ad6f60736",
+        "hash_b": "79fddfa44434a4074440bd96d77fbacb83d6f34f2e9ad2f5bd0d077e5bc38035",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-034.webp"
+      },
+      "035": {
+        "name": "Light Yagami",
+        "series": "Death Note",
+        "hash_r": "dc61076e367c95dd8efce199f9c539ffdb4d68bbf8122173d5586cd3a36d5d99",
+        "hash_g": "f52d31e4aa271d82b9aa64adb82392af255b932d17302e713105c943d3624169",
+        "hash_b": "61814b056ddb5db90e2d4d3063e1d665708fd637885c69463f44e9f91f6119d7",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-035.webp"
+      },
+      "036": {
+        "name": "Shinra Kusakabe",
+        "series": "Fire Force",
+        "hash_r": "69d2e3a207cb8fffd094aea63096fcf0765633d00568767d9f33b968905980c9",
+        "hash_g": "09e24d5ba6d3390ecfd13983ea9404e0d2fc45bd476270eba2f6a0c1895c0dc1",
+        "hash_b": "e7414594729a3c24df1bbda418dd44a4ecece12200fe11b9111d8188c27bc874",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/PTR-036.webp"
+      }
+    },
+    "SSR": {
+      "037": {
+        "name": "Lina Inverse",
+        "series": "Slayers",
+        "hash_r": "2677fc3ede010192dcbb7a5428052c08bf2bc70bd96db072a9aceb45d33252b7",
+        "hash_g": "8e06facdd3a530db8cfdb9c5f9a3b8a14a378c09d575c929f867774b88219040",
+        "hash_b": "3a5250f2ed76bc769419e0fb262d993e216374fa1185b62c99c877b5d551355c",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-037.webp"
+      },
+      "038": {
+        "name": "Gourry Gabriev",
+        "series": "Slayers",
+        "hash_r": "3c1d2debd8532c76699986fabc62bf5e8df089e233332c935b50da5721000c04",
+        "hash_g": "a722472666ebe91e4f0e36eb98ecc879de125c32a3ff77ea7aecb7af00d78554",
+        "hash_b": "bd56f2de36170eacf19b166ad8ac96bc3744e5c6c58585b544f919805f3291b7",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-038.webp"
+      },
+      "039": {
+        "name": "Zelgadis Graywords",
+        "series": "Slayers",
+        "hash_r": "21da78d62e59b47d8ebb0ac602d7959d6e61a8f69c9658763bc7aed08948b2bb",
+        "hash_g": "9ba87a635822fc4e28f494e8e8486f17426d189f33783c6875cb72ef2c8bd796",
+        "hash_b": "e4b97a8fc145120edd31840b4d1773acc9e807556b6ef2eeff6da33442c17090",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-039.webp"
+      },
+      "040": {
+        "name": "Amelia Wil Tesla Saillune",
+        "series": "Slayers",
+        "hash_r": "8515bb3e2a74279986c893dabf7031af77a46edc28b3585418091bc612fb74ad",
+        "hash_g": "8745558a8c5572d24e3b41b9e74e0ff145eb40039068e9587b79a6f5bbd3e1ad",
+        "hash_b": "10f97bf89b560baeaf8a6bd5265c026571b7fcebf7be2c79f593cf536a86ed11",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-040.webp"
+      },
+      "041": {
+        "name": "Yuusuke Urameshi",
+        "series": "Yu Yu Hakusho",
+        "hash_r": "45f28528f4449c2d964208dd38a2e4f5a6a808e645ba125bf83b6bd161c33be8",
+        "hash_g": "fbd36a5ce5bf28641f7edbb8c1402db7a96ce14c494c3e7ded706a80844bcf1f",
+        "hash_b": "fc3f612ccd5252379b64aac1b76079071d42a826522851d4c9e2c7c14ac8408a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-041.webp"
+      },
+      "042": {
+        "name": "Hiei",
+        "series": "Yu Yu Hakusho",
+        "hash_r": "75aa6208c22cf5c0295820368b2a20d08397276dca469fe19b4cfef10703665f",
+        "hash_g": "a4868598ddd9f604801e8e0fce5e6e5bdb2064bed65aae718418bb6771e0d6fd",
+        "hash_b": "70f8f1161c2d5f6bc618d3e33147cd6026f9d9a38724a06924ebec1b370dbc51",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-042.webp"
+      },
+      "043": {
+        "name": "Kazuma Kuwabara",
+        "series": "Yu Yu Hakusho",
+        "hash_r": "19c5d1247f817c41fd2993d3a321deded656304b73a8a51d803b5cbd9a5b66ad",
+        "hash_g": "ca133129770bc8fe4cc297d55691135386e6d7cf311bba36fdde0a5c48f2068b",
+        "hash_b": "268c2ef4781e0af1b14f7c415b4c1bbb9cffe96e01878462c907140815d858ae",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-043.webp"
+      },
+      "044": {
+        "name": "Kurama",
+        "series": "Yu Yu Hakusho",
+        "hash_r": "10834c7929f95f82bbcf7925a60c5c9bf071dd27d1f723b19c164744397f8d49",
+        "hash_g": "dfc4a8003b38a0234cb8afdf70206af0648dee6004397aa70067062781261852",
+        "hash_b": "193ef57bf5af53ab64ed99f150d8e4e18a276926367c682be50fec5e73fcdaa7",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-044.webp"
+      },
+      "045": {
+        "name": "Genkai",
+        "series": "Yu Yu Hakusho",
+        "hash_r": "37c4f294c097e4eb403fdcb5b22dd877c7f36d8f9b64045fe13d62eb164dd468",
+        "hash_g": "5089d53cad37107937e2cdeba967b6e59ef63fe4024b08289782547f843b9dae",
+        "hash_b": "6597251d32a075df76a6fb7a9a96e78dcec27c15efbd773b64ea4f8154c1af22",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-045.webp"
+      },
+      "046": {
+        "name": "Gon Freecss",
+        "series": "Hunter x Hunter",
+        "hash_r": "dbdd44f159d49a8300e8cbee2a184bae9660acc5bf25dc64044b050156ab6905",
+        "hash_g": "297d4f9d6de9c5ce131b8faa9130eca4ad629d2f5cffa648eb16de5a71889725",
+        "hash_b": "de5917edddf1a22b839bca529f883006ced7b3c4f326b6c119a1dcd76e929f88",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-046.webp"
+      },
+      "047": {
+        "name": "Killua Zoldyck",
+        "series": "Hunter x Hunter",
+        "hash_r": "763b9b85e3bbbd3f93c1f766da6c7a5437a617c6ebe87d8ada3be4938c1423b1",
+        "hash_g": "a44368f033bac216fc41c4c1fb1608e26c0a20009697f1c6b48a404ef10a9151",
+        "hash_b": "7d470d71de6697d6a94bd41cab4e3702c1f0078cac2fe423bb73fb95b7075dcf",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-047.webp"
+      },
+      "048": {
+        "name": "Kurapika",
+        "series": "Hunter x Hunter",
+        "hash_r": "5cc076a6d308ca24674c8892bf3d9c63d297cf5e4d740848d3b91e20a2495b64",
+        "hash_g": "3dfa37a9e9de85cba6d573e28cfa8ed648900e2ef8d0ad0c73518a88946cdcb3",
+        "hash_b": "84b3d743848c27cbe2e0cc188464431b8dea214f230e2e933141078e48c2bde9",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-048.webp"
+      },
+      "049": {
+        "name": "Leorio Paladiknight",
+        "series": "Hunter x Hunter",
+        "hash_r": "dad2873319b7e607735862e6fd3bd61d3ec0f45678083f631da30b4400d6dbc8",
+        "hash_g": "d9763efa91aaf7cc820774e3938857cf3f562fc9a281de5ec9314ffab2f4d40d",
+        "hash_b": "80929fdb1ddcddd19b4ca4b39440b615435d0d4134429a713592c39adb89741e",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-049.webp"
+      },
+      "050": {
+        "name": "Ryuk",
+        "series": "Death Note",
+        "hash_r": "eecc17ba3ee55114c500b33875da32a4443edb717042330cb8eea6d9ad062474",
+        "hash_g": "45a61c0a0b3d9ea5c886463d33c67548a50962f27ae9f962a6b2603dd60d8f1e",
+        "hash_b": "4036dcb6ad9f3360b3ff94a28201eca3510f7868afb4582eb362b30bb8597c92",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-050.webp"
+      },
+      "051": {
+        "name": "Rem",
+        "series": "Death Note",
+        "hash_r": "b9ef07e82c03e769ea7b33d5dd748e48128c8dbcaae122b4ff89cd769ea2894a",
+        "hash_g": "e1fff1296c7aa1a30d0625c6709ec2d6ff8a0c515010261165166c14bd7dd9e9",
+        "hash_b": "a40e497e5e5f53496fc4a67a4ae3cc6e2e832dde4ddbdd272360155c07e9efac",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-051.webp"
+      },
+      "052": {
+        "name": "Go Seiba",
+        "series": "The Racing Brothers",
+        "hash_r": "cfdec83edcd672ae62541840b37846a4354a32a607d3a27552f1d58f1fc10748",
+        "hash_g": "145b3a163ac096853e72c3f4d071290ec7db8863172723be18668df28d9627c2",
+        "hash_b": "65471c74974873d451cbf0dee45394f7827776f62c494ef59f203b36478baa13",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-052.webp"
+      },
+      "053": {
+        "name": "Retsu Seiba",
+        "series": "The Racing Brothers",
+        "hash_r": "0d7abc296e0ad5f3010222462f71f52617aaf185bb553965aa69d086701b5518",
+        "hash_g": "627feaaa5dd6195adc1ee20c749596f4b390719ffc937e6dbbeaef86dd7f6183",
+        "hash_b": "ac7a2998b34eab810e93db415c7e6513d1de1b94458c1292b0ab01f0646031f3",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-053.webp"
+      },
+      "054": {
+        "name": "Takashi Natsume",
+        "series": "Natsume's Book of Friends",
+        "hash_r": "cf3b4fe90792a3e293d776c62b73193b0b862000abcd480d089c597c0cab2025",
+        "hash_g": "66a70133352ab07148022638e8b9541de1882ab26af07912470c317c137b7552",
+        "hash_b": "e0ec7946966770328cc6c905a3210558916ba1f5e0c6ba12024b44322b7ac05c",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SSR-054.webp"
+      }
+    },
+    "SR": {
+      "055": {
+        "name": "Kishou Arima",
+        "series": "Tokyo Ghoul",
+        "hash_r": "543766a2061ffb009a8363dd8c839fb485d84707f63c62b3f40e32830eeeab19",
+        "hash_g": "00757cf56e303666104e02abc062b1f5cec165a8790a8beaf1b9193b332e2dbb",
+        "hash_b": "9f96436b865e0c343080c167a40925583a3d502f7c20747211c2d887a95c6fd6",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-055.webp"
+      },
+      "056": {
+        "name": "Souther",
+        "series": "Fist of the North Star",
+        "hash_r": "24769628ad00cb1b143ee24d34afc6fcea78c0caececaa18d7713de4cba515a6",
+        "hash_g": "82af00b21e7e39fb14f81ba3c903b29173ba9a2897cfee176342f9bc1a18e6cb",
+        "hash_b": "d82216c376419c9e893f7cfa24ba03d7b0453bf3a190b0c06b02e3ec013f02ea",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-056.webp"
+      },
+      "057": {
+        "name": "Souther",
+        "series": "Fist of the North Star",
+        "hash_r": "8ab2f1380fb49771c3d25cf7fe7491b754a6453beb1074a642e425bfc09c874a",
+        "hash_g": "bb5e8db171f04bdab52b55b006cb08d66b290b0451078b5541b0be5c936a8064",
+        "hash_b": "fb59d5e405ad6848fc5942314c3f99e724e0dfcfe7b235e44ea945c342d0875f",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-057.webp"
+      },
+      "058": {
+        "name": "Toki",
+        "series": "Fist of the North Star",
+        "hash_r": "5df070376c2790a307e7e2a1d9abe34980989c316148250b78959b41a2f5b5da",
+        "hash_g": "fb98313aab68f08b8a0ace65edc0d043084f0425016b923caf21a8e7ed7950c2",
+        "hash_b": "2b4fc6d6448cbce1a127a233684f781439c8ded5754d0f4fe59a375e8f1a227d",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-058.webp"
+      },
+      "059": {
+        "name": "Ushio Aotsuki",
+        "series": "Ushio & Tora",
+        "hash_r": "01873a49fcba12e909d09a5a11791e1e48fdaa7b23b4786ec388c0f94ec141f6",
+        "hash_g": "e63015bfe500a3261a45601d56a991e4823515f6ed37c182dae20c02d005c4cc",
+        "hash_b": "ab8324d0cb649c13fbf5b9a45712f402447b3ae6cb2fcf61b51dfbed8c4f4289",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-059.webp"
+      },
+      "060": {
+        "name": "Nobita Nobi",
+        "series": "Doraemon",
+        "hash_r": "c97fa0bff82be3224dc99627b79f762afed61364d2e792f2b44d3d29ab8a6bc7",
+        "hash_g": "9ff98aaa090e50645dd542390d510c3d1e5d58065a4a5c504548d30ac1c1ee72",
+        "hash_b": "826df27494d5da9530cd37d22b2cbd5df880f6d41a9f4c54112d90cfb834bf57",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-060.webp"
+      },
+      "061": {
+        "name": "Shizuka Minamoto",
+        "series": "Doraemon",
+        "hash_r": "93894396768cf4cc07fc5e0ad20dead84382d6412d66f80b40bc9e4ab15652e4",
+        "hash_g": "7e381897cfdecb1a826580b5881223be65b89d985ccf73bf7d7902f29e4e445a",
+        "hash_b": "8ffcb8443925788f9b5234fee32f204d002701121fcc583a4ed5a16d4b07c7df",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-061.webp"
+      },
+      "062": {
+        "name": "Takeshi Gouda",
+        "series": "Doraemon",
+        "hash_r": "66e03c2e70815e91839e476185d210ee9fef78bcbb09ab6e252122d17555e754",
+        "hash_g": "d154729ddd1b69e9fe54d9eb7113ba3c7c00f4d4ba27ca6590c53eaa5127c0fe",
+        "hash_b": "221e7a988b1692b57edd93347aafd0b0c15171a92b22ad6af5eeeebda28b7d63",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-062.webp"
+      },
+      "063": {
+        "name": "Suneo Honekawa",
+        "series": "Doraemon",
+        "hash_r": "732de920d5e9eaf4d85766b984180be2b59044a2d28801943bc71995349d65d8",
+        "hash_g": "4c5b5d9891d5dd9cec139678a6e86e0eb9cd7102dc2b1623f71465b7b4bb6076",
+        "hash_b": "0d98ed00838c39703e4049d0ed98e744582bb56c54274dff22c074ea2729a8ce",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-063.webp"
+      },
+      "064": {
+        "name": "Roy Mustang",
+        "series": "Fullmetal Alchemist",
+        "hash_r": "025854b7ffedd1e52e8c8a1437a52cff62d6c88f0f52a6d98f330a24cdac4f82",
+        "hash_g": "32e915da0089dbc9d269caf3c76782cfd7ad1fbb347206970eec5aa8604beda8",
+        "hash_b": "cbbd3598c9e771f76091fcb050f79fb3974eaa194d726484bd41591f7ce2309a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-064.webp"
+      },
+      "065": {
+        "name": "Goblin Slayer",
+        "series": "Goblin Slayer",
+        "hash_r": "818a9a28e0f66a61f46db0a74936169624b075747da26d17248d7089ac7a4331",
+        "hash_g": "40e7a53464791cb4ffaee4e9a26a7a327b639054cd2115fb0f56272d39a8f8b3",
+        "hash_b": "99ce1e6935ef0846bf26d15873c3646f50236c304399c1e7ea5eda088be640c3",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-065.webp"
+      },
+      "066": {
+        "name": "Yahiko Myoujin",
+        "series": "Rurouni Kenshin",
+        "hash_r": "6096df008ffa788b121ef61902cce5b1e76ea28b12ffc347ffe74b051fa4e148",
+        "hash_g": "bd59ea970721b87ede6cc585e9614d0fbaf8f5aa189e9197fc90dab6187f0a8e",
+        "hash_b": "f62f8539cef931ef088539d82244d884ccc8964c9982fc25937a509478eebd74",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-066.webp"
+      },
+      "067": {
+        "name": "Sanosuke Sagara",
+        "series": "Rurouni Kenshin",
+        "hash_r": "8741b1f4e61ca39ef6ccc9bd988c3d399085afcd7abb53c4f683da81e781f7b9",
+        "hash_g": "a7ede53c48d3b0f788e50e019ecfdc0d524564f0b2676e38a7d5e3cacae24c76",
+        "hash_b": "4b50f4366815cd5c6a292ad561e347fbb0f7ebbcd2de0a4ad8efe48ec23a3330",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-067.webp"
+      },
+      "068": {
+        "name": "Lelouch Lamperouge",
+        "series": "Code Geass",
+        "hash_r": "876a500735ca5f97253522c4bb9648851f1a8aecedde0c957a53f0bc66964518",
+        "hash_g": "ca0ef51c05d80ebe2e0d7e52232fa41fede94a771b5a9700fe7f700d5ee8173c",
+        "hash_b": "7d14519253d94c3448534a586d9103662284baec749c3fb81730195f912173dc",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-068.webp"
+      },
+      "069": {
+        "name": "Suzaku Kururugi",
+        "series": "Code Geass",
+        "hash_r": "aa2cd3fdf47997038cc1570703493b6e491ae417e7ed82cc0763c5cb5657d58d",
+        "hash_g": "0337471b2a15cead191f315c368b84ffea07aba7451beebdf9000f52e3f71c6d",
+        "hash_b": "829a0c9b023482b963141b07dd7e6a4256d821d6c2f360de73aeb6cabc205337",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-069.webp"
+      },
+      "070": {
+        "name": "Kallen Stadtfeld",
+        "series": "Code Geass",
+        "hash_r": "b20b7b1e8f3ebf2e3753b93ad24fafcf3961dc8813fb7d85477d15ad7e45a463",
+        "hash_g": "7a060678e078dcb033241d224ec86b2e6a502c63bc0c3b8eb0a752d2344555f0",
+        "hash_b": "4900fd8d8b841d77c9c992c481102475b41328b4aa1783cc3e695dc51492ce31",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-070.webp"
+      },
+      "071": {
+        "name": "Hikaru Shindou",
+        "series": "Hikaru no Go",
+        "hash_r": "e464131b439673c08e285c24d5c37b5d36c95ea501e8422d8aad94b3aec1b88d",
+        "hash_g": "1795bf08fa91cefd78dec7a04b5fc232493a3ab02da48d7ca199221aee6c59d5",
+        "hash_b": "33cc8f40cfb534fe7e1a130d6b10d0316741899889c5c1d6c9efffcdcaa4cbaf",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-071.webp"
+      },
+      "072": {
+        "name": "Akira Touya",
+        "series": "Hikaru no Go",
+        "hash_r": "92bd7caa767ae6086e836e8228427ef6d2bfb4153324e3488649281246cc839f",
+        "hash_g": "7a4dbb7c4b7d6834bfdc299c853b17f84f05bb39c6f506b06216b98013b7cba8",
+        "hash_b": "19779b7460f48ed9d9fc3362837ca6ed7ccf018b9cd4b80f6150bd8430728214",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-072.webp"
+      },
+      "073": {
+        "name": "Miroku",
+        "series": "Inuyasha",
+        "hash_r": "96e0c7e5ceffb21a46c8998c186ccba5420a1773d79ab81e2e1140dadcd75536",
+        "hash_g": "1c563da2a7a32f2ddc768c7f647881b3214ec32fcfa0bd4f2d10cfd3715598ec",
+        "hash_b": "c0567f9237aa98d029492f6faedc75f6f0bc3319e36cdbaabd0ca14c0fbb5be2",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-073.webp"
+      },
+      "074": {
+        "name": "Taiju Ooki",
+        "series": "Dr. Stone",
+        "hash_r": "91aa55add74bd86203ced0400a8de1a3d497fe884283c41415f3af96b58fe046",
+        "hash_g": "74b4960807254e3ed38b3ba5ce2b033376031bb94effff40d616f77e76f14713",
+        "hash_b": "1a786bc1026072b222c3388f27711efe5d4eadd2782f2a89788e2a28ddd22071",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-074.webp"
+      },
+      "075": {
+        "name": "Yuzuriha Ogawa",
+        "series": "Dr. Stone",
+        "hash_r": "dbdf8b0a7a734ef8604d6904beb91e814a489aa8ce1ee0b06630d9a34f8ba8cc",
+        "hash_g": "62890b41504e0fb436e0836d5653d1dabc846f92757b4ab120fae53639a4dcb7",
+        "hash_b": "d0fa1de9f48163a0b030080f745e42645d25d545c86ee2ee79ed2c04d5e4e473",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-075.webp"
+      },
+      "076": {
+        "name": "Tsukasa Shishiou",
+        "series": "Dr. Stone",
+        "hash_r": "94f4ca17f66334623fb648dc0c8a430c9b444eab5ce795f0f9e5894ac8f28aed",
+        "hash_g": "d5d8a5caddb473ca6130a97457154133dd0234dfb93ebd365f1724f1da55dd44",
+        "hash_b": "8669aef1e8f9b18fb58d5ceb4c557fac569dde28ecd70277dc7adc071d2e419a",
+        "img_url": "https://waifucards.app/img/cards/RX-5M01/SR-076.webp"
+      }
+    }
+  }
+}
