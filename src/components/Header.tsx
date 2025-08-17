@@ -1,18 +1,29 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
 
 import {Button, Icon} from '@rneui/themed';
 
-import {Colors, Icons} from '../app/constants';
-import {NavigationParamList, NavigationProp} from '../app/navigation/types';
+import {Colors, Icons} from '../constants';
+
+type DrawerParamList = {
+  index: undefined;
+  'goddess-story': undefined;
+  'senpai-goddess-haven': undefined;
+};
+
+type DrawerNavigation = DrawerNavigationProp<DrawerParamList>;
 
 interface HeaderProps {
-  navigation: NavigationProp<keyof NavigationParamList>;
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   showBackButton?: boolean;
 }
+
 const Header = (props: HeaderProps) => {
-  const {navigation, children, showBackButton} = props;
+  const {children, showBackButton} = props;
+  const navigation = useNavigation<DrawerNavigation>();
+
   return (
     <View
       style={[
@@ -36,7 +47,7 @@ const Header = (props: HeaderProps) => {
           containerStyle={styles.toggleDrawerContainer}
           buttonStyle={styles.toggleDrawerButton}
           type="clear"
-          onPress={async () => {
+          onPress={() => {
             navigation.openDrawer();
           }}
         >
@@ -53,7 +64,6 @@ const Header = (props: HeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    // paddingTop: 50,
     backgroundColor: Colors.headerBg,
     flexDirection: 'row',
   },
@@ -71,4 +81,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
+
 export default Header;

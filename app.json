@@ -11,30 +11,32 @@
       "resizeMode": "cover",
       "backgroundColor": "#f2a4a8"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
+    "scheme": "goddessstorylibrary",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.arjunverano95.goddess-story-library",
-      "infoPlist": {
-        "NSSpeechRecognitionUsageDescription": "This app uses speech recognition to convert your speech to text.",
-        "NSCameraUsageDescription": "This app uses the camera to let user put a photo in his profile page."
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#f2a4a8"
       },
-      "permissions": ["android.permission.RECORD_AUDIO"],
-      "package": "com.arjunverano95.goddess_story_library"
+      "edgeToEdgeEnabled": true,
+      "package": "com.arjunverano.goddess_story_library"
     },
     "web": {
+      "bundler": "metro",
+      "output": "static",
       "favicon": "./assets/favicon.png"
     },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "baseUrl": "/goddess-story-library"
+    },
     "extra": {
+      "router": {},
       "eas": {
         "projectId": "3ecac027-9d6d-4e86-878c-e8ba23c725d2"
       }

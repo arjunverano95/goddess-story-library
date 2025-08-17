@@ -1,29 +1,38 @@
 import React, {useCallback, useRef, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
+import {Button, Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
 import {FlashList} from '@shopify/flash-list';
 
-import {Colors, Icons} from '../../../../app/constants';
+import {Colors, Icons} from '../../../../constants';
 import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {
   label: string;
-  value: string;
+  value: string | string[];
   data: string[];
   onPress: () => void;
   onSelect: (item: string) => void;
+  multiSelect?: boolean;
 }
+
 export const SearchField = (props: SearchFieldProps) => {
-  const {label, value, data, onPress, onSelect} = props;
+  const {label, value, data, onPress, onSelect, multiSelect = false} = props;
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const {theme} = useTheme();
+  const backgroundColor = theme?.colors?.grey5 || Colors.greyOutline;
 
-  const formattedData = !value
-    ? data
-    : [value, ...data.filter((item) => item !== value)];
+  // Handle both single and multi-select values
+  const selectedValues = Array.isArray(value) ? value : value ? [value] : [];
+  const formattedData =
+    selectedValues.length === 0
+      ? data
+      : [
+          ...selectedValues,
+          ...data.filter((item) => !selectedValues.includes(item)),
+        ];
   const listData = useRef(formattedData);
 
   const toggleOverlay = () => {
@@ -31,6 +40,7 @@ export const SearchField = (props: SearchFieldProps) => {
     setSearchValue('');
     setIsOverlayVisible(!isOverlayVisible);
   };
+
   const handleSearch = (value: string) => {
     if (!value) listData.current = formattedData;
     else
@@ -41,19 +51,21 @@ export const SearchField = (props: SearchFieldProps) => {
       ];
     setSearchValue(value);
   };
+
   const renderItem = useCallback(
     ({item}: {item: string}) => {
       return (
         <ListItem containerStyle={styles.selectListItem}>
           <ListItem.CheckBox
-            // Use ThemeProvider to change the defaults of the checkbox
             iconType="material-community"
             checkedIcon="checkbox-marked"
             uncheckedIcon="checkbox-blank-outline"
-            checked={item === value}
+            checked={selectedValues.includes(item)}
             onPress={() => {
               onSelect(item);
-              toggleOverlay();
+              if (!multiSelect) {
+                toggleOverlay();
+              }
             }}
           />
           <ListItem.Content>
@@ -62,8 +74,9 @@ export const SearchField = (props: SearchFieldProps) => {
         </ListItem>
       );
     },
-    [toggleOverlay],
+    [onSelect, selectedValues, multiSelect, toggleOverlay],
   );
+
   return (
     <>
       <ListItem
@@ -74,32 +87,56 @@ export const SearchField = (props: SearchFieldProps) => {
         }}
       >
         <ListItem.Content>
-          <Text style={[styles.formText, !value ? {} : {color: Colors.black}]}>
-            {!value ? label : value}
+          <Text
+            style={[
+              styles.formText,
+              selectedValues.length === 0 ? {} : {color: Colors.black},
+            ]}
+          >
+            {selectedValues.length === 0 ? label : selectedValues.join(', ')}
           </Text>
         </ListItem.Content>
         <Icon name={Icons.arrow_right} />
       </ListItem>
-      <Overlay isVisible={isOverlayVisible} toggleOverlay={toggleOverlay}>
-        <SearchBar
-          lightTheme={true}
-          containerStyle={styles.searchBarContainer}
-          inputContainerStyle={{backgroundColor: theme.colors.grey5}}
-          placeholder={label}
-          onChangeText={handleSearch}
-          value={searchValue}
-        />
-        <SafeAreaView style={styles.overlayContentContainer}>
-          <FlashList
-            data={listData.current}
-            renderItem={renderItem}
-            estimatedItemSize={36}
+      <Overlay
+        isVisible={isOverlayVisible}
+        toggleOverlay={toggleOverlay}
+        type="fullscreen"
+      >
+        <View style={styles.searchOverlayContainer}>
+          <View style={styles.searchHeader}>
+            <Text h4 style={styles.searchTitle}>
+              {label}
+            </Text>
+            <Button
+              type="clear"
+              onPress={toggleOverlay}
+              icon={<Icon name={Icons.close} size={24} color={Colors.black} />}
+            />
+          </View>
+          <SearchBar
+            lightTheme={true}
+            containerStyle={styles.searchBarContainer}
+            inputContainerStyle={{backgroundColor}}
+            placeholder={label}
+            onChangeText={handleSearch}
+            value={searchValue}
           />
-        </SafeAreaView>
+          <SafeAreaView style={styles.overlayContentContainer}>
+            <FlashList
+              data={listData.current}
+              renderItem={renderItem}
+              estimatedItemSize={36}
+              keyExtractor={(item) => item}
+              extraData={selectedValues}
+            />
+          </SafeAreaView>
+        </View>
       </Overlay>
     </>
   );
 };
+
 const styles = StyleSheet.create({
   listItem: {
     marginHorizontal: 0,
@@ -114,7 +151,22 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: Colors.black,
   },
-
+  searchOverlayContainer: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  searchHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.greyOutline,
+  },
+  searchTitle: {
+    color: Colors.black,
+  },
   overlayContentContainer: {
     margin: 10,
     flex: 1,

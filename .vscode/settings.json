@@ -1,5 +1,7 @@
 {
-  "editor.formatOnSave": true,
-  "importSorter.generalConfiguration.sortOnBeforeSave": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
+  }
 }
-  
