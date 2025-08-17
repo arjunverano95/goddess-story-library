@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import Animated, {FadeIn} from 'react-native-reanimated';
 
 import {useGSL} from '../hooks/useGSL';
+import {GSLCard} from '../models/GSLCard';
 import Header from './Header';
 import {FilterBar, Gallery} from './SetList';
-import {GSLCard} from '../models/GSLCard';
 
 interface BaseScreenProps {
   dataUrl: string;
@@ -32,7 +33,7 @@ const BaseScreen = (props: BaseScreenProps) => {
   };
 
   return (
-    <>
+    <Animated.View style={{flex: 1}} entering={FadeIn.duration(800).delay(200)}>
       <Header>
         <FilterBar
           title={title}
@@ -51,7 +52,7 @@ const BaseScreen = (props: BaseScreenProps) => {
       </Header>
 
       <Gallery data={data || []} filter={filter} sort={sort} />
-    </>
+    </Animated.View>
   );
 };
 

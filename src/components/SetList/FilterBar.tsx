@@ -1,12 +1,18 @@
+import * as Haptics from 'expo-haptics';
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
 
 import {Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
-import FilterForm from './FilterForm';
 import Overlay from '../Overlay';
+import FilterForm from './FilterForm';
 
 interface FilterBarProps {
   title: string;
@@ -21,8 +27,37 @@ export const FilterBar = (props: FilterBarProps) => {
   const {title, filter, formData, sort, onFilter, onSort} = props;
   const [isFilterFormVisible, setIsFilterFormVisible] = useState(false);
 
+  const filterScale = useSharedValue(1);
+  const sortScale = useSharedValue(1);
+
+  const filterAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: filterScale.value}],
+    };
+  });
+
+  const sortAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: sortScale.value}],
+    };
+  });
+
   const toggleFilterForm = () => {
+    filterScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      filterScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     setIsFilterFormVisible(!isFilterFormVisible);
+  };
+
+  const handleSort = async () => {
+    sortScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      sortScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    onSort(sort === 'asc' ? 'desc' : 'asc');
   };
 
   return (
@@ -32,28 +67,30 @@ export const FilterBar = (props: FilterBarProps) => {
           {!filter.SetNumber ? title : filter.SetNumber}
         </Text>
       </View>
-      <Button
-        containerStyle={styles.filterButtonContainer}
-        buttonStyle={styles.headerButton}
-        type="clear"
-        onPress={toggleFilterForm}
-      >
-        <Icon name={Icons.filter} color="white" />
-      </Button>
-      <Button
-        containerStyle={styles.sortButtonContainer}
-        buttonStyle={styles.headerButton}
-        type="clear"
-        onPress={async () => {
-          onSort(sort === 'asc' ? 'desc' : 'asc');
-        }}
-      >
-        <Icon
-          name={sort === 'asc' ? Icons.sort_asc : Icons.sort_desc}
-          color="white"
-          type="material-community"
-        />
-      </Button>
+      <Animated.View style={filterAnimatedStyle}>
+        <Button
+          containerStyle={styles.filterButtonContainer}
+          buttonStyle={styles.headerButton}
+          type="clear"
+          onPress={toggleFilterForm}
+        >
+          <Icon name={Icons.filter} color="white" />
+        </Button>
+      </Animated.View>
+      <Animated.View style={sortAnimatedStyle}>
+        <Button
+          containerStyle={styles.sortButtonContainer}
+          buttonStyle={styles.headerButton}
+          type="clear"
+          onPress={handleSort}
+        >
+          <Icon
+            name={sort === 'asc' ? Icons.sort_asc : Icons.sort_desc}
+            color="white"
+            type="material-community"
+          />
+        </Button>
+      </Animated.View>
       <Overlay
         isVisible={isFilterFormVisible}
         toggleOverlay={toggleFilterForm}

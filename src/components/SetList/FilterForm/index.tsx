@@ -5,7 +5,7 @@ import {Button, Icon, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
-import {InputField, SearchField, SelectField} from './Fields';
+import {InputField, SearchField} from './Fields';
 
 interface FilterFormProps {
   data: GSLCard;
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   },
   formHeader: {
     flexDirection: 'row',
-    paddingVertical: 25,
+    paddingBottom: 25,
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: Colors.greyOutline,
@@ -227,6 +227,7 @@ const styles = StyleSheet.create({
   },
 
   submitContainer: {
+    paddingTop: 10,
     paddingBottom: 20,
   },
   submitButton: {

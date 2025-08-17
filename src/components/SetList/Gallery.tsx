@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   Platform,
+  RefreshControl,
   StyleSheet,
-  View,
   Text,
   useWindowDimensions,
+  View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -12,9 +13,9 @@ import {FlashList} from '@shopify/flash-list';
 
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
-import GalleryItem from './GalleryItem';
-import CardDetails from './CardDetails';
 import Overlay from '../Overlay';
+import CardDetails from './CardDetails';
+import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
   data: GSLCard[];
@@ -26,6 +27,7 @@ export const Gallery = (props: GalleryProps) => {
   const {data, filter, sort} = props;
   const [galleryData, setGalleryData] = useState<GSLCard[]>([]);
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
   const {width} = useWindowDimensions();
 
   // Responsive column layout
@@ -84,7 +86,7 @@ export const Gallery = (props: GalleryProps) => {
               const filterValue = cleanFilter[filterKey] as string;
               const filterArray = filterValue.split(', ').map((s) => s.trim());
               if (!filterArray.includes(item[filterKey])) return false;
-            } else if (item[filterKey] != cleanFilter[filterKey]) return false;
+            } else if (item[filterKey] !== cleanFilter[filterKey]) return false;
           }
         }
         return true;
@@ -94,11 +96,19 @@ export const Gallery = (props: GalleryProps) => {
     }
   }, [data, filter, sort]);
 
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    // Simulate refresh delay for smooth UX
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  }, []);
+
   if (!data || data.length === 0) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>Loading cards...</Text>
+          <Text style={styles.emptyText}>No cards found</Text>
         </View>
       </SafeAreaView>
     );
@@ -111,15 +121,28 @@ export const Gallery = (props: GalleryProps) => {
         numColumns={getColumnCount()}
         estimatedItemSize={248}
         renderItem={({item}) => (
-          <GalleryItem
-            data={item}
-            onPress={(item) => {
-              setSelectedCard(item);
-            }}
-          />
+          <View style={{width: '100%'}}>
+            <GalleryItem
+              data={item}
+              onPress={(item) => {
+                setSelectedCard(item);
+              }}
+            />
+          </View>
         )}
         keyExtractor={(item) => item.ID || item.Code}
         contentContainerStyle={styles.listContainer}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            colors={[Colors.primary]}
+            tintColor={Colors.primary}
+            progressBackgroundColor={Colors.background}
+          />
+        }
+        showsVerticalScrollIndicator={false}
+        overScrollMode="never"
       />
 
       {/* Card Details Overlay */}
@@ -158,5 +181,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: Colors.black,
     opacity: 0.6,
+    marginBottom: 20,
   },
 });

@@ -1,5 +1,12 @@
+import * as Haptics from 'expo-haptics';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  withTiming,
+} from 'react-native-reanimated';
 
 import {Badge, Card, Text} from '@rneui/themed';
 
@@ -14,59 +21,88 @@ interface GalleryItemProps {
 
 const GalleryItem = (props: GalleryItemProps) => {
   const {data, onPress} = props;
+  const scale = useSharedValue(1);
+  const opacity = useSharedValue(1);
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: scale.value}],
+      opacity: opacity.value,
+    };
+  });
+
+  const handlePressIn = () => {
+    scale.value = withSpring(0.95, {damping: 15, stiffness: 300});
+    opacity.value = withTiming(0.8, {duration: 100});
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  };
+
+  const handlePressOut = () => {
+    scale.value = withSpring(1, {damping: 15, stiffness: 300});
+    opacity.value = withTiming(1, {duration: 100});
+  };
 
   return (
     <Card containerStyle={styles.cardContainer}>
-      <Pressable
-        onPress={() => {
-          onPress(data);
-        }}
-      >
-        <View>
-          <Badge
-            containerStyle={styles.setNoBadgeContainer}
-            badgeStyle={styles.badge}
-            textStyle={styles.badgeText}
-            value={data.SetNumber}
-            status="warning"
-          />
-          <Badge
-            containerStyle={styles.cardNoBadgeContainer}
-            badgeStyle={styles.badge}
-            textStyle={styles.badgeText}
-            value={data.CardNumber}
-            status="success"
-          />
-          <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
-        </View>
-        <View style={styles.cardFooter}>
-          <View style={styles.cardTitleContainer}>
-            <Text style={styles.cardTitle}>{`${data.CharacterName}`}</Text>
-            <Text style={styles.cardSubTitle}>{data.Rarity}</Text>
-          </View>
+      <Animated.View style={[styles.cardWrapper, animatedStyle]}>
+        <Pressable
+          onPress={() => {
+            onPress(data);
+          }}
+          onPressIn={handlePressIn}
+          onPressOut={handlePressOut}
+          style={styles.pressable}
+        >
           <View>
-            <Text style={styles.textContent}>{data.SeriesName}</Text>
+            <Badge
+              containerStyle={styles.setNoBadgeContainer}
+              badgeStyle={styles.badge}
+              textStyle={styles.badgeText}
+              value={data.SetNumber}
+              status="warning"
+            />
+            <Badge
+              containerStyle={styles.cardNoBadgeContainer}
+              badgeStyle={styles.badge}
+              textStyle={styles.badgeText}
+              value={data.CardNumber}
+              status="success"
+            />
+            <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
           </View>
-        </View>
-      </Pressable>
+          <View style={styles.cardFooter}>
+            <View style={styles.cardTitleContainer}>
+              <Text style={styles.cardTitle}>{`${data.CharacterName}`}</Text>
+              <Text style={styles.cardSubTitle}>{data.Rarity}</Text>
+            </View>
+            <View>
+              <Text style={styles.textContent}>{data.SeriesName}</Text>
+            </View>
+          </View>
+        </Pressable>
+      </Animated.View>
     </Card>
   );
 };
 
 const styles = StyleSheet.create({
+  cardWrapper: {
+    flex: 1,
+  },
+  pressable: {
+    flex: 1,
+  },
   image: {
-    aspectRatio: 1,
     width: '100%',
-    height: undefined,
+    aspectRatio: 1,
+    resizeMode: 'cover',
   },
   cardContainer: {
     borderWidth: 0,
     shadowColor: Colors.transparent,
-    flex: 1,
-    margin: 0,
-    paddingHorizontal: 5,
-    paddingTop: 10,
-    paddingBottom: 0,
+    //width: 160,
+    margin: 5,
+    padding: 0,
   },
   cardTitleContainer: {
     flexDirection: 'row',

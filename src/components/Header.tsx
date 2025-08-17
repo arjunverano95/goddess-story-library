@@ -1,7 +1,13 @@
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useNavigation} from '@react-navigation/native';
+import * as Haptics from 'expo-haptics';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
 
 import {Button, Icon} from '@rneui/themed';
 
@@ -24,6 +30,39 @@ const Header = (props: HeaderProps) => {
   const {children, showBackButton} = props;
   const navigation = useNavigation<DrawerNavigation>();
 
+  const menuScale = useSharedValue(1);
+  const backScale = useSharedValue(1);
+
+  const menuAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: menuScale.value}],
+    };
+  });
+
+  const backAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: backScale.value}],
+    };
+  });
+
+  const handleMenuPress = () => {
+    menuScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      menuScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    navigation.openDrawer();
+  };
+
+  const handleBackPress = async () => {
+    backScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      backScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    navigation.goBack();
+  };
+
   return (
     <View
       style={[
@@ -32,27 +71,27 @@ const Header = (props: HeaderProps) => {
       ]}
     >
       {showBackButton ? (
-        <Button
-          containerStyle={styles.toggleDrawerContainer}
-          buttonStyle={styles.toggleDrawerButton}
-          type="clear"
-          onPress={async () => {
-            navigation.goBack();
-          }}
-        >
-          <Icon name={Icons.arrow_left} color={Colors.black} />
-        </Button>
+        <Animated.View style={backAnimatedStyle}>
+          <Button
+            containerStyle={styles.toggleDrawerContainer}
+            buttonStyle={styles.toggleDrawerButton}
+            type="clear"
+            onPress={handleBackPress}
+          >
+            <Icon name={Icons.arrow_left} color={Colors.black} />
+          </Button>
+        </Animated.View>
       ) : (
-        <Button
-          containerStyle={styles.toggleDrawerContainer}
-          buttonStyle={styles.toggleDrawerButton}
-          type="clear"
-          onPress={() => {
-            navigation.openDrawer();
-          }}
-        >
-          <Icon name={Icons.menu} color="white" />
-        </Button>
+        <Animated.View style={menuAnimatedStyle}>
+          <Button
+            containerStyle={styles.toggleDrawerContainer}
+            buttonStyle={styles.toggleDrawerButton}
+            type="clear"
+            onPress={handleMenuPress}
+          >
+            <Icon name={Icons.menu} color="white" />
+          </Button>
+        </Animated.View>
       )}
 
       {children && (
