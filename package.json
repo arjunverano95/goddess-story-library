@@ -12,7 +12,7 @@
     "lint": "expo lint",
     "format": "prettier --write .",
     "deploy": "gh-pages --nojekyll -d dist",
-    "predeploy": "expo export -p web"
+    "predeploy": "rimraf dist && expo export -p web"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
