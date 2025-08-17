@@ -8,7 +8,7 @@ export default function SenpaiGoddessHavenPage() {
   return (
     <Animated.View
       style={styles.container}
-      entering={FadeIn.duration(600).delay(100)}
+      entering={FadeIn.duration(400).delay(50)}
     >
       <BaseScreen
         dataUrl="/data/senpai-goddess-haven.json"

@@ -15,7 +15,6 @@ import {Colors, Icons} from '../constants';
 
 type DrawerParamList = {
   index: undefined;
-  'goddess-story': undefined;
   'senpai-goddess-haven': undefined;
 };
 

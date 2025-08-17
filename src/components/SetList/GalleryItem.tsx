@@ -1,3 +1,4 @@
+import {Badge, Card, Text} from '@rneui/themed';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
@@ -8,15 +9,13 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import {Badge, Card, Text} from '@rneui/themed';
-
 import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import GalleryImage from './GalleryImage';
 
 interface GalleryItemProps {
   data: GSLCard;
-  onPress: (value: GSLCard) => void;
+  onPress: (data: GSLCard) => void;
 }
 
 const GalleryItem = (props: GalleryItemProps) => {
@@ -101,7 +100,6 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     shadowColor: Colors.transparent,
     //width: 160,
-    margin: 5,
     padding: 0,
   },
   cardTitleContainer: {

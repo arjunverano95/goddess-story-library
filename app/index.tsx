@@ -1,5 +1,23 @@
-import {Redirect} from 'expo-router';
+import React from 'react';
+import {StyleSheet} from 'react-native';
+import Animated, {FadeIn} from 'react-native-reanimated';
+
+import BaseScreen from '../src/components/BaseScreen';
 
 export default function Index() {
-  return <Redirect href="/goddess-story" />;
+  return (
+    <Animated.View
+      style={styles.container}
+      entering={FadeIn.duration(400).delay(50)}
+    >
+      <BaseScreen dataUrl="/data/goddess-story.json" title="Goddess Story" />
+    </Animated.View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fffdfd',
+  },
+});

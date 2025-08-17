@@ -119,9 +119,8 @@ export const Gallery = (props: GalleryProps) => {
       <FlashList
         data={galleryData}
         numColumns={getColumnCount()}
-        estimatedItemSize={248}
         renderItem={({item}) => (
-          <View style={{width: '100%'}}>
+          <View style={{flex: 1, margin: 5}}>
             <GalleryItem
               data={item}
               onPress={(item) => {
@@ -178,9 +177,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    fontSize: 18,
-    color: Colors.black,
-    opacity: 0.6,
-    marginBottom: 20,
+    fontSize: 16,
+    color: Colors.greyOutline,
   },
 });

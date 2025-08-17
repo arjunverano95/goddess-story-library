@@ -47,17 +47,14 @@ export default function RootLayout() {
   }
 
   return (
-    <Animated.View
-      style={{flex: 1}}
-      entering={FadeIn.duration(1000).delay(200)}
-    >
+    <Animated.View style={{flex: 1}} entering={FadeIn.duration(500).delay(100)}>
       <RNEUIThemeProvider theme={rneuiTheme}>
         <ThemeProvider
           value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
         >
           <Drawer
             drawerContent={(props: any) => <CustomDrawerContent {...props} />}
-            initialRouteName="goddess-story"
+            initialRouteName="index"
             screenOptions={{
               headerShown: false,
               drawerStyle: {
@@ -71,13 +68,6 @@ export default function RootLayout() {
           >
             <Drawer.Screen
               name="index"
-              options={{
-                title: 'Goddess Story',
-                drawerLabel: 'Goddess Story',
-              }}
-            />
-            <Drawer.Screen
-              name="goddess-story"
               options={{
                 title: 'Goddess Story',
                 drawerLabel: 'Goddess Story',

@@ -1,12 +1,12 @@
-import React from 'react';
-import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 import {DrawerItem} from '@react-navigation/drawer';
 import {Text} from '@rneui/themed';
 import {useRouter} from 'expo-router';
+import React from 'react';
+import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 
 import {Colors} from '../constants';
 
-type RouteType = '/goddess-story' | '/senpai-goddess-haven';
+type RouteType = '/' | '/senpai-goddess-haven';
 
 const Routes: {
   name: string;
@@ -18,7 +18,7 @@ const Routes: {
     name: 'GoddessStory',
     label: 'Goddess Story',
     icon: require('../../assets/little-frog.png'),
-    route: '/goddess-story',
+    route: '/',
   },
   {
     name: 'SenpaiGoddessHaven',

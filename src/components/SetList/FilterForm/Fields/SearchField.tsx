@@ -169,7 +169,6 @@ export const SearchField = (props: SearchFieldProps) => {
             <FlashList
               data={listData}
               renderItem={renderItem}
-              estimatedItemSize={40}
               keyExtractor={(item) => String(item)}
               extraData={selectedValues}
               keyboardShouldPersistTaps="handled"
