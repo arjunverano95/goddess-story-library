@@ -1,9 +1,11 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import {Image} from 'expo-image';
+import React from 'react';
+import {Platform, StyleSheet, View} from 'react-native';
 
 import {Colors} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
+import MobileWebView from './MobileWebView';
+import WebSearchIframe from './WebSearchIframe';
 
 interface CardDetailImageProps {
   data: GSLCard;
@@ -23,15 +25,12 @@ const CardDetailImage = (props: CardDetailImageProps) => {
       </View>
     );
   } else {
-    return (
-      <View style={styles.noImageContainer}>
-        <Image
-          style={styles.noImage}
-          source={require('../../../../assets/no-image.png')}
-          contentFit="contain"
-        />
-      </View>
-    );
+    // Use platform-specific components
+    if (Platform.OS === 'web') {
+      return <WebSearchIframe data={data} />;
+    } else {
+      return <MobileWebView data={data} />;
+    }
   }
 };
 
@@ -45,18 +44,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: null,
     width: null,
-  },
-  noImageContainer: {
-    flex: 1,
-    margin: 15,
-    backgroundColor: Colors.white,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  noImage: {
-    width: 100,
-    height: 100,
-    opacity: 0.5,
   },
 });
 

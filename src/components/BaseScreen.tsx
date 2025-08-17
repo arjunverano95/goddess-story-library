@@ -5,6 +5,7 @@ import {useGSL} from '../hooks/useGSL';
 import {GSLCard} from '../models/GSLCard';
 import Header from './Header';
 import {FilterBar, Gallery} from './SetList';
+import WebFooter from './WebFooter';
 
 interface BaseScreenProps {
   dataUrl: string;
@@ -52,6 +53,7 @@ const BaseScreen = (props: BaseScreenProps) => {
       </Header>
 
       <Gallery data={data || []} filter={filter} sort={sort} />
+      <WebFooter />
     </Animated.View>
   );
 };

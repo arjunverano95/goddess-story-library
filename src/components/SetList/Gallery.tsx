@@ -14,7 +14,7 @@ import {FlashList} from '@shopify/flash-list';
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import Overlay from '../Overlay';
-import CardDetails from './CardDetails';
+import {CardDetails} from './CardDetails';
 import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
