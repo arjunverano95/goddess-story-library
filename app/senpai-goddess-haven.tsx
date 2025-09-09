@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 import Animated, {FadeIn} from 'react-native-reanimated';
 
 import BaseScreen from '../src/components/BaseScreen';
+import {CARD_LISTING} from '../src/constants';
 
 export default function SenpaiGoddessHavenPage() {
   return (
@@ -10,10 +11,7 @@ export default function SenpaiGoddessHavenPage() {
       style={styles.container}
       entering={FadeIn.duration(400).delay(50)}
     >
-      <BaseScreen
-        dataUrl="/data/senpai-goddess-haven.json"
-        title="Senpai Goddess Haven"
-      />
+      <BaseScreen collection={CARD_LISTING.SGH} title="Senpai Goddess Haven" />
     </Animated.View>
   );
 }
