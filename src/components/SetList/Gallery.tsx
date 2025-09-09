@@ -120,7 +120,7 @@ export const Gallery = (props: GalleryProps) => {
         data={galleryData}
         numColumns={getColumnCount()}
         renderItem={({item}) => (
-          <View style={{flex: 1, margin: 5}}>
+          <View style={{flex: 1}}>
             <GalleryItem
               data={item}
               onPress={(item) => {
