@@ -87,7 +87,7 @@ const FilterForm = (props: FilterFormProps) => {
       <View style={styles.formContainer}>
         <View style={styles.dragHandle} />
         <View style={styles.formHeader}>
-          <Icon name={Icons.filter} size={45} />
+          <Icon name={Icons.filter} size={40} />
           <Text h3 style={styles.title}>
             {'Filter'}
           </Text>
