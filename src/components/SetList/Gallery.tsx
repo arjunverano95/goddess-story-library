@@ -1,20 +1,12 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {
-  ActivityIndicator,
   FlatList,
   Platform,
-  RefreshControl,
   StyleSheet,
   Text,
   useWindowDimensions,
   View,
 } from 'react-native';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
-  withTiming,
-} from 'react-native-reanimated';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Colors, Sizes} from '../../constants';
@@ -23,6 +15,7 @@ import {PaginationInfo} from '../../services/api';
 import Overlay from '../Overlay';
 import {CardDetails} from './CardDetails';
 import GalleryItem from './GalleryItem';
+import SkeletonGalleryItem from './SkeletonGalleryItem';
 
 interface GalleryProps {
   data: GSLCard[];
@@ -32,35 +25,27 @@ interface GalleryProps {
   onPageChange?: (page: number) => void;
   loadMore?: (page: number) => Promise<void>;
   hasMorePages?: boolean;
-  enableVirtualization?: boolean;
   enableAnimations?: boolean;
-  cardAspectRatio?: number;
+}
+
+// Grid row data structure
+interface GridRow {
+  id: string;
+  items: GSLCard[];
+  isLastRow?: boolean;
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {
-    data,
-    isLoading,
-    pagination,
-    loadMore,
-    hasMorePages,
-    enableVirtualization = true,
-    enableAnimations = true,
-    cardAspectRatio = 1,
-  } = props;
+  const {data, isLoading, pagination, loadMore, hasMorePages} = props;
 
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
-  // const [isScrolling, setIsScrolling] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const {width} = useWindowDimensions();
   const flatListRef = useRef<FlatList>(null);
+  const loadMoreTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Animation values
-  const scrollY = useSharedValue(0);
-  const fadeAnim = useSharedValue(1);
-
-  // Responsive column layout - memoized for performance
+  // Responsive column layout
   const columnCount = useMemo(() => {
     if (width < Sizes.sm) return 2;
     if (width >= Sizes.sm && width < Sizes.md) return 3;
@@ -69,140 +54,177 @@ export const Gallery = (props: GalleryProps) => {
     return 6;
   }, [width]);
 
-  // Calculate item dimensions for better performance
+  // Calculate item dimensions
   const itemWidth = useMemo(() => {
     const padding = 20; // 10px padding on each side
     const margin = 4; // 2px margin on each side
     return (width - padding - (columnCount - 1) * margin) / columnCount;
   }, [width, columnCount]);
 
-  const itemHeight = useMemo(() => {
-    return itemWidth * cardAspectRatio + 80; // Add space for text content
-  }, [itemWidth, cardAspectRatio]);
+  // Convert data to grid rows
+  const gridData = useMemo(() => {
+    if (!data || data.length === 0) return [];
 
-  // Memoize the data to prevent unnecessary re-renders
-  const galleryData = useMemo(() => {
-    return data || [];
-  }, [data]);
+    const rows: GridRow[] = [];
+    for (let i = 0; i < data.length; i += columnCount) {
+      const rowItems = data.slice(i, i + columnCount);
+      rows.push({
+        id: `row-${i}`,
+        items: rowItems,
+        isLastRow: i + columnCount >= data.length,
+      });
+    }
+    return rows;
+  }, [data, columnCount]);
 
-  // Memoized render functions for better performance
-  const renderItem = useCallback(
-    ({item, index}: {item: GSLCard; index: number}) => {
-      if (enableAnimations) {
-        return (
-          <AnimatedGalleryItem
-            item={item}
-            index={index}
-            onPress={setSelectedCard}
-          />
-        );
-      }
+  // Memoized press handler to prevent re-renders
+  const handleCardPress = useCallback((item: GSLCard) => {
+    setSelectedCard(item);
+  }, []);
 
+  // Render row function with optimized memoization
+  const renderRow = useCallback(
+    ({item: row}: {item: GridRow}) => {
       return (
-        <View
-          style={[styles.itemContainer, {width: itemWidth, height: itemHeight}]}
-        >
-          <GalleryItem
-            data={item}
-            onPress={(item) => {
-              setSelectedCard(item);
-            }}
-          />
+        <View style={styles.rowContainer}>
+          {row.items.map((card, index) => (
+            <View
+              key={`${card.ID || card.Code}-${index}`}
+              style={[styles.itemContainer, {width: itemWidth}]}
+            >
+              <GalleryItem data={card} onPress={handleCardPress} />
+            </View>
+          ))}
+          {/* Fill empty slots in last row */}
+          {row.isLastRow &&
+            row.items.length < columnCount &&
+            Array.from({length: columnCount - row.items.length}).map(
+              (_, index) => (
+                <View
+                  key={`empty-${index}`}
+                  style={[styles.itemContainer, {width: itemWidth}]}
+                />
+              ),
+            )}
         </View>
       );
     },
-    [enableAnimations, itemWidth, itemHeight, setSelectedCard],
+    [itemWidth, columnCount, handleCardPress],
   );
 
-  const keyExtractor = useCallback((item: GSLCard) => item.ID || item.Code, []);
+  const keyExtractor = useCallback((item: GridRow) => item.id, []);
 
+  // Footer component for loading more
   const renderFooter = useCallback(() => {
-    if (!loadingMore) return null;
+    if (!loadingMore && !isLoadingMore) return null;
 
     return (
       <View style={styles.footerLoader}>
-        <ActivityIndicator size="small" color={Colors.primary} />
-        <Text style={styles.footerLoaderText}>Loading more cards...</Text>
+        <View style={styles.footerSkeletonContainer}>
+          {Array.from({length: columnCount}).map((_, index) => (
+            <View
+              key={`footer-skeleton-${index}`}
+              style={[styles.itemContainer, {width: itemWidth}]}
+            >
+              <SkeletonGalleryItem width={itemWidth} />
+            </View>
+          ))}
+        </View>
       </View>
     );
-  }, [loadingMore]);
+  }, [loadingMore, isLoadingMore, columnCount, itemWidth]);
 
-  const getItemLayout = useCallback(
-    (data: any, index: number) => {
-      return {
-        length: itemHeight,
-        offset: itemHeight * Math.floor(index / columnCount),
-        index,
-      };
-    },
-    [itemHeight, columnCount],
-  );
+  // Load more handler with debouncing
+  const handleLoadMore = useCallback(async () => {
+    if (!loadMore || !hasMorePages || loadingMore || isLoadingMore) {
+      return;
+    }
 
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    // Simulate refresh delay for smooth UX
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 1000);
+    // Clear any existing timeout
+    if (loadMoreTimeoutRef.current) {
+      clearTimeout(loadMoreTimeoutRef.current);
+    }
+
+    // Debounce the load more call
+    loadMoreTimeoutRef.current = setTimeout(async () => {
+      setIsLoadingMore(true);
+      setLoadingMore(true);
+      try {
+        const nextPage = (pagination?.page || 1) + 1;
+        await loadMore(nextPage);
+      } catch (error) {
+        console.error('Error loading more data:', error);
+      } finally {
+        setLoadingMore(false);
+        setIsLoadingMore(false);
+      }
+    }, 300); // 300ms debounce
+  }, [loadMore, hasMorePages, pagination, loadingMore, isLoadingMore]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (loadMoreTimeoutRef.current) {
+        clearTimeout(loadMoreTimeoutRef.current);
+      }
+    };
   }, []);
 
-  // Handle infinite scroll
-  const handleLoadMore = useCallback(async () => {
-    if (!loadMore || !hasMorePages || loadingMore) return;
-
-    setLoadingMore(true);
-    try {
-      await loadMore((pagination?.page || 1) + 1);
-    } catch (error) {
-      console.error('Error loading more data:', error);
-    } finally {
-      setLoadingMore(false);
+  // Skeleton loading data
+  const skeletonRows = useMemo(() => {
+    if (!isLoading) return [];
+    const skeletonCount = columnCount * 3; // Show 3 rows of skeletons
+    const rows: GridRow[] = [];
+    for (let i = 0; i < skeletonCount; i += columnCount) {
+      const rowItems = Array.from({length: columnCount}).map((_, index) => ({
+        ID: `skeleton-${i + index}`,
+        Code: `skeleton-${i + index}`,
+      })) as GSLCard[];
+      rows.push({
+        id: `skeleton-row-${i}`,
+        items: rowItems,
+        isLastRow: i + columnCount >= skeletonCount,
+      });
     }
-  }, [loadMore, hasMorePages, pagination, loadingMore]);
+    return rows;
+  }, [isLoading, columnCount]);
 
-  // Scroll handling for animations
-  const handleScroll = useCallback(
-    (event: any) => {
-      if (enableAnimations) {
-        scrollY.value = event.nativeEvent.contentOffset.y;
-      }
+  const renderSkeletonRow = useCallback(
+    ({item: row}: {item: GridRow}) => {
+      return (
+        <View style={styles.rowContainer}>
+          {row.items.map((_, index) => (
+            <View
+              key={`skeleton-${row.id}-${index}`}
+              style={[styles.itemContainer, {width: itemWidth}]}
+            >
+              <SkeletonGalleryItem width={itemWidth} />
+            </View>
+          ))}
+        </View>
+      );
     },
-    [enableAnimations, scrollY],
+    [itemWidth],
   );
 
-  const handleScrollBeginDrag = useCallback(() => {
-    // setIsScrolling(true);
-    if (enableAnimations) {
-      fadeAnim.value = withTiming(0.8, {duration: 200});
-    }
-  }, [enableAnimations, fadeAnim]);
-
-  const handleScrollEndDrag = useCallback(() => {
-    // setIsScrolling(false);
-    if (enableAnimations) {
-      fadeAnim.value = withTiming(1, {duration: 200});
-    }
-  }, [enableAnimations, fadeAnim]);
-
-  // Animated style for the list
-  const animatedListStyle = useAnimatedStyle(() => {
-    return {
-      opacity: enableAnimations ? fadeAnim.value : 1,
-    };
-  });
-
+  // Skeleton loading state
   if (isLoading) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color={Colors.primary} />
-          <Text style={styles.loadingText}>Loading cards...</Text>
-        </View>
+        <FlatList
+          data={skeletonRows}
+          renderItem={renderSkeletonRow}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.listContainer}
+          showsVerticalScrollIndicator={false}
+          removeClippedSubviews={false}
+        />
       </SafeAreaView>
     );
   }
 
-  if (!data || data.length === 0) {
+  // Empty state
+  if ((!data || data.length === 0) && !isLoading) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
         <View style={styles.emptyContainer}>
@@ -214,43 +236,28 @@ export const Gallery = (props: GalleryProps) => {
 
   return (
     <SafeAreaView style={styles.galleryContainer}>
-      <Animated.View style={[styles.listWrapper, animatedListStyle]}>
-        <FlatList
-          ref={flatListRef}
-          data={galleryData}
-          numColumns={columnCount}
-          renderItem={renderItem}
-          keyExtractor={keyExtractor}
-          contentContainerStyle={styles.listContainer}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={onRefresh}
-              colors={[Colors.primary]}
-              tintColor={Colors.primary}
-              progressBackgroundColor={Colors.background}
-            />
-          }
-          showsVerticalScrollIndicator={false}
-          onEndReached={handleLoadMore}
-          onEndReachedThreshold={0.5}
-          ListFooterComponent={renderFooter}
-          getItemLayout={enableVirtualization ? getItemLayout : undefined}
-          removeClippedSubviews={enableVirtualization}
-          maxToRenderPerBatch={enableVirtualization ? 8 : undefined}
-          updateCellsBatchingPeriod={enableVirtualization ? 50 : undefined}
-          initialNumToRender={enableVirtualization ? 6 : undefined}
-          windowSize={enableVirtualization ? 5 : undefined}
-          maintainVisibleContentPosition={{
-            minIndexForVisible: 0,
-            autoscrollToTopThreshold: 10,
-          }}
-          onScroll={handleScroll}
-          onScrollBeginDrag={handleScrollBeginDrag}
-          onScrollEndDrag={handleScrollEndDrag}
-          scrollEventThrottle={16}
-        />
-      </Animated.View>
+      <FlatList
+        ref={flatListRef}
+        data={gridData}
+        renderItem={renderRow}
+        keyExtractor={keyExtractor}
+        contentContainerStyle={styles.listContainer}
+        showsVerticalScrollIndicator={false}
+        onEndReached={handleLoadMore}
+        onEndReachedThreshold={0.3}
+        ListFooterComponent={renderFooter}
+        removeClippedSubviews={true}
+        scrollEventThrottle={16}
+        windowSize={10}
+        maxToRenderPerBatch={10}
+        updateCellsBatchingPeriod={50}
+        initialNumToRender={6}
+        getItemLayout={(data, index) => ({
+          length: itemWidth + 8, // itemWidth + margin
+          offset: (itemWidth + 8) * Math.floor(index / columnCount),
+          index,
+        })}
+      />
 
       {/* Card Details Overlay */}
       {selectedCard && (
@@ -270,89 +277,53 @@ export const Gallery = (props: GalleryProps) => {
   );
 };
 
-// Animated Gallery Item Component
-const AnimatedGalleryItem = React.memo(
-  ({
-    item,
-    index,
-    onPress,
-  }: {
-    item: GSLCard;
-    index: number;
-    onPress: (item: GSLCard) => void;
-  }) => {
-    const translateY = useSharedValue(50);
-    const opacity = useSharedValue(0);
-    const scale = useSharedValue(0.9);
-
-    useEffect(() => {
-      // Staggered animation for items
-      const delay = index * 50;
-      setTimeout(() => {
-        translateY.value = withSpring(0, {damping: 15, stiffness: 100});
-        opacity.value = withTiming(1, {duration: 300});
-        scale.value = withSpring(1, {damping: 15, stiffness: 100});
-      }, delay);
-    }, [index, translateY, opacity, scale]);
-
-    const animatedStyle = useAnimatedStyle(() => {
-      return {
-        transform: [{translateY: translateY.value}, {scale: scale.value}],
-        opacity: opacity.value,
-      };
-    });
-
-    return (
-      <Animated.View style={[styles.itemContainer, animatedStyle]}>
-        <GalleryItem data={item} onPress={onPress} />
-      </Animated.View>
-    );
-  },
-);
-
-AnimatedGalleryItem.displayName = 'AnimatedGalleryItem';
-
 const styles = StyleSheet.create({
   galleryContainer: {
     flex: 1,
-    paddingBottom: Platform.select({web: 0, native: 10}),
     backgroundColor: Colors.background,
-  },
-  listWrapper: {
-    flex: 1,
   },
   listContainer: {
     padding: 10,
+    paddingBottom: Platform.select({web: 0, native: 20}),
+  },
+  rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 4,
   },
   itemContainer: {
-    flex: 1,
     margin: 2,
   },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   loadingText: {
     fontSize: 16,
     color: Colors.greyOutline,
     marginTop: 10,
+    textAlign: 'center',
   },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   emptyText: {
     fontSize: 16,
     color: Colors.greyOutline,
+    textAlign: 'center',
   },
   footerLoader: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
     paddingVertical: 20,
-    gap: 10,
+  },
+  footerSkeletonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 4,
   },
   footerLoaderText: {
     fontSize: 14,

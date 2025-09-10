@@ -1,9 +1,8 @@
 import React, {useCallback, useMemo, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button, Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
-import {FlashList} from '@shopify/flash-list';
+import {Button, Icon, ListItem, SearchBar, Text} from '@rneui/themed';
 
 import {Colors, Icons} from '../../../../constants';
 import Overlay from '../../../Overlay';
@@ -22,9 +21,9 @@ export const SearchField = (props: SearchFieldProps) => {
 
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const {theme} = useTheme();
+  // const {theme} = useTheme();
 
-  const backgroundColor = theme?.colors?.grey5 || Colors.greyOutline;
+  const backgroundColor = Colors.searchBg;
 
   // Normalize selected values to an array
   const selectedValues = useMemo<string[]>(
@@ -166,7 +165,7 @@ export const SearchField = (props: SearchFieldProps) => {
 
           {/* List */}
           <SafeAreaView style={styles.overlayContentContainer}>
-            <FlashList
+            <FlatList
               data={listData}
               renderItem={renderItem}
               keyExtractor={(item) => String(item)}

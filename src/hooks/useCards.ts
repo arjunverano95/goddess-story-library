@@ -38,21 +38,22 @@ export const useCards = ({
       setCurrentPage(1);
       setHasMorePages(true);
       setAccumulatedCards([]);
-      // Small delay to ensure state is properly reset
-      setTimeout(() => setIsResetting(false), 50);
+      // Don't set rto false immediately - let it be controlled by data arrival
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(filters), enableInfiniteScroll]);
 
   // Update accumulated data when new data arrives (only for initial load)
   useEffect(() => {
-    if (isResetting) return; // Don't update data while resetting
-
     if (cardsData?.data && enableInfiniteScroll && currentPage === 1) {
       // Only handle initial data load here, subsequent pages are handled in loadMore
       const newCards = mapApiCardsToGSLCards(cardsData.data);
       setAccumulatedCards(newCards);
       setHasMorePages(cardsData.pagination?.hasNextPage || false);
+      // Reset the resetting state when new data arrives
+      if (isResetting) {
+        setIsResetting(false);
+      }
     } else if (
       cardsData &&
       !cardsData.data &&
@@ -62,6 +63,10 @@ export const useCards = ({
       // Handle case where API returns empty data
       setAccumulatedCards([]);
       setHasMorePages(false);
+      // Reset the resetting state even when no data is returned
+      if (isResetting) {
+        setIsResetting(false);
+      }
     }
   }, [cardsData, enableInfiniteScroll, currentPage, isResetting]);
 
@@ -103,6 +108,13 @@ export const useCards = ({
     : cardsData?.data
       ? mapApiCardsToGSLCards(cardsData.data)
       : [];
+
+  // For non-infinite scroll, also reset isResetting when data arrives
+  useEffect(() => {
+    if (!enableInfiniteScroll && cardsData && isResetting) {
+      setIsResetting(false);
+    }
+  }, [cardsData, enableInfiniteScroll, isResetting]);
 
   return {
     data: finalData,

@@ -1,4 +1,4 @@
-package com.arjunverano.goddess_story_library
+package com.chronowage.goddess_story_library
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

@@ -1,4 +1,4 @@
-package com.arjunverano.goddess_story_library
+package com.chronowage.goddess_story_library
 
 import android.app.Application
 import android.content.res.Configuration

@@ -1,12 +1,5 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {
-  ActivityIndicator,
-  Platform,
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  Text,
-} from 'react-native';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {Platform, ScrollView, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Colors} from '../../constants';
@@ -15,6 +8,7 @@ import {PaginationInfo} from '../../services/api';
 import Overlay from '../Overlay';
 import {CardDetails} from './CardDetails';
 import GalleryItem from './GalleryItem';
+import SkeletonGalleryWeb from './SkeletonGallery.web';
 
 interface GalleryProps {
   data: GSLCard[];
@@ -29,7 +23,6 @@ interface GalleryProps {
 export const Gallery = (props: GalleryProps) => {
   const {data, isLoading, pagination, loadMore, hasMorePages} = props;
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   // const [isNearBottom, setIsNearBottom] = useState(false);
   const scrollViewRef = useRef<ScrollView>(null);
@@ -51,14 +44,6 @@ export const Gallery = (props: GalleryProps) => {
   //   }
   //   return chunks;
   // }, [galleryData, columnCount]);
-
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    // Simulate refresh delay for smooth UX
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 1000);
-  }, []);
 
   // Handle infinite scroll
   const handleLoadMore = useCallback(async () => {
@@ -88,33 +73,32 @@ export const Gallery = (props: GalleryProps) => {
     [loadMore, hasMorePages, loadingMore, handleLoadMore],
   );
 
+  // Memoized card press handler
+  const handleCardPress = useCallback((item: GSLCard) => {
+    setSelectedCard(item);
+  }, []);
+
   // Memoized render functions for better performance
   const renderItem = useCallback(
     (item: GSLCard, index: number) => (
       <div
-        key={item.ID || item.Code}
+        key={item.ID || item.Code || `item-${index}`}
         className="gallery-item"
         data-animation-delay={index * 50}
       >
-        <GalleryItem
-          data={item}
-          onPress={(item) => {
-            setSelectedCard(item);
-          }}
-        />
+        <GalleryItem data={item} onPress={handleCardPress} />
       </div>
     ),
-    [],
+    [handleCardPress],
   );
 
-  // Render footer with loading indicator
+  // Render footer with skeleton loading
   const renderFooter = useCallback(() => {
     if (!loadingMore) return null;
 
     return (
       <div style={styles.footerLoader} className="gallery-footer">
-        <ActivityIndicator size="small" color={Colors.primary} />
-        <Text style={styles.footerLoaderText}>Loading more cards...</Text>
+        <SkeletonGalleryWeb itemCount={6} />
       </div>
     );
   }, [loadingMore]);
@@ -167,8 +151,9 @@ export const Gallery = (props: GalleryProps) => {
           .gallery-grid {
             display: grid !important;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            padding: 10px;
+          
+            margin: 0px;
+            padding: 0px;
             width: 100%;
           }
           
@@ -176,36 +161,35 @@ export const Gallery = (props: GalleryProps) => {
           @media (max-width: 480px) {
             .gallery-grid {
               grid-template-columns: repeat(2, 1fr);
-              gap: 8px;
-              padding: 8px;
+            
             }
           }
           
           @media (min-width: 481px) and (max-width: 768px) {
             .gallery-grid {
               grid-template-columns: repeat(3, 1fr);
-              gap: 10px;
+           
             }
           }
           
           @media (min-width: 769px) and (max-width: 1024px) {
             .gallery-grid {
               grid-template-columns: repeat(4, 1fr);
-              gap: 12px;
+          
             }
           }
           
           @media (min-width: 1025px) and (max-width: 1200px) {
             .gallery-grid {
               grid-template-columns: repeat(5, 1fr);
-              gap: 14px;
+             
             }
           }
           
           @media (min-width: 1201px) {
             .gallery-grid {
               grid-template-columns: repeat(6, 1fr);
-              gap: 16px;
+             
             }
           }
           
@@ -259,10 +243,13 @@ export const Gallery = (props: GalleryProps) => {
   if (isLoading) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
-        <div style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color={Colors.primary} />
-          <Text style={styles.loadingText}>Loading cards...</Text>
-        </div>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
+          <SkeletonGalleryWeb itemCount={12} />
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -284,21 +271,15 @@ export const Gallery = (props: GalleryProps) => {
         ref={scrollViewRef}
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-            colors={[Colors.primary]}
-            tintColor={Colors.primary}
-            progressBackgroundColor={Colors.background}
-          />
-        }
         onScroll={handleScroll}
         scrollEventThrottle={16}
         showsVerticalScrollIndicator={false}
         bounces={true}
         bouncesZoom={false}
         alwaysBounceVertical={false}
+        // removeClippedSubviews={true}
+        // maxToRenderPerBatch={10}
+        // windowSize={10}
       >
         <div style={styles.galleryGrid} className="gallery-grid">
           {galleryData.map((item, index) => renderItem(item, index))}
@@ -337,10 +318,11 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     paddingBottom: 20,
+    padding: 10,
   },
   galleryGrid: {
-    padding: 10,
     width: '100%',
+    gap: 10,
   },
   itemContainer: {
     backgroundColor: 'transparent',

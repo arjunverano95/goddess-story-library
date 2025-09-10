@@ -4,6 +4,7 @@ import {useFonts} from 'expo-font';
 import {Drawer} from 'expo-router/drawer';
 import {StatusBar} from 'expo-status-bar';
 import Animated, {FadeIn} from 'react-native-reanimated';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {useColorScheme} from '@/hooks/useColorScheme';
 import CustomDrawerContent from '../src/components/CustomDrawerContent';
@@ -47,44 +48,49 @@ export default function RootLayout() {
   }
 
   return (
-    <Animated.View style={{flex: 1}} entering={FadeIn.duration(500).delay(100)}>
-      <RNEUIThemeProvider theme={rneuiTheme}>
-        <ThemeProvider
-          value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-        >
-          <Drawer
-            drawerContent={(props: any) => <CustomDrawerContent {...props} />}
-            initialRouteName="index"
-            screenOptions={{
-              headerShown: false,
-              drawerStyle: {
-                backgroundColor: '#fffdfd',
-                width: 300,
-              },
-              drawerType: 'front',
-              swipeEnabled: true,
-              swipeEdgeWidth: 50,
-            }}
+    <SafeAreaProvider>
+      <Animated.View
+        style={{flex: 1}}
+        entering={FadeIn.duration(500).delay(100)}
+      >
+        <RNEUIThemeProvider theme={rneuiTheme}>
+          <ThemeProvider
+            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
           >
-            <Drawer.Screen
-              name="index"
-              options={{
-                title: 'Goddess Story',
-                drawerLabel: 'Goddess Story',
+            <Drawer
+              drawerContent={(props: any) => <CustomDrawerContent {...props} />}
+              initialRouteName="index"
+              screenOptions={{
+                headerShown: false,
+                drawerStyle: {
+                  backgroundColor: '#fffdfd',
+                  width: 300,
+                },
+                drawerType: 'front',
+                swipeEnabled: true,
+                swipeEdgeWidth: 50,
               }}
-            />
-            <Drawer.Screen
-              name="senpai-goddess-haven"
-              options={{
-                title: 'Senpai Goddess Haven',
-                drawerLabel: 'Senpai Goddess Haven',
-              }}
-            />
-            <Drawer.Screen name="+not-found" />
-          </Drawer>
-          <StatusBar style="auto" />
-        </ThemeProvider>
-      </RNEUIThemeProvider>
-    </Animated.View>
+            >
+              <Drawer.Screen
+                name="index"
+                options={{
+                  title: 'Goddess Story',
+                  drawerLabel: 'Goddess Story',
+                }}
+              />
+              <Drawer.Screen
+                name="senpai-goddess-haven"
+                options={{
+                  title: 'Senpai Goddess Haven',
+                  drawerLabel: 'Senpai Goddess Haven',
+                }}
+              />
+              <Drawer.Screen name="+not-found" />
+            </Drawer>
+            <StatusBar style="auto" />
+          </ThemeProvider>
+        </RNEUIThemeProvider>
+      </Animated.View>
+    </SafeAreaProvider>
   );
 }

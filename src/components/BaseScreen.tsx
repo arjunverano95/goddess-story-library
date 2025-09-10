@@ -91,9 +91,7 @@ const BaseScreen = (props: BaseScreenProps) => {
         onPageChange={setPage}
         loadMore={loadMore}
         hasMorePages={hasMorePages}
-        enableVirtualization={true}
         enableAnimations={true}
-        cardAspectRatio={1}
       />
       <WebFooter />
     </Animated.View>

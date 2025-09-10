@@ -1,6 +1,6 @@
 import {Badge, Card, Text} from '@rneui/themed';
 import * as Haptics from 'expo-haptics';
-import React from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -18,7 +18,7 @@ interface GalleryItemProps {
   onPress: (data: GSLCard) => void;
 }
 
-const GalleryItem = (props: GalleryItemProps) => {
+const GalleryItem = React.memo<GalleryItemProps>((props) => {
   const {data, onPress} = props;
   const scale = useSharedValue(1);
   const opacity = useSharedValue(1);
@@ -30,24 +30,44 @@ const GalleryItem = (props: GalleryItemProps) => {
     };
   });
 
-  const handlePressIn = () => {
+  const handlePressIn = useCallback(() => {
     scale.value = withSpring(0.95, {damping: 15, stiffness: 300});
     opacity.value = withTiming(0.8, {duration: 100});
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  };
+  }, [scale, opacity]);
 
-  const handlePressOut = () => {
+  const handlePressOut = useCallback(() => {
     scale.value = withSpring(1, {damping: 15, stiffness: 300});
     opacity.value = withTiming(1, {duration: 100});
-  };
+  }, [scale, opacity]);
+
+  const handlePress = useCallback(() => {
+    onPress(data);
+  }, [onPress, data]);
+
+  // Memoize badge values to prevent unnecessary re-renders
+  const badgeValues = useMemo(
+    () => ({
+      setNumber: data.SetNumber,
+      cardNumber: data.CardNumber,
+      characterName: data.CharacterName,
+      rarity: data.Rarity,
+      seriesName: data.SeriesName,
+    }),
+    [
+      data.SetNumber,
+      data.CardNumber,
+      data.CharacterName,
+      data.Rarity,
+      data.SeriesName,
+    ],
+  );
 
   return (
     <Card containerStyle={styles.cardContainer}>
       <Animated.View style={[styles.cardWrapper, animatedStyle]}>
         <Pressable
-          onPress={() => {
-            onPress(data);
-          }}
+          onPress={handlePress}
           onPressIn={handlePressIn}
           onPressOut={handlePressOut}
           style={styles.pressable}
@@ -57,32 +77,32 @@ const GalleryItem = (props: GalleryItemProps) => {
               containerStyle={styles.setNoBadgeContainer}
               badgeStyle={styles.badge}
               textStyle={styles.badgeText}
-              value={data.SetNumber}
+              value={badgeValues.setNumber}
               status="warning"
             />
             <Badge
               containerStyle={styles.cardNoBadgeContainer}
               badgeStyle={styles.badge}
               textStyle={styles.badgeText}
-              value={data.CardNumber}
+              value={badgeValues.cardNumber}
               status="success"
             />
             <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
           </View>
           <View style={styles.cardFooter}>
             <View style={styles.cardTitleContainer}>
-              <Text style={styles.cardTitle}>{`${data.CharacterName}`}</Text>
-              <Text style={styles.cardSubTitle}>{data.Rarity}</Text>
+              <Text style={styles.cardTitle}>{badgeValues.characterName}</Text>
+              <Text style={styles.cardSubTitle}>{badgeValues.rarity}</Text>
             </View>
             <View>
-              <Text style={styles.textContent}>{data.SeriesName}</Text>
+              <Text style={styles.textContent}>{badgeValues.seriesName}</Text>
             </View>
           </View>
         </Pressable>
       </Animated.View>
     </Card>
   );
-};
+});
 
 const styles = StyleSheet.create({
   cardWrapper: {
@@ -100,6 +120,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     shadowColor: Colors.transparent,
     //width: 160,
+    margin: 0,
     padding: 0,
   },
   cardTitleContainer: {
@@ -147,4 +168,22 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GalleryItem;
+// Custom comparison function for React.memo
+const areEqual = (prevProps: GalleryItemProps, nextProps: GalleryItemProps) => {
+  // Compare the essential data properties
+  return (
+    prevProps.data.ID === nextProps.data.ID &&
+    prevProps.data.Code === nextProps.data.Code &&
+    prevProps.data.CharacterName === nextProps.data.CharacterName &&
+    prevProps.data.SeriesName === nextProps.data.SeriesName &&
+    prevProps.data.Rarity === nextProps.data.Rarity &&
+    prevProps.data.ImageUrl === nextProps.data.ImageUrl &&
+    prevProps.data.SetNumber === nextProps.data.SetNumber &&
+    prevProps.data.CardNumber === nextProps.data.CardNumber &&
+    prevProps.onPress === nextProps.onPress
+  );
+};
+
+GalleryItem.displayName = 'GalleryItem';
+
+export default React.memo(GalleryItem, areEqual);

@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "primaryColor": "#f2a4a8",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/gsl-icon.png",
       "resizeMode": "cover",
       "backgroundColor": "#f2a4a8"
     },
@@ -15,7 +15,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chronowage.goddessStoryLibrary"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +24,8 @@
         "backgroundColor": "#f2a4a8"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.arjunverano.goddess_story_library"
+      "package": "com.chronowage.goddess_story_library",
+      "usesCleartextTraffic": true
     },
     "web": {
       "bundler": "metro",

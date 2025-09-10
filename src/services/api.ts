@@ -2,14 +2,14 @@ import axios, {AxiosResponse} from 'axios';
 
 import {API_BASE_URL, CARD_LISTING} from '../constants';
 
-// New API for dynamic data
+// API client for direct API calls
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
 });
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-// New API methods for card collections
+// API interfaces
 export interface CardFilters {
   page?: number;
   limit?: number;
@@ -50,8 +50,11 @@ export interface CardsResponse {
 }
 
 export const api = {
-  // Cards endpoints
-  getCards: (collection: string, filters: CardFilters = {}) => {
+  // Cards endpoints - direct API calls only
+  getCards: async (
+    collection: string,
+    filters: CardFilters = {},
+  ): Promise<CardsResponse> => {
     const params = new URLSearchParams();
     Object.entries(filters).forEach(([key, value]) => {
       if (value !== undefined && value !== null && value !== '') {
@@ -60,35 +63,41 @@ export const api = {
     });
     const queryString = params.toString();
     const url = `/${collection}/cards${queryString ? `?${queryString}` : ''}`;
-    return apiClient.get(url).then(responseBody) as Promise<CardsResponse>;
+
+    const response = (await apiClient
+      .get(url)
+      .then(responseBody)) as CardsResponse;
+
+    return response;
   },
 
-  // Series endpoints
-  getSeries: (collection: string) =>
-    apiClient
+  // Series endpoints - direct API calls only
+  getSeries: async (collection: string): Promise<string[]> => {
+    const data = await apiClient
       .get(`/${collection}/series`)
-      .then(responseBody)
-      .then((data) =>
-        Array.isArray(data) ? data.map((item) => item.name) : [],
-      ) as Promise<string[]>,
+      .then(responseBody);
 
-  // Rarity endpoints
-  getRarities: (collection: string) =>
-    apiClient
+    const series = Array.isArray(data) ? data.map((item) => item.name) : [];
+    return series;
+  },
+
+  // Rarity endpoints - direct API calls only
+  getRarities: async (collection: string): Promise<string[]> => {
+    const data = await apiClient
       .get(`/${collection}/rarity`)
-      .then(responseBody)
-      .then((data) =>
-        Array.isArray(data) ? data.map((item) => item.name) : [],
-      ) as Promise<string[]>,
+      .then(responseBody);
 
-  // Set endpoints
-  getSets: (collection: string) =>
-    apiClient
-      .get(`/${collection}/set`)
-      .then(responseBody)
-      .then((data) =>
-        Array.isArray(data) ? data.map((item) => item.name) : [],
-      ) as Promise<string[]>,
+    const rarities = Array.isArray(data) ? data.map((item) => item.name) : [];
+    return rarities;
+  },
+
+  // Set endpoints - direct API calls only
+  getSets: async (collection: string): Promise<string[]> => {
+    const data = await apiClient.get(`/${collection}/set`).then(responseBody);
+
+    const sets = Array.isArray(data) ? data.map((item) => item.name) : [];
+    return sets;
+  },
 
   // Collection identifiers
   listings: CARD_LISTING,

@@ -46,9 +46,9 @@ const CustomDrawerContent = (props: any) => {
       </View>
 
       <View style={styles.routesContainer}>
-        {Routes.map((item) => (
+        {Routes.map((item, index) => (
           <DrawerItem
-            key={item.name}
+            key={`${item.name}-${index}-${Date.now()}`}
             icon={() => (
               <Image
                 resizeMode={'contain'}

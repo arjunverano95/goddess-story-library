@@ -8,6 +8,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Button, Icon} from '@rneui/themed';
 
@@ -63,47 +64,53 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <View
+    <SafeAreaView
       style={[
         styles.headerContainer,
         showBackButton ? {backgroundColor: Colors.transparent} : {},
       ]}
+      edges={['top']}
     >
-      {showBackButton ? (
-        <Animated.View style={backAnimatedStyle}>
-          <Button
-            containerStyle={styles.toggleDrawerContainer}
-            buttonStyle={styles.toggleDrawerButton}
-            type="clear"
-            onPress={handleBackPress}
-          >
-            <Icon name={Icons.arrow_left} color={Colors.black} />
-          </Button>
-        </Animated.View>
-      ) : (
-        <Animated.View style={menuAnimatedStyle}>
-          <Button
-            containerStyle={styles.toggleDrawerContainer}
-            buttonStyle={styles.toggleDrawerButton}
-            type="clear"
-            onPress={handleMenuPress}
-          >
-            <Icon name={Icons.menu} color="white" />
-          </Button>
-        </Animated.View>
-      )}
+      <View style={styles.headerContent}>
+        {showBackButton ? (
+          <Animated.View style={backAnimatedStyle}>
+            <Button
+              containerStyle={styles.toggleDrawerContainer}
+              buttonStyle={styles.toggleDrawerButton}
+              type="clear"
+              onPress={handleBackPress}
+            >
+              <Icon name={Icons.arrow_left} color={Colors.black} />
+            </Button>
+          </Animated.View>
+        ) : (
+          <Animated.View style={menuAnimatedStyle}>
+            <Button
+              containerStyle={styles.toggleDrawerContainer}
+              buttonStyle={styles.toggleDrawerButton}
+              type="clear"
+              onPress={handleMenuPress}
+            >
+              <Icon name={Icons.menu} color="white" />
+            </Button>
+          </Animated.View>
+        )}
 
-      {children && (
-        <View style={styles.headerContentContainer}>{props.children}</View>
-      )}
-    </View>
+        {children && (
+          <View style={styles.headerContentContainer}>{props.children}</View>
+        )}
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: Colors.headerBg,
+  },
+  headerContent: {
     flexDirection: 'row',
+    paddingBottom: 8,
   },
   toggleDrawerContainer: {
     marginTop: 10,
