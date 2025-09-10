@@ -44,29 +44,24 @@ export const useCards = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(filters), enableInfiniteScroll]);
 
-  // Update accumulated data when new data arrives
+  // Update accumulated data when new data arrives (only for initial load)
   useEffect(() => {
     if (isResetting) return; // Don't update data while resetting
 
-    if (cardsData?.data) {
+    if (cardsData?.data && enableInfiniteScroll && currentPage === 1) {
+      // Only handle initial data load here, subsequent pages are handled in loadMore
       const newCards = mapApiCardsToGSLCards(cardsData.data);
-
-      if (enableInfiniteScroll) {
-        if (currentPage === 1) {
-          // First page - replace all data
-          setAccumulatedCards(newCards);
-        } else {
-          // Subsequent pages - append data
-          setAccumulatedCards((prev) => [...prev, ...newCards]);
-        }
-        setHasMorePages(cardsData.pagination?.hasNextPage || false);
-      }
-    } else if (cardsData && !cardsData.data) {
+      setAccumulatedCards(newCards);
+      setHasMorePages(cardsData.pagination?.hasNextPage || false);
+    } else if (
+      cardsData &&
+      !cardsData.data &&
+      enableInfiniteScroll &&
+      currentPage === 1
+    ) {
       // Handle case where API returns empty data
-      if (enableInfiniteScroll && currentPage === 1) {
-        setAccumulatedCards([]);
-        setHasMorePages(false);
-      }
+      setAccumulatedCards([]);
+      setHasMorePages(false);
     }
   }, [cardsData, enableInfiniteScroll, currentPage, isResetting]);
 
@@ -79,17 +74,28 @@ export const useCards = ({
       const newFilters = {...filters, page};
       const newData = await api.getCards(collection, newFilters);
 
-      // Update the SWR cache with new data
-      mutate(newData, false);
+      // For infinite scroll, we need to handle the data accumulation directly
+      // since the SWR key is based on the original filters
+      if (newData?.data) {
+        const newCards = mapApiCardsToGSLCards(newData.data);
+
+        if (page === 1) {
+          // First page - replace all data
+          setAccumulatedCards(newCards);
+        } else {
+          // Subsequent pages - append data
+          setAccumulatedCards((prev) => [...prev, ...newCards]);
+        }
+        setHasMorePages(newData.pagination?.hasNextPage || false);
+      } else if (newData && !newData.data) {
+        // Handle case where API returns empty data
+        if (page === 1) {
+          setAccumulatedCards([]);
+          setHasMorePages(false);
+        }
+      }
     },
-    [
-      enableInfiniteScroll,
-      hasMorePages,
-      filters,
-      collection,
-      mutate,
-      isResetting,
-    ],
+    [enableInfiniteScroll, hasMorePages, filters, collection, isResetting],
   );
 
   const finalData = enableInfiniteScroll

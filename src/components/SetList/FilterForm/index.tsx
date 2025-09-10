@@ -30,18 +30,18 @@ const FilterForm = (props: FilterFormProps) => {
   const [formData, setFormData] = useState<ExtendedGSLCard>({
     ...data,
     SetNumber: data.SetNumber
-      ? data.SetNumber.includes(', ')
-        ? data.SetNumber.split(', ').map((s) => s.trim())
+      ? data.SetNumber.includes('|')
+        ? data.SetNumber.split('|').map((s) => s.trim())
         : data.SetNumber
       : '',
     Rarity: data.Rarity
-      ? data.Rarity.includes(', ')
-        ? data.Rarity.split(', ').map((s) => s.trim())
+      ? data.Rarity.includes('|')
+        ? data.Rarity.split('|').map((s) => s.trim())
         : data.Rarity
       : '',
     SeriesName: data.SeriesName
-      ? data.SeriesName.includes(', ')
-        ? data.SeriesName.split(', ').map((s) => s.trim())
+      ? data.SeriesName.includes('|')
+        ? data.SeriesName.split('|').map((s) => s.trim())
         : data.SeriesName
       : '',
   });
@@ -175,13 +175,13 @@ const FilterForm = (props: FilterFormProps) => {
               const submitData: GSLCard = {
                 ...formData,
                 SetNumber: Array.isArray(formData.SetNumber)
-                  ? formData.SetNumber.join(', ')
+                  ? formData.SetNumber.join('|')
                   : formData.SetNumber,
                 Rarity: Array.isArray(formData.Rarity)
-                  ? formData.Rarity.join(', ')
+                  ? formData.Rarity.join('|')
                   : formData.Rarity,
                 SeriesName: Array.isArray(formData.SeriesName)
-                  ? formData.SeriesName.join(', ')
+                  ? formData.SeriesName.join('|')
                   : formData.SeriesName,
               };
               onSubmit(submitData);

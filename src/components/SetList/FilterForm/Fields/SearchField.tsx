@@ -110,7 +110,7 @@ export const SearchField = (props: SearchFieldProps) => {
             ]}
             numberOfLines={2}
           >
-            {selectedValues.length === 0 ? label : selectedValues.join(', ')}
+            {selectedValues.length === 0 ? label : selectedValues.join('|')}
           </Text>
         </ListItem.Content>
         <Icon name={Icons.arrow_right} />
