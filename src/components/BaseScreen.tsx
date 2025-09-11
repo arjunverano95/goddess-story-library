@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import Animated, {FadeIn} from 'react-native-reanimated';
 
-import {useCards, useRarities, useSeries, useSets} from '../hooks';
+import {useInfiniteCards, useRarities, useSeries, useSets} from '../hooks';
 import {GSLCard} from '../models/GSLCard';
 import {CardFilters} from '../services/api';
 import Header from './Header';
@@ -47,10 +47,19 @@ const BaseScreen = (props: BaseScreenProps) => {
     return filters;
   }, [filter, page, limit, sort]);
 
-  const {data, isLoading, pagination, loadMore, hasMorePages} = useCards({
+  const {
+    cards: data,
+    isLoading,
+    pagination,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    refetch,
+    isFetching,
+  } = useInfiniteCards({
     collection,
     filters: apiFilters,
-    enableInfiniteScroll: true,
+    enabled: true,
   });
   const {setNumbers} = useSets(collection);
   const {rarities} = useRarities(collection);
@@ -89,9 +98,13 @@ const BaseScreen = (props: BaseScreenProps) => {
         isLoading={isLoading}
         pagination={pagination}
         onPageChange={setPage}
-        loadMore={loadMore}
-        hasMorePages={hasMorePages}
+        loadMore={undefined}
+        hasMorePages={hasNextPage}
         enableAnimations={true}
+        fetchNextPage={fetchNextPage}
+        isFetchingNextPage={isFetchingNextPage}
+        refetch={refetch}
+        isRefreshing={isFetching && !isFetchingNextPage}
       />
       <WebFooter />
     </Animated.View>

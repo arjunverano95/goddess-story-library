@@ -1,8 +1,7 @@
-import {FlashList, FlashListRef} from '@shopify/flash-list';
-import {useCallback, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {
+  FlatList,
   Platform,
-  RefreshControl,
   StyleSheet,
   Text,
   useWindowDimensions,
@@ -12,6 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
+import {PaginationInfo} from '../../services/api';
 import Overlay from '../Overlay';
 import {CardDetails} from './CardDetails';
 import GalleryItem from './GalleryItem';
@@ -21,16 +21,11 @@ interface GalleryProps {
   data: GSLCard[];
   filter: GSLCard;
   isLoading?: boolean;
-  pagination?: any;
+  pagination?: PaginationInfo;
   onPageChange?: (page: number) => void;
   loadMore?: (page: number) => Promise<void>;
   hasMorePages?: boolean;
   enableAnimations?: boolean;
-  // New props for React Query
-  fetchNextPage?: () => void;
-  isFetchingNextPage?: boolean;
-  refetch?: () => void;
-  isRefreshing?: boolean;
 }
 
 // Grid row data structure
@@ -41,18 +36,14 @@ interface GridRow {
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {
-    data,
-    isLoading,
-    fetchNextPage,
-    isFetchingNextPage,
-    refetch,
-    isRefreshing = false,
-  } = props;
+  const {data, isLoading, pagination, loadMore, hasMorePages} = props;
 
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const {width} = useWindowDimensions();
-  const flashListRef = useRef<FlashListRef<GridRow>>(null);
+  const flatListRef = useRef<FlatList>(null);
+  const loadMoreTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Responsive column layout
   const columnCount = useMemo(() => {
@@ -125,7 +116,7 @@ export const Gallery = (props: GalleryProps) => {
 
   // Footer component for loading more
   const renderFooter = useCallback(() => {
-    if (!isFetchingNextPage) return null;
+    if (!loadingMore && !isLoadingMore) return null;
 
     return (
       <View style={styles.footerLoader}>
@@ -141,14 +132,43 @@ export const Gallery = (props: GalleryProps) => {
         </View>
       </View>
     );
-  }, [isFetchingNextPage, columnCount, itemWidth]);
+  }, [loadingMore, isLoadingMore, columnCount, itemWidth]);
 
-  // Load more handler
-  const handleLoadMore = useCallback(() => {
-    if (fetchNextPage && !isFetchingNextPage) {
-      fetchNextPage();
+  // Load more handler with debouncing
+  const handleLoadMore = useCallback(async () => {
+    if (!loadMore || !hasMorePages || loadingMore || isLoadingMore) {
+      return;
     }
-  }, [fetchNextPage, isFetchingNextPage]);
+
+    // Clear any existing timeout
+    if (loadMoreTimeoutRef.current) {
+      clearTimeout(loadMoreTimeoutRef.current);
+    }
+
+    // Debounce the load more call
+    loadMoreTimeoutRef.current = setTimeout(async () => {
+      setIsLoadingMore(true);
+      setLoadingMore(true);
+      try {
+        const nextPage = (pagination?.page || 1) + 1;
+        await loadMore(nextPage);
+      } catch (error) {
+        console.error('Error loading more data:', error);
+      } finally {
+        setLoadingMore(false);
+        setIsLoadingMore(false);
+      }
+    }, 300); // 300ms debounce
+  }, [loadMore, hasMorePages, pagination, loadingMore, isLoadingMore]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (loadMoreTimeoutRef.current) {
+        clearTimeout(loadMoreTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Skeleton loading data
   const skeletonRows = useMemo(() => {
@@ -187,23 +207,17 @@ export const Gallery = (props: GalleryProps) => {
     [itemWidth],
   );
 
-  // Pull to refresh handler
-  const handleRefresh = useCallback(() => {
-    if (refetch) {
-      refetch();
-    }
-  }, [refetch]);
-
   // Skeleton loading state
   if (isLoading) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
-        <FlashList
+        <FlatList
           data={skeletonRows}
           renderItem={renderSkeletonRow}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
+          removeClippedSubviews={false}
         />
       </SafeAreaView>
     );
@@ -222,8 +236,8 @@ export const Gallery = (props: GalleryProps) => {
 
   return (
     <SafeAreaView style={styles.galleryContainer}>
-      <FlashList
-        ref={flashListRef}
+      <FlatList
+        ref={flatListRef}
         data={gridData}
         renderItem={renderRow}
         keyExtractor={keyExtractor}
@@ -232,14 +246,17 @@ export const Gallery = (props: GalleryProps) => {
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.3}
         ListFooterComponent={renderFooter}
-        refreshControl={
-          <RefreshControl
-            refreshing={isRefreshing}
-            onRefresh={handleRefresh}
-            colors={[Colors.primary]}
-            tintColor={Colors.primary}
-          />
-        }
+        removeClippedSubviews={true}
+        scrollEventThrottle={16}
+        windowSize={10}
+        maxToRenderPerBatch={10}
+        updateCellsBatchingPeriod={50}
+        initialNumToRender={6}
+        getItemLayout={(data, index) => ({
+          length: itemWidth + 8, // itemWidth + margin
+          offset: (itemWidth + 8) * Math.floor(index / columnCount),
+          index,
+        })}
       />
 
       {/* Card Details Overlay */}

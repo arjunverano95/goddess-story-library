@@ -12,6 +12,7 @@ import {OfflineScreen} from '../src/components';
 import CustomDrawerContent from '../src/components/CustomDrawerContent';
 import {Colors} from '../src/constants';
 import {useNetworkStatus} from '../src/hooks';
+import {QueryProvider} from '../src/providers/QueryProvider';
 
 // Suppress pointerEvents deprecation warning
 if (__DEV__) {
@@ -68,43 +69,47 @@ export default function RootLayout() {
         style={{flex: 1}}
         entering={FadeIn.duration(500).delay(100)}
       >
-        <RNEUIThemeProvider theme={rneuiTheme}>
-          <ThemeProvider
-            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-          >
-            <Drawer
-              drawerContent={(props: any) => <CustomDrawerContent {...props} />}
-              initialRouteName="index"
-              screenOptions={{
-                headerShown: false,
-                drawerStyle: {
-                  backgroundColor: '#fffdfd',
-                  width: 300,
-                },
-                drawerType: 'front',
-                swipeEnabled: true,
-                swipeEdgeWidth: 50,
-              }}
+        <QueryProvider>
+          <RNEUIThemeProvider theme={rneuiTheme}>
+            <ThemeProvider
+              value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
             >
-              <Drawer.Screen
-                name="index"
-                options={{
-                  title: 'Goddess Story',
-                  drawerLabel: 'Goddess Story',
+              <Drawer
+                drawerContent={(props: any) => (
+                  <CustomDrawerContent {...props} />
+                )}
+                initialRouteName="index"
+                screenOptions={{
+                  headerShown: false,
+                  drawerStyle: {
+                    backgroundColor: '#fffdfd',
+                    width: 300,
+                  },
+                  drawerType: 'front',
+                  swipeEnabled: true,
+                  swipeEdgeWidth: 50,
                 }}
-              />
-              <Drawer.Screen
-                name="senpai-goddess-haven"
-                options={{
-                  title: 'Senpai Goddess Haven',
-                  drawerLabel: 'Senpai Goddess Haven',
-                }}
-              />
-              <Drawer.Screen name="+not-found" />
-            </Drawer>
-            <StatusBar style="auto" />
-          </ThemeProvider>
-        </RNEUIThemeProvider>
+              >
+                <Drawer.Screen
+                  name="index"
+                  options={{
+                    title: 'Goddess Story',
+                    drawerLabel: 'Goddess Story',
+                  }}
+                />
+                <Drawer.Screen
+                  name="senpai-goddess-haven"
+                  options={{
+                    title: 'Senpai Goddess Haven',
+                    drawerLabel: 'Senpai Goddess Haven',
+                  }}
+                />
+                <Drawer.Screen name="+not-found" />
+              </Drawer>
+              <StatusBar style="auto" />
+            </ThemeProvider>
+          </RNEUIThemeProvider>
+        </QueryProvider>
       </Animated.View>
     </SafeAreaProvider>
   );

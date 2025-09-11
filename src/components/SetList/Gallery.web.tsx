@@ -1,5 +1,11 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {Platform, ScrollView, StyleSheet, Text} from 'react-native';
+import {
+  Platform,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Colors} from '../../constants';
@@ -18,10 +24,26 @@ interface GalleryProps {
   onPageChange?: (page: number) => void;
   loadMore?: (page: number) => Promise<void>;
   hasMorePages?: boolean;
+  enableAnimations?: boolean;
+  // New props for React Query
+  fetchNextPage?: () => void;
+  isFetchingNextPage?: boolean;
+  refetch?: () => void;
+  isRefreshing?: boolean;
 }
 
 export const Gallery = (props: GalleryProps) => {
-  const {data, isLoading, pagination, loadMore, hasMorePages} = props;
+  const {
+    data,
+    isLoading,
+    pagination,
+    loadMore,
+    hasMorePages,
+    fetchNextPage,
+    isFetchingNextPage,
+    refetch,
+    isRefreshing = false,
+  } = props;
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
   const [loadingMore, setLoadingMore] = useState(false);
   // const [isNearBottom, setIsNearBottom] = useState(false);
@@ -47,17 +69,27 @@ export const Gallery = (props: GalleryProps) => {
 
   // Handle infinite scroll
   const handleLoadMore = useCallback(async () => {
-    if (!loadMore || !hasMorePages || loadingMore) return;
-
-    setLoadingMore(true);
-    try {
-      await loadMore((pagination?.page || 1) + 1);
-    } catch (error) {
-      console.error('Error loading more data:', error);
-    } finally {
-      setLoadingMore(false);
+    // Use React Query fetchNextPage if available, otherwise fall back to legacy loadMore
+    if (fetchNextPage && hasMorePages && !isFetchingNextPage) {
+      fetchNextPage();
+    } else if (loadMore && hasMorePages && !loadingMore) {
+      setLoadingMore(true);
+      try {
+        await loadMore((pagination?.page || 1) + 1);
+      } catch (error) {
+        console.error('Error loading more data:', error);
+      } finally {
+        setLoadingMore(false);
+      }
     }
-  }, [loadMore, hasMorePages, pagination, loadingMore]);
+  }, [
+    fetchNextPage,
+    loadMore,
+    hasMorePages,
+    pagination,
+    loadingMore,
+    isFetchingNextPage,
+  ]);
 
   // Handle infinite scroll with intersection observer for web
   const handleScroll = useCallback(
@@ -66,17 +98,29 @@ export const Gallery = (props: GalleryProps) => {
       const isCloseToBottom =
         contentOffset.y + layoutMeasurement.height >= contentSize.height - 200;
 
-      if (isCloseToBottom && loadMore && hasMorePages && !loadingMore) {
+      if (
+        isCloseToBottom &&
+        hasMorePages &&
+        !loadingMore &&
+        !isFetchingNextPage
+      ) {
         handleLoadMore();
       }
     },
-    [loadMore, hasMorePages, loadingMore, handleLoadMore],
+    [hasMorePages, loadingMore, isFetchingNextPage, handleLoadMore],
   );
 
   // Memoized card press handler
   const handleCardPress = useCallback((item: GSLCard) => {
     setSelectedCard(item);
   }, []);
+
+  // Pull to refresh handler
+  const handleRefresh = useCallback(() => {
+    if (refetch) {
+      refetch();
+    }
+  }, [refetch]);
 
   // Memoized render functions for better performance
   const renderItem = useCallback(
@@ -94,14 +138,15 @@ export const Gallery = (props: GalleryProps) => {
 
   // Render footer with skeleton loading
   const renderFooter = useCallback(() => {
-    if (!loadingMore) return null;
+    const isLoadingMore = loadingMore || isFetchingNextPage;
+    if (!isLoadingMore) return null;
 
     return (
       <div style={styles.footerLoader} className="gallery-footer">
         <SkeletonGalleryWeb itemCount={6} />
       </div>
     );
-  }, [loadingMore]);
+  }, [loadingMore, isFetchingNextPage]);
 
   // Inject CSS styles for web
   useEffect(() => {
@@ -211,13 +256,13 @@ export const Gallery = (props: GalleryProps) => {
     if (
       Platform.OS === 'web' &&
       typeof window !== 'undefined' &&
-      loadMore &&
-      hasMorePages
+      hasMorePages &&
+      (fetchNextPage || loadMore)
     ) {
       const observer = new IntersectionObserver(
         (entries) => {
           const [entry] = entries;
-          if (entry.isIntersecting && !loadingMore) {
+          if (entry.isIntersecting && !loadingMore && !isFetchingNextPage) {
             handleLoadMore();
           }
         },
@@ -238,7 +283,14 @@ export const Gallery = (props: GalleryProps) => {
         }
       };
     }
-  }, [loadMore, hasMorePages, loadingMore, handleLoadMore]);
+  }, [
+    fetchNextPage,
+    loadMore,
+    hasMorePages,
+    loadingMore,
+    isFetchingNextPage,
+    handleLoadMore,
+  ]);
 
   if (isLoading) {
     return (
@@ -277,6 +329,14 @@ export const Gallery = (props: GalleryProps) => {
         bounces={true}
         bouncesZoom={false}
         alwaysBounceVertical={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={isRefreshing}
+            onRefresh={handleRefresh}
+            colors={[Colors.primary]}
+            tintColor={Colors.primary}
+          />
+        }
         // removeClippedSubviews={true}
         // maxToRenderPerBatch={10}
         // windowSize={10}
