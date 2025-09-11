@@ -98,7 +98,7 @@ export const Gallery = (props: GalleryProps) => {
         <View style={styles.rowContainer}>
           {row.items.map((card, index) => (
             <View
-              key={`${card.ID || card.Code}-${index}`}
+              key={`${row.id}-${index}`}
               style={[styles.itemContainer, {width: itemWidth}]}
             >
               <GalleryItem data={card} onPress={handleCardPress} />
@@ -110,7 +110,7 @@ export const Gallery = (props: GalleryProps) => {
             Array.from({length: columnCount - row.items.length}).map(
               (_, index) => (
                 <View
-                  key={`empty-${index}`}
+                  key={`empty-${row.id}-${index}`}
                   style={[styles.itemContainer, {width: itemWidth}]}
                 />
               ),

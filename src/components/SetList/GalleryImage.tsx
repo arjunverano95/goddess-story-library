@@ -1,6 +1,6 @@
 import {Image} from 'expo-image';
 import React, {useCallback, useState} from 'react';
-import {ImageStyle, StyleProp, View, ViewStyle} from 'react-native';
+import {ImageStyle, StyleProp, ViewStyle} from 'react-native';
 import Animated, {FadeIn} from 'react-native-reanimated';
 
 interface GalleryImageProps {
@@ -18,36 +18,23 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
   }, []);
 
   return (
-    <View style={containerStyle}>
-      {/* Show skeleton while loading */}
-      {/* {isLoading && imageUrl && !imageLoadFailed && (
-        <Animated.View
-          entering={FadeIn.duration(200)}
-          exiting={FadeOut.duration(200)}
-        >
-          <ImageSkeleton style={style} />
-        </Animated.View>
-      )} */}
-
-      {/* Image with smooth transition */}
-      <Animated.View entering={FadeIn.duration(300)}>
-        <Image
-          style={[style, {resizeMode: undefined}]}
-          source={
-            !imageUrl || imageLoadFailed
-              ? require('../../../assets/no-image.png')
-              : {uri: imageUrl}
-          }
-          contentFit="cover"
-          onError={onError}
-          transition={0}
-          placeholder={require('../../../assets/no-image.png')}
-          cachePolicy="memory-disk"
-          recyclingKey={imageUrl}
-          priority="normal"
-        />
-      </Animated.View>
-    </View>
+    <Animated.View entering={FadeIn.duration(300)} style={containerStyle}>
+      <Image
+        style={[style, {resizeMode: undefined}]}
+        source={
+          !imageUrl || imageLoadFailed
+            ? require('../../../assets/no-image.png')
+            : {uri: imageUrl}
+        }
+        contentFit="cover"
+        onError={onError}
+        transition={0}
+        placeholder={require('../../../assets/no-image.png')}
+        cachePolicy="memory-disk"
+        recyclingKey={imageUrl}
+        priority="normal"
+      />
+    </Animated.View>
   );
 });
 

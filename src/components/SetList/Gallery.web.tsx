@@ -126,7 +126,7 @@ export const Gallery = (props: GalleryProps) => {
   const renderItem = useCallback(
     (item: GSLCard, index: number) => (
       <div
-        key={item.ID || item.Code || `item-${index}`}
+        key={`item-${index}`}
         className="gallery-item"
         data-animation-delay={index * 50}
       >
