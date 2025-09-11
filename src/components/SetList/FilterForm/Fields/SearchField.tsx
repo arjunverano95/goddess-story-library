@@ -248,7 +248,6 @@ const styles = StyleSheet.create({
   headerActions: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
   },
   searchTitle: {
     color: Colors.black,
