@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     margin: 2,
     padding: 0,
-    shadowColor: Colors.transparent,
   },
   imageSkeleton: {
     borderTopLeftRadius: 8,

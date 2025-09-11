@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     borderWidth: 0,
-    shadowColor: Colors.transparent,
     //width: 160,
     margin: 0,
     padding: 0,
