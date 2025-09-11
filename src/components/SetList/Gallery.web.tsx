@@ -371,7 +371,7 @@ const styles = StyleSheet.create({
   galleryContainer: {
     flex: 1,
     backgroundColor: Colors.background,
-    minHeight: '100vh', // Use viewport units for responsive height
+    minHeight: 800, // Use viewport units for responsive height
   },
   scrollView: {
     flex: 1,

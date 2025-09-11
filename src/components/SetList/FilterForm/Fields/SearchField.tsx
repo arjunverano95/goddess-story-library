@@ -75,21 +75,17 @@ export const SearchField = (props: SearchFieldProps) => {
     }
   }, [isOverlayVisible]);
 
-  const handleSearch = useCallback(
-    (value: string) => {
-      setSearchValue(value);
-      if (!value?.trim()) {
-        setListData(formattedData);
-        return;
-      }
-      const lower = value.toLowerCase();
-      setListData(
-        data.filter((item) => String(item).toLowerCase().includes(lower)),
-      );
-    },
-    [data, formattedData],
-  );
-
+  const handleSearch = (value: string) => {
+    setSearchValue(value);
+    if (!value?.trim()) {
+      setListData(formattedData);
+      return;
+    }
+    const lower = value.toLowerCase();
+    setListData(
+      data.filter((item) => String(item).toLowerCase().includes(lower)),
+    );
+  };
   const renderItem = useCallback(
     ({item}: {item: string}) => {
       const checked = selectedValues.includes(item);
