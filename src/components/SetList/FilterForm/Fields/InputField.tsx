@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
-import {ListItem} from '@rneui/themed';
+import {ListItem} from 'react-native-elements';
 
 import {Colors} from '../../../../constants';
 

@@ -1,4 +1,4 @@
-import {FlashList, FlashListRef} from '@shopify/flash-list';
+import {FlashList} from '@shopify/flash-list';
 import {useCallback, useMemo, useRef, useState} from 'react';
 import {
   Platform,
@@ -52,7 +52,7 @@ export const Gallery = (props: GalleryProps) => {
 
   const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
   const {width} = useWindowDimensions();
-  const flashListRef = useRef<FlashListRef<GridRow>>(null);
+  const flashListRef = useRef(null);
 
   // Responsive column layout
   const columnCount = useMemo(() => {
@@ -204,6 +204,7 @@ export const Gallery = (props: GalleryProps) => {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
+          estimatedItemSize={230}
         />
       </SafeAreaView>
     );
@@ -240,6 +241,7 @@ export const Gallery = (props: GalleryProps) => {
             tintColor={Colors.primary}
           />
         }
+        estimatedItemSize={230}
       />
 
       {/* Card Details Overlay */}

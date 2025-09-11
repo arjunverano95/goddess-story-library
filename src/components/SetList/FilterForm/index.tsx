@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, TouchableOpacity, View} from 'react-native';
 
-import {Button, Icon, Text} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
+import {Text} from 'react-native-elements';
 
-import {Colors, Icons} from '../../../constants';
+import {Colors} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
 import {InputField, SearchField} from './Fields';
 
@@ -87,7 +88,7 @@ const FilterForm = (props: FilterFormProps) => {
       <View style={styles.formContainer}>
         <View style={styles.dragHandle} />
         <View style={styles.formHeader}>
-          <Icon name={Icons.filter} size={40} />
+          <MaterialIcons name="tune" size={40} color={Colors.black} />
           <Text h3 style={styles.title}>
             {'Filter'}
           </Text>
@@ -167,9 +168,8 @@ const FilterForm = (props: FilterFormProps) => {
         </View>
 
         <View style={styles.submitContainer}>
-          <Button
-            containerStyle={styles.submitButton}
-            title={'Submit'}
+          <TouchableOpacity
+            style={styles.submitButton}
             onPress={() => {
               // Convert back to GSLCard format for submission
               const submitData: GSLCard = {
@@ -186,7 +186,9 @@ const FilterForm = (props: FilterFormProps) => {
               };
               onSubmit(submitData);
             }}
-          />
+          >
+            <Text style={styles.submitButtonText}>Submit</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </>
@@ -232,6 +234,17 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     marginHorizontal: 0,
+    backgroundColor: Colors.primary,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  submitButtonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

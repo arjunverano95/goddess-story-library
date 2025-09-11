@@ -1,10 +1,11 @@
 import React, {useCallback, useMemo, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button, Icon, ListItem, SearchBar, Text} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
+import {ListItem, SearchBar, Text} from 'react-native-elements';
 
-import {Colors, Icons} from '../../../../constants';
+import {Colors} from '../../../../constants';
 import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {
@@ -112,7 +113,7 @@ export const SearchField = (props: SearchFieldProps) => {
             {selectedValues.length === 0 ? label : selectedValues.join('|')}
           </Text>
         </ListItem.Content>
-        <Icon name={Icons.arrow_right} />
+        <MaterialIcons name="arrow-forward" size={24} color={Colors.black} />
       </ListItem>
 
       <Overlay
@@ -130,8 +131,8 @@ export const SearchField = (props: SearchFieldProps) => {
             <View style={styles.headerActions}>
               {/* Optional Clear (only shows when something is selected) */}
               {selectedValues.length > 0 && (
-                <Button
-                  type="clear"
+                <TouchableOpacity
+                  style={styles.clearButton}
                   onPress={() => {
                     // Clear is delegated to the parent via onSelect for single values;
                     // For multi-select parents typically handle remove/toggle.
@@ -139,28 +140,30 @@ export const SearchField = (props: SearchFieldProps) => {
                     // Parent should support this by updating `value` accordingly.
                     selectedValues.forEach((v) => onSelect(v));
                   }}
-                  title="Clear"
-                />
+                >
+                  <Text style={styles.clearButtonText}>Clear</Text>
+                </TouchableOpacity>
               )}
-              <Button
-                type="clear"
+              <TouchableOpacity
+                style={styles.closeButton}
                 onPress={toggleOverlay}
-                icon={
-                  <Icon name={Icons.close} size={24} color={Colors.black} />
-                }
-              />
+              >
+                <MaterialIcons name="close" size={24} color={Colors.black} />
+              </TouchableOpacity>
             </View>
           </View>
 
           {/* Search */}
           <SearchBar
-            lightTheme
-            containerStyle={styles.searchBarContainer}
-            inputContainerStyle={{backgroundColor}}
-            placeholder={label}
-            onChangeText={handleSearch}
-            value={searchValue}
-            platform="default"
+            {...({
+              lightTheme: true,
+              containerStyle: styles.searchBarContainer,
+              inputContainerStyle: {backgroundColor},
+              placeholder: label,
+              onChangeText: handleSearch,
+              value: searchValue,
+              platform: 'default',
+            } as any)}
           />
 
           {/* List */}
@@ -177,12 +180,12 @@ export const SearchField = (props: SearchFieldProps) => {
           {/* Multi-select footer */}
           {multiSelect && (
             <View style={styles.footer}>
-              <Button
-                title="Done"
+              <TouchableOpacity
+                style={styles.doneButton}
                 onPress={toggleOverlay}
-                buttonStyle={styles.doneButton}
-                radius="md"
-              />
+              >
+                <Text style={styles.doneButtonText}>Done</Text>
+              </TouchableOpacity>
             </View>
           )}
         </View>
@@ -247,5 +250,30 @@ const styles = StyleSheet.create({
   },
   doneButton: {
     paddingVertical: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  doneButtonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  clearButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginRight: 8,
+  },
+  clearButtonText: {
+    color: Colors.primary,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  closeButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

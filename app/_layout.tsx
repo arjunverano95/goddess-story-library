@@ -1,5 +1,4 @@
 import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
-import {createTheme, ThemeProvider as RNEUIThemeProvider} from '@rneui/themed';
 import {useFonts} from 'expo-font';
 import {Drawer} from 'expo-router/drawer';
 import {StatusBar} from 'expo-status-bar';
@@ -10,7 +9,6 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {useColorScheme} from '@/hooks/useColorScheme';
 import {OfflineScreen} from '../src/components';
 import CustomDrawerContent from '../src/components/CustomDrawerContent';
-import {Colors} from '../src/constants';
 import {useNetworkStatus} from '../src/hooks';
 import {QueryProvider} from '../src/providers/QueryProvider';
 
@@ -37,16 +35,6 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
-  const rneuiTheme = createTheme({
-    lightColors: {
-      primary: Colors.primary,
-      secondary: Colors.secondary,
-      background: Colors.background,
-      grey5: Colors.greyOutline,
-    },
-    mode: 'light',
-  });
-
   if (!loaded) {
     // Async font loading only occurs in development.
     return null;
@@ -56,9 +44,7 @@ export default function RootLayout() {
   if (isOffline) {
     return (
       <SafeAreaProvider>
-        <RNEUIThemeProvider theme={rneuiTheme}>
-          <OfflineScreen onRetry={checkNetworkStatus} isRetrying={isChecking} />
-        </RNEUIThemeProvider>
+        <OfflineScreen onRetry={checkNetworkStatus} isRetrying={isChecking} />
       </SafeAreaProvider>
     );
   }
@@ -70,45 +56,41 @@ export default function RootLayout() {
         entering={FadeIn.duration(500).delay(100)}
       >
         <QueryProvider>
-          <RNEUIThemeProvider theme={rneuiTheme}>
-            <ThemeProvider
-              value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+          <ThemeProvider
+            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+          >
+            <Drawer
+              drawerContent={(props: any) => <CustomDrawerContent {...props} />}
+              initialRouteName="index"
+              screenOptions={{
+                headerShown: false,
+                drawerStyle: {
+                  backgroundColor: '#fffdfd',
+                  width: 300,
+                },
+                drawerType: 'front',
+                swipeEnabled: true,
+                swipeEdgeWidth: 50,
+              }}
             >
-              <Drawer
-                drawerContent={(props: any) => (
-                  <CustomDrawerContent {...props} />
-                )}
-                initialRouteName="index"
-                screenOptions={{
-                  headerShown: false,
-                  drawerStyle: {
-                    backgroundColor: '#fffdfd',
-                    width: 300,
-                  },
-                  drawerType: 'front',
-                  swipeEnabled: true,
-                  swipeEdgeWidth: 50,
+              <Drawer.Screen
+                name="index"
+                options={{
+                  title: 'Goddess Story',
+                  drawerLabel: 'Goddess Story',
                 }}
-              >
-                <Drawer.Screen
-                  name="index"
-                  options={{
-                    title: 'Goddess Story',
-                    drawerLabel: 'Goddess Story',
-                  }}
-                />
-                <Drawer.Screen
-                  name="senpai-goddess-haven"
-                  options={{
-                    title: 'Senpai Goddess Haven',
-                    drawerLabel: 'Senpai Goddess Haven',
-                  }}
-                />
-                <Drawer.Screen name="+not-found" />
-              </Drawer>
-              <StatusBar style="auto" />
-            </ThemeProvider>
-          </RNEUIThemeProvider>
+              />
+              <Drawer.Screen
+                name="senpai-goddess-haven"
+                options={{
+                  title: 'Senpai Goddess Haven',
+                  drawerLabel: 'Senpai Goddess Haven',
+                }}
+              />
+              <Drawer.Screen name="+not-found" />
+            </Drawer>
+            <StatusBar style="auto" />
+          </ThemeProvider>
         </QueryProvider>
       </Animated.View>
     </SafeAreaProvider>

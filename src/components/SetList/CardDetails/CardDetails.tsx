@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
-import {Badge, Button, Card, Icon, Text} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
+import {Badge, Text} from 'react-native-elements';
 
-import {Colors, Icons, Sizes} from '../../../constants';
+import {Colors, Sizes} from '../../../constants';
 import {GSLCard} from '../../../models/GSLCard';
 import CardDetailImage from './CardDetailImage';
 
@@ -21,15 +22,13 @@ const CardDetails = (props: CardDetailsProps) => {
     <View style={styles.container}>
       {/* Custom X Close Button */}
       <View style={styles.closeButtonContainer}>
-        <Button
-          type="clear"
-          onPress={onClose}
-          icon={<Icon name={Icons.close} size={24} color={Colors.black} />}
-        />
+        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+          <MaterialIcons name="close" size={24} color={Colors.black} />
+        </TouchableOpacity>
       </View>
 
       {/* Card Info Section - Following Original Design */}
-      <Card containerStyle={styles.cardContainer}>
+      <View style={styles.cardContainer}>
         <View style={styles.cardTitleContainer}>
           <Badge
             badgeStyle={styles.rarityBadge}
@@ -37,15 +36,15 @@ const CardDetails = (props: CardDetailsProps) => {
             value={card.Rarity}
             status="warning"
           />
-          <Card.Title style={styles.cardTitle}>{card.CharacterName}</Card.Title>
-          <Card.Title style={styles.cardSubTitle}>{card.SetNumber}</Card.Title>
+          <Text style={styles.cardTitle}>{card.CharacterName}</Text>
+          <Text style={styles.cardSubTitle}>{card.SetNumber}</Text>
         </View>
-        <Card.Divider />
+        <View style={styles.divider} />
         <View>
           <Text>{`Series: ${card.SeriesName}`}</Text>
           <Text>{`ID: ${card.ID}`}</Text>
         </View>
-      </Card>
+      </View>
 
       {/* Card Image Section */}
       <View style={styles.imageContainer}>
@@ -70,11 +69,14 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   },
   cardContainer: {
-    borderWidth: 0,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
     backgroundColor: Colors.white,
     marginTop: 10,
     width: '100%',
     maxWidth: Sizes.sm,
+    padding: 15,
+    borderRadius: 8,
   },
   cardTitleContainer: {
     flexDirection: 'row',
@@ -95,12 +97,22 @@ const styles = StyleSheet.create({
   cardSubTitle: {
     fontWeight: 'normal',
   },
+  divider: {
+    height: 1,
+    backgroundColor: '#e0e0e0',
+    marginVertical: 10,
+  },
   imageContainer: {
     width: '100%',
     maxWidth: Sizes.sm,
     flex: 1,
     margin: 15,
     backgroundColor: Colors.white,
+  },
+  closeButton: {
+    padding: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

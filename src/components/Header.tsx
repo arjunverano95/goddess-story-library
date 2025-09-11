@@ -2,7 +2,7 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {useNavigation} from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -10,9 +10,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button, Icon} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
 
-import {Colors, Icons} from '../constants';
+import {Colors} from '../constants';
 
 type DrawerParamList = {
   index: undefined;
@@ -74,25 +74,21 @@ const Header = (props: HeaderProps) => {
       <View style={styles.headerContent}>
         {showBackButton ? (
           <Animated.View style={backAnimatedStyle}>
-            <Button
-              containerStyle={styles.toggleDrawerContainer}
-              buttonStyle={styles.toggleDrawerButton}
-              type="clear"
+            <TouchableOpacity
+              style={styles.toggleDrawerContainer}
               onPress={handleBackPress}
             >
-              <Icon name={Icons.arrow_left} color={Colors.black} />
-            </Button>
+              <MaterialIcons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
           </Animated.View>
         ) : (
           <Animated.View style={menuAnimatedStyle}>
-            <Button
-              containerStyle={styles.toggleDrawerContainer}
-              buttonStyle={styles.toggleDrawerButton}
-              type="clear"
+            <TouchableOpacity
+              style={styles.toggleDrawerContainer}
               onPress={handleMenuPress}
             >
-              <Icon name={Icons.menu} color="white" />
-            </Button>
+              <MaterialIcons name="menu" size={24} color="white" />
+            </TouchableOpacity>
           </Animated.View>
         )}
 
@@ -115,9 +111,10 @@ const styles = StyleSheet.create({
   toggleDrawerContainer: {
     marginTop: 10,
     marginHorizontal: 5,
-  },
-  toggleDrawerButton: {
     height: 46,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
   },
   headerContentContainer: {
     padding: 0,

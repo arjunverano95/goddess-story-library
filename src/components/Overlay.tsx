@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {Dimensions, Modal, Pressable, StyleSheet, View} from 'react-native';
+import {
+  Dimensions,
+  Modal,
+  Pressable,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -7,9 +14,9 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import {Button, Icon} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
 
-import {Colors, Icons} from '../constants';
+import {Colors} from '../constants';
 
 interface HeaderProps {
   isVisible: boolean;
@@ -91,14 +98,12 @@ const Overlay = (props: HeaderProps) => {
         >
           {showClose && (
             <View style={styles.overlayHeaderContainer}>
-              <Button
-                containerStyle={styles.closeOverlayButtonContainer}
-                buttonStyle={styles.closeOverlayButton}
-                type="clear"
+              <TouchableOpacity
+                style={styles.closeOverlayButtonContainer}
                 onPress={toggleOverlay}
               >
-                <Icon name={Icons.close} color={Colors.black} />
-              </Button>
+                <MaterialIcons name="close" size={24} color={Colors.black} />
+              </TouchableOpacity>
             </View>
           )}
 
@@ -143,9 +148,10 @@ const styles = StyleSheet.create({
   closeOverlayButtonContainer: {
     marginTop: 10,
     marginHorizontal: 5,
-  },
-  closeOverlayButton: {
     height: 46,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
   },
 });
 

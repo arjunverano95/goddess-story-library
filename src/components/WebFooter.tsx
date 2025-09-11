@@ -1,7 +1,7 @@
 import {Ionicons} from '@expo/vector-icons';
 import React, {useEffect, useState} from 'react';
 import {Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Colors, Icons, Sizes} from '../constants';
+import {Colors, Sizes} from '../constants';
 
 interface WebFooterProps {
   downloadUrl?: string;
@@ -59,14 +59,14 @@ const WebFooter: React.FC<WebFooterProps> = ({
   return (
     <View style={styles.footer}>
       <TouchableOpacity style={styles.closeButton} onPress={handleHideFooter}>
-        <Ionicons name={Icons.close as any} size={20} color={Colors.white} />
+        <Ionicons name="close" size={20} color={Colors.white} />
       </TouchableOpacity>
 
       <Text style={styles.footerText}>{footerText}</Text>
 
       <TouchableOpacity style={styles.downloadButton} onPress={handleDownload}>
         <Ionicons
-          name={Icons.download as any}
+          name="cloud-download"
           size={20}
           color={Colors.white}
           style={styles.buttonIcon}

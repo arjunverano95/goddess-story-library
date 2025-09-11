@@ -1,7 +1,7 @@
-import {Badge, Card, Text} from '@rneui/themed';
 import * as Haptics from 'expo-haptics';
 import React, {useCallback, useMemo} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
+import {Badge, Card, Text} from 'react-native-elements';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,

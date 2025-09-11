@@ -1,8 +1,8 @@
 import {DrawerItem} from '@react-navigation/drawer';
-import {Text} from '@rneui/themed';
 import {useRouter} from 'expo-router';
 import React from 'react';
 import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
+import {Text} from 'react-native-elements';
 
 import {Colors} from '../constants';
 
@@ -28,6 +28,12 @@ const Routes: {
   },
 ];
 
+// Debug: Log the icon sources
+console.log(
+  'Icon sources:',
+  Routes.map((r) => ({name: r.name, icon: r.icon})),
+);
+
 const CustomDrawerContent = (props: any) => {
   const router = useRouter();
 
@@ -49,13 +55,34 @@ const CustomDrawerContent = (props: any) => {
         {Routes.map((item, index) => (
           <DrawerItem
             key={`${item.name}-${index}-${Date.now()}`}
-            icon={() => (
-              <Image
-                resizeMode={'contain'}
-                style={styles.iconImg}
-                source={item.icon}
-              />
-            )}
+            icon={({focused, color, size}) => {
+              console.log(
+                `Rendering icon for ${item.name}, focused: ${focused}, color: ${color}, size: ${size}`,
+              );
+              return (
+                <Image
+                  resizeMode={'contain'}
+                  style={[
+                    styles.iconImg,
+                    {
+                      opacity: 1,
+                    },
+                  ]}
+                  source={item.icon}
+                  onError={(error) => {
+                    console.log(
+                      'Icon load error for',
+                      item.name,
+                      ':',
+                      error.nativeEvent.error,
+                    );
+                  }}
+                  onLoad={() => {
+                    console.log('Icon loaded successfully for', item.name);
+                  }}
+                />
+              );
+            }}
             label={item.label}
             onPress={() => {
               handleNavigation(item.route);
@@ -113,7 +140,7 @@ const CustomDrawerContent = (props: any) => {
 const styles = StyleSheet.create({
   drawerContainer: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.white,
   },
   drawerContentContainer: {
     height: 200,
@@ -158,6 +185,7 @@ const styles = StyleSheet.create({
   iconImg: {
     height: 25,
     width: 25,
+    backgroundColor: 'transparent',
   },
   drawerLabel: {
     fontSize: 16,

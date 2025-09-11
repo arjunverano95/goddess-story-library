@@ -24,8 +24,7 @@
         "backgroundColor": "#f2a4a8"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.chronowage.goddess_story_library",
-      "usesCleartextTraffic": true
+      "package": "com.chronowage.goddess_story_library"
     },
     "web": {
       "bundler": "metro",

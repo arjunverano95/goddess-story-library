@@ -1,15 +1,16 @@
 import * as Haptics from 'expo-haptics';
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
 
-import {Button, Icon, Text} from '@rneui/themed';
+import {MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons';
+import {Text} from 'react-native-elements';
 
-import {Colors, Icons} from '../../constants';
+import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import Overlay from '../Overlay';
 import FilterForm from './FilterForm';
@@ -68,28 +69,24 @@ export const FilterBar = (props: FilterBarProps) => {
         </Text>
       </View>
       <Animated.View style={filterAnimatedStyle}>
-        <Button
-          containerStyle={styles.filterButtonContainer}
-          buttonStyle={styles.headerButton}
-          type="clear"
+        <TouchableOpacity
+          style={styles.filterButtonContainer}
           onPress={toggleFilterForm}
         >
-          <Icon name={Icons.filter} color="white" />
-        </Button>
+          <MaterialIcons name="tune" size={24} color="white" />
+        </TouchableOpacity>
       </Animated.View>
       <Animated.View style={sortAnimatedStyle}>
-        <Button
-          containerStyle={styles.sortButtonContainer}
-          buttonStyle={styles.headerButton}
-          type="clear"
+        <TouchableOpacity
+          style={styles.sortButtonContainer}
           onPress={handleSort}
         >
-          <Icon
-            name={sort === 'asc' ? Icons.sort_asc : Icons.sort_desc}
+          <MaterialCommunityIcons
+            name={sort === 'asc' ? 'sort-ascending' : 'sort-descending'}
+            size={24}
             color="white"
-            type="material-community"
           />
-        </Button>
+        </TouchableOpacity>
       </Animated.View>
       <Overlay
         isVisible={isFilterFormVisible}
@@ -122,13 +119,16 @@ const styles = StyleSheet.create({
   },
   filterButtonContainer: {
     marginTop: 10,
-    marginRight: 8,
+    height: 46,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
   },
   sortButtonContainer: {
     marginTop: 10,
-    marginRight: 8,
-  },
-  headerButton: {
     height: 46,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
   },
 });
