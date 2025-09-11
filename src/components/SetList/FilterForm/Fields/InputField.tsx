@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
-import {ListItem} from '@rneui/themed';
+import {ListItem} from 'react-native-elements';
 
-import {Colors} from '../../../../app/constants';
+import {Colors} from '../../../../constants';
 
 interface InputFieldProps {
   label: string;
@@ -11,6 +11,7 @@ interface InputFieldProps {
   onFocus: () => void;
   onChangeText: (value: string) => void;
 }
+
 export const InputField = (props: InputFieldProps) => {
   const {label, value, onFocus, onChangeText} = props;
   return (
@@ -28,6 +29,7 @@ export const InputField = (props: InputFieldProps) => {
     </ListItem>
   );
 };
+
 const styles = StyleSheet.create({
   listItem: {
     marginHorizontal: 0,

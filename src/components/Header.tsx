@@ -1,68 +1,120 @@
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useNavigation} from '@react-navigation/native';
+import * as Haptics from 'expo-haptics';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Button, Icon} from '@rneui/themed';
+import {MaterialIcons} from '@expo/vector-icons';
 
-import {Colors, Icons} from '../app/constants';
-import {NavigationParamList, NavigationProp} from '../app/navigation/types';
+import {Colors} from '../constants';
+
+type DrawerParamList = {
+  index: undefined;
+  'senpai-goddess-haven': undefined;
+};
+
+type DrawerNavigation = DrawerNavigationProp<DrawerParamList>;
 
 interface HeaderProps {
-  navigation: NavigationProp<keyof NavigationParamList>;
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   showBackButton?: boolean;
 }
+
 const Header = (props: HeaderProps) => {
-  const {navigation, children, showBackButton} = props;
+  const {children, showBackButton} = props;
+  const navigation = useNavigation<DrawerNavigation>();
+
+  const menuScale = useSharedValue(1);
+  const backScale = useSharedValue(1);
+
+  const menuAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: menuScale.value}],
+    };
+  });
+
+  const backAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: backScale.value}],
+    };
+  });
+
+  const handleMenuPress = () => {
+    menuScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      menuScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    navigation.openDrawer();
+  };
+
+  const handleBackPress = async () => {
+    backScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
+    setTimeout(() => {
+      backScale.value = withSpring(1, {damping: 15, stiffness: 300});
+    }, 100);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    navigation.goBack();
+  };
+
   return (
-    <View
+    <SafeAreaView
       style={[
         styles.headerContainer,
         showBackButton ? {backgroundColor: Colors.transparent} : {},
       ]}
+      edges={['top']}
     >
-      {showBackButton ? (
-        <Button
-          containerStyle={styles.toggleDrawerContainer}
-          buttonStyle={styles.toggleDrawerButton}
-          type="clear"
-          onPress={async () => {
-            navigation.goBack();
-          }}
-        >
-          <Icon name={Icons.arrow_left} color={Colors.black} />
-        </Button>
-      ) : (
-        <Button
-          containerStyle={styles.toggleDrawerContainer}
-          buttonStyle={styles.toggleDrawerButton}
-          type="clear"
-          onPress={async () => {
-            navigation.openDrawer();
-          }}
-        >
-          <Icon name={Icons.menu} color="white" />
-        </Button>
-      )}
+      <View style={styles.headerContent}>
+        {showBackButton ? (
+          <Animated.View style={backAnimatedStyle}>
+            <TouchableOpacity
+              style={styles.toggleDrawerContainer}
+              onPress={handleBackPress}
+            >
+              <MaterialIcons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
+          </Animated.View>
+        ) : (
+          <Animated.View style={menuAnimatedStyle}>
+            <TouchableOpacity
+              style={styles.toggleDrawerContainer}
+              onPress={handleMenuPress}
+            >
+              <MaterialIcons name="menu" size={24} color="white" />
+            </TouchableOpacity>
+          </Animated.View>
+        )}
 
-      {children && (
-        <View style={styles.headerContentContainer}>{props.children}</View>
-      )}
-    </View>
+        {children && (
+          <View style={styles.headerContentContainer}>{props.children}</View>
+        )}
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   headerContainer: {
-    // paddingTop: 50,
     backgroundColor: Colors.headerBg,
+  },
+  headerContent: {
     flexDirection: 'row',
+    paddingBottom: 8,
   },
   toggleDrawerContainer: {
     marginTop: 10,
     marginHorizontal: 5,
-  },
-  toggleDrawerButton: {
     height: 46,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 10,
   },
   headerContentContainer: {
     padding: 0,
@@ -71,4 +123,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
+
 export default Header;

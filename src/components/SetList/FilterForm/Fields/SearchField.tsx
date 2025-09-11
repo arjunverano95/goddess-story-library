@@ -1,59 +1,104 @@
-import React, {useCallback, useRef, useState} from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Icon, ListItem, SearchBar, Text, useTheme} from '@rneui/themed';
-import {FlashList} from '@shopify/flash-list';
+import {MaterialIcons} from '@expo/vector-icons';
+import {ListItem, SearchBar, Text} from 'react-native-elements';
 
-import {Colors, Icons} from '../../../../app/constants';
+import {Colors} from '../../../../constants';
 import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {
   label: string;
-  value: string;
+  value: string | string[];
   data: string[];
   onPress: () => void;
   onSelect: (item: string) => void;
+  onClearAll?: () => void;
+  multiSelect?: boolean;
 }
+
 export const SearchField = (props: SearchFieldProps) => {
-  const {label, value, data, onPress, onSelect} = props;
+  const {
+    label,
+    value,
+    data,
+    onPress,
+    onSelect,
+    onClearAll,
+    multiSelect = false,
+  } = props;
+
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const {theme} = useTheme();
+  const searchBarRef = useRef<any>(null);
+  // const {theme} = useTheme();
 
-  const formattedData = !value
-    ? data
-    : [value, ...data.filter((item) => item !== value)];
-  const listData = useRef(formattedData);
+  const backgroundColor = Colors.searchBg;
 
-  const toggleOverlay = () => {
-    listData.current = formattedData;
+  // Normalize selected values to an array
+  const selectedValues = useMemo<string[]>(
+    () => (Array.isArray(value) ? value : value ? [value] : []),
+    [value],
+  );
+
+  // Keep selected values at the top of the list
+  const formattedData = useMemo<string[]>(
+    () =>
+      selectedValues.length === 0
+        ? data
+        : [
+            ...selectedValues,
+            ...data.filter((item) => !selectedValues.includes(item)),
+          ],
+    [data, selectedValues],
+  );
+
+  // Use state (not ref) so searches re-render correctly
+  const [listData, setListData] = useState<string[]>(formattedData);
+
+  // Open/close & reset overlay state safely
+  const toggleOverlay = useCallback(() => {
+    setListData(formattedData);
     setSearchValue('');
-    setIsOverlayVisible(!isOverlayVisible);
-  };
+    setIsOverlayVisible((v) => !v);
+  }, [formattedData]);
+
+  // Auto-focus SearchBar when overlay becomes visible
+  useEffect(() => {
+    if (isOverlayVisible && searchBarRef.current) {
+      // Small delay to ensure the overlay is fully rendered
+      const timer = setTimeout(() => {
+        searchBarRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isOverlayVisible]);
+
   const handleSearch = (value: string) => {
-    if (!value) listData.current = formattedData;
-    else
-      listData.current = [
-        ...data.filter((item) => {
-          return `${item}`.toLowerCase().includes(value.toLowerCase());
-        }),
-      ];
     setSearchValue(value);
+    if (!value?.trim()) {
+      setListData(formattedData);
+      return;
+    }
+    const lower = value.toLowerCase();
+    setListData(
+      data.filter((item) => String(item).toLowerCase().includes(lower)),
+    );
   };
   const renderItem = useCallback(
     ({item}: {item: string}) => {
+      const checked = selectedValues.includes(item);
       return (
         <ListItem containerStyle={styles.selectListItem}>
           <ListItem.CheckBox
-            // Use ThemeProvider to change the defaults of the checkbox
             iconType="material-community"
             checkedIcon="checkbox-marked"
             uncheckedIcon="checkbox-blank-outline"
-            checked={item === value}
+            checked={checked}
             onPress={() => {
               onSelect(item);
-              toggleOverlay();
+              if (!multiSelect) toggleOverlay();
             }}
           />
           <ListItem.Content>
@@ -62,8 +107,9 @@ export const SearchField = (props: SearchFieldProps) => {
         </ListItem>
       );
     },
-    [toggleOverlay],
+    [multiSelect, onSelect, selectedValues, toggleOverlay],
   );
+
   return (
     <>
       <ListItem
@@ -74,32 +120,100 @@ export const SearchField = (props: SearchFieldProps) => {
         }}
       >
         <ListItem.Content>
-          <Text style={[styles.formText, !value ? {} : {color: Colors.black}]}>
-            {!value ? label : value}
+          <Text
+            style={[
+              styles.formText,
+              selectedValues.length === 0 ? undefined : {color: Colors.black},
+            ]}
+            numberOfLines={2}
+          >
+            {selectedValues.length === 0 ? label : selectedValues.join(', ')}
           </Text>
         </ListItem.Content>
-        <Icon name={Icons.arrow_right} />
+        <MaterialIcons name="arrow-forward" size={24} color={Colors.black} />
       </ListItem>
-      <Overlay isVisible={isOverlayVisible} toggleOverlay={toggleOverlay}>
-        <SearchBar
-          lightTheme={true}
-          containerStyle={styles.searchBarContainer}
-          inputContainerStyle={{backgroundColor: theme.colors.grey5}}
-          placeholder={label}
-          onChangeText={handleSearch}
-          value={searchValue}
-        />
-        <SafeAreaView style={styles.overlayContentContainer}>
-          <FlashList
-            data={listData.current}
-            renderItem={renderItem}
-            estimatedItemSize={36}
+
+      <Overlay
+        isVisible={isOverlayVisible}
+        toggleOverlay={toggleOverlay}
+        type="fullscreen"
+      >
+        <View style={styles.searchOverlayContainer}>
+          {/* Header */}
+          <View style={styles.searchHeader}>
+            <Text h4 style={styles.searchTitle}>
+              {label}
+            </Text>
+
+            <View style={styles.headerActions}>
+              {/* Optional Clear (only shows when something is selected) */}
+              {selectedValues.length > 0 && (
+                <TouchableOpacity
+                  style={styles.clearButton}
+                  onPress={() => {
+                    if (onClearAll) {
+                      onClearAll();
+                    } else {
+                      // Fallback: Clear is delegated to the parent via onSelect for single values;
+                      // For multi-select parents typically handle remove/toggle.
+                      // Here we try to "clear all" by toggling off each selected item.
+                      // Parent should support this by updating `value` accordingly.
+                      selectedValues.forEach((v) => onSelect(v));
+                    }
+                  }}
+                >
+                  <Text style={styles.clearButtonText}>Clear</Text>
+                </TouchableOpacity>
+              )}
+              <TouchableOpacity
+                style={styles.closeButton}
+                onPress={toggleOverlay}
+              >
+                <MaterialIcons name="close" size={24} color={Colors.black} />
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          {/* Search */}
+          <SearchBar
+            ref={searchBarRef}
+            lightTheme={true}
+            containerStyle={styles.searchBarContainer}
+            inputContainerStyle={{backgroundColor}}
+            placeholder={label}
+            onChangeText={handleSearch}
+            value={searchValue}
+            platform="default"
           />
-        </SafeAreaView>
+
+          {/* List */}
+          <SafeAreaView style={styles.overlayContentContainer}>
+            <FlatList
+              data={listData}
+              renderItem={renderItem}
+              keyExtractor={(item) => String(item)}
+              extraData={selectedValues}
+              keyboardShouldPersistTaps="handled"
+            />
+          </SafeAreaView>
+
+          {/* Multi-select footer */}
+          {multiSelect && (
+            <View style={styles.footer}>
+              <TouchableOpacity
+                style={styles.doneButton}
+                onPress={toggleOverlay}
+              >
+                <Text style={styles.doneButtonText}>Done</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+        </View>
       </Overlay>
     </>
   );
 };
+
 const styles = StyleSheet.create({
   listItem: {
     marginHorizontal: 0,
@@ -114,7 +228,26 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: Colors.black,
   },
-
+  searchOverlayContainer: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  searchHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.greyOutline,
+  },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  searchTitle: {
+    color: Colors.black,
+  },
   overlayContentContainer: {
     margin: 10,
     flex: 1,
@@ -124,12 +257,42 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.transparent,
     borderTopColor: Colors.transparent,
   },
-  searchBarInputContainer: {
-    backgroundColor: Colors.transparent,
-    borderBottomColor: Colors.transparent,
-    borderTopColor: Colors.transparent,
-  },
   selectListItem: {
     paddingVertical: 5,
+  },
+  footer: {
+    borderTopWidth: 1,
+    borderTopColor: Colors.greyOutline,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    backgroundColor: Colors.background,
+  },
+  doneButton: {
+    paddingVertical: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  doneButtonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  clearButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginRight: 8,
+  },
+  clearButtonText: {
+    color: Colors.primary,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  closeButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
