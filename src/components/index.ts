@@ -4,6 +4,3 @@ export {default as Header} from './Header';
 export {default as OfflineScreen} from './OfflineScreen';
 export {default as Overlay} from './Overlay';
 export {default as WebFooter} from './WebFooter';
-
-export {ThemedText} from './ThemedText';
-export {ThemedView} from './ThemedView';

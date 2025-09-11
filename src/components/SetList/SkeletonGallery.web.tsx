@@ -94,7 +94,6 @@ const SkeletonGalleryWeb = React.memo((props: SkeletonGalleryWebProps) => {
   const renderSkeletonItem = (index: number) => (
     <div
       key={`skeleton-${index}`}
-      className="skeleton-item"
       style={{
         width: '100%',
         height: 'auto',
@@ -102,7 +101,6 @@ const SkeletonGalleryWeb = React.memo((props: SkeletonGalleryWebProps) => {
         flexDirection: 'column',
         borderRadius: '8px',
         overflow: 'hidden',
-        backgroundColor: Colors.greyOutline,
       }}
     >
       {/* Image skeleton */}
@@ -111,43 +109,10 @@ const SkeletonGalleryWeb = React.memo((props: SkeletonGalleryWebProps) => {
         style={{
           width: '100%',
           aspectRatio: '1',
-          borderRadius: '8px 8px 0 0',
+          borderRadius: '8px',
           backgroundColor: Colors.greyOutline,
         }}
       />
-
-      {/* Badge skeletons */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '5px',
-          left: '0',
-          right: '0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '0 10px',
-          zIndex: 1,
-        }}
-      >
-        <div
-          className="skeleton-item"
-          style={{
-            width: '40px',
-            height: '20px',
-            borderRadius: '10px',
-            backgroundColor: Colors.greyOutline,
-          }}
-        />
-        <div
-          className="skeleton-item"
-          style={{
-            width: '40px',
-            height: '20px',
-            borderRadius: '10px',
-            backgroundColor: Colors.greyOutline,
-          }}
-        />
-      </div>
 
       {/* Text content skeleton */}
       <div

@@ -1,4 +1,4 @@
-import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
+import {DefaultTheme, ThemeProvider} from '@react-navigation/native';
 import {useFonts} from 'expo-font';
 import {Drawer} from 'expo-router/drawer';
 import {StatusBar} from 'expo-status-bar';
@@ -6,7 +6,6 @@ import React from 'react';
 import Animated, {FadeIn} from 'react-native-reanimated';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {useColorScheme} from '@/hooks/useColorScheme';
 import {OfflineScreen} from '../src/components';
 import CustomDrawerContent from '../src/components/CustomDrawerContent';
 import {useNetworkStatus} from '../src/hooks';
@@ -29,7 +28,6 @@ if (__DEV__) {
 }
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const {isOffline, isChecking, checkNetworkStatus} = useNetworkStatus();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
@@ -56,9 +54,7 @@ export default function RootLayout() {
         entering={FadeIn.duration(500).delay(100)}
       >
         <QueryProvider>
-          <ThemeProvider
-            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-          >
+          <ThemeProvider value={DefaultTheme}>
             <Drawer
               drawerContent={(props: any) => <CustomDrawerContent {...props} />}
               initialRouteName="index"

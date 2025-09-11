@@ -20,22 +20,6 @@ const SkeletonGalleryItem = React.memo<SkeletonGalleryItemProps>((props) => {
         style={styles.imageSkeleton}
       />
 
-      {/* Badge skeletons */}
-      <View style={styles.badgeContainer}>
-        <SkeletonItem
-          width={40}
-          height={20}
-          borderRadius={10}
-          style={styles.badgeSkeleton}
-        />
-        <SkeletonItem
-          width={40}
-          height={20}
-          borderRadius={10}
-          style={styles.badgeSkeleton}
-        />
-      </View>
-
       {/* Text content skeleton */}
       <View style={styles.textContainer}>
         <View style={styles.titleRow}>
