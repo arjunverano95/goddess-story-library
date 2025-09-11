@@ -198,6 +198,7 @@ export const Gallery = (props: GalleryProps) => {
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
           
             margin: 0px;
+            margin-bottom: 100px;
             padding: 0px;
             width: 100%;
           }
