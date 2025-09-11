@@ -5,7 +5,7 @@ export const LightColors = {
   black: '#43484d',
   white: '#ffffff',
   greyOutline: '#bfbfbf',
-  searchBg: '#ede8e8',
+  searchBg: '#d6d2d2',
 };
 
 export const Colors = {
