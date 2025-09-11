@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "Goddess Story Library",
-    "slug": "goddess_story_library",
+    "slug": "goddess-story-library",
+    "owner": "aquila_softwares",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +17,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.chronowage.goddessStoryLibrary"
+      "bundleIdentifier": "com.aquila.goddessStoryLibrary"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,7 +25,7 @@
         "backgroundColor": "#f2a4a8"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.chronowage.goddess_story_library"
+      "package": "com.aquila.goddess_story_library"
     },
     "web": {
       "bundler": "metro",
