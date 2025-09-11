@@ -181,15 +181,13 @@ export const SearchField = (props: SearchFieldProps) => {
           {/* Search */}
           <SearchBar
             ref={searchBarRef}
-            {...({
-              lightTheme: true,
-              containerStyle: styles.searchBarContainer,
-              inputContainerStyle: {backgroundColor},
-              placeholder: label,
-              onChangeText: handleSearch,
-              value: searchValue,
-              platform: 'default',
-            } as any)}
+            lightTheme={true}
+            containerStyle={styles.searchBarContainer}
+            inputContainerStyle={{backgroundColor}}
+            placeholder={label}
+            onChangeText={handleSearch}
+            value={searchValue}
+            platform="default"
           />
 
           {/* List */}
