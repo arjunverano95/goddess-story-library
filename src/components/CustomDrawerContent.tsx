@@ -1,12 +1,11 @@
 import {DrawerItem} from '@react-navigation/drawer';
-import {useRouter} from 'expo-router';
 import React from 'react';
 import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
 
 import {Colors} from '../constants';
 
-type RouteType = '/' | '/senpai-goddess-haven';
+type RouteType = 'index' | 'senpai-goddess-haven';
 
 const Routes: {
   name: string;
@@ -18,13 +17,13 @@ const Routes: {
     name: 'GoddessStory',
     label: 'Goddess Story',
     icon: require('../../assets/little-frog.png'),
-    route: '/',
+    route: 'index',
   },
   {
     name: 'SenpaiGoddessHaven',
     label: 'Senpai Goddess Haven',
     icon: require('../../assets/senpai-goddess-haven.png'),
-    route: '/senpai-goddess-haven',
+    route: 'senpai-goddess-haven',
   },
 ];
 
@@ -35,10 +34,8 @@ console.log(
 );
 
 const CustomDrawerContent = (props: any) => {
-  const router = useRouter();
-
   const handleNavigation = (route: RouteType) => {
-    router.push(route);
+    props.navigation.navigate(route);
     props.navigation.closeDrawer();
   };
 

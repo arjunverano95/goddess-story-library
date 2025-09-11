@@ -11,7 +11,6 @@ import Animated, {
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {MaterialIcons} from '@expo/vector-icons';
-
 import {Colors} from '../constants';
 
 type DrawerParamList = {
@@ -67,7 +66,7 @@ const Header = (props: HeaderProps) => {
     <SafeAreaView
       style={[
         styles.headerContainer,
-        showBackButton ? {backgroundColor: Colors.transparent} : {},
+        showBackButton ? {backgroundColor: Colors.background} : {},
       ]}
       edges={['top']}
     >
@@ -78,7 +77,7 @@ const Header = (props: HeaderProps) => {
               style={styles.toggleDrawerContainer}
               onPress={handleBackPress}
             >
-              <MaterialIcons name="arrow-back" size={24} color="white" />
+              <MaterialIcons name="arrow-back" size={24} color={Colors.black} />
             </TouchableOpacity>
           </Animated.View>
         ) : (
@@ -87,7 +86,7 @@ const Header = (props: HeaderProps) => {
               style={styles.toggleDrawerContainer}
               onPress={handleMenuPress}
             >
-              <MaterialIcons name="menu" size={24} color="white" />
+              <MaterialIcons name="menu" size={24} color={Colors.black} />
             </TouchableOpacity>
           </Animated.View>
         )}
@@ -102,7 +101,7 @@ const Header = (props: HeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: Colors.headerBg,
+    backgroundColor: 'white',
   },
   headerContent: {
     flexDirection: 'row',

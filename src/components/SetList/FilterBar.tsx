@@ -10,7 +10,7 @@ import Animated, {
 import {MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons';
 import {Text} from 'react-native-elements';
 
-import {Colors} from '../../constants';
+import {Colors} from '@/src/constants';
 import {GSLCard} from '../../models/GSLCard';
 import Overlay from '../Overlay';
 import FilterForm from './FilterForm';
@@ -73,7 +73,7 @@ export const FilterBar = (props: FilterBarProps) => {
           style={styles.filterButtonContainer}
           onPress={toggleFilterForm}
         >
-          <MaterialIcons name="tune" size={24} color="white" />
+          <MaterialIcons name="tune" size={24} color={Colors.black} />
         </TouchableOpacity>
       </Animated.View>
       <Animated.View style={sortAnimatedStyle}>
@@ -84,7 +84,7 @@ export const FilterBar = (props: FilterBarProps) => {
           <MaterialCommunityIcons
             name={sort === 'asc' ? 'sort-ascending' : 'sort-descending'}
             size={24}
-            color="white"
+            color={Colors.black}
           />
         </TouchableOpacity>
       </Animated.View>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 19,
-    color: Colors.white,
+    color: Colors.black,
   },
   filterButtonContainer: {
     marginTop: 10,

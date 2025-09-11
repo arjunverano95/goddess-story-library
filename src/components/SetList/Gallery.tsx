@@ -8,7 +8,6 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
@@ -197,7 +196,7 @@ export const Gallery = (props: GalleryProps) => {
   // Skeleton loading state
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.galleryContainer}>
+      <View style={styles.galleryContainer}>
         <FlashList
           data={skeletonRows}
           renderItem={renderSkeletonRow}
@@ -206,23 +205,23 @@ export const Gallery = (props: GalleryProps) => {
           showsVerticalScrollIndicator={false}
           estimatedItemSize={230}
         />
-      </SafeAreaView>
+      </View>
     );
   }
 
   // Empty state
   if ((!data || data.length === 0) && !isLoading) {
     return (
-      <SafeAreaView style={styles.galleryContainer}>
+      <View style={styles.galleryContainer}>
         <View style={styles.emptyContainer}>
           <Text style={styles.emptyText}>No cards found</Text>
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.galleryContainer}>
+    <View style={styles.galleryContainer}>
       <FlashList
         ref={flashListRef}
         data={gridData}
@@ -258,7 +257,7 @@ export const Gallery = (props: GalleryProps) => {
           />
         </Overlay>
       )}
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -266,6 +265,7 @@ const styles = StyleSheet.create({
   galleryContainer: {
     flex: 1,
     backgroundColor: Colors.background,
+    paddingBottom: 20,
   },
   listContainer: {
     padding: 10,
