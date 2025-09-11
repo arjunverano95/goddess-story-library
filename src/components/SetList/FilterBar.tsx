@@ -65,7 +65,7 @@ export const FilterBar = (props: FilterBarProps) => {
     <>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
-          {!filter.SetNumber ? title : filter.SetNumber}
+          {!filter.SetNumber ? title : filter.SetNumber.split('|').join(', ')}
         </Text>
       </View>
       <Animated.View style={filterAnimatedStyle}>

@@ -83,6 +83,13 @@ const FilterForm = (props: FilterFormProps) => {
     }
   };
 
+  const clearAll = (key: keyof ExtendedGSLCard) => {
+    setFormData({
+      ...formData,
+      [key]: [],
+    });
+  };
+
   return (
     <>
       <View style={styles.formContainer}>
@@ -124,6 +131,9 @@ const FilterForm = (props: FilterFormProps) => {
             onSelect={(item) => {
               updateFormData('SetNumber', item);
             }}
+            onClearAll={() => {
+              clearAll('SetNumber');
+            }}
           />
 
           <InputField
@@ -144,6 +154,9 @@ const FilterForm = (props: FilterFormProps) => {
             onSelect={(item) => {
               updateFormData('Rarity', item);
             }}
+            onClearAll={() => {
+              clearAll('Rarity');
+            }}
           />
 
           <InputField
@@ -163,6 +176,9 @@ const FilterForm = (props: FilterFormProps) => {
             onPress={() => {}}
             onSelect={(item) => {
               updateFormData('SeriesName', item);
+            }}
+            onClearAll={() => {
+              clearAll('SeriesName');
             }}
           />
         </View>

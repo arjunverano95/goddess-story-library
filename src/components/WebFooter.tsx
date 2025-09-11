@@ -27,10 +27,10 @@ const WebFooter: React.FC<WebFooterProps> = ({
       setWindowWidth(window.innerWidth);
 
       // Check localStorage for saved state
-      const savedState = localStorage.getItem('defaultFooterState');
-      if (savedState === 'hidden') {
-        setHideFooter(true);
-      }
+      // const savedState = localStorage.getItem('defaultFooterState');
+      // if (savedState === 'hidden') {
+      //   setHideFooter(true);
+      // }
 
       // Add resize listener
       const handleResize = () => setWindowWidth(window.innerWidth);
@@ -46,7 +46,7 @@ const WebFooter: React.FC<WebFooterProps> = ({
   }
 
   const handleHideFooter = () => {
-    localStorage.setItem('defaultFooterState', 'hidden');
+    // localStorage.setItem('defaultFooterState', 'hidden');
     setHideFooter(true);
   };
 

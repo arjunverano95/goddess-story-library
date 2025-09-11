@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -14,14 +14,24 @@ interface SearchFieldProps {
   data: string[];
   onPress: () => void;
   onSelect: (item: string) => void;
+  onClearAll?: () => void;
   multiSelect?: boolean;
 }
 
 export const SearchField = (props: SearchFieldProps) => {
-  const {label, value, data, onPress, onSelect, multiSelect = false} = props;
+  const {
+    label,
+    value,
+    data,
+    onPress,
+    onSelect,
+    onClearAll,
+    multiSelect = false,
+  } = props;
 
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const searchBarRef = useRef<any>(null);
   // const {theme} = useTheme();
 
   const backgroundColor = Colors.searchBg;
@@ -53,6 +63,17 @@ export const SearchField = (props: SearchFieldProps) => {
     setSearchValue('');
     setIsOverlayVisible((v) => !v);
   }, [formattedData]);
+
+  // Auto-focus SearchBar when overlay becomes visible
+  useEffect(() => {
+    if (isOverlayVisible && searchBarRef.current) {
+      // Small delay to ensure the overlay is fully rendered
+      const timer = setTimeout(() => {
+        searchBarRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isOverlayVisible]);
 
   const handleSearch = useCallback(
     (value: string) => {
@@ -110,7 +131,7 @@ export const SearchField = (props: SearchFieldProps) => {
             ]}
             numberOfLines={2}
           >
-            {selectedValues.length === 0 ? label : selectedValues.join('|')}
+            {selectedValues.length === 0 ? label : selectedValues.join(', ')}
           </Text>
         </ListItem.Content>
         <MaterialIcons name="arrow-forward" size={24} color={Colors.black} />
@@ -134,11 +155,15 @@ export const SearchField = (props: SearchFieldProps) => {
                 <TouchableOpacity
                   style={styles.clearButton}
                   onPress={() => {
-                    // Clear is delegated to the parent via onSelect for single values;
-                    // For multi-select parents typically handle remove/toggle.
-                    // Here we try to "clear all" by toggling off each selected item.
-                    // Parent should support this by updating `value` accordingly.
-                    selectedValues.forEach((v) => onSelect(v));
+                    if (onClearAll) {
+                      onClearAll();
+                    } else {
+                      // Fallback: Clear is delegated to the parent via onSelect for single values;
+                      // For multi-select parents typically handle remove/toggle.
+                      // Here we try to "clear all" by toggling off each selected item.
+                      // Parent should support this by updating `value` accordingly.
+                      selectedValues.forEach((v) => onSelect(v));
+                    }
                   }}
                 >
                   <Text style={styles.clearButtonText}>Clear</Text>
@@ -155,6 +180,7 @@ export const SearchField = (props: SearchFieldProps) => {
 
           {/* Search */}
           <SearchBar
+            ref={searchBarRef}
             {...({
               lightTheme: true,
               containerStyle: styles.searchBarContainer,
