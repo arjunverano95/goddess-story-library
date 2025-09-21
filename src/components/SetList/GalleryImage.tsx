@@ -29,7 +29,7 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
         contentFit="cover"
         onError={onError}
         transition={0}
-        placeholder={require('../../../assets/no-image.png')}
+        placeholder={require('../../../assets/placeholder.png')}
         cachePolicy="memory-disk"
         recyclingKey={imageUrl}
         priority="normal"

@@ -4,27 +4,37 @@ import React from 'react';
 import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
 
-import {Colors} from '../constants';
-
-type RouteType = '/' | '/senpai-goddess-haven';
+import {CARD_LISTING, Colors, LISTING_DATA} from '../constants';
 
 const Routes: {
   name: string;
   label: string;
   icon: any;
-  route: RouteType;
+  route: string;
 }[] = [
   {
-    name: 'GoddessStory',
-    label: 'Goddess Story',
-    icon: require('../../assets/little-frog.png'),
+    name: LISTING_DATA[CARD_LISTING.GSL].id,
+    label: LISTING_DATA[CARD_LISTING.GSL].name,
+    icon: LISTING_DATA[CARD_LISTING.GSL].image_url,
     route: '/',
   },
   {
-    name: 'SenpaiGoddessHaven',
-    label: 'Senpai Goddess Haven',
-    icon: require('../../assets/senpai-goddess-haven.png'),
+    name: LISTING_DATA[CARD_LISTING.SGH].id,
+    label: LISTING_DATA[CARD_LISTING.SGH].name,
+    icon: LISTING_DATA[CARD_LISTING.SGH].image_url,
     route: '/senpai-goddess-haven',
+  },
+  {
+    name: LISTING_DATA[CARD_LISTING.FG].id,
+    label: LISTING_DATA[CARD_LISTING.FG].name,
+    icon: LISTING_DATA[CARD_LISTING.FG].image_url,
+    route: '/flower-girl',
+  },
+  {
+    name: LISTING_DATA[CARD_LISTING.FL].id,
+    label: LISTING_DATA[CARD_LISTING.FL].name,
+    icon: LISTING_DATA[CARD_LISTING.FL].image_url,
+    route: '/fire-legend',
   },
 ];
 
@@ -37,7 +47,7 @@ console.log(
 const CustomDrawerContent = (props: any) => {
   const router = useRouter();
 
-  const handleNavigation = (route: RouteType) => {
+  const handleNavigation = (route: any) => {
     router.push(route);
     props.navigation.closeDrawer();
   };
@@ -88,6 +98,7 @@ const CustomDrawerContent = (props: any) => {
               handleNavigation(item.route);
             }}
             labelStyle={styles.drawerLabel}
+            style={styles.drawerItem}
           />
         ))}
       </View>
@@ -152,6 +163,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: 250,
     width: '100%',
+  },
+  drawerItem: {
+    borderRadius: 0,
   },
   routesContainer: {
     flex: 1,

@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import Animated, {FadeIn} from 'react-native-reanimated';
 
 import BaseScreen from '../src/components/BaseScreen';
-import {CARD_LISTING} from '../src/constants';
+import {CARD_LISTING, LISTING_DATA} from '../src/constants';
 
 export default function Index() {
   return (
@@ -11,7 +11,10 @@ export default function Index() {
       style={styles.container}
       entering={FadeIn.duration(400).delay(50)}
     >
-      <BaseScreen collection={CARD_LISTING.GSL} title="Goddess Story" />
+      <BaseScreen
+        collection={CARD_LISTING.GSL}
+        title={LISTING_DATA[CARD_LISTING.GSL].name}
+      />
     </Animated.View>
   );
 }

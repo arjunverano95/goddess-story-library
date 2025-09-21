@@ -63,7 +63,7 @@ const BaseScreen = (props: BaseScreenProps) => {
   });
   const {setNumbers} = useSets(collection);
   const {rarities} = useRarities(collection);
-  const {series} = useSeries(collection);
+  const {series} = useSeries();
 
   const onFilter = (value: GSLCard) => {
     setFilterData(value);

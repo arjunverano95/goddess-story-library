@@ -72,13 +72,17 @@ export const api = {
   },
 
   // Series endpoints - direct API calls only
-  getSeries: async (collection: string): Promise<string[]> => {
-    const data = await apiClient
-      .get(`/${collection}/series`)
-      .then(responseBody);
+  getSeries: async (): Promise<string[]> => {
+    const data = await apiClient.get(`/series`).then(responseBody);
 
     const series = Array.isArray(data) ? data.map((item) => item.name) : [];
     return series;
+  },
+  getListings: async (): Promise<string[]> => {
+    const data = await apiClient.get(`/listings`).then(responseBody);
+
+    const listings = Array.isArray(data) ? data.map((item) => item.name) : [];
+    return listings;
   },
 
   // Rarity endpoints - direct API calls only
