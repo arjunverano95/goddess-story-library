@@ -1,57 +1,52 @@
+'use client';
+import {useListings} from '@/src/hooks';
 import {DrawerItem} from '@react-navigation/drawer';
 import {useRouter} from 'expo-router';
 import React from 'react';
 import {Image, Linking, Pressable, StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
+import {Colors} from '../constants';
 
-import {CARD_LISTING, Colors, LISTING_DATA} from '../constants';
-
-const Routes: {
-  name: string;
-  label: string;
-  icon: any;
-  route: string;
-}[] = [
-  {
-    name: LISTING_DATA[CARD_LISTING.GSL].id,
-    label: LISTING_DATA[CARD_LISTING.GSL].name,
-    icon: LISTING_DATA[CARD_LISTING.GSL].image_url,
-    route: '/',
-  },
-  {
-    name: LISTING_DATA[CARD_LISTING.SGH].id,
-    label: LISTING_DATA[CARD_LISTING.SGH].name,
-    icon: LISTING_DATA[CARD_LISTING.SGH].image_url,
-    route: '/senpai-goddess-haven',
-  },
-  {
-    name: LISTING_DATA[CARD_LISTING.FG].id,
-    label: LISTING_DATA[CARD_LISTING.FG].name,
-    icon: LISTING_DATA[CARD_LISTING.FG].image_url,
-    route: '/flower-girl',
-  },
-  {
-    name: LISTING_DATA[CARD_LISTING.FL].id,
-    label: LISTING_DATA[CARD_LISTING.FL].name,
-    icon: LISTING_DATA[CARD_LISTING.FL].image_url,
-    route: '/fire-legend',
-  },
-];
-
-// Debug: Log the icon sources
-console.log(
-  'Icon sources:',
-  Routes.map((r) => ({name: r.name, icon: r.icon})),
-);
+// const Routes: {
+//   name: string;
+//   label: string;
+//   icon: any;
+//   route: string;
+// }[] = [
+//   {
+//     name: LISTING_DATA[CARD_LISTING.GSL].id,
+//     label: LISTING_DATA[CARD_LISTING.GSL].name,
+//     icon: LISTING_DATA[CARD_LISTING.GSL].image_url,
+//     route: '/',
+//   },
+//   {
+//     name: LISTING_DATA[CARD_LISTING.SGH].id,
+//     label: LISTING_DATA[CARD_LISTING.SGH].name,
+//     icon: LISTING_DATA[CARD_LISTING.SGH].image_url,
+//     route: '/senpai-goddess-haven',
+//   },
+//   {
+//     name: LISTING_DATA[CARD_LISTING.FG].id,
+//     label: LISTING_DATA[CARD_LISTING.FG].name,
+//     icon: LISTING_DATA[CARD_LISTING.FG].image_url,
+//     route: '/flower-girl',
+//   },
+//   {
+//     name: LISTING_DATA[CARD_LISTING.FL].id,
+//     label: LISTING_DATA[CARD_LISTING.FL].name,
+//     icon: LISTING_DATA[CARD_LISTING.FL].image_url,
+//     route: '/fire-legend',
+//   },
+// ];
 
 const CustomDrawerContent = (props: any) => {
   const router = useRouter();
+  const {listings} = useListings();
 
   const handleNavigation = (route: any) => {
     router.push(route);
     props.navigation.closeDrawer();
   };
-
   return (
     <View style={styles.drawerContainer}>
       <View style={styles.drawerContentContainer}>
@@ -62,7 +57,7 @@ const CustomDrawerContent = (props: any) => {
       </View>
 
       <View style={styles.routesContainer}>
-        {Routes.map((item, index) => (
+        {listings.map((item, index) => (
           <DrawerItem
             key={`${item.name}-${index}-${Date.now()}`}
             icon={({focused, color, size}) => {
@@ -78,7 +73,7 @@ const CustomDrawerContent = (props: any) => {
                       opacity: 1,
                     },
                   ]}
-                  source={item.icon}
+                  source={{uri: item.image_url}}
                   onError={(error) => {
                     console.log(
                       'Icon load error for',
@@ -93,9 +88,9 @@ const CustomDrawerContent = (props: any) => {
                 />
               );
             }}
-            label={item.label}
+            label={item.name}
             onPress={() => {
-              handleNavigation(item.route);
+              handleNavigation(item.id);
             }}
             labelStyle={styles.drawerLabel}
             style={styles.drawerItem}

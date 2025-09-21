@@ -30,13 +30,14 @@ export const useInfiniteCards = ({
     refetch,
   } = useInfiniteQuery({
     queryKey,
-    queryFn: async ({pageParam = 1}) => {
+    queryFn: async ({pageParam}) => {
       const response = await api.getCards(collection, {
         ...filters,
         page: pageParam,
       });
       return response;
     },
+    initialPageParam: 1,
     getNextPageParam: (lastPage) => {
       if (!lastPage?.pagination?.hasNextPage) {
         return undefined;

@@ -77,10 +77,10 @@ export default function RootLayout() {
                 }}
               />
               <Drawer.Screen
-                name="senpai-goddess-haven"
+                name="[slug]/index"
                 options={{
-                  title: 'Senpai Goddess Haven',
-                  drawerLabel: 'Senpai Goddess Haven',
+                  title: 'Dynamic Route',
+                  drawerLabel: 'Dynamic Route',
                 }}
               />
               <Drawer.Screen name="+not-found" />
