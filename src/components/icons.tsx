@@ -1,7 +1,14 @@
 import {Ionicons} from '@expo/vector-icons';
 import React from 'react';
 
-type IconName = 'home' | 'compass' | 'books' | 'bell' | 'person';
+type IconName =
+  | 'home'
+  | 'compass'
+  | 'books'
+  | 'bell'
+  | 'person'
+  | 'heart'
+  | 'grid';
 
 export function Icon({
   name,
@@ -20,6 +27,8 @@ export function Icon({
     books: focused ? 'book' : 'book-outline',
     bell: focused ? 'notifications' : 'notifications-outline',
     person: focused ? 'person' : 'person-outline',
+    heart: focused ? 'heart' : 'heart-outline',
+    grid: focused ? 'grid' : 'grid-outline',
   };
 
   return <Ionicons name={map[name]} size={size} color={color} />;

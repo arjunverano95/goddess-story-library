@@ -1,4 +1,3 @@
-import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {useNavigation} from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
@@ -12,13 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {MaterialIcons} from '@expo/vector-icons';
 import {Colors} from '../constants';
-
-type DrawerParamList = {
-  index: undefined;
-  'senpai-goddess-haven': undefined;
-};
-
-type DrawerNavigation = DrawerNavigationProp<DrawerParamList>;
+import {usePanel} from '../contexts/PanelContext';
 
 interface HeaderProps {
   children?: React.ReactNode;
@@ -27,7 +20,8 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps) => {
   const {children, showBackButton} = props;
-  const navigation = useNavigation<DrawerNavigation>();
+  const navigation = useNavigation();
+  const {openPanel} = usePanel();
 
   const menuScale = useSharedValue(1);
   const backScale = useSharedValue(1);
@@ -50,7 +44,7 @@ const Header = (props: HeaderProps) => {
       menuScale.value = withSpring(1, {damping: 15, stiffness: 300});
     }, 100);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    navigation.openDrawer();
+    openPanel();
   };
 
   const handleBackPress = async () => {

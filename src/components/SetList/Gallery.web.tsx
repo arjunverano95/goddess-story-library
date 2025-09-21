@@ -227,14 +227,14 @@ export const Gallery = (props: GalleryProps) => {
           
           @media (min-width: 1025px) and (max-width: 1200px) {
             .gallery-grid {
-              grid-template-columns: repeat(5, 1fr);
+              grid-template-columns: repeat(6, 1fr);
              
             }
           }
           
           @media (min-width: 1201px) {
             .gallery-grid {
-              grid-template-columns: repeat(6, 1fr);
+              grid-template-columns: repeat(7, 1fr);
              
             }
           }

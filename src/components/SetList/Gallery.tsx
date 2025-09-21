@@ -55,11 +55,11 @@ export const Gallery = (props: GalleryProps) => {
 
   // Responsive column layout
   const columnCount = useMemo(() => {
-    if (width < Sizes.sm) return 2;
-    if (width >= Sizes.sm && width < Sizes.md) return 3;
-    if (width >= Sizes.md && width < Sizes.lg) return 4;
-    if (width >= Sizes.lg && width < Sizes.xl) return 5;
-    return 6;
+    if (width < Sizes.sm) return 3;
+    if (width >= Sizes.sm && width < Sizes.md) return 4;
+    if (width >= Sizes.md && width < Sizes.lg) return 5;
+    if (width >= Sizes.lg && width < Sizes.xl) return 6;
+    return 7;
   }, [width]);
 
   // Calculate item dimensions

@@ -1,12 +1,12 @@
 import {DefaultTheme, ThemeProvider} from '@react-navigation/native';
 import {useFonts} from 'expo-font';
-import {Stack} from 'expo-router';
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import Animated, {FadeIn} from 'react-native-reanimated';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {OfflineScreen} from '../src/components';
+import {Tabs} from 'expo-router';
+import {Icon, OfflineScreen} from '../src/components';
 import {useNetworkStatus} from '../src/hooks';
 import {QueryProvider} from '../src/providers/QueryProvider';
 
@@ -54,9 +54,72 @@ export default function RootLayout() {
       >
         <QueryProvider>
           <ThemeProvider value={DefaultTheme}>
-            <Stack screenOptions={{headerShown: false}}>
-              <Stack.Screen name="(tabs)" />
-            </Stack>
+            <Tabs
+              screenOptions={{
+                headerShown: false,
+                tabBarStyle: {
+                  height: 55,
+                },
+              }}
+            >
+              <Tabs.Screen
+                name="index"
+                options={{
+                  title: 'Home',
+                  tabBarIcon: ({size, color, focused}) => (
+                    <Icon
+                      name="home"
+                      size={size}
+                      color={color}
+                      focused={focused}
+                    />
+                  ),
+                }}
+              />
+              <Tabs.Screen
+                name="cards"
+                options={{
+                  title: 'Cards',
+                  tabBarIcon: ({size, color, focused}) => (
+                    <Icon
+                      name="grid"
+                      size={size}
+                      color={color}
+                      focused={focused}
+                    />
+                  ),
+                }}
+              />
+
+              <Tabs.Screen
+                name="favorites"
+                options={{
+                  title: 'Favorites',
+                  tabBarIcon: ({size, color, focused}) => (
+                    <Icon
+                      name="heart"
+                      size={size}
+                      color={color}
+                      focused={focused}
+                    />
+                  ),
+                }}
+              />
+              <Tabs.Screen
+                name="profile"
+                options={{
+                  title: 'Profile',
+                  tabBarIcon: ({size, color, focused}) => (
+                    <Icon
+                      name="person"
+                      size={size}
+                      color={color}
+                      focused={focused}
+                    />
+                  ),
+                }}
+              />
+            </Tabs>
             <StatusBar style="auto" />
           </ThemeProvider>
         </QueryProvider>
