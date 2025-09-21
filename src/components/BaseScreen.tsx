@@ -6,7 +6,6 @@ import {GSLCard} from '../models/GSLCard';
 import {CardFilters} from '../services/api';
 import Header from './Header';
 import {FilterBar, Gallery} from './SetList';
-import WebFooter from './WebFooter';
 
 interface BaseScreenProps {
   collection: string;
@@ -63,7 +62,7 @@ const BaseScreen = (props: BaseScreenProps) => {
   });
   const {setNumbers} = useSets(collection);
   const {rarities} = useRarities(collection);
-  const {series} = useSeries(collection);
+  const {series} = useSeries();
 
   const onFilter = (value: GSLCard) => {
     setFilterData(value);
@@ -106,7 +105,6 @@ const BaseScreen = (props: BaseScreenProps) => {
         refetch={refetch}
         isRefreshing={isFetching && !isFetchingNextPage}
       />
-      <WebFooter />
     </Animated.View>
   );
 };

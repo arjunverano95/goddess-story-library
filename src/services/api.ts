@@ -1,6 +1,6 @@
 import axios, {AxiosResponse} from 'axios';
 
-import {API_BASE_URL, CARD_LISTING} from '../constants';
+import {API_BASE_URL} from '../constants';
 
 // API client for direct API calls
 const apiClient = axios.create({
@@ -72,13 +72,47 @@ export const api = {
   },
 
   // Series endpoints - direct API calls only
-  getSeries: async (collection: string): Promise<string[]> => {
-    const data = await apiClient
-      .get(`/${collection}/series`)
-      .then(responseBody);
+  getSeries: async (): Promise<string[]> => {
+    const data = await apiClient.get(`/series`).then(responseBody);
 
     const series = Array.isArray(data) ? data.map((item) => item.name) : [];
     return series;
+  },
+  getListings: async (): Promise<
+    {id: string; name: string; image_url: string}[]
+  > => {
+    const response = await apiClient
+      .get<{
+        success: boolean;
+        data: {id: string; name: string; image_url: string}[];
+      }>(`/listings`)
+      .then(responseBody);
+
+    console.log(response);
+    const listings =
+      response.success && Array.isArray(response.data)
+        ? response.data.map(
+            (item: {id: string; name: string; image_url: string}) => ({
+              id: item.id,
+              name: item.name,
+              image_url: item.image_url,
+            }),
+          )
+        : [];
+    return listings;
+  },
+  getListing: async (
+    slug: string,
+  ): Promise<{id: string; name: string; image_url: string}> => {
+    const data = await apiClient
+      .get<{id: string; name: string; image_url: string}>(`/listings/${slug}`)
+      .then(responseBody);
+
+    return {
+      id: data.id,
+      name: data.name,
+      image_url: data.image_url,
+    };
   },
 
   // Rarity endpoints - direct API calls only
@@ -98,7 +132,4 @@ export const api = {
     const sets = Array.isArray(data) ? data.map((item) => item.name) : [];
     return sets;
   },
-
-  // Collection identifiers
-  listings: CARD_LISTING,
 };
