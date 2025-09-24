@@ -1,7 +1,7 @@
 import * as Haptics from 'expo-haptics';
 import React, {useCallback, useMemo} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {Badge, Card, Text} from 'react-native-elements';
+import {Badge, Text} from 'react-native-elements';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -64,7 +64,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
   );
 
   return (
-    <Card containerStyle={styles.cardContainer}>
+    <div style={styles.cardContainer}>
       <Animated.View style={[styles.cardWrapper, animatedStyle]}>
         <Pressable
           onPress={handlePress}
@@ -100,7 +100,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
           </View>
         </Pressable>
       </Animated.View>
-    </Card>
+    </div>
   );
 });
 

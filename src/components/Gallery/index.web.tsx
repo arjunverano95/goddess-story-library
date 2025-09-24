@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -12,9 +13,8 @@ import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import {PaginationInfo} from '../../services/api';
 import Overlay from '../Overlay';
-import {CardDetails} from './CardDetails';
+import {CardDetails} from '../SetList/CardDetails';
 import GalleryItem from './GalleryItem';
-import SkeletonGalleryWeb from './SkeletonGallery.web';
 
 interface GalleryProps {
   data: GSLCard[];
@@ -136,14 +136,14 @@ export const Gallery = (props: GalleryProps) => {
     [handleCardPress],
   );
 
-  // Render footer with skeleton loading
+  // Render footer with loading text
   const renderFooter = useCallback(() => {
     const isLoadingMore = loadingMore || isFetchingNextPage;
     if (!isLoadingMore) return null;
 
     return (
       <div style={styles.footerLoader} className="gallery-footer">
-        <SkeletonGalleryWeb itemCount={6} />
+        <Text style={styles.footerLoaderText}>Loading more...</Text>
       </div>
     );
   }, [loadingMore, isFetchingNextPage]);
@@ -296,13 +296,9 @@ export const Gallery = (props: GalleryProps) => {
   if (isLoading) {
     return (
       <SafeAreaView style={styles.galleryContainer}>
-        <ScrollView
-          style={styles.scrollView}
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        >
-          <SkeletonGalleryWeb itemCount={12} />
-        </ScrollView>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Loading cards...</Text>
+        </View>
       </SafeAreaView>
     );
   }

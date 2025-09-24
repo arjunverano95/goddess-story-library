@@ -12,9 +12,8 @@ import {
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import Overlay from '../Overlay';
-import {CardDetails} from './CardDetails';
+import {CardDetails} from '../SetList/CardDetails';
 import GalleryItem from './GalleryItem';
-import SkeletonGalleryItem from './SkeletonGalleryItem';
 
 interface GalleryProps {
   data: GSLCard[];
@@ -128,19 +127,10 @@ export const Gallery = (props: GalleryProps) => {
 
     return (
       <View style={styles.footerLoader}>
-        <View style={styles.footerSkeletonContainer}>
-          {Array.from({length: columnCount}).map((_, index) => (
-            <View
-              key={`footer-skeleton-${index}`}
-              style={[styles.itemContainer, {width: itemWidth}]}
-            >
-              <SkeletonGalleryItem width={itemWidth} />
-            </View>
-          ))}
-        </View>
+        <Text style={styles.footerLoaderText}>Loading more...</Text>
       </View>
     );
-  }, [isFetchingNextPage, columnCount, itemWidth]);
+  }, [isFetchingNextPage]);
 
   // Load more handler
   const handleLoadMore = useCallback(() => {
@@ -149,43 +139,6 @@ export const Gallery = (props: GalleryProps) => {
     }
   }, [fetchNextPage, isFetchingNextPage]);
 
-  // Skeleton loading data
-  const skeletonRows = useMemo(() => {
-    if (!isLoading) return [];
-    const skeletonCount = columnCount * 3; // Show 3 rows of skeletons
-    const rows: GridRow[] = [];
-    for (let i = 0; i < skeletonCount; i += columnCount) {
-      const rowItems = Array.from({length: columnCount}).map((_, index) => ({
-        ID: `skeleton-${i + index}`,
-        Code: `skeleton-${i + index}`,
-      })) as GSLCard[];
-      rows.push({
-        id: `skeleton-row-${i}`,
-        items: rowItems,
-        isLastRow: i + columnCount >= skeletonCount,
-      });
-    }
-    return rows;
-  }, [isLoading, columnCount]);
-
-  const renderSkeletonRow = useCallback(
-    ({item: row}: {item: GridRow}) => {
-      return (
-        <View style={styles.rowContainer}>
-          {row.items.map((_, index) => (
-            <View
-              key={`skeleton-${row.id}-${index}`}
-              style={[styles.itemContainer, {width: itemWidth}]}
-            >
-              <SkeletonGalleryItem width={itemWidth} />
-            </View>
-          ))}
-        </View>
-      );
-    },
-    [itemWidth],
-  );
-
   // Pull to refresh handler
   const handleRefresh = useCallback(() => {
     if (refetch) {
@@ -193,18 +146,13 @@ export const Gallery = (props: GalleryProps) => {
     }
   }, [refetch]);
 
-  // Skeleton loading state
+  // Loading state
   if (isLoading) {
     return (
       <View style={styles.galleryContainer}>
-        <FlashList
-          data={skeletonRows}
-          renderItem={renderSkeletonRow}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={styles.listContainer}
-          showsVerticalScrollIndicator={false}
-          estimatedItemSize={230}
-        />
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Loading cards...</Text>
+        </View>
       </View>
     );
   }
@@ -304,11 +252,6 @@ const styles = StyleSheet.create({
   },
   footerLoader: {
     paddingVertical: 20,
-  },
-  footerSkeletonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 4,
   },
   footerLoaderText: {
     fontSize: 14,

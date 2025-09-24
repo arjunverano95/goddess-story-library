@@ -4,8 +4,9 @@ import Animated, {FadeIn} from 'react-native-reanimated';
 import {useInfiniteCards, useRarities, useSeries, useSets} from '../hooks';
 import {GSLCard} from '../models/GSLCard';
 import {CardFilters} from '../services/api';
+import {Gallery} from './Gallery';
 import Header from './Header';
-import {FilterBar, Gallery} from './SetList';
+import {FilterBar} from './SetList';
 
 interface BaseScreenProps {
   collection: string;
