@@ -20,7 +20,8 @@
       "bundleIdentifier": "com.aquila.goddessStoryLibrary",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
-      }
+      },
+      "jsEngine": "jsc"
     },
     "android": {
       "adaptiveIcon": {
@@ -45,6 +46,7 @@
       "eas": {
         "projectId": "3ecac027-9d6d-4e86-878c-e8ba23c725d2"
       }
-    }
+    },
+    "jsEngine": "hermes"
   }
 }

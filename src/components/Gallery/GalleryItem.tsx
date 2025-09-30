@@ -64,7 +64,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
   );
 
   return (
-    <div style={styles.cardContainer}>
+    <View style={styles.cardContainer}>
       <Animated.View style={[styles.cardWrapper, animatedStyle]}>
         <Pressable
           onPress={handlePress}
@@ -100,7 +100,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
           </View>
         </Pressable>
       </Animated.View>
-    </div>
+    </View>
   );
 });
 

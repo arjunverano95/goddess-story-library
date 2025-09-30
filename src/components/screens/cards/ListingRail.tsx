@@ -1,21 +1,15 @@
 'use client';
+import {Colors} from '@/src/constants';
 import {useListings} from '@/src/hooks';
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Pressable} from 'react-native-gesture-handler';
-import {Colors} from '../constants';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
-interface CollectionPanelProps {
-  onClose: () => void;
+interface ListingRailProps {
   onListingSelect?: (id: string) => void;
   currentListing?: string;
 }
 
-const CollectionPanel = ({
-  onClose,
-  onListingSelect,
-  currentListing,
-}: CollectionPanelProps) => {
+const ListingRail = ({onListingSelect, currentListing}: ListingRailProps) => {
   const {listings} = useListings();
 
   const handleListingSelect = (id: string) => {
@@ -26,12 +20,6 @@ const CollectionPanel = ({
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-          <Text style={styles.closeText}>✕</Text>
-        </TouchableOpacity>
-      </View>
-
       <View style={styles.content}>
         {listings.map((item, index) => (
           <Pressable
@@ -69,15 +57,9 @@ const CollectionPanel = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
-    width: 90,
-  },
-  header: {
-    alignItems: 'center',
-    paddingVertical: 16,
     backgroundColor: '#f8f9fa',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    width: 90,
+    paddingTop: 20,
   },
   closeButton: {
     width: 24,
@@ -122,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CollectionPanel;
+export default ListingRail;

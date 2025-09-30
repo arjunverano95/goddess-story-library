@@ -4,8 +4,8 @@ import {Pressable, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 import {Text} from 'react-native-elements';
 
-import {Colors} from '../../../constants';
-import {GSLCard} from '../../../models/GSLCard';
+import {Colors} from '@/src/constants';
+import {GSLCard} from '@/src/models/GSLCard';
 import {InputField, SearchField} from './Fields';
 
 interface FilterFormProps {

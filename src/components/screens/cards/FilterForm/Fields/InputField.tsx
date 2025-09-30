@@ -1,9 +1,8 @@
+import {Colors} from '@/src/constants';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
 import {ListItem} from 'react-native-elements';
-
-import {Colors} from '../../../../constants';
 
 interface InputFieldProps {
   label: string;

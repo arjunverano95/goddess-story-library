@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import {MaterialIcons} from '@expo/vector-icons';
 import {Badge, Text} from 'react-native-elements';
 
 import {Colors, Sizes} from '../../../constants';
@@ -10,22 +9,16 @@ import CardDetailImage from './CardDetailImage';
 
 interface CardDetailsProps {
   card: GSLCard;
-  onClose: () => void;
 }
 
 const CardDetails = (props: CardDetailsProps) => {
-  const {card, onClose} = props;
+  const {card} = props;
 
   if (!card) return null;
 
   return (
     <View style={styles.container}>
       {/* Custom X Close Button */}
-      <View style={styles.closeButtonContainer}>
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-          <MaterialIcons name="close" size={24} color={Colors.black} />
-        </TouchableOpacity>
-      </View>
 
       {/* Card Info Section - Following Original Design */}
       <View style={styles.cardContainer}>
@@ -58,7 +51,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.background,
-    paddingTop: 60,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -69,10 +61,7 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   },
   cardContainer: {
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
     backgroundColor: Colors.white,
-    marginTop: 10,
     width: '100%',
     maxWidth: Sizes.sm,
     padding: 15,

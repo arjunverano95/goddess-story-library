@@ -7,13 +7,11 @@ import {
   Text,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
+import {useRouter} from 'expo-router';
 import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import {PaginationInfo} from '../../services/api';
-import Overlay from '../Overlay';
-import {CardDetails} from '../SetList/CardDetails';
 import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
@@ -44,7 +42,6 @@ export const Gallery = (props: GalleryProps) => {
     refetch,
     isRefreshing = false,
   } = props;
-  const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
   const [loadingMore, setLoadingMore] = useState(false);
   // const [isNearBottom, setIsNearBottom] = useState(false);
   const scrollViewRef = useRef<ScrollView>(null);
@@ -110,10 +107,27 @@ export const Gallery = (props: GalleryProps) => {
     [hasMorePages, loadingMore, isFetchingNextPage, handleLoadMore],
   );
 
-  // Memoized card press handler
-  const handleCardPress = useCallback((item: GSLCard) => {
-    setSelectedCard(item);
-  }, []);
+  // Memoized card press handler -> navigate to details
+  const router = useRouter();
+  const handleCardPress = useCallback(
+    (item: GSLCard) => {
+      router.push({
+        pathname: '/card-details',
+        params: {
+          ID: item.ID,
+          Code: item.Code,
+          SetNumber: item.SetNumber,
+          CardNumber: item.CardNumber,
+          CharacterName: item.CharacterName,
+          SeriesName: item.SeriesName,
+          Rarity: item.Rarity,
+          ImageUrl: item.ImageUrl,
+          HasImage: item.HasImage,
+        },
+      });
+    },
+    [router],
+  );
 
   // Pull to refresh handler
   const handleRefresh = useCallback(() => {
@@ -125,11 +139,7 @@ export const Gallery = (props: GalleryProps) => {
   // Memoized render functions for better performance
   const renderItem = useCallback(
     (item: GSLCard, index: number) => (
-      <div
-        key={`item-${index}`}
-        className="gallery-item"
-        data-animation-delay={index * 50}
-      >
+      <div key={`item-${index}`} style={styles.itemContainer}>
         <GalleryItem data={item} onPress={handleCardPress} />
       </div>
     ),
@@ -151,100 +161,50 @@ export const Gallery = (props: GalleryProps) => {
   // Inject CSS styles for web
   useEffect(() => {
     if (Platform.OS === 'web' && typeof document !== 'undefined') {
-      // Check if styles are already injected to avoid duplicates
       if (!document.querySelector('#gallery-web-styles')) {
         const style = document.createElement('style');
         style.id = 'gallery-web-styles';
         style.textContent = `
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
-          .gallery-item {
-            transition: all 0.2s ease-in-out;
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          
-          .gallery-item:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-          }
-          
-          /* Set animation delay based on data attribute */
-          .gallery-item[data-animation-delay="0"] { animation-delay: 0ms; }
-          .gallery-item[data-animation-delay="50"] { animation-delay: 50ms; }
-          .gallery-item[data-animation-delay="100"] { animation-delay: 100ms; }
-          .gallery-item[data-animation-delay="150"] { animation-delay: 150ms; }
-          .gallery-item[data-animation-delay="200"] { animation-delay: 200ms; }
-          .gallery-item[data-animation-delay="250"] { animation-delay: 250ms; }
-          .gallery-item[data-animation-delay="300"] { animation-delay: 300ms; }
-          .gallery-item[data-animation-delay="350"] { animation-delay: 350ms; }
-          .gallery-item[data-animation-delay="400"] { animation-delay: 400ms; }
-          .gallery-item[data-animation-delay="450"] { animation-delay: 450ms; }
-          .gallery-item[data-animation-delay="500"] { animation-delay: 500ms; }
-          
           /* Responsive grid using CSS Grid for better performance */
           .gallery-grid {
             display: grid !important;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          
             margin: 0px;
             margin-bottom: 100px;
             padding: 0px;
             width: 100%;
+            gap: 10px;
           }
           
           /* Mobile first approach */
           @media (max-width: 480px) {
             .gallery-grid {
               grid-template-columns: repeat(2, 1fr);
-            
             }
           }
           
           @media (min-width: 481px) and (max-width: 768px) {
             .gallery-grid {
               grid-template-columns: repeat(3, 1fr);
-           
             }
           }
           
           @media (min-width: 769px) and (max-width: 1024px) {
             .gallery-grid {
               grid-template-columns: repeat(4, 1fr);
-          
             }
           }
           
           @media (min-width: 1025px) and (max-width: 1200px) {
             .gallery-grid {
               grid-template-columns: repeat(6, 1fr);
-             
             }
           }
           
           @media (min-width: 1201px) {
             .gallery-grid {
               grid-template-columns: repeat(7, 1fr);
-             
             }
-          }
-          
-          /* Ensure items maintain aspect ratio */
-          .gallery-item {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
           }
         `;
         document.head.appendChild(style);
@@ -295,27 +255,27 @@ export const Gallery = (props: GalleryProps) => {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.galleryContainer}>
+      <View style={styles.galleryContainer}>
         <View style={styles.loadingContainer}>
           <Text style={styles.loadingText}>Loading cards...</Text>
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 
   // Only show "No cards found" if we have data but it's empty
   if (!isLoading && data && data.length === 0) {
     return (
-      <SafeAreaView style={styles.galleryContainer}>
+      <View style={styles.galleryContainer}>
         <div style={styles.emptyContainer}>
           <Text style={styles.emptyText}>No cards found</Text>
         </div>
-      </SafeAreaView>
+      </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.galleryContainer}>
+    <View style={styles.galleryContainer}>
       <ScrollView
         ref={scrollViewRef}
         style={styles.scrollView}
@@ -345,21 +305,8 @@ export const Gallery = (props: GalleryProps) => {
         {renderFooter()}
       </ScrollView>
 
-      {/* Card Details Overlay */}
-      {selectedCard && (
-        <Overlay
-          isVisible={true}
-          toggleOverlay={() => setSelectedCard(null)}
-          type="fullscreen"
-          showClose={false}
-        >
-          <CardDetails
-            card={selectedCard}
-            onClose={() => setSelectedCard(null)}
-          />
-        </Overlay>
-      )}
-    </SafeAreaView>
+      {/* Details shown on dedicated screen now */}
+    </View>
   );
 };
 

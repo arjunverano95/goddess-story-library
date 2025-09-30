@@ -1,5 +1,6 @@
 import {FlashList} from '@shopify/flash-list';
-import {useCallback, useMemo, useRef, useState} from 'react';
+import {useRouter} from 'expo-router';
+import {useCallback, useMemo, useRef} from 'react';
 import {
   Platform,
   RefreshControl,
@@ -11,8 +12,6 @@ import {
 
 import {Colors, Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
-import Overlay from '../Overlay';
-import {CardDetails} from '../SetList/CardDetails';
 import GalleryItem from './GalleryItem';
 
 interface GalleryProps {
@@ -44,13 +43,14 @@ export const Gallery = (props: GalleryProps) => {
     isLoading,
     fetchNextPage,
     isFetchingNextPage,
+    hasMorePages,
     refetch,
     isRefreshing = false,
   } = props;
 
-  const [selectedCard, setSelectedCard] = useState<GSLCard | null>(null);
   const {width} = useWindowDimensions();
   const flashListRef = useRef(null);
+  const router = useRouter();
 
   // Responsive column layout
   const columnCount = useMemo(() => {
@@ -84,10 +84,26 @@ export const Gallery = (props: GalleryProps) => {
     return rows;
   }, [data, columnCount]);
 
-  // Memoized press handler to prevent re-renders
-  const handleCardPress = useCallback((item: GSLCard) => {
-    setSelectedCard(item);
-  }, []);
+  // Navigate to details screen on press
+  const handleCardPress = useCallback(
+    (item: GSLCard) => {
+      router.push({
+        pathname: '/card-details',
+        params: {
+          ID: item.ID,
+          Code: item.Code,
+          SetNumber: item.SetNumber,
+          CardNumber: item.CardNumber,
+          CharacterName: item.CharacterName,
+          SeriesName: item.SeriesName,
+          Rarity: item.Rarity,
+          ImageUrl: item.ImageUrl,
+          HasImage: item.HasImage,
+        },
+      });
+    },
+    [router],
+  );
 
   // Render row function with optimized memoization
   const renderRow = useCallback(
@@ -134,10 +150,10 @@ export const Gallery = (props: GalleryProps) => {
 
   // Load more handler
   const handleLoadMore = useCallback(() => {
-    if (fetchNextPage && !isFetchingNextPage) {
+    if (fetchNextPage && hasMorePages && !isFetchingNextPage) {
       fetchNextPage();
     }
-  }, [fetchNextPage, isFetchingNextPage]);
+  }, [fetchNextPage, hasMorePages, isFetchingNextPage]);
 
   // Pull to refresh handler
   const handleRefresh = useCallback(() => {
@@ -157,8 +173,8 @@ export const Gallery = (props: GalleryProps) => {
     );
   }
 
-  // Empty state
-  if ((!data || data.length === 0) && !isLoading) {
+  // Empty state mirrors web: only when we have data but it's empty
+  if (!isLoading && data && data.length === 0) {
     return (
       <View style={styles.galleryContainer}>
         <View style={styles.emptyContainer}>
@@ -188,23 +204,7 @@ export const Gallery = (props: GalleryProps) => {
             tintColor={Colors.primary}
           />
         }
-        estimatedItemSize={230}
       />
-
-      {/* Card Details Overlay */}
-      {selectedCard && (
-        <Overlay
-          isVisible={true}
-          toggleOverlay={() => setSelectedCard(null)}
-          type="fullscreen"
-          showClose={false}
-        >
-          <CardDetails
-            card={selectedCard}
-            onClose={() => setSelectedCard(null)}
-          />
-        </Overlay>
-      )}
     </View>
   );
 };

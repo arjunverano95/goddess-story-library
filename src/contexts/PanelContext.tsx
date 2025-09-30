@@ -1,20 +1,23 @@
 import React, {createContext, ReactNode, useContext} from 'react';
 
 interface PanelContextType {
-  openPanel: () => void;
+  togglePanel: () => void;
+  isOpen: boolean;
 }
 
 const PanelContext = createContext<PanelContextType | undefined>(undefined);
 
 export const PanelProvider = ({
   children,
-  openPanel,
+  togglePanel,
+  isOpen,
 }: {
   children: ReactNode;
-  openPanel: () => void;
+  togglePanel: () => void;
+  isOpen: boolean;
 }) => {
   return (
-    <PanelContext.Provider value={{openPanel}}>
+    <PanelContext.Provider value={{togglePanel, isOpen}}>
       {children}
     </PanelContext.Provider>
   );

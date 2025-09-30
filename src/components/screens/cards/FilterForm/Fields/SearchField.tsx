@@ -2,11 +2,10 @@ import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
+import {Overlay} from '@/src/components';
+import {Colors} from '@/src/constants';
 import {MaterialIcons} from '@expo/vector-icons';
 import {ListItem, SearchBar, Text} from 'react-native-elements';
-
-import {Colors} from '../../../../constants';
-import Overlay from '../../../Overlay';
 
 interface SearchFieldProps {
   label: string;

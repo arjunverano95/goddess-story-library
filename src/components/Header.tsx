@@ -1,27 +1,25 @@
 import {useNavigation} from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {MaterialIcons} from '@expo/vector-icons';
 import {Colors} from '../constants';
-import {usePanel} from '../contexts/PanelContext';
 
 interface HeaderProps {
+  title?: string;
   children?: React.ReactNode;
   showBackButton?: boolean;
 }
 
 const Header = (props: HeaderProps) => {
-  const {children, showBackButton} = props;
+  const {children, showBackButton, title} = props;
   const navigation = useNavigation();
-  const {openPanel} = usePanel();
 
   const menuScale = useSharedValue(1);
   const backScale = useSharedValue(1);
@@ -38,15 +36,6 @@ const Header = (props: HeaderProps) => {
     };
   });
 
-  const handleMenuPress = () => {
-    menuScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
-    setTimeout(() => {
-      menuScale.value = withSpring(1, {damping: 15, stiffness: 300});
-    }, 100);
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    openPanel();
-  };
-
   const handleBackPress = async () => {
     backScale.value = withSpring(0.9, {damping: 15, stiffness: 300});
     setTimeout(() => {
@@ -57,15 +46,14 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <SafeAreaView
+    <View
       style={[
         styles.headerContainer,
         showBackButton ? {backgroundColor: Colors.background} : {},
       ]}
-      edges={['top']}
     >
       <View style={styles.headerContent}>
-        {showBackButton ? (
+        {showBackButton && (
           <Animated.View style={backAnimatedStyle}>
             <TouchableOpacity
               style={styles.toggleDrawerContainer}
@@ -74,35 +62,44 @@ const Header = (props: HeaderProps) => {
               <MaterialIcons name="arrow-back" size={24} color={Colors.black} />
             </TouchableOpacity>
           </Animated.View>
-        ) : (
-          <Animated.View style={menuAnimatedStyle}>
-            <TouchableOpacity
-              style={styles.toggleDrawerContainer}
-              onPress={handleMenuPress}
-            >
-              <MaterialIcons name="menu" size={24} color={Colors.black} />
-            </TouchableOpacity>
-          </Animated.View>
         )}
 
-        {children && (
-          <View style={styles.headerContentContainer}>{props.children}</View>
-        )}
+        {title ? (
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{title}</Text>
+          </View>
+        ) : null}
+
+        {children ? (
+          <View style={styles.headerContentContainer}>{children}</View>
+        ) : null}
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   headerContainer: {
+    paddingTop: 20,
     backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
   },
   headerContent: {
     flexDirection: 'row',
-    paddingBottom: 8,
+  },
+  titleContainer: {
+    flex: 1,
+    paddingLeft: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 16,
+    color: Colors.black,
   },
   toggleDrawerContainer: {
-    marginTop: 10,
+    marginTop: 5,
     marginHorizontal: 5,
     height: 46,
     justifyContent: 'center',
