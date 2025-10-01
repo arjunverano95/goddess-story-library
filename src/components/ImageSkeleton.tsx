@@ -1,46 +1,37 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withRepeat,
-  withTiming,
-} from 'react-native-reanimated';
+import React, {useEffect, useRef, useState} from 'react';
+import {YStack} from 'tamagui';
 
 interface ImageSkeletonProps {
   style?: any;
 }
 
 const ImageSkeleton: React.FC<ImageSkeletonProps> = ({style}) => {
-  const opacity = useSharedValue(0.3);
+  const [isHigh, setIsHigh] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    opacity.value = withRepeat(withTiming(0.8, {duration: 1200}), -1, true);
-  }, [opacity]);
-
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: opacity.value,
+    intervalRef.current = setInterval(() => {
+      setIsHigh((prev) => !prev);
+    }, 1200);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  });
+  }, []);
 
   return (
-    <Animated.View style={[styles.skeleton, style, animatedStyle]}>
-      <View style={styles.skeletonContent} />
-    </Animated.View>
+    <YStack
+      animation="medium"
+      opacity={isHigh ? 0.8 : 0.3}
+      style={style}
+      backgroundColor="#E8E8E8"
+      borderRadius={8}
+      overflow="hidden"
+    >
+      <YStack flex={1} backgroundColor="#F0F0F0" />
+    </YStack>
   );
 };
 
-const styles = StyleSheet.create({
-  skeleton: {
-    backgroundColor: '#E8E8E8',
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  skeletonContent: {
-    flex: 1,
-    backgroundColor: '#F0F0F0',
-  },
-});
+// migrated to Tamagui layout with animations-moti pulse
 
 export default ImageSkeleton;

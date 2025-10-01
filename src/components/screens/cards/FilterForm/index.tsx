@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Pressable, StyleSheet, TouchableOpacity} from 'react-native';
 
-import {MaterialIcons} from '@expo/vector-icons';
-import {Text} from 'react-native-elements';
-
-import {Colors} from '@/src/constants';
 import {GSLCard} from '@/src/models/GSLCard';
+import {MaterialIcons} from '@expo/vector-icons';
+import {Text, XStack, YStack, useTheme} from 'tamagui';
 import {InputField, SearchField} from './Fields';
 
 interface FilterFormProps {
@@ -90,13 +88,21 @@ const FilterForm = (props: FilterFormProps) => {
     });
   };
 
+  const theme = useTheme();
   return (
     <>
-      <View style={styles.formContainer}>
-        <View style={styles.dragHandle} />
-        <View style={styles.formHeader}>
-          <MaterialIcons name="tune" size={40} color={Colors.black} />
-          <Text h3 style={styles.title}>
+      <YStack style={[styles.formContainer]} backgroundColor="$bg">
+        <YStack style={styles.dragHandle} backgroundColor="$borderColor" />
+        <XStack
+          style={styles.formHeader}
+          borderBottomColor={theme.borderColor?.val as any}
+        >
+          <MaterialIcons
+            name="tune"
+            size={40}
+            color={theme.color?.val || '#43484d'}
+          />
+          <Text style={styles.title} fontSize={24} fontWeight="700">
             {'Filter'}
           </Text>
           <Pressable
@@ -119,9 +125,9 @@ const FilterForm = (props: FilterFormProps) => {
           >
             <Text>{'Reset'}</Text>
           </Pressable>
-        </View>
+        </XStack>
 
-        <View style={styles.formFields}>
+        <YStack style={styles.formFields}>
           <SearchField
             value={formData.SetNumber}
             label={'Set'}
@@ -181,11 +187,11 @@ const FilterForm = (props: FilterFormProps) => {
               clearAll('SeriesName');
             }}
           />
-        </View>
+        </YStack>
 
-        <View style={styles.submitContainer}>
+        <YStack style={styles.submitContainer}>
           <TouchableOpacity
-            style={styles.submitButton}
+            style={[styles.submitButton, {backgroundColor: theme.primary?.val}]}
             onPress={() => {
               // Convert back to GSLCard format for submission
               const submitData: GSLCard = {
@@ -205,15 +211,14 @@ const FilterForm = (props: FilterFormProps) => {
           >
             <Text style={styles.submitButtonText}>Submit</Text>
           </TouchableOpacity>
-        </View>
-      </View>
+        </YStack>
+      </YStack>
     </>
   );
 };
 
 const styles = StyleSheet.create({
   formContainer: {
-    backgroundColor: Colors.background,
     paddingHorizontal: 25,
     flex: 1,
     justifyContent: 'space-between',
@@ -221,7 +226,6 @@ const styles = StyleSheet.create({
   dragHandle: {
     width: 40,
     height: 4,
-    backgroundColor: Colors.greyOutline,
     borderRadius: 2,
     alignSelf: 'center',
     marginTop: 10,
@@ -232,7 +236,6 @@ const styles = StyleSheet.create({
     paddingBottom: 25,
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: Colors.greyOutline,
   },
   title: {marginLeft: 10, flex: 1},
   clear: {
@@ -250,7 +253,6 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     marginHorizontal: 0,
-    backgroundColor: Colors.primary,
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -258,7 +260,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   submitButtonText: {
-    color: Colors.white,
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
   },

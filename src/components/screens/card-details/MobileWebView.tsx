@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {WebView} from 'react-native-webview';
-import {Colors} from '../../../constants';
+import {YStack} from 'tamagui';
 import {GSLCard} from '../../../models/GSLCard';
 
 interface MobileWebViewProps {
@@ -85,7 +85,13 @@ const MobileWebView: React.FC<MobileWebViewProps> = ({data}) => {
   `;
 
   return (
-    <View style={styles.container}>
+    <YStack
+      flex={1}
+      margin={15}
+      backgroundColor="$cardBg"
+      borderRadius={8}
+      overflow="hidden"
+    >
       <WebView
         ref={webViewRef}
         source={{html: googleSearchHTML}}
@@ -99,18 +105,11 @@ const MobileWebView: React.FC<MobileWebViewProps> = ({data}) => {
           console.log('WebView message:', event.nativeEvent.data);
         }}
       />
-    </View>
+    </YStack>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 15,
-    backgroundColor: Colors.white,
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
   webView: {
     flex: 1,
     backgroundColor: 'transparent',

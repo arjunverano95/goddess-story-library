@@ -1,7 +1,7 @@
 import {useLocalSearchParams} from 'expo-router';
 import React, {useEffect, useMemo, useState} from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
-import RNAnimated, {FadeIn} from 'react-native-reanimated';
+import {Animated, StyleSheet} from 'react-native';
+import {XStack, YStack} from 'tamagui';
 
 import {Gallery, PanelHeader} from '@/src/components';
 import {ListingRail} from '@/src/components/screens/cards';
@@ -129,8 +129,7 @@ export default function CardsScreen() {
 
   return (
     <PanelProvider togglePanel={togglePanel} isOpen={isOpen}>
-      <View style={styles.container}>
-        {/* Left Side Panel */}
+      <XStack flex={1} flexDirection="row" backgroundColor="$background">
         <Animated.View
           style={[
             styles.panel,
@@ -145,12 +144,8 @@ export default function CardsScreen() {
           />
         </Animated.View>
 
-        {/* Main Content */}
-        <View style={styles.mainContent}>
-          <RNAnimated.View
-            style={{flex: 1}}
-            entering={FadeIn.duration(800).delay(200)}
-          >
+        <YStack flex={1} backgroundColor="$background">
+          <YStack flex={1} animation="quick" enterStyle={{opacity: 0, y: 10}}>
             <PanelHeader
               title={
                 filter.SetNumber
@@ -182,26 +177,17 @@ export default function CardsScreen() {
               refetch={refetch}
               isRefreshing={isFetching && !isFetchingNextPage}
             />
-          </RNAnimated.View>
-        </View>
-      </View>
+          </YStack>
+        </YStack>
+      </XStack>
     </PanelProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-  },
   panel: {
     height: '100%',
     backgroundColor: 'white',
     overflow: 'hidden',
-  },
-  mainContent: {
-    flex: 1,
-    height: '100%',
-    backgroundColor: '#fffdfd',
   },
 });

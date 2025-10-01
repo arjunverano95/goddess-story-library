@@ -1,9 +1,9 @@
 'use client';
-import {Colors} from '@/src/constants';
 import {useListings} from '@/src/hooks';
+import {Image} from 'expo-image';
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
-
+import {Pressable, StyleSheet} from 'react-native';
+import {Text, YStack, useTheme} from 'tamagui';
 interface ListingRailProps {
   onListingSelect?: (id: string) => void;
   currentListing?: string;
@@ -11,6 +11,7 @@ interface ListingRailProps {
 
 const ListingRail = ({onListingSelect, currentListing}: ListingRailProps) => {
   const {listings} = useListings();
+  const theme = useTheme();
 
   const handleListingSelect = (id: string) => {
     if (onListingSelect) {
@@ -19,8 +20,13 @@ const ListingRail = ({onListingSelect, currentListing}: ListingRailProps) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
+    <YStack
+      style={[
+        styles.container,
+        {backgroundColor: theme.subtleBg?.val || '#f8f9fa'},
+      ]}
+    >
+      <YStack style={styles.content}>
         {listings.map((item, index) => (
           <Pressable
             key={`${item.name}-${index}-${Date.now()}`}
@@ -31,26 +37,19 @@ const ListingRail = ({onListingSelect, currentListing}: ListingRailProps) => {
             ]}
           >
             <Image
-              resizeMode={'cover'}
+              contentFit={'cover'}
               style={styles.itemImage}
               source={{uri: item.image_url}}
-              onError={(error) => {
-                console.log(
-                  'Icon load error for',
-                  item.name,
-                  ':',
-                  error.nativeEvent.error,
-                );
-              }}
-              onLoad={() => {
-                console.log('Icon loaded successfully for', item.name);
-              }}
             />
-            <Text style={styles.itemLabel}>{item.name}</Text>
+            <Text
+              style={[styles.itemLabel, {color: theme.color?.val || '#43484d'}]}
+            >
+              {item.name}
+            </Text>
           </Pressable>
         ))}
-      </View>
-    </View>
+      </YStack>
+    </YStack>
   );
 };
 
@@ -94,7 +93,6 @@ const styles = StyleSheet.create({
   },
   itemLabel: {
     fontSize: 10,
-    color: Colors.black,
     fontWeight: '500',
     textAlign: 'center',
     lineHeight: 12,

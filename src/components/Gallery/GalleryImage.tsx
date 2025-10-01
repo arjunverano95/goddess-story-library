@@ -3,11 +3,11 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {ImageStyle, StyleProp, ViewStyle} from 'react-native';
 import Animated, {
   Easing,
-  FadeIn,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import {YStack} from 'tamagui';
 
 interface GalleryImageProps {
   imageUrl?: string;
@@ -65,11 +65,15 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
       : {uri: imageUrl};
 
   return (
-    <Animated.View entering={FadeIn.duration(200)} style={containerStyle}>
+    <YStack
+      animation="quick"
+      enterStyle={{opacity: 0, y: 8}}
+      style={containerStyle}
+    >
       {/* Placeholder layer */}
       <Animated.View style={[{position: 'absolute', inset: 0}, phStyle]}>
         <Image
-          style={[style, {resizeMode: undefined}]}
+          style={style}
           source={require('../../../assets/placeholder.png')}
           contentFit="cover"
           // Keep transition = 0; we control crossfade via Reanimated
@@ -82,7 +86,7 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
       {/* Real image (remote or fallback) */}
       <Animated.View style={[realStyle]}>
         <Image
-          style={[style, {resizeMode: undefined}]}
+          style={style}
           source={realSource}
           contentFit="cover"
           onError={onError}
@@ -93,7 +97,7 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
           priority="normal"
         />
       </Animated.View>
-    </Animated.View>
+    </YStack>
   );
 });
 

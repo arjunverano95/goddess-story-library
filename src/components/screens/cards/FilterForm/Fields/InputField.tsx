@@ -1,8 +1,6 @@
-import {Colors} from '@/src/constants';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-
-import {ListItem} from 'react-native-elements';
+import {Input, YStack, useTheme} from 'tamagui';
 
 interface InputFieldProps {
   label: string;
@@ -13,19 +11,24 @@ interface InputFieldProps {
 
 export const InputField = (props: InputFieldProps) => {
   const {label, value, onFocus, onChangeText} = props;
+  const theme = useTheme();
   return (
-    <ListItem containerStyle={styles.listItem}>
-      <ListItem.Content>
-        <ListItem.Input
-          style={styles.inputField}
-          placeholder={label}
-          placeholderTextColor={Colors.greyOutline}
-          onFocus={onFocus}
-          onChangeText={onChangeText}
-          value={value}
-        />
-      </ListItem.Content>
-    </ListItem>
+    <YStack
+      style={styles.listItem}
+      borderBottomWidth={1}
+      borderColor={theme.borderColor?.val as any}
+    >
+      <Input
+        style={styles.inputField}
+        placeholder={label}
+        placeholderTextColor={theme.muted?.val}
+        onFocus={onFocus}
+        onChangeText={onChangeText}
+        value={value}
+        backgroundColor="transparent"
+        color={theme.color?.val as any}
+      />
+    </YStack>
   );
 };
 
@@ -34,12 +37,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     paddingVertical: 5,
     paddingHorizontal: 0,
-    borderBottomWidth: 1,
-    borderColor: Colors.greyOutline,
     height: 50,
   },
   inputField: {
     textAlign: 'left',
-    color: Colors.black,
+    color: '#43484d',
   },
 });

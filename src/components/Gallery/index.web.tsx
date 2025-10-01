@@ -1,15 +1,8 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {
-  Platform,
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Platform, RefreshControl, StyleSheet} from 'react-native';
+import {ScrollView, Text, YStack} from 'tamagui';
 
 import {useRouter} from 'expo-router';
-import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import {PaginationInfo} from '../../services/api';
 import GalleryItem from './GalleryItem';
@@ -255,27 +248,27 @@ export const Gallery = (props: GalleryProps) => {
 
   if (isLoading) {
     return (
-      <View style={styles.galleryContainer}>
-        <View style={styles.loadingContainer}>
+      <YStack style={styles.galleryContainer}>
+        <YStack style={styles.loadingContainer}>
           <Text style={styles.loadingText}>Loading cards...</Text>
-        </View>
-      </View>
+        </YStack>
+      </YStack>
     );
   }
 
   // Only show "No cards found" if we have data but it's empty
   if (!isLoading && data && data.length === 0) {
     return (
-      <View style={styles.galleryContainer}>
+      <YStack style={styles.galleryContainer}>
         <div style={styles.emptyContainer}>
           <Text style={styles.emptyText}>No cards found</Text>
         </div>
-      </View>
+      </YStack>
     );
   }
 
   return (
-    <View style={styles.galleryContainer}>
+    <YStack style={styles.galleryContainer}>
       <ScrollView
         ref={scrollViewRef}
         style={styles.scrollView}
@@ -290,8 +283,8 @@ export const Gallery = (props: GalleryProps) => {
           <RefreshControl
             refreshing={isRefreshing}
             onRefresh={handleRefresh}
-            colors={[Colors.primary]}
-            tintColor={Colors.primary}
+            colors={['#D7B23A']}
+            tintColor={'#D7B23A'}
           />
         }
         // removeClippedSubviews={true}
@@ -306,16 +299,12 @@ export const Gallery = (props: GalleryProps) => {
       </ScrollView>
 
       {/* Details shown on dedicated screen now */}
-    </View>
+    </YStack>
   );
 };
 
 const styles = StyleSheet.create({
-  galleryContainer: {
-    flex: 1,
-    backgroundColor: Colors.background,
-    minHeight: 800, // Use viewport units for responsive height
-  },
+  galleryContainer: {flex: 1, backgroundColor: '#FFF9F9', minHeight: 800},
   scrollView: {
     flex: 1,
   },
@@ -343,7 +332,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
-    color: Colors.greyOutline,
+    color: '#8B8D79',
     marginTop: 10,
     textAlign: 'center',
   },
@@ -354,11 +343,7 @@ const styles = StyleSheet.create({
     minHeight: 400,
     width: '100%',
   },
-  emptyText: {
-    fontSize: 16,
-    color: Colors.greyOutline,
-    textAlign: 'center',
-  },
+  emptyText: {fontSize: 16, color: '#8B8D79', textAlign: 'center'},
   footerLoader: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -370,7 +355,7 @@ const styles = StyleSheet.create({
   },
   footerLoaderText: {
     fontSize: 14,
-    color: Colors.greyOutline,
+    color: '#8B8D79',
     textAlign: 'center',
     marginLeft: 10,
   },

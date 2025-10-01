@@ -5,12 +5,11 @@ import {
   Platform,
   RefreshControl,
   StyleSheet,
-  Text,
   useWindowDimensions,
-  View,
 } from 'react-native';
+import {Text, YStack, useTheme} from 'tamagui';
 
-import {Colors, Sizes} from '../../constants';
+import {Sizes} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import GalleryItem from './GalleryItem';
 
@@ -49,6 +48,7 @@ export const Gallery = (props: GalleryProps) => {
   } = props;
 
   const {width} = useWindowDimensions();
+  const theme = useTheme();
   const flashListRef = useRef(null);
   const router = useRouter();
 
@@ -109,27 +109,27 @@ export const Gallery = (props: GalleryProps) => {
   const renderRow = useCallback(
     ({item: row}: {item: GridRow}) => {
       return (
-        <View style={styles.rowContainer}>
+        <YStack style={styles.rowContainer}>
           {row.items.map((card, index) => (
-            <View
+            <YStack
               key={`${row.id}-${index}`}
               style={[styles.itemContainer, {width: itemWidth}]}
             >
               <GalleryItem data={card} onPress={handleCardPress} />
-            </View>
+            </YStack>
           ))}
           {/* Fill empty slots in last row */}
           {row.isLastRow &&
             row.items.length < columnCount &&
             Array.from({length: columnCount - row.items.length}).map(
               (_, index) => (
-                <View
+                <YStack
                   key={`empty-${row.id}-${index}`}
                   style={[styles.itemContainer, {width: itemWidth}]}
                 />
               ),
             )}
-        </View>
+        </YStack>
       );
     },
     [itemWidth, columnCount, handleCardPress],
@@ -142,9 +142,9 @@ export const Gallery = (props: GalleryProps) => {
     if (!isFetchingNextPage) return null;
 
     return (
-      <View style={styles.footerLoader}>
+      <YStack style={styles.footerLoader}>
         <Text style={styles.footerLoaderText}>Loading more...</Text>
-      </View>
+      </YStack>
     );
   }, [isFetchingNextPage]);
 
@@ -165,27 +165,31 @@ export const Gallery = (props: GalleryProps) => {
   // Loading state
   if (isLoading) {
     return (
-      <View style={styles.galleryContainer}>
-        <View style={styles.loadingContainer}>
+      <YStack
+        style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}
+      >
+        <YStack style={styles.loadingContainer}>
           <Text style={styles.loadingText}>Loading cards...</Text>
-        </View>
-      </View>
+        </YStack>
+      </YStack>
     );
   }
 
   // Empty state mirrors web: only when we have data but it's empty
   if (!isLoading && data && data.length === 0) {
     return (
-      <View style={styles.galleryContainer}>
-        <View style={styles.emptyContainer}>
+      <YStack
+        style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}
+      >
+        <YStack style={styles.emptyContainer}>
           <Text style={styles.emptyText}>No cards found</Text>
-        </View>
-      </View>
+        </YStack>
+      </YStack>
     );
   }
 
   return (
-    <View style={styles.galleryContainer}>
+    <YStack style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}>
       <FlashList
         ref={flashListRef}
         data={gridData}
@@ -200,19 +204,19 @@ export const Gallery = (props: GalleryProps) => {
           <RefreshControl
             refreshing={isRefreshing}
             onRefresh={handleRefresh}
-            colors={[Colors.primary]}
-            tintColor={Colors.primary}
+            colors={[theme.primary?.val || '#D7B23A']}
+            tintColor={theme.primary?.val || '#D7B23A'}
           />
         }
       />
-    </View>
+    </YStack>
   );
 };
 
 const styles = StyleSheet.create({
   galleryContainer: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: '#FFF9F9',
     paddingBottom: 20,
   },
   listContainer: {
@@ -235,7 +239,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
-    color: Colors.greyOutline,
+    color: '#8B8D79',
     marginTop: 10,
     textAlign: 'center',
   },
@@ -247,7 +251,7 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 16,
-    color: Colors.greyOutline,
+    color: '#8B8D79',
     textAlign: 'center',
   },
   footerLoader: {
@@ -255,7 +259,7 @@ const styles = StyleSheet.create({
   },
   footerLoaderText: {
     fontSize: 14,
-    color: Colors.greyOutline,
+    color: '#8B8D79',
   },
 });
 

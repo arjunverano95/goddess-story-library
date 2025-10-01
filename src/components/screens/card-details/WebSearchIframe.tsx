@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Colors} from '../../../constants';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, YStack} from 'tamagui';
 import {GSLCard} from '../../../models/GSLCard';
 
 interface WebSearchIframeProps {
@@ -38,8 +38,8 @@ const WebSearchIframe: React.FC<WebSearchIframeProps> = ({data}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchContainer}>
+    <YStack style={styles.container}>
+      <YStack style={styles.searchContainer}>
         <Text style={styles.searchTitle}>
           No image available for: {data.SeriesName} {data.CharacterName}
         </Text>
@@ -52,13 +52,13 @@ const WebSearchIframe: React.FC<WebSearchIframeProps> = ({data}) => {
         >
           <Text style={styles.searchButtonText}>Search Images on Google</Text>
         </TouchableOpacity>
-      </View>
+      </YStack>
 
       {/* Google Custom Search for images */}
-      <View style={styles.imageWebview}>
+      <YStack style={styles.imageWebview}>
         <div className="gcse-searchresults-only"></div>
-      </View>
-    </View>
+      </YStack>
+    </YStack>
   );
 };
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 15,
-    backgroundColor: Colors.white,
+    backgroundColor: '#FFFFFF',
     borderRadius: 8,
     overflow: 'hidden',
   },
@@ -79,25 +79,25 @@ const styles = StyleSheet.create({
   searchTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: Colors.black,
+    color: '#43484d',
     textAlign: 'center',
     marginBottom: 10,
   },
   searchSubtitle: {
     fontSize: 14,
-    color: Colors.black,
+    color: '#43484d',
     textAlign: 'center',
     marginBottom: 20,
     opacity: 0.7,
   },
   searchButton: {
-    backgroundColor: Colors.primary,
+    backgroundColor: '#e85d64',
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 8,
   },
   searchButtonText: {
-    color: Colors.white,
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
   },

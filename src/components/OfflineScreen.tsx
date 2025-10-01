@@ -1,8 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from 'react-native-elements';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Colors} from '../constants';
+import {Button, Text, YStack} from 'tamagui';
 
 interface OfflineScreenProps {
   onRetry: () => void;
@@ -14,84 +12,65 @@ const OfflineScreen: React.FC<OfflineScreenProps> = ({
   isRetrying = false,
 }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.iconContainer}>
-          <Text style={styles.icon}>📡</Text>
-        </View>
+    <SafeAreaView style={{flex: 1}}>
+      <YStack
+        flex={1}
+        backgroundColor="$bg"
+        alignItems="center"
+        justifyContent="center"
+        style={{paddingHorizontal: 20}}
+      >
+        <YStack style={{marginBottom: 24}}>
+          <Text fontSize={64} textAlign="center">
+            📡
+          </Text>
+        </YStack>
 
-        <Text style={styles.title}>No Internet Connection</Text>
-        <Text style={styles.subtitle}>
+        <Text
+          fontSize={24}
+          fontWeight="700"
+          color="$color"
+          textAlign="center"
+          style={{marginBottom: 12}}
+        >
+          No Internet Connection
+        </Text>
+        <Text
+          fontSize={16}
+          color="$muted"
+          textAlign="center"
+          style={{marginBottom: 32, lineHeight: 24}}
+        >
           Please check your internet connection and try again
         </Text>
 
         <Button
-          title={isRetrying ? 'Checking Connection...' : 'Try Again'}
-          onPress={onRetry}
-          loading={isRetrying}
+          backgroundColor="$primary"
+          pressStyle={{backgroundColor: '$primaryPress'}}
+          hoverStyle={{backgroundColor: '$primaryHover'}}
+          borderRadius={8}
+          style={{paddingHorizontal: 32, paddingVertical: 12, marginBottom: 16}}
           disabled={isRetrying}
-          buttonStyle={styles.retryButton}
-          titleStyle={styles.retryButtonText}
-        />
+          onPress={onRetry}
+        >
+          <Text fontSize={16} fontWeight="600" color="#fff">
+            {isRetrying ? 'Checking Connection...' : 'Try Again'}
+          </Text>
+        </Button>
 
-        <Text style={styles.hint}>
+        <Text
+          fontSize={14}
+          color="$muted"
+          textAlign="center"
+          fontStyle="italic"
+        >
           Make sure you&apos;re connected to Wi-Fi or mobile data
         </Text>
-      </View>
+      </YStack>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  iconContainer: {
-    marginBottom: 24,
-  },
-  icon: {
-    fontSize: 64,
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.black,
-    textAlign: 'center',
-    marginBottom: 12,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: Colors.greyOutline,
-    textAlign: 'center',
-    marginBottom: 32,
-    lineHeight: 24,
-  },
-  retryButton: {
-    backgroundColor: Colors.primary,
-    borderRadius: 8,
-    paddingHorizontal: 32,
-    paddingVertical: 12,
-    marginBottom: 16,
-  },
-  retryButtonText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#fff',
-  },
-  hint: {
-    fontSize: 14,
-    color: Colors.greyOutline,
-    textAlign: 'center',
-    fontStyle: 'italic',
-  },
-});
+// migrated to Tamagui components
 
 export default OfflineScreen;

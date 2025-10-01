@@ -1,15 +1,9 @@
 import * as Haptics from 'expo-haptics';
 import React, {useCallback, useMemo} from 'react';
-import {Pressable, StyleSheet, View} from 'react-native';
-import {Badge, Text} from 'react-native-elements';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
-  withTiming,
-} from 'react-native-reanimated';
+import {Pressable, StyleSheet} from 'react-native';
+import Animated from 'react-native-reanimated';
+import {Text, YStack, useTheme} from 'tamagui';
 
-import {Colors} from '../../constants';
 import {GSLCard} from '../../models/GSLCard';
 import GalleryImage from './GalleryImage';
 
@@ -20,26 +14,10 @@ interface GalleryItemProps {
 
 const GalleryItem = React.memo<GalleryItemProps>((props) => {
   const {data, onPress} = props;
-  const scale = useSharedValue(1);
-  const opacity = useSharedValue(1);
-
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      transform: [{scale: scale.value}],
-      opacity: opacity.value,
-    };
-  });
-
+  const theme = useTheme();
   const handlePressIn = useCallback(() => {
-    scale.value = withSpring(0.95, {damping: 15, stiffness: 300});
-    opacity.value = withTiming(0.8, {duration: 100});
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-  }, [scale, opacity]);
-
-  const handlePressOut = useCallback(() => {
-    scale.value = withSpring(1, {damping: 15, stiffness: 300});
-    opacity.value = withTiming(1, {duration: 100});
-  }, [scale, opacity]);
+  }, []);
 
   const handlePress = useCallback(() => {
     onPress(data);
@@ -64,43 +42,65 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
   );
 
   return (
-    <View style={styles.cardContainer}>
-      <Animated.View style={[styles.cardWrapper, animatedStyle]}>
+    <YStack style={styles.cardContainer}>
+      <Animated.View style={[styles.cardWrapper]}>
         <Pressable
           onPress={handlePress}
           onPressIn={handlePressIn}
-          onPressOut={handlePressOut}
+          onPressOut={handlePressIn}
           style={styles.pressable}
         >
-          <View>
-            <Badge
-              containerStyle={styles.setNoBadgeContainer}
-              badgeStyle={styles.badge}
-              textStyle={styles.badgeText}
-              value={badgeValues.setNumber}
-              status="warning"
-            />
-            <Badge
-              containerStyle={styles.cardNoBadgeContainer}
-              badgeStyle={styles.badge}
-              textStyle={styles.badgeText}
-              value={badgeValues.cardNumber}
-              status="success"
-            />
+          <YStack>
+            <YStack
+              position="absolute"
+              top={5}
+              left={10}
+              zIndex={999}
+              height={20}
+              minWidth={40}
+              paddingHorizontal={6}
+              alignItems="center"
+              justifyContent="center"
+              backgroundColor={theme.primary?.val as any}
+              borderRadius={6}
+            >
+              <Text fontSize={10} fontWeight="700" color="#fff">
+                {badgeValues.setNumber}
+              </Text>
+            </YStack>
+            <YStack
+              position="absolute"
+              top={5}
+              right={5}
+              zIndex={999}
+              height={20}
+              minWidth={40}
+              paddingHorizontal={6}
+              alignItems="center"
+              justifyContent="center"
+              backgroundColor={theme.secondary?.val as any}
+              borderRadius={6}
+            >
+              <Text fontSize={10} fontWeight="700" color="#fff">
+                {badgeValues.cardNumber}
+              </Text>
+            </YStack>
             <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
-          </View>
-          <View style={styles.cardFooter}>
-            <View style={styles.cardTitleContainer}>
+          </YStack>
+          <YStack style={styles.cardFooter}>
+            <YStack style={styles.cardTitleContainer}>
               <Text style={styles.cardTitle}>{badgeValues.characterName}</Text>
               <Text style={styles.cardSubTitle}>{badgeValues.rarity}</Text>
-            </View>
-            <View>
-              <Text style={styles.textContent}>{badgeValues.seriesName}</Text>
-            </View>
-          </View>
+            </YStack>
+            <YStack>
+              <Text style={[styles.textContent, {color: theme.muted?.val}]}>
+                {badgeValues.seriesName}
+              </Text>
+            </YStack>
+          </YStack>
         </Pressable>
       </Animated.View>
-    </View>
+    </YStack>
   );
 });
 
@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     aspectRatio: 1,
-    resizeMode: 'cover',
   },
   cardContainer: {
     borderWidth: 0,
@@ -159,7 +158,6 @@ const styles = StyleSheet.create({
   },
   textContent: {
     fontSize: 11,
-    color: Colors.greyOutline,
   },
   cardFooter: {
     paddingHorizontal: 8,

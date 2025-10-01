@@ -1,15 +1,17 @@
-import {DefaultTheme, ThemeProvider} from '@react-navigation/native';
-import {useFonts} from 'expo-font';
+import {DarkTheme, DefaultTheme, ThemeProvider} from '@react-navigation/native';
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import RNAnimated, {FadeIn} from 'react-native-reanimated';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {TamaguiProvider, YStack} from 'tamagui';
 
 import {Stack} from 'expo-router';
+// removed duplicate tamagui import
+import {useColorScheme} from 'react-native';
 import {OfflineScreen} from '../src/components';
 import {useNetworkStatus} from '../src/hooks';
 import {QueryProvider} from '../src/providers/QueryProvider';
+import {config} from '../tamagui.config';
 
 // Suppress pointerEvents deprecation warning
 if (__DEV__) {
@@ -28,15 +30,9 @@ if (__DEV__) {
 }
 
 export default function RootLayout() {
+  const colorScheme = useColorScheme();
   const {isOffline, isChecking, checkNetworkStatus} = useNetworkStatus();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+  // Fonts are embedded via app.json expo-font plugin; no runtime loading
 
   // Show offline screen when there's no internet connection
   if (isOffline) {
@@ -52,26 +48,27 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaProvider>
-        <RNAnimated.View
-          style={{flex: 1}}
-          entering={FadeIn.duration(500).delay(100)}
-        >
-          <QueryProvider>
-            <ThemeProvider value={DefaultTheme}>
-              <Stack
-                screenOptions={{headerShown: false}}
-                initialRouteName="(tabs)"
+        <TamaguiProvider config={config}>
+          <YStack flex={1} animation="quick" enterStyle={{opacity: 0, y: 10}}>
+            <QueryProvider>
+              <ThemeProvider
+                value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
               >
-                <Stack.Screen name="(tabs)" />
-                <Stack.Screen
-                  name="card-details"
-                  options={{presentation: 'card'}}
-                />
-              </Stack>
-              <StatusBar style="auto" />
-            </ThemeProvider>
-          </QueryProvider>
-        </RNAnimated.View>
+                <Stack
+                  screenOptions={{headerShown: false}}
+                  initialRouteName="(tabs)"
+                >
+                  <Stack.Screen name="(tabs)" />
+                  <Stack.Screen
+                    name="card-details"
+                    options={{presentation: 'card'}}
+                  />
+                </Stack>
+                <StatusBar style="auto" />
+              </ThemeProvider>
+            </QueryProvider>
+          </YStack>
+        </TamaguiProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

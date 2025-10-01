@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {Overlay} from '@/src/components';
-import {Colors} from '@/src/constants';
 import {MaterialIcons} from '@expo/vector-icons';
-import {ListItem, SearchBar, Text} from 'react-native-elements';
+import {FlashList} from '@shopify/flash-list';
+import {Input, Sheet, Text, XStack, YStack, useTheme} from 'tamagui';
+// remove unused alias
 
 interface SearchFieldProps {
   label: string;
@@ -33,7 +33,8 @@ export const SearchField = (props: SearchFieldProps) => {
   const searchBarRef = useRef<any>(null);
   // const {theme} = useTheme();
 
-  const backgroundColor = Colors.searchBg;
+  const theme = useTheme();
+  const backgroundColor = theme.subtleBg?.val ?? '#F7D6D5';
 
   // Normalize selected values to an array
   const selectedValues = useMemo<string[]>(
@@ -85,130 +86,183 @@ export const SearchField = (props: SearchFieldProps) => {
       data.filter((item) => String(item).toLowerCase().includes(lower)),
     );
   };
+  const onChangeText = (text?: string) => handleSearch(text ?? '');
   const renderItem = useCallback(
     ({item}: {item: string}) => {
       const checked = selectedValues.includes(item);
       return (
-        <ListItem containerStyle={styles.selectListItem}>
-          <ListItem.CheckBox
-            iconType="material-community"
-            checkedIcon="checkbox-marked"
-            uncheckedIcon="checkbox-blank-outline"
-            checked={checked}
-            onPress={() => {
-              onSelect(item);
-              if (!multiSelect) toggleOverlay();
-            }}
-          />
-          <ListItem.Content>
-            <ListItem.Subtitle>{item}</ListItem.Subtitle>
-          </ListItem.Content>
-        </ListItem>
+        <TouchableOpacity
+          style={styles.selectListItem}
+          onPress={() => {
+            onSelect(item);
+            if (!multiSelect) toggleOverlay();
+          }}
+        >
+          <XStack
+            alignItems="center"
+            justifyContent="flex-start"
+            style={{paddingHorizontal: 10, paddingVertical: 8}}
+          >
+            <MaterialIcons
+              name={checked ? 'check-box' : 'check-box-outline-blank'}
+              size={22}
+              color={
+                checked
+                  ? theme.primary?.val || '#D7B23A'
+                  : theme.muted?.val || '#8B8D79'
+              }
+            />
+            <Text>{item}</Text>
+          </XStack>
+        </TouchableOpacity>
       );
     },
-    [multiSelect, onSelect, selectedValues, toggleOverlay],
+    [
+      multiSelect,
+      onSelect,
+      selectedValues,
+      toggleOverlay,
+      theme.primary?.val,
+      theme.muted?.val,
+    ],
   );
 
   return (
     <>
-      <ListItem
-        containerStyle={[styles.listItem, styles.listItemText]}
+      <TouchableOpacity
+        style={[
+          styles.listItem,
+          styles.listItemText,
+          {borderColor: theme.borderColor?.val},
+        ]}
         onPress={() => {
           onPress();
           toggleOverlay();
         }}
       >
-        <ListItem.Content>
+        <XStack
+          alignItems="center"
+          justifyContent="space-between"
+          style={{paddingHorizontal: 10, paddingVertical: 5}}
+        >
           <Text
             style={[
               styles.formText,
-              selectedValues.length === 0 ? undefined : {color: Colors.black},
+              selectedValues.length === 0
+                ? undefined
+                : {color: theme.color?.val},
             ]}
             numberOfLines={2}
           >
             {selectedValues.length === 0 ? label : selectedValues.join(', ')}
           </Text>
-        </ListItem.Content>
-        <MaterialIcons name="arrow-forward" size={24} color={Colors.black} />
-      </ListItem>
-
-      <Overlay
-        isVisible={isOverlayVisible}
-        toggleOverlay={toggleOverlay}
-        type="fullscreen"
-      >
-        <View style={styles.searchOverlayContainer}>
-          {/* Header */}
-          <View style={styles.searchHeader}>
-            <Text h4 style={styles.searchTitle}>
-              {label}
-            </Text>
-
-            <View style={styles.headerActions}>
-              {/* Optional Clear (only shows when something is selected) */}
-              {selectedValues.length > 0 && (
-                <TouchableOpacity
-                  style={styles.clearButton}
-                  onPress={() => {
-                    if (onClearAll) {
-                      onClearAll();
-                    } else {
-                      // Fallback: Clear is delegated to the parent via onSelect for single values;
-                      // For multi-select parents typically handle remove/toggle.
-                      // Here we try to "clear all" by toggling off each selected item.
-                      // Parent should support this by updating `value` accordingly.
-                      selectedValues.forEach((v) => onSelect(v));
-                    }
-                  }}
-                >
-                  <Text style={styles.clearButtonText}>Clear</Text>
-                </TouchableOpacity>
-              )}
-              <TouchableOpacity
-                style={styles.closeButton}
-                onPress={toggleOverlay}
-              >
-                <MaterialIcons name="close" size={24} color={Colors.black} />
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          {/* Search */}
-          <SearchBar
-            ref={searchBarRef}
-            lightTheme={true}
-            containerStyle={styles.searchBarContainer}
-            inputContainerStyle={{backgroundColor}}
-            placeholder={label}
-            onChangeText={handleSearch}
-            value={searchValue}
-            platform="default"
+          <MaterialIcons
+            name="arrow-forward"
+            size={24}
+            color={theme.color?.val}
           />
+        </XStack>
+      </TouchableOpacity>
 
-          {/* List */}
-          <SafeAreaView style={styles.overlayContentContainer}>
-            <FlatList
-              data={listData}
-              renderItem={renderItem}
-              keyExtractor={(item) => String(item)}
-              extraData={selectedValues}
-              keyboardShouldPersistTaps="handled"
-            />
-          </SafeAreaView>
+      <Sheet
+        modal
+        open={isOverlayVisible}
+        onOpenChange={setIsOverlayVisible}
+        snapPointsMode="fit"
+      >
+        <Sheet.Overlay />
+        <Sheet.Frame padding={0}>
+          <YStack style={styles.searchOverlayContainer}>
+            {/* Header */}
+            <XStack
+              style={[
+                styles.searchHeader,
+                {borderBottomColor: theme.borderColor?.val},
+              ]}
+            >
+              <Text style={styles.searchTitle} fontSize={20} fontWeight="700">
+                {label}
+              </Text>
 
-          {/* Multi-select footer */}
-          {multiSelect && (
-            <View style={styles.footer}>
-              <TouchableOpacity
-                style={styles.doneButton}
-                onPress={toggleOverlay}
-              >
-                <Text style={styles.doneButtonText}>Done</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        </View>
-      </Overlay>
+              <XStack style={styles.headerActions}>
+                {/* Optional Clear (only shows when something is selected) */}
+                {selectedValues.length > 0 && (
+                  <TouchableOpacity
+                    style={styles.clearButton}
+                    onPress={() => {
+                      if (onClearAll) {
+                        onClearAll();
+                      } else {
+                        // Fallback: Clear is delegated to the parent via onSelect for single values;
+                        // For multi-select parents typically handle remove/toggle.
+                        // Here we try to "clear all" by toggling off each selected item.
+                        // Parent should support this by updating `value` accordingly.
+                        selectedValues.forEach((v) => onSelect(v));
+                      }
+                    }}
+                  >
+                    <Text
+                      style={[
+                        styles.clearButtonText,
+                        {color: theme.primary?.val},
+                      ]}
+                    >
+                      Clear
+                    </Text>
+                  </TouchableOpacity>
+                )}
+                <TouchableOpacity
+                  style={styles.closeButton}
+                  onPress={toggleOverlay}
+                >
+                  <MaterialIcons
+                    name="close"
+                    size={24}
+                    color={theme.color?.val}
+                  />
+                </TouchableOpacity>
+              </XStack>
+            </XStack>
+
+            {/* Search */}
+            <YStack style={{paddingHorizontal: 10, paddingVertical: 10}}>
+              <Input
+                ref={searchBarRef}
+                placeholder={label}
+                backgroundColor={backgroundColor as any}
+                onChangeText={onChangeText}
+                value={searchValue}
+              />
+            </YStack>
+
+            {/* List */}
+            <SafeAreaView style={styles.overlayContentContainer}>
+              <FlashList
+                data={listData}
+                renderItem={renderItem}
+                keyExtractor={(item) => String(item)}
+                extraData={selectedValues}
+                keyboardShouldPersistTaps="handled"
+              />
+            </SafeAreaView>
+
+            {/* Multi-select footer */}
+            {multiSelect && (
+              <YStack style={styles.footer}>
+                <TouchableOpacity
+                  style={[
+                    styles.doneButton,
+                    {backgroundColor: theme.primary?.val},
+                  ]}
+                  onPress={toggleOverlay}
+                >
+                  <Text style={styles.doneButtonText}>Done</Text>
+                </TouchableOpacity>
+              </YStack>
+            )}
+          </YStack>
+        </Sheet.Frame>
+      </Sheet>
     </>
   );
 };
@@ -219,17 +273,17 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 0,
     borderBottomWidth: 1,
-    borderColor: Colors.greyOutline,
+    borderColor: '#E6E1DE',
     height: 50,
   },
-  formText: {fontSize: 18, color: Colors.greyOutline},
+  formText: {fontSize: 18, color: '#8B8D79'},
   listItemText: {
     paddingLeft: 10,
-    color: Colors.black,
+    color: '#43484d',
   },
   searchOverlayContainer: {
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: '#FFF9F9',
   },
   searchHeader: {
     flexDirection: 'row',
@@ -238,43 +292,40 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderBottomWidth: 1,
-    borderBottomColor: Colors.greyOutline,
+    borderBottomColor: '#E6E1DE',
   },
   headerActions: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  searchTitle: {
-    color: Colors.black,
-  },
+  searchTitle: {color: '#43484d'},
   overlayContentContainer: {
     margin: 10,
     flex: 1,
   },
   searchBarContainer: {
-    backgroundColor: Colors.transparent,
-    borderBottomColor: Colors.transparent,
-    borderTopColor: Colors.transparent,
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderTopColor: 'transparent',
   },
   selectListItem: {
     paddingVertical: 5,
   },
   footer: {
     borderTopWidth: 1,
-    borderTopColor: Colors.greyOutline,
+    borderTopColor: '#E6E1DE',
     paddingHorizontal: 16,
     paddingVertical: 10,
-    backgroundColor: Colors.background,
+    backgroundColor: '#FFF9F9',
   },
   doneButton: {
     paddingVertical: 12,
-    backgroundColor: Colors.primary,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   doneButtonText: {
-    color: Colors.white,
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -283,11 +334,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     marginRight: 8,
   },
-  clearButtonText: {
-    color: Colors.primary,
-    fontSize: 14,
-    fontWeight: '500',
-  },
+  clearButtonText: {fontSize: 14, fontWeight: '500'},
   closeButton: {
     paddingVertical: 8,
     paddingHorizontal: 8,

@@ -1,5 +1,6 @@
 import {Ionicons} from '@expo/vector-icons';
 import React from 'react';
+import {useTheme} from 'tamagui';
 
 type IconName =
   | 'home'
@@ -21,6 +22,7 @@ export function Icon({
   color?: string;
   focused?: boolean;
 }) {
+  const theme = useTheme();
   const map: Record<IconName, keyof typeof Ionicons.glyphMap> = {
     home: focused ? 'home' : 'home-outline',
     compass: focused ? 'compass' : 'compass-outline',
@@ -31,5 +33,6 @@ export function Icon({
     grid: focused ? 'grid' : 'grid-outline',
   };
 
-  return <Ionicons name={map[name]} size={size} color={color} />;
+  const finalColor = color ?? theme.color?.val ?? '#000';
+  return <Ionicons name={map[name]} size={size} color={finalColor} />;
 }

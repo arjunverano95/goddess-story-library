@@ -1,16 +1,19 @@
 import {Tabs} from 'expo-router';
 import React from 'react';
 import {Platform} from 'react-native';
+import {useTheme} from 'tamagui';
 import {Icon} from '../../src/components';
 
 export default function TabsLayout() {
+  const theme = useTheme();
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           paddingTop: Platform.OS === 'web' ? 0 : 10,
-          height: 100,
+          height: Platform.OS === 'web' ? 50 : 100,
+          backgroundColor: theme.cardBg ? theme.cardBg.val : undefined,
         },
       }}
     >

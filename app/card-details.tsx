@@ -1,12 +1,11 @@
 import {Header} from '@/src/components';
-import {CardDetails} from '@/src/components/SetList';
+import {CardDetails} from '@/src/components/screens/card-details';
 import {GSLCard} from '@/src/models/GSLCard';
-import {useLocalSearchParams, useRouter} from 'expo-router';
+import {useLocalSearchParams} from 'expo-router';
 import React, {useMemo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {YStack} from 'tamagui';
 
 export default function CardDetailsScreen() {
-  const router = useRouter();
   const params = useLocalSearchParams();
 
   const card: GSLCard = useMemo(() => {
@@ -29,15 +28,9 @@ export default function CardDetailsScreen() {
     };
   }, [params]);
   return (
-    <View style={styles.container}>
+    <YStack flex={1} backgroundColor="$background">
       <Header title="Card Details" showBackButton />
       <CardDetails card={card} />
-    </View>
+    </YStack>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
