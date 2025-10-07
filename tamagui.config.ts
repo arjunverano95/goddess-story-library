@@ -69,24 +69,24 @@ export const config = createTamagui({
 
   fonts: {
     body: {
-      family: 'SpaceMono',
+      family: 'Inter',
       size: {1: 12, 2: 14, 3: 16, 4: 18, 5: 20, 6: 24},
       lineHeight: {1: 18, 2: 20, 3: 24, 4: 28, 5: 32, 6: 36},
-      weight: {1: '400', 4: '400', 7: '700'},
+      weight: {1: '400', 4: '500', 7: '600'},
       letterSpacing: {1: 0, 7: 0},
     },
     heading: {
-      family: 'SpaceMono',
+      family: 'Inter',
       size: {1: 14, 2: 16, 3: 20, 4: 24, 5: 28, 6: 32},
       lineHeight: {1: 20, 2: 22, 3: 26, 4: 30, 5: 34, 6: 38},
-      weight: {1: '700', 4: '700', 7: '700'},
+      weight: {1: '600', 4: '600', 7: '700'},
       letterSpacing: {1: 0, 7: 0},
     },
     mono: {
-      family: 'SpaceMono',
+      family: 'Inter',
       size: {1: 12, 2: 14, 3: 16, 4: 18},
       lineHeight: {1: 18, 2: 20, 3: 24, 4: 28},
-      weight: {1: '400', 7: '700'},
+      weight: {1: '400', 7: '600'},
       letterSpacing: {1: 0, 7: 0},
     },
   },
@@ -161,6 +161,7 @@ export const config = createTamagui({
     allowedStyleValues: 'somewhat-strict-web',
     defaultTheme: 'light',
   },
+  defaultFont: 'body',
 });
 
 type OurConfig = typeof config;

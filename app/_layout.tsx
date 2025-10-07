@@ -7,6 +7,7 @@ import {TamaguiProvider, YStack} from 'tamagui';
 
 import {Stack} from 'expo-router';
 // removed duplicate tamagui import
+import {useFonts} from 'expo-font';
 import {useColorScheme} from 'react-native';
 import {OfflineScreen} from '../src/components';
 import {useNetworkStatus} from '../src/hooks';
@@ -32,7 +33,10 @@ if (__DEV__) {
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const {isOffline, isChecking, checkNetworkStatus} = useNetworkStatus();
-  // Fonts are embedded via app.json expo-font plugin; no runtime loading
+  useFonts({
+    Inter: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
+    InterItalic: require('../assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf'),
+  });
 
   // Show offline screen when there's no internet connection
   if (isOffline) {

@@ -41,7 +41,10 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/SpaceMono-Regular.ttf"]
+          "fonts": [
+            "./assets/fonts/Inter-VariableFont_opsz,wght.ttf",
+            "./assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf"
+          ]
         }
       ]
     ],

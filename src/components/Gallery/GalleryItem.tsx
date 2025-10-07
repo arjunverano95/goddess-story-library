@@ -31,6 +31,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
       characterName: data.CharacterName,
       rarity: data.Rarity,
       seriesName: data.SeriesName,
+      cardId: data.ID,
     }),
     [
       data.SetNumber,
@@ -38,6 +39,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
       data.CharacterName,
       data.Rarity,
       data.SeriesName,
+      data.ID,
     ],
   );
 
@@ -61,7 +63,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
             <YStack
               position="absolute"
               top={5}
-              left={10}
+              right={5}
               zIndex={999}
               height={20}
               minWidth={40}
@@ -72,24 +74,7 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
               borderRadius={6}
             >
               <Text fontSize={10} fontWeight="700" color="#fff">
-                {badgeValues.setNumber}
-              </Text>
-            </YStack>
-            <YStack
-              position="absolute"
-              top={5}
-              right={5}
-              zIndex={999}
-              height={20}
-              minWidth={40}
-              paddingHorizontal={6}
-              alignItems="center"
-              justifyContent="center"
-              backgroundColor={theme.secondary?.val as any}
-              borderRadius={6}
-            >
-              <Text fontSize={10} fontWeight="700" color="#fff">
-                {badgeValues.cardNumber}
+                {badgeValues.cardId}
               </Text>
             </YStack>
             <GalleryImage
