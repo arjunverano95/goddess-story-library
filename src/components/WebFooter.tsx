@@ -10,8 +10,8 @@ interface WebFooterProps {
 }
 
 const WebFooter: React.FC<WebFooterProps> = ({
-  downloadUrl = 'https://drive.google.com/file/d/1jSvF128oKd4pizkIhjIpiZFEoBw7kRCB/view?usp=share_link',
-  downloadText = 'Download (APK)',
+  downloadUrl = 'https://play.google.com/store/apps/details?id=com.aquila.goddess_story_library',
+  downloadText = 'Get it on Google Play',
   footerText = 'For best experience, download the app',
 }) => {
   const [hideFooter, setHideFooter] = useState(false);
@@ -66,7 +66,7 @@ const WebFooter: React.FC<WebFooterProps> = ({
 
       <TouchableOpacity style={styles.downloadButton} onPress={handleDownload}>
         <Ionicons
-          name="cloud-download"
+          name="logo-google-playstore"
           size={20}
           color={Colors.white}
           style={styles.buttonIcon}
@@ -105,7 +105,9 @@ const styles = StyleSheet.create({
   downloadButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.black,
+    borderWidth: 1,
+    borderColor: Colors.white,
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 8,
