@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, TouchableOpacity} from 'react-native';
+import {Pressable, TouchableOpacity} from 'react-native';
 
 import {GSLCard} from '@/src/models/GSLCard';
 import {MaterialIcons} from '@expo/vector-icons';
@@ -91,10 +91,32 @@ const FilterForm = (props: FilterFormProps) => {
   const theme = useTheme();
   return (
     <>
-      <YStack style={[styles.formContainer]} backgroundColor="$bg">
-        <YStack style={styles.dragHandle} backgroundColor="$borderColor" />
+      <YStack
+        style={{
+          paddingHorizontal: 25,
+          flex: 1,
+          justifyContent: 'space-between',
+        }}
+        backgroundColor="$bg"
+      >
+        <YStack
+          style={{
+            width: 40,
+            height: 4,
+            borderRadius: 2,
+            alignSelf: 'center',
+            marginTop: 10,
+            marginBottom: 10,
+          }}
+          backgroundColor="$borderColor"
+        />
         <XStack
-          style={styles.formHeader}
+          style={{
+            flexDirection: 'row',
+            paddingBottom: 25,
+            alignItems: 'center',
+            borderBottomWidth: 1,
+          }}
           borderBottomColor={theme.borderColor?.val as any}
         >
           <MaterialIcons
@@ -102,11 +124,15 @@ const FilterForm = (props: FilterFormProps) => {
             size={40}
             color={theme.color?.val || '#43484d'}
           />
-          <Text style={styles.title} fontSize={24} fontWeight="700">
+          <Text
+            style={{marginLeft: 10, flex: 1}}
+            fontSize={24}
+            fontWeight="700"
+          >
             {'Filter'}
           </Text>
           <Pressable
-            style={styles.clear}
+            style={{paddingTop: 12, paddingHorizontal: 10}}
             onPress={() => {
               const clearData: GSLCard = {
                 ID: '',
@@ -127,7 +153,7 @@ const FilterForm = (props: FilterFormProps) => {
           </Pressable>
         </XStack>
 
-        <YStack style={styles.formFields}>
+        <YStack style={{flex: 1, paddingTop: 10}}>
           <SearchField
             value={formData.SetNumber}
             label={'Set'}
@@ -189,9 +215,17 @@ const FilterForm = (props: FilterFormProps) => {
           />
         </YStack>
 
-        <YStack style={styles.submitContainer}>
+        <YStack style={{paddingTop: 10, paddingBottom: 20}}>
           <TouchableOpacity
-            style={[styles.submitButton, {backgroundColor: theme.primary?.val}]}
+            style={{
+              marginHorizontal: 0,
+              paddingVertical: 12,
+              paddingHorizontal: 20,
+              borderRadius: 8,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: theme.primary?.val as any,
+            }}
             onPress={() => {
               // Convert back to GSLCard format for submission
               const submitData: GSLCard = {
@@ -209,61 +243,15 @@ const FilterForm = (props: FilterFormProps) => {
               onSubmit(submitData);
             }}
           >
-            <Text style={styles.submitButtonText}>Submit</Text>
+            <Text style={{color: '#FFFFFF', fontSize: 16, fontWeight: 'bold'}}>
+              Submit
+            </Text>
           </TouchableOpacity>
         </YStack>
       </YStack>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  formContainer: {
-    paddingHorizontal: 25,
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  dragHandle: {
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  formHeader: {
-    flexDirection: 'row',
-    paddingBottom: 25,
-    alignItems: 'center',
-    borderBottomWidth: 1,
-  },
-  title: {marginLeft: 10, flex: 1},
-  clear: {
-    paddingTop: 12,
-    paddingHorizontal: 10,
-  },
-  formFields: {
-    flex: 1,
-    paddingTop: 10,
-  },
-
-  submitContainer: {
-    paddingTop: 10,
-    paddingBottom: 20,
-  },
-  submitButton: {
-    marginHorizontal: 0,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  submitButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default FilterForm;

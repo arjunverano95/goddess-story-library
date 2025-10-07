@@ -1,12 +1,7 @@
 import {FlashList} from '@shopify/flash-list';
 import {useRouter} from 'expo-router';
 import {useCallback, useMemo, useRef} from 'react';
-import {
-  Platform,
-  RefreshControl,
-  StyleSheet,
-  useWindowDimensions,
-} from 'react-native';
+import {Platform, RefreshControl, useWindowDimensions} from 'react-native';
 import {Text, YStack, useTheme} from 'tamagui';
 
 import {Sizes} from '../../constants';
@@ -109,11 +104,17 @@ export const Gallery = (props: GalleryProps) => {
   const renderRow = useCallback(
     ({item: row}: {item: GridRow}) => {
       return (
-        <YStack style={styles.rowContainer}>
+        <YStack
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginBottom: 4,
+          }}
+        >
           {row.items.map((card, index) => (
             <YStack
               key={`${row.id}-${index}`}
-              style={[styles.itemContainer, {width: itemWidth}]}
+              style={[{margin: 2}, {width: itemWidth}]}
             >
               <GalleryItem data={card} onPress={handleCardPress} />
             </YStack>
@@ -125,7 +126,7 @@ export const Gallery = (props: GalleryProps) => {
               (_, index) => (
                 <YStack
                   key={`empty-${row.id}-${index}`}
-                  style={[styles.itemContainer, {width: itemWidth}]}
+                  style={[{margin: 2}, {width: itemWidth}]}
                 />
               ),
             )}
@@ -142,8 +143,8 @@ export const Gallery = (props: GalleryProps) => {
     if (!isFetchingNextPage) return null;
 
     return (
-      <YStack style={styles.footerLoader}>
-        <Text style={styles.footerLoaderText}>Loading more...</Text>
+      <YStack style={{paddingVertical: 20}}>
+        <Text style={{fontSize: 14, color: '#8B8D79'}}>Loading more...</Text>
       </YStack>
     );
   }, [isFetchingNextPage]);
@@ -166,10 +167,26 @@ export const Gallery = (props: GalleryProps) => {
   if (isLoading) {
     return (
       <YStack
-        style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}
+        style={{flex: 1, backgroundColor: theme.bg?.val, paddingBottom: 20}}
       >
-        <YStack style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading cards...</Text>
+        <YStack
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingHorizontal: 20,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              color: '#8B8D79',
+              marginTop: 10,
+              textAlign: 'center',
+            }}
+          >
+            Loading cards...
+          </Text>
         </YStack>
       </YStack>
     );
@@ -179,23 +196,37 @@ export const Gallery = (props: GalleryProps) => {
   if (!isLoading && data && data.length === 0) {
     return (
       <YStack
-        style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}
+        style={{flex: 1, backgroundColor: theme.bg?.val, paddingBottom: 20}}
       >
-        <YStack style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No cards found</Text>
+        <YStack
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingHorizontal: 20,
+          }}
+        >
+          <Text style={{fontSize: 16, color: '#8B8D79', textAlign: 'center'}}>
+            No cards found
+          </Text>
         </YStack>
       </YStack>
     );
   }
 
   return (
-    <YStack style={[styles.galleryContainer, {backgroundColor: theme.bg?.val}]}>
+    <YStack
+      style={{flex: 1, backgroundColor: theme.bg?.val, paddingBottom: 20}}
+    >
       <FlashList
         ref={flashListRef}
         data={gridData}
         renderItem={renderRow}
         keyExtractor={keyExtractor}
-        contentContainerStyle={styles.listContainer}
+        contentContainerStyle={{
+          padding: 10,
+          paddingBottom: Platform.select({web: 0, native: 20}),
+        }}
         showsVerticalScrollIndicator={false}
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.3}
@@ -213,54 +244,6 @@ export const Gallery = (props: GalleryProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  galleryContainer: {
-    flex: 1,
-    backgroundColor: '#FFF9F9',
-    paddingBottom: 20,
-  },
-  listContainer: {
-    padding: 10,
-    paddingBottom: Platform.select({web: 0, native: 20}),
-  },
-  rowContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 4,
-  },
-  itemContainer: {
-    margin: 2,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  loadingText: {
-    fontSize: 16,
-    color: '#8B8D79',
-    marginTop: 10,
-    textAlign: 'center',
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  emptyText: {
-    fontSize: 16,
-    color: '#8B8D79',
-    textAlign: 'center',
-  },
-  footerLoader: {
-    paddingVertical: 20,
-  },
-  footerLoaderText: {
-    fontSize: 14,
-    color: '#8B8D79',
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default Gallery;

@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {StyleSheet} from 'react-native';
+// Removed StyleSheet usage
 import {WebView} from 'react-native-webview';
 import {YStack} from 'tamagui';
 import {GSLCard} from '../../../models/GSLCard';
@@ -95,7 +95,7 @@ const MobileWebView: React.FC<MobileWebViewProps> = ({data}) => {
       <WebView
         ref={webViewRef}
         source={{html: googleSearchHTML}}
-        style={styles.webView}
+        style={{flex: 1, backgroundColor: 'transparent'}}
         javaScriptEnabled={true}
         domStorageEnabled={true}
         startInLoadingState={true}
@@ -109,11 +109,6 @@ const MobileWebView: React.FC<MobileWebViewProps> = ({data}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  webView: {
-    flex: 1,
-    backgroundColor: 'transparent',
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default MobileWebView;

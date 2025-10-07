@@ -1,9 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import React, {useState} from 'react';
-import {Modal, Pressable, StyleSheet, TouchableOpacity} from 'react-native';
+import {Modal, Pressable, TouchableOpacity} from 'react-native';
 import Animated from 'react-native-reanimated';
-import {Text, YStack, useTheme,Sheet} from 'tamagui';
+import {Sheet, Text, YStack, useTheme} from 'tamagui';
 
 import {MaterialIcons} from '@expo/vector-icons';
 import {usePanel} from '../../contexts/PanelContext';
@@ -81,14 +81,21 @@ const PanelHeader = (props: HeaderProps) => {
           !showBackButton ? (
             <Animated.View>
               <TouchableOpacity
-                style={styles.toggleDrawerContainer}
+                style={{
+                  marginTop: 5,
+                  marginHorizontal: 5,
+                  height: 46,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingHorizontal: 10,
+                }}
                 activeOpacity={0.8}
                 onPress={handleMenuPress}
               >
                 <MaterialIcons
                   name={isOpen ? 'menu-open' : 'menu'}
                   size={24}
-                  color={theme.color?.val || '#43484d'}
+                  color="white"
                 />
               </TouchableOpacity>
             </Animated.View>
@@ -96,13 +103,19 @@ const PanelHeader = (props: HeaderProps) => {
         }
         right={
           onFilter || onSort ? (
-            <YStack style={styles.menuButtonWrapper}>
-              <TouchableOpacity style={styles.menuButton} onPress={toggleMenu}>
-                <MaterialIcons
-                  name="more-vert"
-                  size={24}
-                  color={theme.color?.val || '#43484d'}
-                />
+            <YStack style={{justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity
+                style={{
+                  marginTop: 5,
+                  marginHorizontal: 5,
+                  height: 46,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingHorizontal: 10,
+                }}
+                onPress={toggleMenu}
+              >
+                <MaterialIcons name="more-vert" size={24} color="white" />
               </TouchableOpacity>
             </YStack>
           ) : undefined
@@ -119,40 +132,54 @@ const PanelHeader = (props: HeaderProps) => {
         onRequestClose={() => setIsMenuOpen(false)}
       >
         <Pressable
-          style={styles.menuBackdrop}
+          style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}
           onPress={() => setIsMenuOpen(false)}
         />
         <YStack
-          style={[
-            styles.dropdownContainer,
-            {
-              backgroundColor: theme.cardBg?.val || 'white',
-              borderColor: '#e0e0e0',
-            },
-          ]}
+          style={{
+            position: 'absolute',
+            top: 50,
+            right: 10,
+            backgroundColor: (theme.cardBg?.val as any) || 'white',
+            borderRadius: 8,
+            paddingVertical: 6,
+            paddingHorizontal: 6,
+            borderWidth: 1,
+            borderColor: '#e0e0e0',
+            elevation: 4,
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowOffset: {width: 0, height: 2},
+            shadowRadius: 6,
+          }}
         >
           {onFilter && formData && filter && (
             <TouchableOpacity
-              style={styles.dropdownItem}
+              style={{
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                minWidth: 120,
+              }}
               onPress={handleOpenFilter}
             >
               <Text
-                style={[
-                  styles.dropdownItemText,
-                  {color: theme.color?.val || '#43484d'},
-                ]}
+                style={{color: theme.color?.val || '#43484d', fontSize: 16}}
               >
                 Filter
               </Text>
             </TouchableOpacity>
           )}
           {onSort && (
-            <TouchableOpacity style={styles.dropdownItem} onPress={handleSort}>
+            <TouchableOpacity
+              style={{
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                minWidth: 120,
+              }}
+              onPress={handleSort}
+            >
               <Text
-                style={[
-                  styles.dropdownItemText,
-                  {color: theme.color?.val || '#43484d'},
-                ]}
+                style={{color: theme.color?.val || '#43484d', fontSize: 16}}
               >
                 Sort
               </Text>
@@ -189,72 +216,6 @@ const PanelHeader = (props: HeaderProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  headerContent: {
-    flexDirection: 'row',
-  },
-  menuButtonWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  menuButton: {
-    marginTop: 5,
-    marginHorizontal: 5,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-  },
-  menuBackdrop: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  dropdownContainer: {
-    position: 'absolute',
-    top: 50,
-    right: 10,
-    backgroundColor: 'white',
-    borderRadius: 8,
-    paddingVertical: 6,
-    paddingHorizontal: 6,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: {width: 0, height: 2},
-    shadowRadius: 6,
-  },
-  dropdownItem: {
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    minWidth: 120,
-  },
-  dropdownItemText: {
-    color: '#43484d',
-    fontSize: 16,
-  },
-  titleContainer: {
-    flex: 1,
-    paddingLeft: 10,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 16,
-    color: '#43484d',
-  },
-  toggleDrawerContainer: {
-    marginTop: 5,
-    marginHorizontal: 5,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default PanelHeader;

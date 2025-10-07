@@ -1,6 +1,6 @@
 import {Image} from 'expo-image';
 import React, {useCallback, useEffect, useState} from 'react';
-import {ImageStyle, StyleProp, ViewStyle} from 'react-native';
+import {ImageStyle, StyleProp} from 'react-native';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -12,14 +12,13 @@ import {YStack} from 'tamagui';
 interface GalleryImageProps {
   imageUrl?: string;
   style: StyleProp<ImageStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
 }
 
 const FADE_MS = 260;
 const EASE = Easing.out(Easing.cubic);
 
 const GalleryImage = React.memo<GalleryImageProps>((props) => {
-  const {imageUrl, style, containerStyle} = props;
+  const {imageUrl, style} = props;
   const [imageLoadFailed, setImageLoadFailed] = useState(false);
 
   // Animated values
@@ -65,11 +64,7 @@ const GalleryImage = React.memo<GalleryImageProps>((props) => {
       : {uri: imageUrl};
 
   return (
-    <YStack
-      animation="quick"
-      enterStyle={{opacity: 0, y: 8}}
-      style={containerStyle}
-    >
+    <YStack animation="quick" enterStyle={{opacity: 0, y: 8}}>
       {/* Placeholder layer */}
       <Animated.View style={[{position: 'absolute', inset: 0}, phStyle]}>
         <Image
@@ -108,8 +103,7 @@ const areEqual = (
 ) => {
   return (
     prevProps.imageUrl === nextProps.imageUrl &&
-    prevProps.style === nextProps.style &&
-    prevProps.containerStyle === nextProps.containerStyle
+    prevProps.style === nextProps.style
   );
 };
 

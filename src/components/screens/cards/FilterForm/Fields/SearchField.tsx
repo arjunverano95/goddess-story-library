@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {MaterialIcons} from '@expo/vector-icons';
@@ -92,7 +92,7 @@ export const SearchField = (props: SearchFieldProps) => {
       const checked = selectedValues.includes(item);
       return (
         <TouchableOpacity
-          style={styles.selectListItem}
+          style={{paddingVertical: 5}}
           onPress={() => {
             onSelect(item);
             if (!multiSelect) toggleOverlay();
@@ -130,11 +130,15 @@ export const SearchField = (props: SearchFieldProps) => {
   return (
     <>
       <TouchableOpacity
-        style={[
-          styles.listItem,
-          styles.listItemText,
-          {borderColor: theme.borderColor?.val},
-        ]}
+        style={{
+          marginHorizontal: 0,
+          paddingVertical: 5,
+          paddingHorizontal: 0,
+          borderBottomWidth: 1,
+          borderColor: theme.borderColor?.val as any,
+          height: 50,
+          paddingLeft: 10,
+        }}
         onPress={() => {
           onPress();
           toggleOverlay();
@@ -146,12 +150,13 @@ export const SearchField = (props: SearchFieldProps) => {
           style={{paddingHorizontal: 10, paddingVertical: 5}}
         >
           <Text
-            style={[
-              styles.formText,
-              selectedValues.length === 0
-                ? undefined
-                : {color: theme.color?.val},
-            ]}
+            style={{
+              fontSize: 18,
+              color:
+                selectedValues.length === 0
+                  ? '#8B8D79'
+                  : (theme.color?.val as any),
+            }}
             numberOfLines={2}
           >
             {selectedValues.length === 0 ? label : selectedValues.join(', ')}
@@ -172,23 +177,32 @@ export const SearchField = (props: SearchFieldProps) => {
       >
         <Sheet.Overlay />
         <Sheet.Frame padding={0}>
-          <YStack style={styles.searchOverlayContainer}>
+          <YStack style={{flex: 1, backgroundColor: '#FFF9F9'}}>
             {/* Header */}
             <XStack
-              style={[
-                styles.searchHeader,
-                {borderBottomColor: theme.borderColor?.val},
-              ]}
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingHorizontal: 20,
+                paddingVertical: 15,
+                borderBottomWidth: 1,
+                borderBottomColor: theme.borderColor?.val as any,
+              }}
             >
-              <Text style={styles.searchTitle} fontSize={20} fontWeight="700">
+              <Text style={{color: '#43484d'}} fontSize={20} fontWeight="700">
                 {label}
               </Text>
 
-              <XStack style={styles.headerActions}>
+              <XStack style={{flexDirection: 'row', alignItems: 'center'}}>
                 {/* Optional Clear (only shows when something is selected) */}
                 {selectedValues.length > 0 && (
                   <TouchableOpacity
-                    style={styles.clearButton}
+                    style={{
+                      paddingVertical: 8,
+                      paddingHorizontal: 12,
+                      marginRight: 8,
+                    }}
                     onPress={() => {
                       if (onClearAll) {
                         onClearAll();
@@ -202,17 +216,23 @@ export const SearchField = (props: SearchFieldProps) => {
                     }}
                   >
                     <Text
-                      style={[
-                        styles.clearButtonText,
-                        {color: theme.primary?.val},
-                      ]}
+                      style={{
+                        fontSize: 14,
+                        fontWeight: '500',
+                        color: theme.primary?.val as any,
+                      }}
                     >
                       Clear
                     </Text>
                   </TouchableOpacity>
                 )}
                 <TouchableOpacity
-                  style={styles.closeButton}
+                  style={{
+                    paddingVertical: 8,
+                    paddingHorizontal: 8,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
                   onPress={toggleOverlay}
                 >
                   <MaterialIcons
@@ -236,7 +256,7 @@ export const SearchField = (props: SearchFieldProps) => {
             </YStack>
 
             {/* List */}
-            <SafeAreaView style={styles.overlayContentContainer}>
+            <SafeAreaView style={{margin: 10, flex: 1}}>
               <FlashList
                 data={listData}
                 renderItem={renderItem}
@@ -248,15 +268,30 @@ export const SearchField = (props: SearchFieldProps) => {
 
             {/* Multi-select footer */}
             {multiSelect && (
-              <YStack style={styles.footer}>
+              <YStack
+                style={{
+                  borderTopWidth: 1,
+                  borderTopColor: '#E6E1DE',
+                  paddingHorizontal: 16,
+                  paddingVertical: 10,
+                  backgroundColor: '#FFF9F9',
+                }}
+              >
                 <TouchableOpacity
-                  style={[
-                    styles.doneButton,
-                    {backgroundColor: theme.primary?.val},
-                  ]}
+                  style={{
+                    paddingVertical: 12,
+                    borderRadius: 8,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: theme.primary?.val as any,
+                  }}
                   onPress={toggleOverlay}
                 >
-                  <Text style={styles.doneButtonText}>Done</Text>
+                  <Text
+                    style={{color: '#FFFFFF', fontSize: 16, fontWeight: 'bold'}}
+                  >
+                    Done
+                  </Text>
                 </TouchableOpacity>
               </YStack>
             )}
@@ -266,79 +301,4 @@ export const SearchField = (props: SearchFieldProps) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  listItem: {
-    marginHorizontal: 0,
-    paddingVertical: 5,
-    paddingHorizontal: 0,
-    borderBottomWidth: 1,
-    borderColor: '#E6E1DE',
-    height: 50,
-  },
-  formText: {fontSize: 18, color: '#8B8D79'},
-  listItemText: {
-    paddingLeft: 10,
-    color: '#43484d',
-  },
-  searchOverlayContainer: {
-    flex: 1,
-    backgroundColor: '#FFF9F9',
-  },
-  searchHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E6E1DE',
-  },
-  headerActions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  searchTitle: {color: '#43484d'},
-  overlayContentContainer: {
-    margin: 10,
-    flex: 1,
-  },
-  searchBarContainer: {
-    backgroundColor: 'transparent',
-    borderBottomColor: 'transparent',
-    borderTopColor: 'transparent',
-  },
-  selectListItem: {
-    paddingVertical: 5,
-  },
-  footer: {
-    borderTopWidth: 1,
-    borderTopColor: '#E6E1DE',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    backgroundColor: '#FFF9F9',
-  },
-  doneButton: {
-    paddingVertical: 12,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  doneButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  clearButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    marginRight: 8,
-  },
-  clearButtonText: {fontSize: 14, fontWeight: '500'},
-  closeButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Removed StyleSheet in favor of inline styles

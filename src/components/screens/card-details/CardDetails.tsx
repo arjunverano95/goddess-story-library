@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+// Removed StyleSheet usage
 import {Text, XStack, YStack} from 'tamagui';
 
 import {Sizes} from '../../../constants';
@@ -49,7 +49,9 @@ const CardDetails = (props: CardDetailsProps) => {
           </Text>
           <Text fontWeight="normal">{card.SetNumber}</Text>
         </XStack>
-        <YStack style={styles.divider} />
+        <YStack
+          style={{height: 1, backgroundColor: '#e0e0e0', marginVertical: 10}}
+        />
         <YStack>
           <Text>{`Series: ${card.SeriesName}`}</Text>
           <Text>{`ID: ${card.ID}`}</Text>
@@ -69,23 +71,6 @@ const CardDetails = (props: CardDetailsProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  closeButtonContainer: {
-    position: 'absolute',
-    top: 15,
-    right: 10,
-    zIndex: 1000,
-  },
-  divider: {
-    height: 1,
-    backgroundColor: '#e0e0e0',
-    marginVertical: 10,
-  },
-  closeButton: {
-    padding: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default CardDetails;

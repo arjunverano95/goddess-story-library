@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
-import {Platform, StyleSheet, TouchableOpacity} from 'react-native';
+import {Platform, TouchableOpacity} from 'react-native';
 import Animated from 'react-native-reanimated';
 
 import {MaterialIcons} from '@expo/vector-icons';
@@ -32,34 +32,44 @@ const Header = (props: HeaderProps) => {
 
   return (
     <YStack
-      style={[
-        styles.headerContainer,
-        showBackButton ? {backgroundColor: theme.bg?.val} : {},
-      ]}
+      style={{
+        paddingTop: Platform.OS === 'web' ? 0 : 20,
+        backgroundColor: theme.primary?.val as any,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.primary?.val as any,
+      }}
     >
-      <YStack style={styles.headerContent}>
+      <YStack style={{flexDirection: 'row'}}>
         {left ? (
           <YStack>{left}</YStack>
         ) : showBackButton ? (
           <Animated.View>
             <TouchableOpacity
-              style={styles.toggleDrawerContainer}
+              style={{
+                marginTop: 5,
+                marginHorizontal: 5,
+                height: 46,
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingHorizontal: 10,
+              }}
               activeOpacity={0.8}
               onPress={handleBackPress}
             >
-              <MaterialIcons
-                name="arrow-back"
-                size={24}
-                color={theme.color?.val || '#43484d'}
-              />
+              <MaterialIcons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
           </Animated.View>
         ) : null}
 
         {title ? (
-          <YStack style={styles.titleContainer}>
+          <YStack style={{flex: 1, paddingLeft: 10}}>
             <Text
-              style={[styles.title, {color: theme.color?.val || '#43484d'}]}
+              style={{
+                fontSize: 18,
+                fontWeight: 'bold',
+                marginTop: 16,
+                color: 'white',
+              }}
             >
               {title}
             </Text>
@@ -67,55 +77,21 @@ const Header = (props: HeaderProps) => {
         ) : null}
 
         {children ? (
-          <YStack style={styles.headerContentContainer}>{children}</YStack>
+          <YStack
+            style={{padding: 0, margin: 0, flex: 1, flexDirection: 'row'}}
+          >
+            {children}
+          </YStack>
         ) : null}
 
         {right ? (
-          <YStack style={styles.menuButtonWrapper}>{right}</YStack>
+          <YStack style={{justifyContent: 'center', alignItems: 'center'}}>
+            {right}
+          </YStack>
         ) : null}
       </YStack>
     </YStack>
   );
 };
-
-const styles = StyleSheet.create({
-  headerContainer: {
-    paddingTop: Platform.OS === 'web' ? 0 : 20,
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  headerContent: {
-    flexDirection: 'row',
-  },
-  menuButtonWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  titleContainer: {
-    flex: 1,
-    paddingLeft: 10,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 16,
-    color: '#43484d',
-  },
-  toggleDrawerContainer: {
-    marginTop: 5,
-    marginHorizontal: 5,
-    height: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-  },
-  headerContentContainer: {
-    padding: 0,
-    margin: 0,
-    flex: 1,
-    flexDirection: 'row',
-  },
-});
 
 export default Header;

@@ -1,6 +1,6 @@
 import * as Haptics from 'expo-haptics';
 import React, {useCallback, useMemo} from 'react';
-import {Pressable, StyleSheet} from 'react-native';
+import {Pressable} from 'react-native';
 import Animated from 'react-native-reanimated';
 import {Text, YStack, useTheme} from 'tamagui';
 
@@ -42,13 +42,20 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
   );
 
   return (
-    <YStack style={styles.cardContainer}>
-      <Animated.View style={[styles.cardWrapper]}>
+    <YStack
+      borderWidth={0}
+      margin={0}
+      padding={0}
+      borderColor={theme.borderColor?.val as any}
+      borderRadius={8}
+      overflow="hidden"
+    >
+      <Animated.View style={{flex: 1}}>
         <Pressable
           onPress={handlePress}
           onPressIn={handlePressIn}
           onPressOut={handlePressIn}
-          style={styles.pressable}
+          style={{flex: 1}}
         >
           <YStack>
             <YStack
@@ -85,15 +92,26 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
                 {badgeValues.cardNumber}
               </Text>
             </YStack>
-            <GalleryImage style={styles.image} imageUrl={data.ImageUrl} />
+            <GalleryImage
+              style={{width: '100%', aspectRatio: 1}}
+              imageUrl={data.ImageUrl}
+            />
           </YStack>
-          <YStack style={styles.cardFooter}>
-            <YStack style={styles.cardTitleContainer}>
-              <Text style={styles.cardTitle}>{badgeValues.characterName}</Text>
-              <Text style={styles.cardSubTitle}>{badgeValues.rarity}</Text>
+          <YStack
+            paddingHorizontal={10}
+            paddingVertical={3}
+            backgroundColor={theme.white?.val as any}
+          >
+            <YStack flexDirection="row">
+              <Text flex={1} textAlign="left" fontSize={12}>
+                {badgeValues.characterName}
+              </Text>
+              <Text textAlign="right" fontSize={12} fontWeight="bold">
+                {badgeValues.rarity}
+              </Text>
             </YStack>
             <YStack>
-              <Text style={[styles.textContent, {color: theme.muted?.val}]}>
+              <Text fontSize={11} color={theme.muted?.val as any}>
                 {badgeValues.seriesName}
               </Text>
             </YStack>
@@ -102,67 +120,6 @@ const GalleryItem = React.memo<GalleryItemProps>((props) => {
       </Animated.View>
     </YStack>
   );
-});
-
-const styles = StyleSheet.create({
-  cardWrapper: {
-    flex: 1,
-  },
-  pressable: {
-    flex: 1,
-  },
-  image: {
-    width: '100%',
-    aspectRatio: 1,
-  },
-  cardContainer: {
-    borderWidth: 0,
-    //width: 160,
-    margin: 0,
-    padding: 0,
-  },
-  cardTitleContainer: {
-    flexDirection: 'row',
-  },
-  setNoBadgeContainer: {
-    position: 'absolute',
-    top: 5,
-    left: 10,
-    zIndex: 999,
-  },
-  cardNoBadgeContainer: {
-    position: 'absolute',
-    top: 5,
-    right: 5,
-    zIndex: 999,
-  },
-  badge: {
-    height: 20,
-    minWidth: 40,
-    paddingHorizontal: 1,
-    marginRight: 5,
-    fontSize: 9,
-  },
-  badgeText: {
-    fontWeight: 'bold',
-  },
-  cardTitle: {
-    flex: 1,
-    textAlign: 'left',
-    fontSize: 12,
-  },
-  cardSubTitle: {
-    textAlign: 'right',
-    fontSize: 12,
-    fontWeight: 'bold',
-  },
-  textContent: {
-    fontSize: 11,
-  },
-  cardFooter: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-  },
 });
 
 // Custom comparison function for React.memo

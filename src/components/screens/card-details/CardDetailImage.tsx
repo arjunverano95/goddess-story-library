@@ -1,6 +1,6 @@
 import {Image} from 'expo-image';
 import React from 'react';
-import {Platform, StyleSheet} from 'react-native';
+import {Platform} from 'react-native';
 import {YStack} from 'tamagui';
 import {MobileWebView, WebSearchIframe} from '.';
 import {GSLCard} from '../../../models/GSLCard';
@@ -16,7 +16,7 @@ const CardDetailImage = (props: CardDetailImageProps) => {
     return (
       <YStack flex={1} margin={15} backgroundColor="$cardBg">
         <Image
-          style={styles.image}
+          style={{flex: 1}}
           source={{uri: data.ImageUrl}}
           contentFit="contain"
         />
@@ -32,12 +32,6 @@ const CardDetailImage = (props: CardDetailImageProps) => {
   }
 };
 
-const styles = StyleSheet.create({
-  image: {
-    flex: 1,
-    height: null,
-    width: null,
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default CardDetailImage;

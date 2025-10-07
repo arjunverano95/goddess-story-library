@@ -8,16 +8,23 @@ const animations = createAnimations({
 });
 
 /**
- * Brand palette
+ * Brand palette (updated: deep pink primary)
  */
 const palette = {
   goldMain: '#D7B23A',
   goldDeep: '#A8871F',
   greenMain: '#B6C7A7',
   greenDeep: '#8FA57F',
+
+  // 🔴 deep pink brand
+  pinkMain: '#E91E63', // primary
+  pinkHover: '#F06292', // hover (lighter)
+  pinkPress: '#C2185B', // press (deeper)
+
   pinkBg: '#F7D6D5',
   pinkAcc: '#F3AEB0',
   pinkDeep: '#D08A90',
+
   ink: '#2D2310',
   olive: '#8B8D79',
   paper: '#FFF9F9',
@@ -35,10 +42,11 @@ export const config = createTamagui({
     space: {xs: 2, sm: 4, md: 8, true: 8, lg: 12, xl: 16},
     radius: {none: 0, sm: 3, md: 6, true: 3, lg: 10},
     color: {
-      // brand
-      primary: palette.goldMain,
-      primaryHover: '#E0C157',
-      primaryPress: palette.goldDeep,
+      // brand (🔴 switched to deep pink)
+      primary: palette.pinkMain,
+      primaryHover: palette.pinkHover,
+      primaryPress: palette.pinkPress,
+
       secondary: palette.greenMain,
       secondaryHover: '#C7D6BA',
       secondaryPress: palette.greenDeep,
@@ -55,7 +63,7 @@ export const config = createTamagui({
       searchBg: palette.pinkBg,
       transparent: 'transparent',
     },
-    
+
     zIndex: {xs: 0, sm: 10, md: 100, lg: 1000, xl: 10000},
   },
 
@@ -88,16 +96,19 @@ export const config = createTamagui({
     light: {
       bg: palette.paper,
       color: palette.ink,
-      primary: palette.goldMain,
+
+      // 🔴 deep pink primary
+      primary: palette.pinkMain,
+      primaryHover: palette.pinkHover,
+      primaryPress: palette.pinkPress,
+
       secondary: palette.greenMain,
+      secondaryHover: '#C7D6BA',
+      secondaryPress: palette.greenDeep,
+
       borderColor: palette.border,
       cardBg: '#FFFFFF',
       muted: palette.olive,
-
-      primaryHover: '#E0C157',
-      primaryPress: palette.goldDeep,
-      secondaryHover: '#C7D6BA',
-      secondaryPress: palette.greenDeep,
 
       subtleBg: palette.pinkBg,
     },
@@ -107,9 +118,10 @@ export const config = createTamagui({
       bg: palette.darkBg,
       color: '#F6F0EB',
 
-      primary: palette.goldDeep,
-      primaryHover: '#C9A233',
-      primaryPress: '#6E5712',
+      // keep press a bit deeper for dark
+      primary: palette.pinkHover,
+      primaryHover: palette.pinkMain,
+      primaryPress: palette.pinkPress,
 
       secondary: palette.greenDeep,
       secondaryHover: '#9BAD8E',
@@ -147,13 +159,11 @@ export const config = createTamagui({
   settings: {
     disableSSR: true,
     allowedStyleValues: 'somewhat-strict-web',
-    defaultTheme: 'light', // default light
+    defaultTheme: 'light',
   },
 });
 
-// now, make your types flow nicely back to your `tamagui` import:
 type OurConfig = typeof config;
-
 declare module 'tamagui' {
   interface TamaguiCustomConfig extends OurConfig {
     __typeBrand?: never;

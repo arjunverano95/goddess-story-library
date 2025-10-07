@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {Text, YStack} from 'tamagui';
 import {GSLCard} from '../../../models/GSLCard';
 
@@ -38,73 +38,68 @@ const WebSearchIframe: React.FC<WebSearchIframeProps> = ({data}) => {
   };
 
   return (
-    <YStack style={styles.container}>
-      <YStack style={styles.searchContainer}>
-        <Text style={styles.searchTitle}>
+    <YStack
+      style={{
+        flex: 1,
+        margin: 15,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 8,
+        overflow: 'hidden',
+      }}
+    >
+      <YStack
+        style={{
+          padding: 20,
+          alignItems: 'center',
+          borderBottomWidth: 1,
+          borderBottomColor: '#e0e0e0',
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: '600',
+            color: '#43484d',
+            textAlign: 'center',
+            marginBottom: 10,
+          }}
+        >
           No image available for: {data.SeriesName} {data.CharacterName}
         </Text>
-        <Text style={styles.searchSubtitle}>
+        <Text
+          style={{
+            fontSize: 14,
+            color: '#43484d',
+            textAlign: 'center',
+            marginBottom: 20,
+            opacity: 0.7,
+          }}
+        >
           Try searching online for this character
         </Text>
         <TouchableOpacity
-          style={styles.searchButton}
+          style={{
+            backgroundColor: '#e85d64',
+            paddingHorizontal: 20,
+            paddingVertical: 12,
+            borderRadius: 8,
+          }}
           onPress={handleSearchClick}
         >
-          <Text style={styles.searchButtonText}>Search Images on Google</Text>
+          <Text style={{color: '#FFFFFF', fontSize: 16, fontWeight: '600'}}>
+            Search Images on Google
+          </Text>
         </TouchableOpacity>
       </YStack>
 
       {/* Google Custom Search for images */}
-      <YStack style={styles.imageWebview}>
+      <YStack style={{flex: 1, minHeight: 400}}>
         <div className="gcse-searchresults-only"></div>
       </YStack>
     </YStack>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 15,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  searchContainer: {
-    padding: 20,
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  searchTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#43484d',
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  searchSubtitle: {
-    fontSize: 14,
-    color: '#43484d',
-    textAlign: 'center',
-    marginBottom: 20,
-    opacity: 0.7,
-  },
-  searchButton: {
-    backgroundColor: '#e85d64',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 8,
-  },
-  searchButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  imageWebview: {
-    flex: 1,
-    minHeight: 400,
-  },
-});
+// Removed StyleSheet in favor of inline styles
 
 export default WebSearchIframe;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+// Removed StyleSheet usage
 import {Input, YStack, useTheme} from 'tamagui';
 
 interface InputFieldProps {
@@ -14,12 +14,17 @@ export const InputField = (props: InputFieldProps) => {
   const theme = useTheme();
   return (
     <YStack
-      style={styles.listItem}
+      style={{
+        marginHorizontal: 0,
+        paddingVertical: 5,
+        paddingHorizontal: 0,
+        height: 50,
+      }}
       borderBottomWidth={1}
       borderColor={theme.borderColor?.val as any}
     >
       <Input
-        style={styles.inputField}
+        style={{textAlign: 'left', color: '#43484d'}}
         placeholder={label}
         placeholderTextColor={theme.muted?.val}
         onFocus={onFocus}
@@ -31,16 +36,4 @@ export const InputField = (props: InputFieldProps) => {
     </YStack>
   );
 };
-
-const styles = StyleSheet.create({
-  listItem: {
-    marginHorizontal: 0,
-    paddingVertical: 5,
-    paddingHorizontal: 0,
-    height: 50,
-  },
-  inputField: {
-    textAlign: 'left',
-    color: '#43484d',
-  },
-});
+// Removed StyleSheet in favor of inline styles

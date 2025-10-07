@@ -1,6 +1,6 @@
 import {useLocalSearchParams} from 'expo-router';
 import React, {useEffect, useMemo, useState} from 'react';
-import {Animated, StyleSheet} from 'react-native';
+import {Animated} from 'react-native';
 import {XStack, YStack} from 'tamagui';
 
 import {Gallery, PanelHeader} from '@/src/components';
@@ -132,7 +132,11 @@ export default function CardsScreen() {
       <XStack flex={1} flexDirection="row" backgroundColor="$background">
         <Animated.View
           style={[
-            styles.panel,
+            {
+              height: '100%',
+              backgroundColor: 'white',
+              overflow: 'hidden',
+            },
             {
               width: panelWidth,
             },
@@ -184,10 +188,4 @@ export default function CardsScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  panel: {
-    height: '100%',
-    backgroundColor: 'white',
-    overflow: 'hidden',
-  },
-});
+// Removed StyleSheet in favor of inline styles

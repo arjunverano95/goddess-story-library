@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {Platform, RefreshControl, StyleSheet} from 'react-native';
+import {Platform, RefreshControl} from 'react-native';
 import {ScrollView, Text, YStack} from 'tamagui';
 
 import {useRouter} from 'expo-router';
@@ -132,7 +132,15 @@ export const Gallery = (props: GalleryProps) => {
   // Memoized render functions for better performance
   const renderItem = useCallback(
     (item: GSLCard, index: number) => (
-      <div key={`item-${index}`} style={styles.itemContainer}>
+      <div
+        key={`item-${index}`}
+        style={{
+          backgroundColor: 'transparent',
+          borderRadius: 8,
+          overflow: 'hidden',
+          width: '100%',
+        }}
+      >
         <GalleryItem data={item} onPress={handleCardPress} />
       </div>
     ),
@@ -145,8 +153,30 @@ export const Gallery = (props: GalleryProps) => {
     if (!isLoadingMore) return null;
 
     return (
-      <div style={styles.footerLoader} className="gallery-footer">
-        <Text style={styles.footerLoaderText}>Loading more...</Text>
+      <div
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingTop: 20,
+          paddingBottom: 20,
+          paddingLeft: 10,
+          paddingRight: 10,
+          backgroundColor: 'transparent',
+          width: '100%',
+        }}
+        className="gallery-footer"
+      >
+        <Text
+          style={{
+            fontSize: 14,
+            color: '#8B8D79',
+            textAlign: 'center',
+            marginLeft: 10,
+          }}
+        >
+          Loading more...
+        </Text>
       </div>
     );
   }, [loadingMore, isFetchingNextPage]);
@@ -248,9 +278,26 @@ export const Gallery = (props: GalleryProps) => {
 
   if (isLoading) {
     return (
-      <YStack style={styles.galleryContainer}>
-        <YStack style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading cards...</Text>
+      <YStack style={{flex: 1, backgroundColor: '#FFF9F9', minHeight: 800}}>
+        <YStack
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: 400,
+            width: '100%',
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              color: '#8B8D79',
+              marginTop: 10,
+              textAlign: 'center',
+            }}
+          >
+            Loading cards...
+          </Text>
         </YStack>
       </YStack>
     );
@@ -259,20 +306,30 @@ export const Gallery = (props: GalleryProps) => {
   // Only show "No cards found" if we have data but it's empty
   if (!isLoading && data && data.length === 0) {
     return (
-      <YStack style={styles.galleryContainer}>
-        <div style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No cards found</Text>
+      <YStack style={{flex: 1, backgroundColor: '#FFF9F9', minHeight: 800}}>
+        <div
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: 400,
+            width: '100%',
+          }}
+        >
+          <Text style={{fontSize: 16, color: '#8B8D79', textAlign: 'center'}}>
+            No cards found
+          </Text>
         </div>
       </YStack>
     );
   }
 
   return (
-    <YStack style={styles.galleryContainer}>
+    <YStack style={{flex: 1, backgroundColor: '#FFF9F9', minHeight: 800}}>
       <ScrollView
         ref={scrollViewRef}
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollContent}
+        style={{flex: 1}}
+        contentContainerStyle={{flexGrow: 1, paddingBottom: 20, padding: 10}}
         onScroll={handleScroll}
         scrollEventThrottle={16}
         showsVerticalScrollIndicator={false}
@@ -291,7 +348,7 @@ export const Gallery = (props: GalleryProps) => {
         // maxToRenderPerBatch={10}
         // windowSize={10}
       >
-        <div style={styles.galleryGrid} className="gallery-grid">
+        <div style={{width: '100%', gap: 10}} className="gallery-grid">
           {galleryData.map((item, index) => renderItem(item, index))}
         </div>
 
@@ -303,62 +360,6 @@ export const Gallery = (props: GalleryProps) => {
   );
 };
 
-const styles = StyleSheet.create({
-  galleryContainer: {flex: 1, backgroundColor: '#FFF9F9', minHeight: 800},
-  scrollView: {
-    flex: 1,
-  },
-  scrollContent: {
-    flexGrow: 1,
-    paddingBottom: 20,
-    padding: 10,
-  },
-  galleryGrid: {
-    width: '100%',
-    gap: 10,
-  },
-  itemContainer: {
-    backgroundColor: 'transparent',
-    borderRadius: 8,
-    overflow: 'hidden',
-    width: '100%',
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: 400,
-    width: '100%',
-  },
-  loadingText: {
-    fontSize: 16,
-    color: '#8B8D79',
-    marginTop: 10,
-    textAlign: 'center',
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: 400,
-    width: '100%',
-  },
-  emptyText: {fontSize: 16, color: '#8B8D79', textAlign: 'center'},
-  footerLoader: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    backgroundColor: 'transparent',
-    width: '100%',
-  },
-  footerLoaderText: {
-    fontSize: 14,
-    color: '#8B8D79',
-    textAlign: 'center',
-    marginLeft: 10,
-  },
-});
+// Removed StyleSheet.create in favor of inline objects and Tamagui props
 
 export default Gallery;

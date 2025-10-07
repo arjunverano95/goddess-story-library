@@ -11,10 +11,26 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
+          position: 'absolute',
+          bottom: Platform.OS === 'web' ? 0 : 0,
           paddingTop: Platform.OS === 'web' ? 0 : 10,
-          height: Platform.OS === 'web' ? 50 : 100,
+          height: Platform.OS === 'web' ? 60 : 100,
           backgroundColor: theme.cardBg ? theme.cardBg.val : undefined,
+          borderTopColor: 'transparent',
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          elevation: 8,
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 8,
+          marginBottom: Platform.OS === 'web' ? 0 : 20,
         },
+        tabBarActiveTintColor: theme.primary?.val,
+        tabBarInactiveTintColor: theme.muted?.val,
       }}
     >
       <Tabs.Screen
