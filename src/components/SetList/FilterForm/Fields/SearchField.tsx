@@ -1,5 +1,11 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {MaterialIcons} from '@expo/vector-icons';
@@ -231,6 +237,7 @@ const styles = StyleSheet.create({
   searchOverlayContainer: {
     flex: 1,
     backgroundColor: Colors.background,
+    paddingTop: Platform.OS === 'ios' ? 30 : 0,
   },
   searchHeader: {
     flexDirection: 'row',
