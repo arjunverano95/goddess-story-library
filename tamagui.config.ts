@@ -1,4 +1,5 @@
 import {createAnimations} from '@tamagui/animations-moti';
+import {shorthands as defaultShorthands} from '@tamagui/shorthands';
 import {createTamagui} from 'tamagui';
 
 const animations = createAnimations({
@@ -38,9 +39,59 @@ export const config = createTamagui({
   animations,
 
   tokens: {
-    size: {xs: 4, sm: 8, md: 12, true: 12, lg: 20, xl: 32},
-    space: {xs: 2, sm: 4, md: 8, true: 8, lg: 12, xl: 16},
-    radius: {none: 0, sm: 3, md: 6, true: 3, lg: 10},
+    size: {
+      0: 0,
+      1: 4,
+      2: 8,
+      3: 12,
+      4: 16, // used by size="$4"
+      5: 20,
+      6: 24,
+      7: 28,
+      8: 32, // used by some buttons
+      9: 40,
+      10: 48,
+      11: 56,
+      12: 64,
+      xs: 4,
+      sm: 8,
+      md: 12,
+      true: 12,
+      lg: 20,
+      xl: 32,
+    },
+    space: {
+      0: 0,
+      1: 2,
+      2: 4, // gap="$2", px="$2", pb="$2"
+      3: 8, // gap="$3", mr="$3"
+      4: 12, // gap="$4", p="$4"
+      5: 16,
+      6: 20, // pb="$6"
+      7: 24,
+      8: 32,
+      xs: 2,
+      sm: 4,
+      md: 8,
+      true: 8,
+      lg: 12,
+      xl: 16,
+    },
+    radius: {
+      1: 2,
+      2: 4,
+      3: 6,
+      4: 8,
+      5: 10,
+      6: 12, // br="$6"
+      7: 14,
+      8: 16,
+      none: 0,
+      sm: 3,
+      md: 6,
+      true: 3,
+      lg: 10,
+    },
     color: {
       // brand (🔴 switched to deep pink)
       primary: palette.pinkMain,
@@ -150,10 +201,10 @@ export const config = createTamagui({
   },
 
   shorthands: {
-    px: 'paddingHorizontal',
-    py: 'paddingVertical',
-    mx: 'marginHorizontal',
-    my: 'marginVertical',
+    ...defaultShorthands,
+    // keep just your convenience overrides if you really want them:
+
+    // (remove gap/bg/br/bc/bw/etc. so you don't shadow the built-ins)
   },
 
   settings: {

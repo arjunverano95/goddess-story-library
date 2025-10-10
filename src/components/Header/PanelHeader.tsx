@@ -190,14 +190,33 @@ const PanelHeader = (props: HeaderProps) => {
 
       {/* Filter form presentation using Tamagui Sheet */}
       <Sheet
+        forceRemoveScrollEnabled={isFilterFormVisible}
         modal
         open={isFilterFormVisible}
         onOpenChange={setIsFilterFormVisible}
+        snapPoints={[85]}
+        snapPointsMode="percent"
         dismissOnSnapToBottom
-        snapPointsMode="fit"
+        zIndex={100_000}
+        animation="medium"
       >
-        <Sheet.Overlay />
-        <Sheet.Frame padding={0} backgroundColor={theme.cardBg?.val as any}>
+        <Sheet.Overlay
+          animation="medium"
+          backgroundColor="rgba(0,0,0,0.4)"
+          enterStyle={{opacity: 0}}
+          exitStyle={{opacity: 0}}
+          opacity={0.45}
+        />
+        <Sheet.Handle
+          backgroundColor={theme.borderColor?.val as any}
+          marginBottom={5}
+        />
+        <Sheet.Frame
+          padding={0}
+          backgroundColor={theme.cardBg?.val as any}
+          borderTopRightRadius={20}
+          borderTopLeftRadius={20}
+        >
           {filter && formData && onFilter ? (
             <FilterForm
               data={filter}
