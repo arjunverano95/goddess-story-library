@@ -2,7 +2,7 @@
   "name": "waifu-collection-redirect",
   "main": "expo-router/entry",
   "version": "1.0.0",
-  "homepage": "https://www.waifucollection.com/",
+  "homepage": "https://arjunverano95.github.io/goddess-story-library",
   "scripts": {
     "start": "expo start --tunnel --clear",
     "reset-project": "node ./scripts/reset-project.js",
