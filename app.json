@@ -37,8 +37,7 @@
     },
     "plugins": ["expo-router"],
     "experiments": {
-      "typedRoutes": true,
-      "baseUrl": "/goddess-story-library"
+      "typedRoutes": true
     },
     "extra": {
       "router": {},
