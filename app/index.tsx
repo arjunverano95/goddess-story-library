@@ -1,6 +1,6 @@
+import {Image} from 'expo-image';
 import React from 'react';
 import {
-  Image,
   Linking,
   Platform,
   StyleSheet,
@@ -24,9 +24,10 @@ export default function Index() {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
         <Image
-          source={require('../assets/waicolle.png')}
+          source={{uri: 'https://api.waifucollection.com/images/icon.png'}}
           style={styles.logo}
-          resizeMode="contain"
+          contentFit="contain"
+          transition={200}
         />
         <Text style={styles.title}>Goddess Story Library</Text>
         <Text style={styles.subtitle}>This app has been rebranded as</Text>
